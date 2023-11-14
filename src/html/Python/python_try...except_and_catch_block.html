@@ -1,0 +1,45 @@
+<div>
+  <h4 class="text-subhead font-head">Python try...except Block</h4>
+  <p class="text-content ml-content">The try...except block is used to handle exceptions in Python.</p><br/>  
+  <p class="text-content ml-content font-bold">Here's the syntax of try...except block:</p>
+  </p>
+  <p class="text-content ml-content">try:</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;# code that may cause exception</p>
+  <p class="text-content ml-content">except:</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;# code to run when exception occurs</p><br/>  
+  <p class="text-content ml-content">Here, we have placed the code that might generate an exception inside the try block. Every try block is followed by an except block.</p>   
+  <p class="text-content ml-content">When an exception occurs, it is caught by the except block. The except block cannot be used without the try block.</p>
+   </p><br/>
+  <h5 class="text-content font-head">Example: Exception Handling Using try...except</h5>  
+  <p class="text-content ml-content">try:</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;numerator = 10</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;denominator = 0</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;result = numerator/denominator</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;print(result)</p>
+  <p class="text-content ml-content">except:</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;print("Error: Denominator cannot be 0.")</p>
+  <p class="text-content ml-content"># Output: Error: Denominator cannot be 0.</p><br/> 
+  <h5 class="text-content font-head">In the example, we are trying to divide a number by 0. Here, this code generates an exception.</h5>   
+  <p class="text-content ml-content">To handle the exception, we have put the code, result = numerator/denominator inside the try block. Now when an exception occurs, the rest of the code inside the try block is skipped.</p>   
+  <p class="text-content ml-content">The except block catches the exception and statements inside the except block are executed.</p>   
+  <p class="text-content ml-content">If none of the statements in the try block generates an exception, the except block is skipped.</p><br/>   
+  <h4 class="text-subhead font-head">Catching Specific Exceptions in Python</h4>  
+  <p class="text-content ml-content">For each try block, there can be zero or more except blocks. Multiple except blocks allow us to handle each exception differently.</p>   
+  <p class="text-content ml-content">The argument type of each except block indicates the type of exception that can be handled by it. </p><br/> 
+  <p class="text-content ml-content"><h5 class="text-content font-head">For example,</h5>   
+  <p class="text-content ml-content">try:</p>      
+  <p class="text-content ml-content">&nbsp;&nbsp;even_numbers = [2,4,6,8]</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;print(even_numbers[5])</p>
+  <p class="text-content ml-content">except ZeroDivisionError:</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;print("Denominator cannot be 0.")</p>
+  <p class="text-content ml-content">except IndexError:</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;print("Index Out of Bound.")</p>
+  <p class="text-content ml-content"># Output: Index Out of Bound</p><br/>   
+  <h5 class="text-content font-head">In this example, we have created a list named even_numbers.Since the list index starts from 0, the last element of the list is at index 3.</h5><br/>  
+  <p class="text-content ml-content">Notice the statement,</p> 
+  <p class="text-content ml-content">print(even_numbers[5])</p><br/>
+  <p class="text-content ml-content">Here, we are trying to access a value to the index 5. Hence, IndexError exception occurs.</p>
+  <p class="text-content ml-content">When the IndexError exception occurs in the try block,</p>
+  <p class="text-content ml-content">The ZeroDivisionError exception is skipped.</p>
+  <p class="text-content ml-content">The set of code inside the IndexError exception is executed.</p>  
+</div>

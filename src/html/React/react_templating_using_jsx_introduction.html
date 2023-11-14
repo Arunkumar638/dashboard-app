@@ -1,0 +1,54 @@
+<div>
+  <h3 class="text-head font-head">Templating using JSX</h3>
+  <p class="text-content ml-content">It is a technique commonly used in modern JavaScript frameworks like React. 
+  JSX (JavaScript XML) is a syntax extension that allows you to write HTML-like code in JavaScript files. 
+  It provides a concise and readable way to describe the structure of UI components.</p><br/>
+  Here's a basic example of how templating using JSX works:
+  <p class="text-content ml-content">import React from 'react';</p>
+  <p class="text-content ml-content">const MyComponent = () => {</p>
+  <p class="text-content ml-content">return (</p>
+  <p class="text-content ml-content">&lt;div&gt;</p>
+  <p class="text-content ml-content">&lt;h3&gt;Hello, World!&lt;/h3&gt;</p>
+  <p class="text-content ml-content">&lt;p&gtThis is a JSX template.&lt;/p&gt;</p>
+  <p class="text-content ml-content">&lt;/div&gt;</p>
+  <p class="text-content ml-content">);</p>
+  <p class="text-content ml-content">};</p>
+  <p class="text-content ml-content">export default MyComponent;</p><br/>
+  <b>In this example, MyComponent is a functional component that returns JSX code. It looks very similar to HTML, but it's actually JavaScript. 
+    You can use curly braces {} to embed JavaScript expressions within JSX:</b><br/><br/>
+  <p class="text-content ml-content">import React from 'react';</p>
+  <p class="text-content ml-content">const MyComponent = () => {</p>
+  <p class="text-content ml-content">const name = 'John Doe';</p>
+  <p class="text-content ml-content">return (</br></p>
+  <p class="text-content ml-content">    {</p>
+  <p class="text-content ml-content">&lt;div&gt;</p>
+  <p class="text-content ml-content">&lt;h1>Hello, {name}!&lt;/h1></p>
+  <p class="text-content ml-content">&lt;p&gt;This is a JSX template.&lt;/p&gt;</p>
+  <p class="text-content ml-content">&lt;/div&gt;</p>
+  <p class="text-content ml-content">}</p>
+
+  <p class="text-content ml-content">);</p>
+  <p class="text-content ml-content">};</p>
+  export default MyComponent;<br/>
+  <p class="text-content ml-content font-semibold">Here, we're using the variable name inside the JSX code by wrapping it in curly braces. 
+  You can also use JavaScript logic and conditionals within JSX, for example:</p>
+  <p class="text-content ml-content">import React from 'react';</p>
+  <p class="text-content ml-content">const MyComponent = () => {</p>
+  <p class="text-content ml-content">const isLoggedIn = true;</p>
+  <p class="text-content ml-content">return (</p>
+  <p class="text-content ml-content">&lt;div&gt;</p>
+  <p class="text-content ml-content">{isLoggedIn ? (</p>
+  <p class="text-content ml-content"> &lt;h1&gt;Welcome, User!&lt;/h1&gt;</p>
+  <p class="text-content ml-content">) : (</p>
+  <p class="text-content ml-content"> &lt;h1&gt;Please log in&lt;/h1&gt;</p>
+  <p class="text-content ml-content"> )}</p>
+  <p class="text-content ml-content"> &lt;/div&gt;</p>
+  <p class="text-content ml-content"> );</p>
+  <p class="text-content ml-content">};</p>
+
+  export default MyComponent;<br/><br/>
+  <p class="text-content ml-content">Remember to have a toolchain set up to transpile and bundle JSX code if you're working outside of a React environment. Typically, this is done using tools like Babel and Webpack.</p>
+  <p class="text-content ml-content">Keep in mind that this is a basic introduction to templating using JSX. 
+  In real-world applications, you'll often be working with more complex components, state management, 
+  and props passing, but this should give you a good starting point.</p>
+</div>

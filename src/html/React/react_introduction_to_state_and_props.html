@@ -1,0 +1,69 @@
+<div>
+  <h2 class="text-head font-head"><b>State and props</b></h2>
+  <p class="text-content ml-content">State and props are two fundamental concepts in React that allow you to manage data and pass information between components.</p>
+  <h3 class="text-subhead font-head"><b>State:</b></h3>
+  <p class="text-content ml-content">State is an internal data store that belongs to a specific component. 
+  It represents the current condition or data of a component at any given point in time. State can be modified by the component itself, typically in response to user actions or other events.</p>
+  <h3 class="text-subhead font-head"><b>Setting Initial State:</b></h3>
+  <p class="text-content ml-content">You initialize state in a class component by setting the this.state property in the component's constructor.</p><br/>
+  <p class="text-content ml-content">class Counter extends React.Component {</p>
+  <p class="text-content ml-content">  constructor(props) {</p>
+  <p class="text-content ml-content">    super(props);</p>
+  <p class="text-content ml-content">    this.state = {</p></p>
+  <p class="text-content ml-content">      count: 0</p>
+  <p class="text-content ml-content">    };</p>
+  <p class="text-content ml-content">  }</p>
+  <p class="text-content ml-content">  render() {</p>
+  <p class="text-content ml-content">    return &lt;div&gt;Count: {this.state.count}&lt;/div&gt;;</p>
+  <p class="text-content ml-content">  }</p>
+  <p class="text-content ml-content">}</p><br/>
+  <h3 class="text-subhead font-head"><b>Updating State:</b></h3>
+  <p class="text-content ml-content">You should never directly modify the state object. 
+    Instead, you use the setState method provided by React. This ensures that React knows about the update and can trigger a re-render.</p>
+  this.setState({ count: this.state.count + 1 });</p><br/>
+  <h3 class="text-subhead font-head"><b>Asynchronous Nature of setState:</b></h3>
+  <p class="text-content ml-content">The setState function is asynchronous, which means that React may batch multiple setState 
+    calls into a single update for performance reasons. If you need to perform actions after the state has been updated, 
+    you can use the callback function as the second argument to setState.</p><br/>
+  <p class="text-content ml-content">this.setState({ count: this.state.count + 1 }, () => {</p>
+  <p class="text-content ml-content">  console.log('Count updated:', this.state.count);</p>
+  <p class="text-content ml-content">});</p><br/>
+  <h3 class="text-subhead font-head"><b>Props:</b></h3>
+  <p class="text-content ml-content">Props (short for properties) are inputs that are passed into a React component. 
+    They are immutable (read-only) within the component that receives them. 
+    Props allow you to customize and configure a component when it is used in a parent component.</p><br/>
+  <h3 class="text-subhead font-head"><b>Passing Props:</b></h3>
+  <p class="text-content ml-content">You pass props in the JSX element when you use a component.</p>
+  <p class="text-content ml-content">&lt;ChildComponent name="John Doe" age={30} /&gt;</p>
+  <p class="text-content ml-content">In this example, name and age are props being passed to the ChildComponent.</p><br/>
+  <h3 class="text-subhead font-head"><b>Accessing Props:</b></h3>
+  <p class="text-content ml-content">In the child component, you can access props via this.props.</p><br/>
+  <p class="text-content ml-content">class ChildComponent extends React.Component {</p></p>
+  <p class="text-content ml-content">  render() {</p>
+  <p class="text-content ml-content">    return (</p>
+  <p class="text-content ml-content">      &lt;div&gt;</p>
+  <p class="text-content ml-content">        &lt;p&gt;Name: {this.props.name}&lt;/p&gt;</p>
+  <p class="text-content ml-content">        &lt;p&gt;Age: {this.props.age}&lt;/p&gt;</p>
+  <p class="text-content ml-content">      &lt;/div&gt;</p>
+  <p class="text-content ml-content">    );</p>
+  <p class="text-content ml-content">}
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">Here, this.props.name and this.props.age are accessing the props passed from the parent.</p><br/>
+  <h3 class="text-subhead font-head"><b>Default Props:</b></h3>
+  <p class="text-content ml-content">You can provide default values for props using the defaultProps property.</p><br/>
+  <p class="text-content ml-content">class ChildComponent extends React.Component {</p>
+  <p class="text-content ml-content">  static defaultProps = {</p>
+  <p class="text-content ml-content">    name: 'Unknown',</p>
+  <p class="text-content ml-content">    age: 0</p>
+  <p class="text-content ml-content">  };</p>
+  <p class="text-content ml-content">  render() {</p>
+  <p class="text-content ml-content">return(
+  <p class="text-content ml-content">      &lt;div&gt;</p>
+  <p class="text-content ml-content">        &lt;p&gt;Name: {this.props.name}&lt;/p&gt;</p>
+  <p class="text-content ml-content">        &lt;p&gt;Age: {this.props.age}&lt;/p&gt;</p>
+  <p class="text-content ml-content">      &lt;/div&gt;</p>
+  <p class="text-content ml-content">    );</p>
+  <p class="text-content ml-content">  }</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">If a prop is not provided when using the component, it will use the default value.</p>
+</div>

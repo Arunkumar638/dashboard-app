@@ -1,0 +1,31 @@
+<div>
+  <h2 class="text-subhead font-bold">Expressions</h2>
+  <p class="text-content ml-content">In React, JSX expressions allow you to embed JavaScript code within JSX to dynamically generate content. 
+  This enables you to use variables, perform calculations, and incorporate conditional logic within your JSX templates.<br/> 
+  Here's an example of how you can use JSX expressions:</p><br/>
+  <p class="text-content ml-content">import React from 'react';</p>
+  <p class="text-content ml-content">const MyComponent = () => {</p>
+  <p class="text-content ml-content">const name = 'John Doe';</p>
+  <p class="text-content ml-content">const isLoggedIn = true;</p>
+  <p class="text-content ml-content">return (</p>
+  <p class="text-content ml-content"> &lt;div&gt;</p>
+  <p class="text-content ml-content">&lt;h1&gt;Hello, {name}!&lt;/h1&gt;</p>
+    {isLoggedIn && &lt;p&gt;Welcome back!&lt;/p&gt;}</p>
+  <p class="text-content ml-content">{isLoggedIn ?&lt;button&gt;Logout?&lt;/button&gt; : &lt;button&gt;Login&lt;/button&gt;}</p>
+  <p class="text-content ml-content">&lt;div&gt;</p>
+  <p class="text-content ml-content">);</p>
+  <p class="text-content ml-content"> };</p>
+export default MyComponent;<br/><br/>
+  <b>In this example:</b>
+  <ol class="list-disc">
+    <li class="ml-points">We define a functional component MyComponent.</li>
+    <li class="ml-points">We declare two variables: name and isLoggedIn.</li>
+    <li class="ml-points">Within the JSX code, we use curly braces {} to insert JavaScript expressions.</li>
+    <li class="ml-points">{name} is an example of embedding a variable within JSX. It will be replaced with the value of the name variable.</li>
+    <li class="ml-points">{isLoggedIn && &lt;p&gt;Welcome back!&lt;/p&gt;} demonstrates conditional rendering. If isLoggedIn is true, it renders a &lt;p&gt; element; otherwise, it renders nothing.</li>
+    <li class="ml-points">The ternary operator isLoggedIn ? ... : ... allows us to conditionally render different elements.</li>
+  </ol> <br/>
+  <p class="text-content ml-content">JSX expressions can include any valid JavaScript code, including variables, functions, arithmetic operations, and logical expressions. This allows you to create dynamic and interactive user interfaces.<br/>
+  Keep in mind that JSX expressions should evaluate to valid React elements, which means they should return a single element or null/undefined. If you need to return multiple elements, you can wrap them in a &lt;div&gt; or use a React fragment (&lt;>...&lt;/&gt;).<br/>
+  Remember to transpile your JSX code using a tool like Babel if you're not working within a React environment. This ensures that your JSX code is converted to standard JavaScript that browsers can understand.</p>
+</div>

@@ -1,0 +1,88 @@
+<div>
+    <h2 class="text-head font-head"><b>Constants in C</b></h2>
+    <p class="text-content ml-content">The constants in C are the read-only variables whose values cannot be modified once they are declared in the C program.
+         The type of constant can be an integer constant, a floating pointer constant, a string constant, or a character constant. 
+         In C language, the const keyword is used to define the constants.</p><br/>
+    <h3 class="text-subhead font-head"><b>What is a constant in C?</b></h3>
+    <p class="text-content ml-content">As the name suggests, a constant in C is a variable that cannot be modified once it is declared in the program. 
+        We cannot make any change in the value of the constant variables after they are defined.</p><br/>
+    <h3 class="text-subhead font-head"><b>How to Define Constant in C?</b></h3>
+    <p class="text-content ml-content">We define a constant in C language using the const keyword. Also known as a const type qualifier, the const keyword is placed at the start of the variable declaration to declare that variable as a constant.<br/>
+    Syntax to Define Constant<br/>
+    const data_type var_name = value;<br/>
+    Example of Constants in C.jpg
+    // C program to illustrate constant variable definition<br/>
+    #include &lt;stdio.h&gt;<br/>
+    int main()<br/>
+    {<br/>
+        // defining integer constant using const keyword<br/>
+        const int int_const = 25;<br/>
+        // defining character constant using const keyword<br/>
+        const char char_const = 'A';<br/>
+        // defining float constant using const keyword<br/>
+        const float float_const = 15.66;<br/>
+         printf("Printing value of Integer Constant: %d\n",
+               int_const);<br/>
+        printf("Printing value of Character Constant: %c\n",
+               char_const);<br/>
+        printf("Printing value of Float Constant: %f",
+               float_const);<br/>
+         return 0;<br/>
+    }<br/>
+    <b>Output</b><br/>
+    Printing value of Integer Constant: 25<br/>
+    Printing value of Character Constant: A<br/>
+    Printing value of Float Constant: 15.660000<br/>
+    One thing to note here is that we have to initialize the constant variables at declaration. Otherwise, the variable will store some garbage value and we won’t be able to change it. 
+    The following image describes examples of incorrect and correct variable definitions.</p><br/>  
+    <img src="/public/Assets/right way to declare constants in c.jpg" height="400" width="400"/>
+    <h3 class="text-subhead font-head"><b>Types of Constants in C</b></h3>
+    <p class="text-content ml-content">The type of the constant is the same as the data type of the variables. Following is the list of the types of constants
+    <li>Integer Constant</li>
+    <li>Character Constant</li>
+    <li>Floating Point Constant</li>
+    <li>Double Precision Floating Point Constant</li>
+    <li>Array Constant</li>
+    <li>Structure Constant</li>
+    We just have to add the const keyword at the start of the variable declaration.</p><br/>
+    <h3 class="text-subhead font-head"><b>Properties of Constant in C</b></h3>
+    <p class="text-content ml-content">The important properties of constant variables in C defined using the const keyword are as follows:<br/>
+    <b>1. Initialization with Declaration</b>
+    We can only initialize the constant variable in C at the time of its declaration. Otherwise, it will store the garbage value.<br/>
+    <b>2. Immutability</b>
+    The constant variables in c are immutable after its definition, i.e., they can be initialized only once in the whole program. After that, we cannot modify the value stored inside that variable.<br/>
+    // C Program to demonstrate the behaviour of constant<br/>
+    // variable<br/>
+    #include &lt;stdio.h&gt;<br/>
+    int main()<br/>
+    {<br/>
+        // declaring a constant variable<br/>
+        const int var;<br/>
+        // initializing constant variable var after declaration<br/>
+        var = 20;<br/>
+         printf("Value of var: %d", var);<br/>
+        return 0;<br/>
+    }<br/>
+    <b>Output</b><br/>
+    In function 'main':<br/>
+    10:9: error: assignment of read-only variable 'var'<br/>
+    10 |     var = 20;<br/>
+     &nbsp; &nbsp;   |  &nbsp; &nbsp; &nbsp;        ^</p><br/>
+    <h3 class="text-subhead font-head"><b>Difference Between Constants and Literals</b></h3>
+    <p class="text-content ml-content">The constant and literals are often confused as the same. But in C language, they are different entities and have different semantics. The following table lists the differences between the constants and literals in C:</p><br/>
+    <img src="/public/Assets/Difference Between Constants and Literals.jpg" height="400" width="400"/><br/>
+    <h3 class="text-subhead font-head"><b>Defining Constant using #define Preprocessor</b></h3>
+    <p class="text-content ml-content">We can also define a constant in C using #define preprocessor. The constants defined using #define are macros that behave like a constant. These constants are not handled by the compiler, they are handled by the preprocessor and are replaced by their value before complication.<br/>
+    #define const_name value<br/>
+    <b>Example of Constant Macro</b><br/>
+    // C Program to define a constant using #define<br/>
+    #include &lt;stdio.h&gt;<br/>
+    #define pi 3.14<br/>
+     int main()<br/>
+    {<br/>
+         printf("The value of pi: %.2f", pi);<br/>
+        return 0;<br/>
+    }<br/>
+    <b>Output</b><br/>
+    The value of pi: 3.14</p>
+    </div>

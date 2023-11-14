@@ -1,0 +1,82 @@
+<div>
+  <h3 class="text-head font-head">Python Casting</h3><br/>
+  <h4 class="text-subhead font-head">Introduction</h4>
+  <p class="text-content ml-content">Casting is the method to convert the Python variable datatype into a certain data type in order to perform the required operation by users. 
+    In this article, we will see the various techniques for typecasting. 
+    There can be two types of Type Casting in Python:
+  </p><br/>
+  <ol class="list-disc">
+      <li class="ml-points">Python Implicit Type Conversion</li>
+      <li class="ml-points">Python Explicit Type Conversion</li>
+  </ol></p><br/>
+  <h4 class="text-subhead font-head">Implicit Type Conversion in Python</h4>
+  <p class="text-content ml-content">In this, method, Python converts the datatype into another datatype automatically. 
+    Users don’t have to involve in this process.</p><br/>
+  <h5 class="font-head">Example</h5>
+  <p class="text-content ml-content"># Python automatically converts</p>
+  <p class="text-content ml-content"># a to int</p>
+  <p class="text-content ml-content">a = 7</p>
+  <p class="text-content ml-content">print(type(a))</p>
+  <p class="text-content ml-content"># Python automatically converts</p>
+  <p class="text-content ml-content"># b to float</p>
+  <p class="text-content ml-content">b = 3.0</p>
+  <p class="text-content ml-content">print(type(b))</p>
+  <p class="text-content ml-content"># Python automatically converts</p>
+  <p class="text-content ml-content"># c to float as it is a float addition</p>
+  <p class="text-content ml-content">c = a + b</p>
+  <p class="text-content ml-content">print(c)</p>
+  <p class="text-content ml-content">print(type(c))</p>
+  <p class="text-content ml-content"># Python automatically converts</p>
+  <p class="text-content ml-content"># d to float as it is a float multiplicatio</p>
+  <p class="text-content ml-content">d = a * b</p>
+  <p class="text-content ml-content">print(d)</p>
+  <p class="text-content ml-content">print(type(d))</p><br/>
+  <h4 class="text-subhead font-head">Explicit Type Conversion in Python</h4>
+  <p class="text-content ml-content">In this method, Python needs user involvement to convert the variable data type into the required data type.</p><br/>
+  <p class="text-content ml-content">Mainly type casting can be done with these data type functions:</p>
+  <p class="text-content ml-content">Int(): Python Int() function take float or string as an argument and returns int type object.</p>
+  <p class="text-content ml-content">float(): Python float() function take int or string as an argument and return float type object.</p>
+  <p class="text-content ml-content">str(): Python str() function takes float or int as an argument and returns string type object.</p><br/>
+  <h5 class="font-head">Example</h5>
+  <p class="text-content ml-content"># type Casting (int to float & string, string to float)</p>
+  <p class="text-content ml-content"># int variable</p>
+  <p class="text-content ml-content">a = 5</p>
+  <p class="text-content ml-content"># string variable</p>
+  <p class="text-content ml-content">b = "5.9"</p>
+  <p class="text-content ml-content"># typecast to float</p>
+  <p class="text-content ml-content">m = float(a)</p>
+  <p class="text-content ml-content">n = str(a)</p>
+  <p class="text-content ml-content">o = float(b)</p>
+  <p class="text-content ml-content">print(m)</p>
+  <p class="text-content ml-content">print(type(m))</p>
+  <p class="text-content ml-content">print(n)</p>
+  <p class="text-content ml-content">print(type(n))</p>
+  <p class="text-content ml-content">print(o)</p>
+  <p class="text-content ml-content">print(type(o))</p><br/>
+  <h5 class="font-head">Example</h5>
+  <p class="text-content ml-content"># type Casting(Python Convert String to float)</p>
+  <p class="text-content ml-content"># string variable</p>
+  <p class="text-content ml-content">a = "5.9"</p>
+  <p class="text-content ml-content"># typecast to float</p>
+  <p class="text-content ml-content">n = float(a)</p>
+  <p class="text-content ml-content">print(n)</p>
+  <p class="text-content ml-content"># type Casting (Python Convert string to int)</p>
+  <p class="text-content ml-content"># string variable</p>
+  <p class="text-content ml-content">a = "5"</p>
+  <p class="text-content ml-content">b = 't'</p>
+  <p class="text-content ml-content"># typecast to int</p>
+  <p class="text-content ml-content">n = int(a)</p>
+  <p class="text-content ml-content">print(n)</p>
+  <p class="text-content ml-content">print(type(n))</p>
+  <p class="text-content ml-content">print(int(b))</p>
+  <p class="text-content ml-content">print(type(b))</p>
+  <p class="text-content ml-content"># type Casting (Addition of string and integer Using Explicit Conversion)</p>
+  <p class="text-content ml-content"># integer variable</p>
+  <p class="text-content ml-content">a = 5</p>
+  <p class="text-content ml-content"># string variable</p>
+  <p class="text-content ml-content">b = 't'</p>
+  <p class="text-content ml-content"># typecast to int</p>
+  <p class="text-content ml-content">n = a+b</p>
+  <p class="text-content ml-content">print(n)</p>
+  <p class="text-content ml-content">print(type(n))</p>
+</div>

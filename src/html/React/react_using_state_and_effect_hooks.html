@@ -1,0 +1,45 @@
+<div>
+  <h3 class="text-subhead font-head">Using state and effect hooks</h3>
+  <p class="text-content ml-content">Using the useState and useEffect hooks in React allows you to add state and perform side effects in functional components. 
+    Here's an example of how to use these hooks.</p><br/>
+  <h4 class="font-semibold">Using useState:</h4>
+  <p class="text-content ml-content">import React, { useState } from 'react';</p>
+  <p class="text-content ml-content">const Counter = () => {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;// Declare a state variable named "count" with an initial value of 0</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;const [count, setCount] = useState(0);</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;// Event handler to increment the count</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;const increment = () => {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;setCount(count + 1);</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;};</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;return (</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Count: {count} &lt;/p&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onClick={increment}&gt;Increment &lt;/button&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;);</p>
+  <p class="text-content ml-content">};</p>
+  <p class="text-content ml-content">export default Counter;</p><br/>
+  <b>In this example:</b>
+  <li class="ml-points">We import useState from React.</li>
+  <li class="ml-points">Inside the functional component Counter, we use useState(0) to declare a state variable named count with an initial value of 0.</li>
+  <li class="ml-points">We also declare a function setCount that allows us to update the count state.</li><br/>
+  <h4>Using useEffect:</h4>
+  <p class="text-content ml-content">import React, { useState, useEffect } from 'react';</p>
+  <p class="text-content ml-content">const Timer = () => {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;const [seconds, setSeconds] = useState(0);</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;useEffect(() => {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;const interval = setInterval(() => {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setSeconds(prevSeconds => prevSeconds + 1);</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;}, 1000);</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;// Cleanup the interval on component unmount</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;return () => clearInterval(interval);</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;}, []); // Empty dependency array means this effect runs once on component mount</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;return&nbsp;&nbsp;&lt;div&gt;Seconds: {seconds} &lt;/div&gt;;</p>
+  <p class="text-content ml-content">};</p>
+  <p class="text-content ml-content">export default Timer;</p><br/>
+  <b>In this example:</b>
+  <li class="ml-points">We import useState and useEffect from React.</li>
+  <li class="ml-points">We declare a state variable seconds and a function setSeconds with an initial value of 0.</li>
+  <li class="ml-points">In the useEffect hook, we set up an interval that increments seconds by 1 every second.</li>
+  <li class="ml-points">We also return a cleanup function in useEffect to clear the interval when the component is unmounted.</li>
+  </div>

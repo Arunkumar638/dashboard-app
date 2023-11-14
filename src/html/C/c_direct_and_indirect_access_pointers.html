@@ -1,0 +1,31 @@
+<div><h2><b>Direct and Indirect Access Pointers</b></h2>
+In C programming, direct and indirect access pointers refer to the ways in which you can access data using pointers.<br/>
+
+<b>Direct Access Pointers:</b><br/>
+
+Direct access pointers refer to pointers that directly point to a specific memory location. This means that the pointer holds the exact memory address of a variable.<br/>
+
+int num = 10;<br/>
+int *ptr = &num;  // ptr directly points to the memory location of 'num'<br/>
+With a direct access pointer, you can use the dereference operator (*) to access the value stored in the memory location pointed to by the pointer.<br/>
+
+int value = *ptr;  // This retrieves the value 10 from the memory location pointed to by 'ptr'<br/>
+<b>Indirect Access Pointers:</b><br/>
+
+Indirect access pointers refer to pointers that point to another pointer, which in turn points to the actual data. This means there are two levels of indirection.<br/>
+
+int num = 10;<br/>
+int *ptr1 = &num;  // ptr1 points to the memory location of 'num'<br/>
+int **ptr2 = &ptr1;  // ptr2 points to ptr1, which in turn points to the memory location of 'num'<br/>
+With an indirect access pointer, you need to dereference twice to get the value.<br/>
+
+int value = **ptr2;  // This retrieves the value 10 by first dereferencing ptr2 to get ptr1, and then dereferencing ptr1 to get the value<br/>
+Indirect access pointers are useful in scenarios where you need to modify a pointer's value from within a function and have that change reflected in the calling function. This is commonly seen when dealing with dynamic memory allocation.<br/>
+
+void changePointer(int **ptr) {<br/>
+    int newVal = 20;<br/>
+    *ptr = &newVal;<br/>
+}<br/>
+In the changePointer function, we're indirectly modifying the value of the original pointer by passing a pointer to a pointer.<br/>
+Both direct and indirect access pointers have their use cases. Direct access pointers are simpler and more straightforward, while indirect access pointers provide a level of indirection that can be useful in more complex scenarios, especially when dealing with dynamic memory allocation and complex data structures.<br/>
+</div>

@@ -1,0 +1,111 @@
+<div>
+  <h3 class="text-subhead font-head">Rules of hooks</h3>
+  <p class="text-content ml-content">Here are some important rules and guidelines for using hooks in React:</p><br/>
+  <h3 class="font-head">1.&nbsp;&nbsp;&nbsp;&nbsp;Only Call Hooks at the Top Level:</h4>
+  <p class="text-content ml-content">Don't call hooks inside loops, conditions, or nested functions. Always use them at the top level of your functional component or custom hook.</p><br/>
+  <p class="text-content ml-content">// Correct</p>
+  <p class="text-content ml-content">function MyComponent() {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;const [count, setCount] = useState(0);</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;// ...</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">// Incorrect</p>
+  <p class="text-content ml-content">function MyComponent() {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;if (condition) {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;const [count, setCount] = useState(0); // Incorrect</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;}</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;// ...</p>
+  <p class="text-content ml-content">}</p><br/>
+  <h3 class="font-head">2.&nbsp;&nbsp;&nbsp;&nbsp;Only Call Hooks from React Functions:</h4>
+  <p class="text-content ml-content">You can call hooks from React functional components or custom hooks. Don't call them from regular JavaScript functions.</p>
+  <p class="text-content ml-content">// Correct</p>
+  <p class="text-content ml-content">function MyComponent() {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;const [count, setCount] = useState(0);</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;// ...</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">// Incorrect</p>
+  <p class="text-content ml-content">const myFunction = () => {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;const [count, setCount] = useState(0); // Incorrect</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;// ...</p>
+  <p class="text-content ml-content">}</p><br/>
+  <h3 class="font-head">3.&nbsp;&nbsp;&nbsp;&nbsp;Only Call Hooks from Custom Hooks or React Functions:</h4>
+  <p class="text-content ml-content">If you're creating a custom hook, make sure to call other hooks from it, and don't call hooks from regular JavaScript functions.</p>
+  <p class="text-content ml-content">// Correct</p>
+  <p class="text-content ml-content">function useCustomHook() {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;const [value, setValue] = useState(0);</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;// ...</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">// Incorrect</p>
+  <p class="text-content ml-content">const myFunction = () => {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;const [count, setCount] = useState(0); // Incorrect</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;// ...</p>
+  <p class="text-content ml-content">}</p><br/>
+  <h3 class="font-head">4.&nbsp;&nbsp;&nbsp;&nbsp;Use Hooks in the Same Order:</h4>
+  <p class="text-content ml-content">Always use hooks in the same order within your component. This helps React to maintain the correct state between renders.</p>
+  <p class="text-content ml-content">// Correct</p>
+  <p class="text-content ml-content">function MyComponent() {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;const [count, setCount] = useState(0);</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;const [text, setText] = useState('');</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;// ...</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">// Incorrect</p>
+  <p class="text-content ml-content">function MyComponent() {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;const [text, setText] = useState('');</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;const [count, setCount] = useState(0); // Incorrect order</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;// ...</p>
+  <p class="text-content ml-content">}</p><br/>
+  <h3 class="font-head">5.&nbsp;&nbsp;&nbsp;&nbsp;Only Call Hooks Conditionally (if required):</h4>
+  <p class="text-content ml-content">Hooks should not be called conditionally, meaning they should always be called in the same order on every render. If you need to conditionally use a hook, you can do so in a custom hook.</p>
+  <p class="text-content ml-content">// Correct</p>
+  <p class="text-content ml-content">function MyComponent() {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;if (condition) {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;const [count, setCount] = useState(0);</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;// ...</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;}</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;// ...</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">// Correct</p>
+  <p class="text-content ml-content">function useConditionalHook() {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;if (condition) {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;const [count, setCount] = useState(0);</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;// ...</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;}</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;// ...</p>
+  <p class="text-content ml-content">}</p><br/> 
+  <h3 class="font-head">6.&nbsp;&nbsp;&nbsp;&nbsp;Only Use Hooks in Functional Components:</h4> 
+  <p class="text-content ml-content">Hooks can only be used in functional components or custom hooks. They cannot be used in class components.</p>
+  <p class="text-content ml-content">// Correct</p>
+  <p class="text-content ml-content">function MyComponent() {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;const [count, setCount] = useState(0);</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;// ...</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">// Incorrect</p>
+  <p class="text-content ml-content">class MyClassComponent extends React.Component {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;render() {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;const [count, setCount] = useState(0); // Incorrect</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;// ...</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;}</p>
+  <p class="text-content ml-content">}</p><br/> 
+  <h3 class="font-head">7.&nbsp;&nbsp;&nbsp;&nbsp;Don't Call Hooks from Regular JavaScript Functions:</h4> 
+  <p class="text-content ml-content">Hooks should only be called from within functional components or custom hooks, not from regular JavaScript functions.</p>
+  <p class="text-content ml-content">// Correct</p>
+  <p class="text-content ml-content">function useCustomHook() {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;const [value, setValue] = useState(0);</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;// ...</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">// Incorrect</p>
+  <p class="text-content ml-content">function myFunction() {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;const [count, setCount] = useState(0); // Incorrect</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;// ...</p>
+  <p class="text-content ml-content">}</p><br/>
+  <h3 class="font-head">8.&nbsp;&nbsp;&nbsp;&nbsp;Custom Hooks Must Start with "use":</h4>
+  <p class="text-content ml-content">If you create a custom hook, it must always start with the word "use". This convention is how React recognizes it as a hook.</p>
+  <p class="text-content ml-content">// Correct</p>
+  <p class="text-content ml-content">function useCustomHook() {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;// ...</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">// Incorrect</p>
+  <p class="text-content ml-content">function customHook() {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;// ...</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">Following these rules will help you use hooks effectively and avoid common pitfalls. Keep in mind that adherence to these rules is important to ensure that your components work correctly and maintain the intended behavior.</p>
+  </div>

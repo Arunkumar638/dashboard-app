@@ -1,0 +1,200 @@
+<div>
+    <h2 class="text-head font-head"><b>Data types in C</b></h2>
+    <p class="text-content ml-content">A data type specifies the type of data that a variable can store such as integer, floating, character, etc.<br/>
+     datatypes.jpg<br/>
+    There are the following data types in C language.<br/>
+     datatypestable.jpg</p><br/>
+    <h3 class="text-subhead font-head"><b>Basic Data Types</b></h3>
+    <p class="text-content ml-content">The basic data types are integer-based and floating-point based. C language supports both signed and unsigned literals.<br/>
+    The memory size of the basic data types may change according to 32 or 64-bit operating system.<br/><br/>
+    Let's see the basic data types. Its size is given according to 32-bit architecture.<br/>
+    <img src="/public/Assets/basic data types.jpg" height="400" width="500"/><br/>
+    <b>Int:</b><br/>
+    Integers are entire numbers without any fractional or decimal parts, and the int data type is used to represent them.<br/>
+    It is frequently applied to variables that include values, such as counts, indices, or other numerical numbers. The int data type may represent both positive and negative numbers because it is signed by default.<br/>
+    An int takes up 4 bytes of memory on most devices, allowing it to store values between around -2 billion and +2 billion.<br/><br/>
+    <b>Char:</b><br/>
+    Individual characters are represented by the char data type. Typically used to hold ASCII or UTF-8 encoding scheme characters, 
+    such as letters, numbers, symbols, or commas. There are 256 characters that can be represented by a single char, which takes up one byte of memory. 
+    Characters such as 'A', 'b', '5', or '$' are enclosed in single quotes.<br/><br/>
+    <b>Float:</b><br/>
+    To represent integers, use the floating data type. Floating numbers can be used to represent fractional units or numbers with decimal places.
+    The float type is usually used for variables that require very good precision but may not be very precise. It can store values with an accuracy 
+    of about 6 decimal places and a range of about 3.4 x 1038 in 4 bytes of memory.<br/><br/>
+    <b>Double:</b>
+    Use two data types to represent two floating integers. When additional precision is needed, such as in scientific calculations or financial applications, it provides greater accuracy compared to float.<br/>
+    Double type, which uses 8 bytes of memory and has an accuracy of about 15 decimal places, yields larger values. C treats floating point numbers as doubles by default if no explicit type is supplied.<br/>
+    int age = 25;  <br/>
+    char grade = 'A';  <br/>
+    float temperature = 98.6;  <br/>
+    double pi = 3.14159265359; <br/> 
+    In the example above, we declare four variables: an int variable for the person's age, a char variable for the student's grade, 
+    a float variable for the temperature reading, and two variables for the number pi.<br/><br/>
+    <b>Derived Data Type</b><br/>
+    Beyond the fundamental datatypes, C also supports derived data types, including arrays, pointers, structures, and unions. 
+    These data types give programmers the ability to handle heterogeneous data, directly modify memory, and build complicated data structures.<br/>
+    <b>Array:</b><br/>
+    An array, a derived data type, lets you store a sequence of fixed-size elements of the same type. It provides a mechanism for joining multiple targets of the same data under the same name.<br/>
+    The index is used to access the elements of the array, with a 0 index for the first entry. The size of the array is fixed at declaration time and cannot be changed during program execution. The array components are placed in adjacent memory regions.
+    <b>Here is an example of declaring and utilizing an array:</b><br/>
+    #include &lt;stdio.h&gt; <br/>
+    int main() { <br/> 
+    int numbers[5]; // Declares an integer array with a size of 5 elements  <br/>
+       
+        // Assign values to the array elements <br/> 
+        numbers[0] = 10; <br/> 
+        numbers[1] = 20; <br/> 
+        numbers[2] = 30; <br/> 
+        numbers[3] = 40; <br/> 
+        numbers[4] = 50; <br/> 
+        // Display the values stored in the array  <br/>
+        printf("Values in the array: "); <br/> 
+        for (int i = 0; i &lt; 5; i++) { <br/> 
+            printf("%d ", numbers[i]); <br/> 
+        }  <br/>
+        printf("\n");  <br/>
+       return 0;  <br/>
+    }  <br/>
+    <b>Output:</b><br/>
+    Values in the array: 10 20 30 40 50<br/><br/>
+    <b>Pointer:</b><br/>
+    A pointer is a derived data type that keeps track of another data type's memory address. When a pointer is declared, the data type it refers to is stated first, and then the variable name is preceded by an asterisk (*).<br/>
+    You can have incorrect access and change the value of variable using pointers by specifying the memory address of the variable. Pointers are commonly used in tasks such as function pointers, data structures, and dynamic memory allocation.<br/>
+    <b>Here is an example of declaring and employing a pointer:</b><br/>
+    #include &lt;stdio.h&gt;  <br/>
+    int main() {  <br/>
+        int num = 42;      // An integer variable  <br/>
+        int *ptr;          // Declares a pointer to an integer  <br/>
+       
+        ptr = #        // Assigns the address of 'num' to the pointer  <br/>
+       // Accessing the value of 'num' using the pointer  <br/>
+        printf("Value of num: %d\n", *ptr);  <br/>
+       return 0;  <br/>
+    }  <br/>
+    <b>Output:</b><br/>
+    Value of num: 42<br/><br/>
+    <b>Structure:</b><br/>
+    A structure is a derived data type that enables the creation of composite data types by allowing the grouping of many data types under a single name. It gives you the ability to create your own unique data structures by fusing together variables of various sorts.<br/>
+    A structure's members or fields are used to refer to each variable within it.<br/>
+    Any data type, including different structures, can be a member of a structure.<br/>
+    A structure's members can be accessed by using the dot (.) operator.<br/>
+    <b>A declaration and use of a structure is demonstrated here:</b><br/>
+    #include &lt;stdio.h&gt;  <br/>
+    #include &lt;string.h&gt; <br/>  
+    // Define a structure representing a person  <br/>
+    struct Person {  <br/>
+        char name[50];  <br/>
+        int age;  <br/>
+        float height; <br/> 
+    };  <br/>
+    int main() {  <br/>
+        // Declare a variable of type struct Person  <br/>
+        struct Person person1;  <br/>
+       // Assign values to the structure members  <br/>
+        strcpy(person1.name, "John Doe");  <br/>
+        person1.age = 30;  <br/>
+        person1.height = 1.8; <br/> 
+       // Accessing the structure members <br/> 
+        printf("Name: %s\n", person1.name);  <br/>
+        printf("Age: %d\n", person1.age);  <br/>
+        printf("Height: %.2f\n", person1.height); <br/> 
+       return 0;  <br/>
+    }  <br/>
+    <b>Output:</b><br/>
+    Name: John Doe<br/>
+    Age: 30<br/>
+    Height: 1.80<br/><br/>
+    <b>Union:</b><br/>
+    A derived data type called a union enables you to store various data types in the same memory address. In contrast to structures, where each member has a separate memory space, members of a union all share a single memory space. A value can only be held by one member of a union at any given moment. When you need to represent many data types interchangeably, unions come in handy. Like structures, you can access the members of a union by using the dot (.) operator.<br/>
+    <b>Here is an example of a union being declared and used:</b><br/>
+    #include &lt;stdio.h&gt; <br/> 
+    // Define a union representing a numeric value  <br/>
+    union NumericValue {  <br/>
+        int intValue;  <br/>
+        float floatValue; <br/> 
+        char stringValue[20]; <br/> 
+    };  <br/>
+    int main() {  <br/>
+        // Declare a variable of type union NumericValue <br/> 
+        union NumericValue value;  <br/>
+        // Assign a value to the union <br/> 
+        value.intValue = 42;  <br/>
+        // Accessing the union members  <br/>
+        printf("Integer Value: %d\n", value.intValue);  <br/>
+        // Assigning a different value to the union  <br/>
+        value.floatValue = 3.14;  <br/>
+        // Accessing the union members <br/> 
+        printf("Float Value: %.2f\n", value.floatValue);  <br/>
+       return 0;  <br/>
+    }  <br/>
+    <b>Output:</b><br/>
+    Integer Value: 42<br/>
+    Float Value: 3.14<br/><br/>
+    <b>Enumeration Data Type</b><br/>
+    A set of named constants or enumerators that represent a collection of connected values can be defined in C using the enumeration data type (enum). Enumerations give you the means to give names that make sense to a group of integral values, which makes your code easier to read and maintain.<br/>
+    <b>Here is an example of how to define and use an enumeration in C:</b><br/>
+    #include &lt;stdio.h&gt; <br/> 
+    // Define an enumeration for days of the week  <br/>
+    enum DaysOfWeek {  <br/>
+        Monday, <br/> 
+        Tuesday, <br/> 
+        Wednesday, <br/> 
+        Thursday, <br/> 
+        Friday,  <br/>
+        Saturday, <br/> 
+        Sunday  <br/>
+    };    <br/>
+    int main() {  <br/>
+        // Declare a variable of type enum DaysOfWeek <br/> 
+        enum DaysOfWeek today;  <br/>
+        // Assign a value from the enumeration <br/> 
+        today = Wednesday;  <br/>
+        // Accessing the enumeration value  <br/>
+        printf("Today is %d\n", today); <br/> 
+        return 0;  <br/>
+    }  <br/>
+    <b>Output:</b><br/>
+    Today is 2<br/><br/>
+    <b>Void Data Type</b><br/>
+    The void data type in the C language is used to denote the lack of a particular type. Function return types, function parameters, 
+    and pointers are three situations where it is frequently utilized.<br/><br/>
+    <b>Function Return Type:</b>
+    A void return type function does not produce a value. A void function executes a task or action and ends rather than returning a value.<br/>
+    <b>Example:</b><br/>
+    void printHello() { printf("Hello, world!\n"); }  <br/><br/>
+    <b>Function Parameters:</b><br/>
+    The parameter void can be used to indicate that a function accepts no arguments.<br/>
+    <b>Example:</b><br/>
+    void processInput(void) { /* Function logic */ }  <br/><br/>
+    <b>Pointers:</b><br/>
+    Any address can be stored in a pointer of type void*, making it a universal pointer. It offers a method for working with pointers to ambiguous or atypical types.<br/>
+    <b>Example:</b><br/>
+    void* dataPtr;  <br/> 
+    The void data type is helpful for defining functions that don't accept any arguments when working with generic pointers or when you wish to signal that a function doesn't return a value. It is significant to note that while void* can be used to build generic pointers, void itself cannot be declared as a variable type.<br/>
+    <b>Here is a sample of code that shows how to utilize void in various situations:</b><br/>
+    #include &lt;stdio.h&gt; <br/>
+    // Function with void return type  <br/>
+    void printHello() {  <br/>
+        printf("Hello, world!\n");  <br/>
+    }  <br/>
+    // Function with void parameter  <br/>
+    void processInput(void) {  <br/>
+        printf("Processing input...\n");<br/>  
+    }  <br/>
+    int main() {  <br/>
+        // Calling a void function  <br/>
+        printHello();  <br/>
+       // Calling a function with void parameter  <br/>
+        processInput();  <br/>
+       // Using a void pointer <br/> 
+        int number = 10; <br/> 
+        void* dataPtr = &amp;number; <br/> 
+        printf("Value of number: %d\n", *(int*)dataPtr);  <br/>
+        return 0;  <br/>
+    }  <br/>
+    <b>Output:</b>
+    Hello, world!<br/>
+    Processing input...<br/>
+    Value of number: 10<br/><br/>
+    As a result, data types are essential in the C programming language because they define the kinds of information that variables can hold. They provide the data's size and format, enabling the compiler to allot memory and carry out the necessary actions. Data types supported by C include void, enumeration, derived, and basic types. In addition to floating-point types like float and double, basic data types in C also include integer-based kinds like int, char, and short. These forms can be signed or unsigned, and they fluctuate in size and range. To create dependable and efficient code, it is crucial to comprehend the memory size and scope of these types.</p><br/>
+    </div>

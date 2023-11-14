@@ -1,0 +1,250 @@
+.popup{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height:100vh;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    
+.popupInner{
+    position: relative;
+    padding: 32px;
+    width: 100%;
+    max-width: 640px;
+    background-color: silver;
+}
+    
+.removepopup{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height:80vh;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+        
+.removepopupInner{
+    position: relative;
+    padding: 70px 0px 70px;
+    width: 100%;
+    max-width: 440px;
+    background-color: silver;
+}
+
+.tabs{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    margin-bottom: 300px;
+    width: 150px;
+}
+
+.main2{
+    display: flex;
+    flex-direction: column;
+    border-right-width: 1px;
+    width: 130px;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    
+}
+    
+.content{
+    display: flex;
+    margin-bottom: 130px;
+    flex-direction: column;
+}
+
+.headertext2{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    margin-left: 200px;
+    margin-top: 50px;
+    color: antiquewhite;
+}
+.headertext3{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    position: absolute;
+    margin-left: 560px;
+    color: antiquewhite;
+}
+
+.headertext4{
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-left: 125px;
+    color: antiquewhite;
+}
+.label{
+    position: absolute;
+    margin-left: 500px;
+    margin-top: 10px;
+    color: antiquewhite;
+}
+.label1{
+    position: absolute;
+    margin-left: 500px;
+    margin-top: 70px;
+    color: antiquewhite;
+}
+.label2{
+    position: absolute;
+    margin-left: 500px;
+    margin-top: 130px;
+    color: antiquewhite;
+}
+.label3{
+    position: absolute;
+    margin-left: 500px;
+    margin-top: 190px;
+    color: #faebd7;
+}
+
+.align{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input{
+    display: flex;
+    width: 16rem;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+
+}
+
+.states{
+    width: 258px;
+    height: 30px;
+}
+
+
+.divider{
+    clear: both;
+    height: 1px;
+    min-height: 0;
+    margin: 30px auto;
+    padding: 0;
+    text-align: center;
+    color: #181414;
+    border: none;
+    border-top: medium double #999;
+    width:100%
+}
+
+
+.pagebutton:hover{
+    --tw-text-opacity: 1;
+    background-color: aliceblue;
+    color: rgb(251 113 133 / var(--tw-text-opacity));
+}
+.pagebutton{
+    --tw-text-opacity: 1;
+    color: antiquewhite;
+    display: inline-block;
+    padding-left: 3rem;
+    padding-right: 3rem; 
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-weight: 600;
+    border-width: 2px;
+    margin-left: 0.75rem;
+    border-color: antiquewhite;
+    border-radius: 9999px;
+
+}
+
+.yes{
+    cursor: pointer;
+    position: absolute;
+    border-radius: 8px;
+    margin-left: 150px;
+    height: 38px;
+    width: 14%;
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    
+}
+
+.no{
+    cursor: pointer;
+    position: absolute;
+    border-radius: 8px;
+    margin-left: 230px;
+    height: 38px;
+    width: 13%;
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.close{
+    position: absolute;
+    top:10px;
+    left:300px; 
+    cursor: pointer;
+    }
+.clear{
+    position: absolute;
+    top:10px;
+    left:285px; 
+    cursor: pointer;
+    
+}
+.save{
+    position: absolute;
+    top:10px;
+    left: 270px;
+    cursor: pointer;  
+    }
+
+  
+.box {
+background-color: #f0f0f0;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+width: 500px;
+position: relative;
+margin-left: 160px;
+margin-top: 50px;
+}
+
+.textarea {
+width: 100%;
+height: 150px;
+padding: 10px;
+box-sizing: border-box;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+.buttons {
+display: flex;
+justify-content: space-between;
+margin-top: 10px;
+}
+
+.edit-button,
+.delete-button {
+padding: 8px 16px;
+border: none;
+border-radius: 5px;
+color: #fff;
+cursor: pointer;
+}
+      
+     

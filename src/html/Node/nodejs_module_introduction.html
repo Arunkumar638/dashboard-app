@@ -1,0 +1,109 @@
+<div>
+    <h3 class="text-head font-head"><b>What is a Module in Node.js?</b></h3>
+    <p class="text-content ml-content">Modules are encapsulated code blocks that communicate with an external application. These can be a single file or a collection of multiple files/folders. These are reusable; hence they are widely used. </p>
+    <p class="text-content ml-content">In node.js, module is a JavaScript file and it will contain a set of functions to reuse it in node.js applications.</p>
+    <p class="text-content ml-content">In node.js, each file is treated as separate module and the modules in node.js are same like JavaScript libraries.</p><br/>
+    <h4 class="text-subhead font-head"><b>Modules Types</b></h4>
+    <p class="text-content ml-content">Node.js includes three types of modules:</p>
+    <ol class="list-disc">
+    <li class="ml-points">Core Modules</li>
+    <li class="ml-points">Local Modules</li>
+    <li class="ml-points">Third Party Modules</li></ol><br/>
+    <h4 class="text-subhead font-head"><b>Core Modules</b></h4>
+    <p class="text-content ml-content">A module is a collection of JavaScript code which encapsulate related code into single unit of code. 
+        Node.js has a simple module loading system. 
+        A developer can load a JavaScript library or module into his program by using require method as given below:</p>
+    <p class="text-content ml-content">var http = require('http');</p><br/>
+    <p class="text-content font-semibold">The following table lists some of the important core modules in Node.js.</p>
+    <img src="/public/Assets/module-1.jpg" height="500" width="500"/><br/>
+    <h5 class="text-subhead font-head"><b>Loading Core Modules</b></h5>
+    <p class="text-content ml-content">In order to use Node.js core or NPM modules, you first need to import it using require() function as shown below.</p>
+    <p class="text-content ml-content">var module = require('module_name');</p>
+    <p class="text-content ml-content">As per above syntax, specify the module name in the require() function. The require() function will return an object, function, property or 
+        any other JavaScript type, depending on what the specified module returns.</p><br/>
+    <p class="text-content ml-content">The following example demonstrates how to use Node.js http module to create a web server.</p>
+    <p class="text-content ml-content">// importing node.js built-in http module</p>
+    <p class="text-content ml-content">var http = require('http');</p>
+    <p class="text-content ml-content">// creating server</p>
+    <p class="text-content ml-content">http.createServer(function (req, res) {</p>
+    <p class="text-content ml-content">res.writeHead(200, {'Content-Type': 'text/html'});</p>
+    <p class="text-content ml-content">res.write('Hello World!');</p>
+    <p class="text-content ml-content">res.end();</p>
+    <p class="text-content ml-content">}).listen(4200);</p><br/>
+    <p class="text-content ml-content">If you observe above code, we imported an http module by using require directive to access HTTP module and created a server to listen 
+        the request and response on port number 4200.</p>
+    <p class="text-content ml-content">Here, the above code will tell the computer to write “Hello World” if anyone tries to access your computer on port 4200.</p><br/>
+    <h4 class="text-subhead font-head"><b>Local Module</b></h4>
+    <p class="text-content ml-content">Local modules are modules created locally in your Node.js application. These
+    modules include different functionalities of your application in separate files and folders. You can also package it and distribute it via NPM, 
+    so that Node.js community can use it. </p>
+    <p class="text-content ml-content">For example, if you need to connect to MongoDB and fetch data then you can create a module for it, which can be reused in your application.</p><br/>
+    <b>Writing Simple Module</b>
+    <p class="text-content ml-content">Let's write simple logging module which logs the information, warning or error to the console.</p>
+    <p class="text-content ml-content">In Node.js, module should be placed in a separate JavaScript file. So, create a Log.js file and write the following code in it.</p><br/>
+    <p class="text-content ml-content">var log = {info: function (info) { </p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Info: ' + info);</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;warning:function (warning) { </p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Warning: ' + warning);</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</p></p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;error:function (error) { </p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Error: ' + error);</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;};module.exports = log</p><br/>
+    <p class="text-content ml-content">In the above example of logging module, we have created an object with three functions - info(), warning() and error(). At the end, 
+        we have assigned this object to module.exports. The module.exports in the above example exposes a log object as a module.</p>
+    <p class="text-content ml-content">The module.exports is a special object which is included in every JS file in the Node.js application by default. Use module.exports or 
+        exports to expose a function, object or variable as a module in Node.js.</p>
+    <p class="text-content ml-content">Now, let's see how to use the above logging module in our application.</p><br/>
+    <h5 class="text-subhead font-head"><b>Loading Local Module</b></h5>
+    <p class="text-content ml-content">To use local modules in your application, you need to load it using require() function in the same way as core module. However, you need to 
+        specify the path of JavaScript file of the module.</p>
+    <p class="text-content ml-content">The following example demonstrates how to use the above logging module contained in Log.js.</p>
+    <p class="text-content ml-content">var myLogModule = require('./Log.js');</p>
+    <p class="text-content ml-content">myLogModule.info('Node.js started');</p><br/>
+    <p class="text-content ml-content">In the above example, app.js is using log module. First, it loads the logging module using require() function and specified path where 
+        logging module is stored. Logging module is contained in Log.js file in the root folder. So, we have specified the path <b>'./Log.js'</b> in the 
+        require() function. The '.' denotes a root folder.</p><br/>
+    <p class="text-content ml-content">The require() function returns a log object because logging module exposes an object in Log.js using module.exports. So now you can use logging 
+        module as an object and call any of its function using dot notation e.g myLogModule.info() or myLogModule.warning() or myLogModule.error()</p>
+    <p class="text-content ml-content">Run the above example using command prompt (in Windows) as shown below.</p>
+    <p class="text-content ml-content">C:\> node app.js</p>
+    <p class="text-content ml-content">Info: Node.js started</p>
+    <p class="text-content ml-content">Thus, you can create a local module using module.exports and use it in your application.</p><br/>
+    <h4 class="text-subhead font-head"><b>External / Third Party Modules</b></h4>
+    <p class="text-content ml-content">In node.js, the external modules are implemented by node.js community people to solve the lot of common coding problems without rewriting the same code for every application.</p>
+    <p class="text-content ml-content">Generally, these external modules are published in Node Package Manager (NPM) registry, so to use external modules in our application first, we need to install the external module codebase from NPM locally using Npm install module_name command.</p>
+    <p class="text-content ml-content">Once we install the codebase locally from NPM, then we can import it in our application using require(‘module_name’) 
+        function.</p><br/>
+    <p class="text-content font-semibold">Following table lists some of the widely downloaded external/third party modules from NPM in node.js.</p>
+    <img src="/public/Assets/module-2.jpg" height="500" width="500"/><br/>
+    <h5 class="text-subhead font-head"><b>Custom / Own Modules</b></h5>
+    <p class="text-content ml-content">In node.js, the built-in and external modules are created by others to fulfill some common functionalities, but it's not limited that we should use only those packages/modules.</p>
+    <p class="text-content ml-content">In node.js, we can also create our own custom module and use it in our application by just importing it.</p>
+    <p class="text-content ml-content">Following is the example of creating a module called custommodule to perform arithmetic operations like addition, multiplication, subtraction, and division.</p><br/>
+    <p class="text-content ml-content">Now, create a file called custommodule.js and write the code like as shown below.</p>
+    <b>custommodule.js</b>
+    <p class="text-content ml-content">// Creating function for adding two values</p>
+    <p class="text-content ml-content">exports.Addition = function(val1, val2)</p>
+    <p class="text-content ml-content">{</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;return (val1 + val2)</p>
+    <p class="text-content ml-content">}</p>
+    <p class="text-content ml-content">// Creating function for subtracting two values</p>
+    <p class="text-content ml-content">exports.Subtract = function(val1, val2)</p>
+    <p class="text-content ml-content">{</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;return (val1 - val2)</p>
+    <p class="text-content ml-content">}</p>
+    <p class="text-content ml-content">// Creating function for multiplying two values</p>
+    <p class="text-content ml-content">exports.Multiplication = function(val1, val2)</p>
+    <p class="text-content ml-content">{</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;return (val1 * val2)</p>
+    <p class="text-content ml-content">}</p>
+    <p class="text-content ml-content">// Creating function for dividing two values</p>
+    <p class="text-content ml-content">exports.Division = function(val1, val2)</p>
+    <p class="text-content ml-content">{</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;return (val1 / val2)
+    }</p><br/>
+    <p class="text-content ml-content">Here, we created our own custom module (custommodule) with different functions and used an exports keyword to 
+        make our properties and methods available outside the module file.</p>
+    </div>

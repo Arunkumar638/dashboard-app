@@ -1,0 +1,289 @@
+<div><h2><b>Functions Pointers Example</b></h2>
+Function pointers are pointers that point to the address of a function. They allow you to call different functions at runtime, depending on which function the pointer is pointing to. Here's an example to illustrate how function pointers work in C:<br/>
+#include &lt;stdio.h&gt;<br/>
+
+int add(int a, int b) {<br/>
+    return a + b;<br/>
+}<br/>
+
+int subtract(int a, int b) {<br/>
+    return a - b;<br/>
+}<br/>
+
+int main() {<br/>
+    int (*operation)(int, int); // Define a function pointer named 'operation'<br/>
+
+    operation = add; // Point the function pointer to the 'add' function<br/>
+    printf("Result of addition: %d\n", operation(4, 3)); // Output: 7<br/>
+
+    operation = subtract; // Point the function pointer to the 'subtract' function<br/>
+    printf("Result of subtraction: %d\n", operation(4, 3)); // Output: 1<br/>
+
+    return 0;<br/>
+}<br/>
+<b>Explanation:</b><br/>
+
+<li>int add(int a, int b) and int subtract(int a, int b) are two functions that perform addition and subtraction, respectively.<br/>
+
+<li>int (*operation)(int, int); declares a function pointer named operation that can point to functions taking two integer arguments and returning an integer.<br/>
+
+<li>operation = add; assigns the address of the add function to the operation pointer.<br/>
+
+<li>printf("Result of addition: %d\n", operation(4, 3)); calls the function pointed to by operation with arguments 4 and 3, which results in calling the add function and printing the result.<br/>
+<li>operation = subtract; reassigns the pointer to point to the subtract function.<br/>
+
+<li>printf("Result of subtraction: %d\n", operation(4, 3)); calls the function pointed to by operation with arguments 4 and 3, which results in calling the subtract function and printing the result.<br/>
+
+In this example, we demonstrate how you can use a function pointer to switch between different functions (add and subtract) at runtime. This can be especially useful in scenarios where you want to choose a specific behavior dynamically based on some condition.<br/>
+
+Remember that function pointers must have the same signature (i.e., same argument types and return type) as the functions they are pointing to. It's also important to handle function pointers with care, as improper usage can lead to unexpected behavior or crashes.<br/>
+<h2><b>Functions with Array Parameters</b></h2>
+Functions in C can accept array parameters. When an array is passed to a function, it is actually passed by reference, which means that any changes made to the array inside the function will affect the original array in the calling function. Here's an example:<br/>
+#include &lt;stdio.h&gt;<br/>
+
+void printArray(int arr[], int size) {<br/>
+    for (int i = 0; i < size; i++) {<br/>
+        printf("%d ", arr[i]);<br/>
+    }<br/>
+    printf("\n");<br/>
+}<br/>
+
+void modifyArray(int arr[], int size) {<br/>
+    for (int i = 0; i < size; i++) {<br/>
+        arr[i] *= 2;<br/>
+    }<br/>
+}<br/>
+
+int main() {<br/>
+    int arr[] = {1, 2, 3, 4, 5};<br/>
+    int size = 5;<br/>
+
+    printf("Original Array: ");<br/>
+    printArray(arr, size);<br/>
+
+    modifyArray(arr, size);<br/>
+
+    printf("Modified Array: ");<br/>
+    printArray(arr, size);<br/>
+
+    return 0;<br/>
+}<br/>
+<b>Explanation:</b><br/>
+
+<li>void printArray(int arr[], int size): This function takes an array arr and its size as parameters. It prints the elements of the array.<br/>
+
+<li>void modifyArray(int arr[], int size): This function also takes an array arr and its size as parameters. It multiplies each element of the array by 2.<br/>
+
+<li>In main(), we declare an array arr with five elements and a variable size set to 5.<br/>
+
+<li>We call printArray() to print the original contents of the array.<br/>
+
+<li>We call modifyArray() to double the values of the elements in the array.<br/>
+
+<li>We call printArray() again to print the modified array.<br/>
+
+<b>Output:</b><br/>
+
+Original Array: 1 2 3 4 5 <br/>
+Modified Array: 2 4 6 8 10 <br/>
+In this example, the functions printArray() and modifyArray() both accept array parameters. The changes made to the array inside modifyArray() are reflected in the original array in main(). This demonstrates how arrays are passed by reference to functions in C.<br/>
+<h2><b>Functions that Return an Array</b></h2>
+In C, a function cannot directly return an entire array. However, it can return a pointer to an array, which effectively allows you to return an array. Here's an example:<br/>
+#include &lt;stdio.h&gt;<br/>
+
+int* createArray(int size) {<br/>
+    int *arr = (int *)malloc(size * sizeof(int)); // Dynamically allocate memory for the array<br/>
+    
+    for (int i = 0; i < size; i++) {<br/>
+        arr[i] = i * 2;<br/>
+    }<br/>
+
+    return arr;<br/>
+}<br/>
+
+int main() {<br/>
+    int size = 5;<br/>
+    int *result = createArray(size);<br/>
+
+    for (int i = 0; i < size; i++) {<br/>
+        printf("%d ", result[i]);<br/>
+    }<br/>
+
+    free(result); // Don't forget to free the dynamically allocated memory<br/>
+
+    return 0;<br/>
+}<br/>
+<b>Explanation:</b><br/>
+
+<li>int* createArray(int size): This function dynamically allocates memory for an array of size size and initializes its elements with values (in this case, i * 2).<br/>
+
+<li>int *result = createArray(size);: In main(), we call createArray() and assign the returned pointer to result.<br/>
+
+<li>We then use a loop to print the elements of the array pointed to by result.<br/>
+
+Finally, we free the dynamically allocated memory using free(result).<br/>
+
+Output:<br/>
+
+0 2 4 6 8 <br/>
+In this example, the createArray() function dynamically allocates memory for an array, initializes its elements, and returns a pointer to the first element of the array. In main(), we use this pointer to access and print the elements.<br/>
+
+Remember, when you dynamically allocate memory using malloc(), it's your responsibility to free that memory using free() when you're done with it to avoid memory leaks.<br/>
+<h2><b>Function Pointers</b></h2>
+Function pointers are pointers that hold the memory address of a function. They allow you to call functions indirectly, which can be useful for selecting different functions to execute at runtime. Here's an example demonstrating the usage of function pointers:<br/>
+#include &lt;stdio.h&gt;<br/>
+
+int add(int a, int b) {<br/>
+    return a + b;<br/>
+}<br/>
+
+int subtract(int a, int b) {<br/>
+    return a - b;<br/>
+}<br/>
+
+int main() {<br/>
+    int (*operation)(int, int); // Declare a function pointer named 'operation'<br/>
+
+    operation = add; // Point the function pointer to the 'add' function<br/>
+    printf("Result of addition: %d\n", operation(4, 3)); // Output: 7<br/>
+
+    operation = subtract; // Point the function pointer to the 'subtract' function<br/>
+    printf("Result of subtraction: %d\n", operation(4, 3)); // Output: 1<br/>
+
+    return 0;<br/>
+}<br/>
+<b>Explanation:</b><br/>
+
+<li>int add(int a, int b) and int subtract(int a, int b) are two functions for addition and subtraction, respectively.<br/>
+
+<li>int (*operation)(int, int); declares a function pointer named operation that can point to functions taking two integer arguments and returning an integer.<br/>
+
+<li>operation = add; assigns the address of the add function to the operation pointer.<br/>
+
+<li>printf("Result of addition: %d\n", operation(4, 3)); calls the function pointed to by operation with arguments 4 and 3, which results in calling the add function and printing the result.<br/>
+
+<li>operation = subtract; reassigns the pointer to point to the subtract function.<br/>
+
+<li>printf("Result of subtraction: %d\n", operation(4, 3)); calls the function pointed to by operation with arguments 4 and 3, which results in calling the subtract function and printing the result.<br/>
+
+Function pointers are powerful and can be used for tasks like selecting appropriate algorithms at runtime, implementing callback functions, and more. However, they require a clear understanding of function signatures and memory management.<br/>
+<h2><b>Array of Function Pointers</b></h2>
+An array of function pointers is an array where each element is a pointer to a function. This allows you to create a table of functions that can be accessed and called using array indexing. Here's an example to illustrate the concept:<br/>
+#include &lt;stdio.h&gt;<br/>
+
+int add(int a, int b) {<br/>
+    return a + b;<br/>
+}<br/>
+
+int subtract(int a, int b) {<br/>
+    return a - b;<br/>
+}<br/>
+
+int multiply(int a, int b) {<br/>
+    return a * b;<br/>
+}<br/>
+
+int divide(int a, int b) {<br/>
+    if (b != 0) {<br/>
+        return a / b;<br/>
+    } else {<br/>
+        return -1; // Indicate division by zero error<br/>
+    }<br/>
+}<br/>
+
+int main() {<br/>
+    int (*operation[4])(int, int); // Declare an array of function pointers<br/>
+    
+    operation[0] = add;<br/>
+    operation[1] = subtract;<br/>
+    operation[2] = multiply;<br/>
+    operation[3] = divide;<br/>
+    
+    int a = 10, b = 5;<br/>
+    
+    for (int i = 0; i < 4; i++) {<br/>
+        int result = operation[i](a, b);<br/>
+        
+        if (result != -1) {<br/>
+            printf("Result of operation %d: %d\n", i, result);<br/>
+        } else {<br/>
+            printf("Error: Division by zero\n");<br/>
+        }<br/>
+    }<br/>
+
+    return 0;<br/>
+}<br/>
+<b>Explanation:</b><br/>
+
+<li>int add(int a, int b), int subtract(int a, int b), int multiply(int a, int b), and int divide(int a, int b) are four functions for basic arithmetic operations.<br/>
+
+<li>int (*operation[4])(int, int); declares an array operation of function pointers, where each element can point to a function taking two integer arguments and returning an integer.<br/>
+
+<li>operation[0] = add;, operation[1] = subtract;, operation[2] = multiply;, and operation[3] = divide; assign the addresses of the respective functions to the elements of the operation array.<br/>
+
+<li>Inside the loop, operation[i](a, b) calls the function pointed to by operation[i] with arguments a and b.<br/>
+
+<b>Output:</b><br/>
+
+Result of operation 0: 15<br/>
+Result of operation 1: 5<br/>
+Result of operation 2: 50<br/>
+Error: Division by zero<br/>
+In this example, we create an array of function pointers operation with four elements. Each element points to a different arithmetic operation function. We then loop through the array, calling each function with a and b as arguments.<br/>
+
+This technique can be useful for implementing strategies, command patterns, and other scenarios where you need to select and call different functions based on certain conditions or inputs.<br/>
+<h2><b>Functions Using void Pointers</b></h2>
+Using void pointers in functions allows you to work with generic data types. Since a void pointer can point to any type, it provides a way to create functions that can operate on different data types without having to create separate functions for each type.<br/>
+
+Here's an example of a function that uses a void pointer:<br/>
+#include &lt;stdio.h&gt;<br/>
+void printValue(void *ptr, char type) {<br/>
+    switch(type) {<br/>
+        case 'i':<br/>
+            printf("Value: %d\n", *((int*)ptr)); // Typecast to int pointer and dereference<br/>
+            break;<br/>
+        case 'f':<br/>
+            printf("Value: %f\n", *((float*)ptr)); // Typecast to float pointer and dereference<br/>
+            break;<br/>
+        case 'c':<br/>
+            printf("Value: %c\n", *((char*)ptr)); // Typecast to char pointer and dereference<br/>
+            break;<br/>
+        default:<br/>
+            printf("Unknown type\n");<br/>
+    }<br/>
+}<br/>
+
+int main() {<br/>
+    int iValue = 42;<br/>
+    float fValue = 3.14;<br/>
+    char cValue = 'A';<br/>
+
+    void *ptr1 = &iValue;<br/>
+    void *ptr2 = &fValue;<br/>
+    void *ptr3 = &cValue;<br/>
+
+    printValue(ptr1, 'i'); // Output: Value: 42<br/>
+    printValue(ptr2, 'f'); // Output: Value: 3.140000<br/>
+    printValue(ptr3, 'c'); // Output: Value: A<br/>
+
+    return 0;<br/>
+}<br/>
+<b>Explanation:</b><br/>
+
+<li>void printValue(void *ptr, char type): This function takes a void pointer ptr and a char type to indicate the data type.<br/>
+
+<li>Inside the function, we use a switch statement to determine the type of the pointer and print the corresponding value.<br/>
+
+<li>In main(), we declare variables of different types (int, float, and char) and obtain void pointers to them.<br/>
+
+We then call printValue() with the appropriate type indicator.<br/>
+
+<b>Output:</b><br/>
+
+Value: 42<br/>
+Value: 3.140000<br/><br/>
+Value: A<br/>
+In this example, the printValue() function uses a void pointer as its argument, allowing it to accept pointers of any type. Inside the function, we typecast the void pointer to the appropriate type before dereferencing it to print the value.<br/>
+
+This approach can be useful when you need to create functions that can work with different data types in a generic way. However, be cautious when using void pointers, as improper typecasting can lead to undefined behavior.<br/>
+</div>

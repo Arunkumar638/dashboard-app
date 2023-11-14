@@ -1,0 +1,70 @@
+<div>
+  <h3 class="text-head font-head">Variable Scope</h3>
+  <p class="text-content ml-content">In Python, we can declare variables in three different scopes: local scope, global, and nonlocal scope.
+    A variable scope specifies the region where we can access a variable.</p> <br/>
+  <h5 class="text-content font-head">For example,</h5>
+  <p class="text-content ml-content">def add_numbers():</p>
+  <p class="text-content ml-content">&nbsp;sum = 5 + 4</p>
+  <p class="text-content ml-content">Here, the sum variable is created inside the function, so it can only be accessed within it (local scope). 
+    This type of variable is called a local variable.</p> <br/>
+  <p class="text-content ml-content">Based on the scope, we can classify Python variables into three types</p>
+  <ol class="list-disc">
+      <li class="ml-points">Local Variables</li>
+      <li class="ml-points">Global Variables</li>
+      <li class="ml-points">Nonlocal Variables</li>
+  </ol><br/>
+  <h4 class="text-subhead font-head">Local Variables</h4>
+  <p class="text-content ml-content">When we declare variables inside a function, these variables will have a local scope (within the function). 
+    We cannot access them outside the function.
+    These types of variables are called local variables.</p> <br/>
+  <h5 class="text-content font-head">For example,</h5>
+  <p class="text-content ml-content">def greet():</p>
+  <p class="text-content ml-content">&nbsp;&nbsp; # local variable</p>
+  <p class="text-content ml-content">&nbsp; &nbsp; message = 'Hello'</p>
+  <p class="text-content ml-content">&nbsp; &nbsp;  print('Local', message)</p>
+  <p class="text-content ml-content">greet()</p>
+  <p class="text-content ml-content"># try to access message variable</p>
+  <p class="text-content ml-content"># outside greet() function</p>
+  <p class="text-content ml-content">print(message)</p><br/>
+  <h5 class="text-content font-head">Output</h5>
+  <p class="text-content ml-content">Local Hello</p>
+  <p class="text-content ml-content">NameError: name 'message' is not defined</p>
+  <p class="text-content ml-content">Here, the message variable is local to the greet() function, so it can only be accessed within the function.</p>
+  <p class="text-content ml-content">That's why we get an error when we try to access it outside the greet() function.
+    To fix this issue, we can make the variable named message global.</p><br/>
+  <h4 class="text-subhead font-head">Global Variables</h4>
+  <p class="text-content ml-content">In Python, a variable declared outside of the function or in global scope is known as a global variable. 
+    This means that a global variable can be accessed inside or outside of the function.</p><br/>
+  <h5 class="text-content font-head">Let's see an example of how a global variable is created in Python.</h5>
+  <p class="text-content ml-content"># declare global variable</p>
+  <p class="text-content ml-content">message = 'Hello'</p>
+  <p class="text-content ml-content">def greet():</p>
+  <p class="text-content ml-content"># declare local variable</p>
+  <p class="text-content ml-content">  &nbsp;print('Local', message)</p>
+  <p class="text-content ml-content">  &nbsp;greet()</p>
+  <p class="text-content ml-content">print('Global', message)</p>
+  <p class="text-content ml-content">This time we can access the message variable from outside of the greet() function. This is because we have created the message variable as the global variable.</p>
+  <p class="text-content ml-content"># declare global variable</p>
+  <p class="text-content ml-content">message = 'Hello'</p>
+  <p class="text-content ml-content">Now, message will be accessible from any scope (region) of the program.</p><br/>
+  <h4 class="text-subhead font-head">Nonlocal Variables</h4>
+  <p class="text-content ml-content">In Python, nonlocal variables are used in nested functions whose local scope is not defined. 
+    This means that the variable can be neither in the local nor the global scope.</p>
+  <p class="text-content ml-content">We use the nonlocal keyword to create nonlocal variables.</p><br/>
+  <h5 class="text-content font-head">For example,</h5>
+  <p class="text-content ml-content"># outside function</p>
+  <p class="text-content ml-content">def outer():</p>
+  <p class="text-content ml-content"># nested function  </p>
+  <p class="text-content ml-content">&nbsp; def inner():</p>
+  <p class="text-content ml-content">&nbsp;# declare nonlocal variable</p>
+  <p class="text-content ml-content">&nbsp;#nonlocal message</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;message = 'nonlocal'</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;print("inner:", message)</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;inner()</p>
+  <p class="text-content ml-content">&nbsp; print("outer:", message)</p>
+  <p class="text-content ml-content">outer()</p><br/>
+  <p class="text-content ml-content">In the above example, there is a nested inner() function. 
+    We have used the nonlocal keywords to create a nonlocal variable.
+    The inner() function is defined in the scope of another function outer().
+  </p>
+</div>

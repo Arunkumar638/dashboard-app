@@ -1,0 +1,168 @@
+<div><h2><b>Loops</b></h2>
+Loops in programming are used to repeat a block of code until the specified condition is met. A loop statement allows programmers to execute a statement or group of statements multiple times without repetition of code.<br/>
+There are mainly two types of loops in C Programming:<br/>
+    <b>Entry Controlled loops:</b> In Entry controlled loops the test condition is checked before entering the main body of the loop. For Loop and While Loop is Entry-controlled loops.<br/>
+    <b>Exit Controlled loops:</b> In Exit controlled loops the test condition is evaluated at the end of the loop body. The loop body will execute at least once, irrespective of whether the condition is true or false. do-while Loop is Exit Controlled loop.<br/>
+Loop table.jpg<br/>
+<h3><b>for Loop</b></h3>
+
+The syntax of the for loop is:<br/>
+
+for (initializationStatement; testExpression; updateStatement)<br/>
+{<br/>
+    // statements inside the body of loop<br/>
+}<br/>
+
+<b>How for loop works?</b>
+<li>     The initialization statement is executed only once.<br/>
+<li>      Then, the test expression is evaluated. If the test expression is evaluated to false, the for loop is terminated.<br/>
+<li>     However, if the test expression is evaluated to true, statements inside the body of the for loop are executed, and the update expression is updated.<br/>
+<li>     Again the test expression is evaluated.<br/>
+
+This process goes on until the test expression is false. When the test expression is false, the loop terminates.<br/>
+
+To learn more about test expression (when the test expression is evaluated to true and false), check out relational and logical operators.<br/>
+
+<b>Example 1:</b><br/> 
+
+// Print numbers from 1 to 10<br/>
+#include &lt;stdio.h&gt;<br/>
+int main() {<br/>
+  int i;<br/>
+  for (i = 1; i < 11; ++i)<br/>
+  {<br/>
+    printf("%d ", i);<br/>
+  }<br/>
+  return 0;<br/>
+}<br/>
+<b>Output</b><br/>
+	1 2 3 4 5 6 7 8 9 10<br/>
+    i is initialized to 1.<br/>
+    The test expression i < 11 is evaluated. Since 1 less than 11 is true, the body of for loop is executed. <br/>This will print the 1 (value of i) on the screen.<br/>
+    The update statement ++i is executed. Now, the value of i will be 2. Again, the test expression is evaluated to true, and the body of for loop is executed. This will print 2 (value of i) on the screen.<br/>
+    Again, the update statement ++i is executed and the test expression i < 11 is evaluated. This process goes on until i becomes 11.<br/>
+    When i becomes 11, i < 11 will be false, and the for loop terminates.<br/>
+<h3><b>Nested for Loop</b></h3>
+Nested for loop refers to any type of loop that is defined inside a ‘for’ loop. <br/>
+<b>Syntax:</b><br/>
+for ( initialization; condition; increment ) {<br/>
+   for ( initialization; condition; increment ) {<br/>
+    // statement of inside loop<br/>
+   }<br/>
+   // statement of outer loop<br/>
+}<br/>
+<b>Example:</b><br/>
+#include &lt;stdio.h&gt;<br/>
+  
+int main() <br/>
+{ <br/>
+    // initializing the 3-D array <br/>
+    int arr[2][3][2] <br/>
+        = { { { 0, 6 }, { 1, 7 }, { 2, 8 } }, 
+            { { 3, 9 }, { 4, 10 }, { 5, 11 } } }; <br/>
+  
+    // Printing values of 3-D array <br/>
+    for (int i = 0; i < 2; ++i) { <br/>
+        for (int j = 0; j < 3; ++j) { <br/>
+            for (int k = 0; k < 2; ++k) { <br/>
+                printf("Element at arr[%i][%i][%i] = %d\n", 
+                       i, j, k, arr[i][j][k]); <br/>
+            } <br/>
+        } <br/>
+    } <br/>
+    return 0; <br/>
+}<br/>
+<h3><b>while loop</b></h3>
+The syntax of the while loop is:<br/>
+
+while (testExpression) {<br/><br/>
+  // the body of the loop <br/>
+}<br/>
+<b>How while loop works?</b><br/>
+    <li>The while loop evaluates the testExpression inside the parentheses ().<br/>
+    <li>If testExpression is true, statements inside the body of while loop are executed. Then, testExpression is evaluated again.<br/>
+    <li>The process goes on until testExpression is evaluated to false.<br/>
+    <li>If testExpression is false, the loop terminates (ends).<br/>
+To learn more about test expressions (when testExpression is evaluated to true and false), check out relational and logical operators.<br/>
+<b>Example 1: while loop</b><br/>
+// Print numbers from 1 to 5<br/>
+#include &lt;stdio.h&gt;<br/>
+int main() {<br/>
+  int i = 1;<br/>
+ while (i <= 5) {<br/>
+    printf("%d\n", i);<br/>
+    ++i;<br/>
+  }<br/>
+  return 0;<br/>
+}<br/>
+<b>Output</b><br/>
+1<br/>
+2<br/>
+3<br/>
+4<br/>
+5<br/>
+
+Here, we have initialized i to 1.<br/>
+
+    <li>When i = 1, the test expression i <= 5 is true. Hence, the body of the while loop is executed. This prints 1 on the screen and the value of i is increased to 2.<br/>
+    <li>Now, i = 2, the test expression i <= 5 is again true. The body of the while loop is executed again. <br/>
+    <li>This prints 2 on the screen and the value of i is increased to 3.<br/>
+    <li>This process goes on until i becomes 6. Then, the test expression i <= 5 will be false and the loop terminates.<br/>
+<h3><b>do...while loop</b></h3>
+
+The do..while loop is similar to the while loop with one important difference. The body of do...while loop is executed at least once. Only then, the test expression is evaluated.<br/>
+
+The syntax of the do...while loop is:<br/>
+
+do {<br/>
+  // the body of the loop<br/>
+}<br/>
+while (testExpression);<br/>
+
+<b>How do...while loop works?</b><br/>
+
+    <li>The body of do...while loop is executed once. Only then, the test Expression is evaluated.<br/>
+    <li>If test Expression is true, the body of the loop is executed again and test Expression is evaluated once more.<br/>
+    <li>This process goes on until test Expression becomes false.<br/>
+    <li>If test Expression is false, the loop ends.<br/>
+<b>Example 2: do...while loop</b><br/>
+// Program to add numbers until the user enters zero<br/>
+#include &lt;stdio.h&gt;<br/>
+int main() {<br/>
+  double number, sum = 0;<br/>
+  // the body of the loop is executed at least once<br/>
+  do {<br/>
+    printf("Enter a number: ");<br/>
+    scanf("%lf", &number);<br/>
+    sum += number;<br/>
+  }<br/>
+  while(number != 0.0);<br/>
+  printf("Sum = %.2lf",sum);<br/>
+
+  return 0;<br/>
+}<br/>
+<b>Output</b><br/>
+Enter a number: 1.5<br/>
+Enter a number: 2.4<br/>
+Enter a number: -3.4<br/>
+Enter a number: 4.2<br/>
+Enter a number: 0<br/>
+Sum = 4.70<br/>
+
+Here, we have used a do...while loop to prompt the user to enter a number. The loop works as long as the input number is not 0.<br/>
+
+The do...while loop executes at least once i.e. the first iteration runs without checking the condition. The condition is checked only after the first iteration has been executed.<br/>
+
+do {<br/>
+  printf("Enter a number: ");<br/>
+  scanf("%lf", &number);<br/>
+  sum += number;<br/>
+}<br/>
+while(number != 0.0);<br/>
+
+So, if the first input is a non-zero number, that number is added to the sum variable and the loop continues to the next iteration. This process is repeated until the user enters 0.<br/>
+
+But if the first input is 0, there will be no second iteration of the loop and sum becomes 0.0.<br/>
+
+Outside the loop, we print the value of sum.<br/>
+</div>

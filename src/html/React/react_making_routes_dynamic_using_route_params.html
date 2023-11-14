@@ -1,0 +1,54 @@
+<div>
+  <h3 class="text-subhead font-head">Making routes dynamic using route params in react</h3>
+  <p class="text-content ml-content">In React Router, you can make routes dynamic by using route parameters, also known as URL parameters or path variables. This allows you to pass data through the URL and use it in your components.</p>
+  <p class="text-content ml-content">Here's how you can make routes dynamic using route params:</p><br/>
+  <b>Step 1:</b> Define a Dynamic Route</p>
+  <p class="text-content ml-content">In your App.js (or wherever you define your routes), specify a dynamic route with a parameter using :paramName.</p>
+  <p class="text-content ml-content">import React from 'react';</p>
+  <p class="text-content ml-content">import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';</p>
+  <p class="text-content ml-content">import Home from './Home';</p>
+  <p class="text-content ml-content">import UserProfile from './UserProfile';</p>
+  <p class="text-content ml-content">import NotFound from './NotFound';</p>
+  <p class="text-content ml-content">const App = () => {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;return (</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;Router&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Switch&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route exact path="/" component={Home} /&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route path="/user/:username" component={UserProfile} /&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route component={NotFound} /&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Switch&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Router&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;);</p>
+  <p class="text-content ml-content">};</p>
+  <p class="text-content ml-content">export default App;</p>
+  <p class="text-content ml-content">In this example, username is a dynamic parameter that can be any value. 
+    It will be available in the UserProfile component.</p><br/>
+  <b>Step 2:</b> Access Route Params in Component</p>
+  <p class="text-content ml-content">In your UserProfile component, you can access the route parameter using the useParams hook (or withRouter for class components).</p>
+  <p class="text-content ml-content">import React from 'react';</p>
+  <p class="text-content ml-content">import { useParams } from 'react-router-dom';</p>
+  <p class="text-content ml-content">const UserProfile = () => {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;const { username } = useParams();</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;return &lt;div&gt;User Profile for: {username}&lt;/div&gt;;</p>
+  <p class="text-content ml-content">};</p>
+  <p class="text-content ml-content">export default UserProfile;</p>
+  <p class="text-content ml-content">In this example, useParams is a hook provided by React Router that allows you to access the route parameters. 
+    It returns an object containing the parameter values.</p><br/>
+  <b>Step 3:</b> Link to Dynamic Route</p>
+  <p class="text-content ml-content">To link to a dynamic route, you can use the Link component and include the parameter value in the to prop.</p>
+  <p class="text-content ml-content">import React from 'react';</p>
+  <p class="text-content ml-content">import { Link } from 'react-router-dom';</p>
+  <p class="text-content ml-content">const UsersList = () => {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;return (</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;Link to="/user/johndoe"&gt;John Doe&lt;/Link&gt;&lt;/li&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;Link to="/user/janesmith"&gt;Jane Smith&lt;/Link&gt;&lt;/li&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;);</p>
+  <p class="text-content ml-content">};</p>
+  <p class="text-content ml-content">export default UsersList;</p><br/>
+  <p class="text-content font-semibold">Description</p>
+  <p class="text-content ml-content">In this example, clicking on the links will navigate to the dynamic route with the corresponding username.</p>
+  <p class="text-content ml-content">Dynamic routes can be useful for creating pages that display specific content based on the URL parameters.</p>
+  <p class="text-content ml-content">By using dynamic route parameters, you can create more flexible and interactive web applications that respond to changes in the URL. This is particularly useful for applications with user-specific content or data.</p>
+  </div>

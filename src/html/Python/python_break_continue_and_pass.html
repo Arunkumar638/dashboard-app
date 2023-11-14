@@ -1,0 +1,33 @@
+<div>
+  <h4 class="text-subhead font-head">Break statement</h4>
+  <p class="text-content ml-content">The break statement in Python is used to terminate or abandon the loop containing the statement and brings the control out of the loop. 
+    It is used with both the while and the for loops, especially with nested loops (loop within a loop) to quit the loop. 
+    It terminates the inner loop and control shifts to the statement in the outer loop.</p><br/>
+  <h5 class="text-content font-head">Example</h5>
+  <p class="text-content ml-content">age = “\n Please enter your age: ”</p>
+  <p class="text-content ml-content">while True:</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;age = input</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;if age >= 18:</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;break</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;else:</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;print (“You’re not eligible to vote”)</p> <br/>
+  <h4 class="text-subhead font-head">Continue statement</h4> 
+  <p class="text-content ml-content">When a program encounters a continue statement in Python, 
+    it skips the execution of the current iteration when the condition is met and lets the loop continue to move to the next iteration. 
+    It is used to continue running the program even after the program encounters a break during execution.</p> <br/>
+  <h5 class="text-content font-head">Example </h5>
+  <p class="text-content ml-content">for letter in 'Flexi ple': </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;if letter == ' ': </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;continue </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;print ('Letters: ', letter)</p><br/>
+  <h4 class="text-subhead font-head">Pass statement</h4>
+  <p class="text-content ml-content">The pass statement is a null operator and is used when the programmer wants to do nothing when the condition is satisfied. 
+    This control statement in Python does not terminate or skip the execution, it simply passes to the next iteration.</p>
+  <p class="text-content ml-content">A loop cannot be left empty otherwise the interpreter will throw an error and to avoid this, a programmer can use the pass statement.</p><br/>
+  <h5 class="text-content font-head">Example</h5>
+  <p class="text-content ml-content">for letter in 'Flexiple': </p>
+  <p class="text-content ml-content">if letter == 'x': </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;pass </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;print ('Letters: ', letter)</p>
+</div>
+

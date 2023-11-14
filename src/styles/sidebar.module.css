@@ -1,0 +1,25 @@
+.position{
+ position: absolute;
+ margin-left:600px;
+}
+
+.compile{
+    position: absolute;
+    margin-bottom: 405px;
+    margin-right: 100px;
+    width: 80px;
+    height: 20px;
+}
+
+.clear{
+    position: absolute;
+    margin-bottom: 405px;
+    width: 80px;
+}
+
+.editorPosition{
+    position: relative;
+    margin-top: 70px;
+
+    
+}

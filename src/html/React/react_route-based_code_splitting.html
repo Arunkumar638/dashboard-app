@@ -1,0 +1,54 @@
+<div>
+  <h2 class="text-subhead  font-head"><b>Route-based code splitting</b></h2>
+  <p class="text-content ml-content">Route-based code splitting is a technique used to dynamically load code for specific routes in a web application. 
+    It involves splitting the application's code into separate bundles, with each bundle containing the code needed for a specific route. 
+    This allows for faster initial page loads, as only the code necessary for the current route is loaded.</p><br/>
+  <p class="text-content ml-content">Here's an example of how to implement route-based code splitting in a React application using React Router and dynamic imports:</p>
+  <h3 class="font-head"><b>Install React Router:</b></h3>
+  <p class="text-content ml-content">If you haven't already, install React Router, which is a popular library for handling routing in React applications.</p>
+  <p class="text-content ml-content">npm install react-router-dom</p><br/>
+  <h3 class="font-head"><b>Create Route Components:</b></h3>
+  <p class="text-content ml-content">Create separate components for each route in your application. These components will be dynamically loaded when the corresponding route is accessed.</p>
+  <p class="text-content ml-content">// RouteComponentA.js</p>
+  <p class="text-content ml-content">import React from 'react';</p>
+  <p class="text-content ml-content">const RouteComponentA = () => {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;return &lt;div&gt;Component for Route A&lt;/div&gt;;</p>
+  <p class="text-content ml-content">};</p>
+  <p class="text-content ml-content">export default RouteComponentA;</p>
+  <p class="text-content ml-content">// RouteComponentB.js</p>
+  <p class="text-content ml-content">import React from 'react';</p>
+  <p class="text-content ml-content">const RouteComponentB = () => {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;return &lt;div&gt;Component for Route B&lt;/div&gt;;</p>
+  <p class="text-content ml-content">};</p>
+  <p class="text-content ml-content">export default RouteComponentB;</p><br/>
+  <h3 class="font-head"><b>Implement Route-based Code Splitting:</b></h3>
+  <p class="text-content ml-content">Use dynamic imports (import() syntax) to load the components for each route. This will create a separate bundle for each route.</p>
+  <p class="text-content ml-content">// App.js</p>
+  <p class="text-content ml-content">import React, { Suspense, lazy } from 'react';</p>
+  <p class="text-content ml-content">import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';</p>
+  <p class="text-content ml-content">const RouteComponentA = lazy(() => import('./RouteComponentA'));</p>
+  <p class="text-content ml-content">const RouteComponentB = lazy(() => import('./RouteComponentB'));</p>
+  <p class="text-content ml-content">const App = () => {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;return (</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;Router&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Suspense fallback={&lt;div&gt;Loading...&lt;/div&gt;}&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Switch&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route path="/routeA" component={RouteComponentA} /&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route path="/routeB" component={RouteComponentB} /&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Switch&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Suspense&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Router&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;);</p>
+  <p class="text-content ml-content">};</p>
+  <p class="text-content ml-content">export default App;</p><br/>
+  <p class="text-content ml-content">In this example, RouteComponentA and RouteComponentB are loaded dynamically using import() when the corresponding routes are accessed. 
+    The Suspense component is used to display a loading message while the components are being loaded.</p><br/>
+  <h3 class="font-head"><b>Start the Application:</b></h3>
+  <p class="text-content ml-content">Start your application using a development server (e.g., npm start). Now, when you navigate to the routes /routeA or /routeB, 
+    the corresponding components will be loaded on-demand.</p>
+  <h3 class="font-head"><b>Benefits of Route-based Code Splitting:</b></h3>
+  <li>&nbsp;&nbsp;Faster Initial Load Time</p>
+  <li>&nbsp;&nbsp;Reduced Bundle Size</p>
+  <li>&nbsp;&nbsp;Improved User Experience</p><br/>
+  <p class="text-content ml-content">Route-based code splitting is particularly useful for large applications with complex routing, as it helps optimize performance and load times. It's an effective technique for improving the user experience in applications with multiple routes.</p>
+  </div>

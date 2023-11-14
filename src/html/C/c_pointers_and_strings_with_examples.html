@@ -1,0 +1,63 @@
+<div><h2><b>Pointers and Strings with Examples</b></h2>
+In C, strings are represented as arrays of characters, terminated by a null character ('\0'). Pointers are used extensively with strings for various operations. Here are some examples to illustrate the relationship between pointers and strings:<br/>
+
+<b>String as an Array:</b><br/>
+#include &lt;stdio.h&gt;<br/>
+
+int main() {<br/>
+    char str[6] = {'H', 'e', 'l', 'l', 'o', '\0'};<br/>
+    char *ptr = str; // 'ptr' points to the first character of 'str'<br/>
+    
+    printf("%s", ptr); // Output: Hello<br/>
+
+    return 0;<br/>
+}<br/>
+In this example, str is an array of characters that forms the string "Hello". We can use a pointer ptr to point to the first character of str. Then, we use %s in the printf() function to print the string.<br/>
+
+<b>String Initialization Using a Pointer:</b><br/>
+
+#include &lt;stdio.h&gt;<br/>
+
+int main() {<br/>
+    char *ptr = "Hello"; // 'ptr' is a pointer to a string literal<br/>
+    
+    printf("%s", ptr); // Output: Hello<br/>
+
+    return 0;<br/>
+}<br/>
+In this example, ptr is a pointer to a string literal "Hello". String literals are automatically null-terminated, so there's no need to explicitly include the null character.<br/>
+
+<b>Passing Strings to Functions:</b><br/>
+#include &lt;stdio.h&gt;<br/>
+
+void printString(char *str) {<br/>
+    printf("%s", str);<br/>
+}<br/>
+
+int main() {<br/>
+    char myString[] = "Hello"; // 'myString' is an array of characters<br/>
+    
+    printString(myString);<br/>
+
+    return 0;<br/>
+}<br/>
+In this example, we pass the array myString to the function printString. The function takes a pointer to the first character of the string. Inside the function, we can use %s to print the string.<br/>
+
+<b>Using scanf() to Read a String:</b><br/>
+
+#include &lt;stdio.h&gt;<br/>
+
+int main() {<br/>
+    char name[20]; // Allocate space for a string<br/>
+    
+    printf("Enter your name: ");<br/>
+    scanf("%s", name); // 'name' is already a pointer to the first character<br/>
+    
+    printf("Hello, %s!", name);<br/>
+
+    return 0;<br/>
+}<br/>
+In this example, we use scanf() to read a string input from the user into the array name.<br/> Since name is an array, it already decays into a pointer to the first character when passed to scanf().<br/>
+
+These examples demonstrate how pointers and strings work together in C. Understanding how to use pointers with strings is important for tasks like string manipulation, input/output operations, and working with text data. Remember to be careful with string operations to avoid buffer overflows and other potential issues.<br/>
+</div>

@@ -1,0 +1,76 @@
+<div>
+    <h3 class="text-subhead font-head">Common Patterns for EventEmitters</h3>
+    <p class="text-content ml-content">There are two common patterns that can be used to raise and bind an event using EventEmitter class in Node.js.</p>
+    <ol class="list-disc">
+    <li class="ml-points">Return EventEmitter from a function</li>
+    <li class="ml-points">Extend the EventEmitter class</li></ol><br/>
+    <h4 class="text-subhead font-head">Return EventEmitter from a function</h4>
+    <p class="text-content ml-content">In this pattern, a constructor function returns an EventEmitter object, which was used to emit events inside a function. This EventEmitter object can be used to subscribe for the events. Consider the following example.</p>
+    <b>Example: Return EventEmitter from a function</b>
+    <p class="text-content ml-content">var emitter = require('events').EventEmitter;</p>
+    <p class="text-content ml-content">function LoopProcessor(num) {</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;var e = new emitter();</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setTimeout(function () {</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"for (var i = 1; i &lt;= num; i++) {"}</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.emit('BeforeProcess', i);</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Processing number:' + i);</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e.emit('AfterProcess', i);</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;, 2000)</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;return e;</p>
+    <p class="text-content ml-content">}</p>
+    <p class="text-content ml-content">var lp = LoopProcessor(3);</p>
+    <p class="text-content ml-content">lp.on('BeforeProcess', function (data) {</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log('About to start the process for ' + data);</p>
+    <p class="text-content ml-content">});</p>
+    <p class="text-content ml-content">lp.on('AfterProcess', function (data) {</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log('Completed processing ' + data);</p>
+    <p class="text-content ml-content">});
+    <b>Output:</b></p>
+    <p class="text-content ml-content">About to start the process for 1</p>
+    <p class="text-content ml-content">Processing number:1</p>
+    <p class="text-content ml-content">Completed processing 1</p>
+    <p class="text-content ml-content">About to start the process for 2</p>
+    <p class="text-content ml-content">Processing number:2</p>
+    <p class="text-content ml-content">Completed processing 2</p>
+    <p class="text-content ml-content">About to start the process for 3</p>
+    <p class="text-content ml-content">Processing number:3</p>
+    <p class="text-content ml-content">Completed processing 3</p><br/>
+    <p class="text-content ml-content">In the above LoopProcessor() function, first we create an object of EventEmitter class and then use it to emit 'BeforeProcess' and 'AfterProcess' events. Finally, we return an object of EventEmitter from the function. So now, we can use the return value of LoopProcessor function to bind these events using on() or addListener() function.</p><br/>
+    <h4 class="text-subhead font-head">Extend EventEmitter Class</h4>
+    <p class="text-content ml-content">In this pattern, we can extend the constructor function from EventEmitter class to emit the events.</p>
+    <b>Example: Extend EventEmitter Class</b>
+    <p class="text-content ml-content">var emitter = require('events').EventEmitter;</p>
+    <p class="text-content ml-content">var util = require('util');</p>
+    <p class="text-content ml-content">function LoopProcessor(num) {</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;var me = this;</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;setTimeout(function () {</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (var i = 1; i &lt;= num; i++) {</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;me.emit('BeforeProcess', i);</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Processing number:' + i);</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;me.emit('AfterProcess', i);</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;, 2000) return this; </p>
+    <p class="text-content ml-content">}</p>
+    <p class="text-content ml-content">util.inherits(LoopProcessor, emitter)</p>
+    <p class="text-content ml-content">var lp = new LoopProcessor(3);</p>
+    <p class="text-content ml-content">lp.on('BeforeProcess', function (data) {</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log('About to start the process for ' + data);</p>
+    <p class="text-content ml-content">});</p>
+    <p class="text-content ml-content">lp.on('AfterProcess', function (data) {</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log('Completed processing ' + data);</p>
+    <p class="text-content ml-content">});</p><br/>
+    <b>Output:</b></p>
+    <p class="text-content ml-content">About to start the process for 1</p>
+    <p class="text-content ml-content">Processing number:1</p>
+    <p class="text-content ml-content">Completed processing 1</p>
+    <p class="text-content ml-content">About to start the process for 2</p>
+    <p class="text-content ml-content">Processing number:2</p>
+    <p class="text-content ml-content">Completed processing 2</p>
+    <p class="text-content ml-content">About to start the process for 3</p>
+    <p class="text-content ml-content">Processing number:3</p>
+    <p class="text-content ml-content">Completed processing 3</p><br/>
+    <p class="text-content ml-content">In the above example, we have extended LoopProcessor constructor function with EventEmitter class using util.inherits() method of utility module. So, you can use EventEmitter's methods with LoopProcessor object to handle its own events.</p>
+    </div>

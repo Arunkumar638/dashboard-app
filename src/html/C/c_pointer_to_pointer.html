@@ -1,0 +1,26 @@
+<div><h2><b>Pointer to pointer</b></h2>
+A pointer to a pointer, also known as a double pointer, is a special type of pointer in C that holds the memory address of another pointer. This allows you to indirectly access the value of a pointer. It's often used in situations where you need to modify a pointer from within a function and have that change reflected in the calling function.<br/>
+
+Here's an example of how you might use a pointer to a pointer:<br/>
+#include &lt;stdio.h&gt;<br/>
+void changePointer(int **ptr) {<br/>
+    int newVal = 20;<br/>
+    *ptr = &newVal;<br/>
+}<br/>
+int main() {<br/>
+    int val = 10;<br/>
+    int *ptr = &val;<br/>
+    printf("Value at pointer: %d\n", *ptr); // Output: Value at pointer: 10<br/>
+     changePointer(&ptr);<br/>
+    
+    printf("Value at pointer after change: %d\n", *ptr); // Output: Value at pointer after <br/>change: 20<br/>
+    
+    return 0;<br/>
+}<br/>
+In this example, we have a function changePointer that takes a pointer to a pointer as an argument. Inside the function, a new integer variable newVal is declared and its address is assigned to the pointer *ptr. This means that the pointer ptr now points to newVal.<br/>
+
+When we call changePointer(&ptr) from main(), we're passing the address of the pointer ptr itself. This allows the function to change what ptr is pointing to.<br/>
+
+It's important to note that you need to be careful when using pointer to pointers. Since you're dealing with memory addresses of other pointers, you should be cautious to ensure that the memory being pointed to remains valid after the function call. In the example above, after changePointer returns, newVal goes out of scope and using ptr afterward would result in undefined behavior.<br/>
+Pointer to pointers are particularly useful in scenarios where you need to dynamically allocate memory and pass that pointer back to the calling function. They are also used in complex data structures and algorithms.<br/>
+</div>

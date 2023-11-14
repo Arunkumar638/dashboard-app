@@ -1,0 +1,129 @@
+.body{
+  background: #f4f7f8;
+}
+
+.courseCard{
+    position: relative;
+    margin-top: 10%;
+    margin-left: 30%;
+    height: 29%;
+    background-color: #ffffff;
+    width: 90%;
+    border: 1px solid #a3a8ab;
+}
+
+.courseColumnCard{
+    position: relative;
+    margin-top: 10%;
+    margin-left: 10%;
+    height: 29%;
+    background-color: #ffffff;
+    width: 90%;
+    border: 1px solid #a3a8ab;
+}
+
+.innerCard{
+    position: relative;
+    padding-top: 17%;
+    padding-bottom: 13%;
+    border-radius: 0.5rem;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background: linear-gradient(to right, #10316B, #E03131);
+   
+}
+
+.cardHeader{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-family: Roboto Slab Variable, sans-serif;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.filterLabel{
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 30%;
+    margin-left: 6rem;
+    font-family: 'Roboto Slab Variable', sans-serif;
+    color: black;
+}
+
+.levelLabel{
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 5%;
+    margin-left: 6rem;
+    font-family: 'Roboto Slab Variable', sans-serif;
+    color: black;
+}
+
+.options{
+    font-size: 13px;
+    margin-top: 5%;
+    margin-left: 6rem;
+    font-family: 'Roboto Slab Variable', sans-serif;
+    color: black;
+}
+
+.filter{
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 70%;
+    margin-top: 3%;
+    font-family: 'Roboto Slab Variable', sans-serif;
+    color: black;
+}
+
+.header{
+    font-size: 1.875rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    margin-left: 3rem;
+    position: absolute;
+    height: 70px;
+    color: #0B409c;
+    font-family: 'Roboto Slab Variable', sans-serif;
+}
+
+.cardDescription{
+    font-family: 'Roboto Slab Variable', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    color:#0B409c;
+}
+
+.cardList{
+    font-family: 'Roboto Slab Variable', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    color:#0B409c;  
+}
+
+.cardListHead{
+    font-family: 'Roboto Slab Variable', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    color:black;
+}
+
+.cardArrow{
+    margin-left: 90%;
+    background-color: transparent;
+    margin-top: 1.7rem;
+    cursor: pointer;
+    color: #FFBE55;
+}
+
+.nodeArrow{
+    margin-left: 90%;
+    background-color: transparent;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    color: #FFBE55;
+}

@@ -1,0 +1,43 @@
+<div>
+  <h2 class="text-subhead font-bold">e.Suspense</h2>
+  <p class="text-content ml-content">Suspense is a React component that allows you to declaratively specify loading states while components are dynamically loading. 
+    It's primarily used in conjunction with React.lazy for code splitting and data fetching.</p><br/>
+  <p class="text-content ml-content">Here's how Suspense works:</p>
+  <li class="ml-points">It's a component that you wrap around code that may throw a promise, such as a dynamic import or a data fetching function.</p>
+  <li class="ml-points">While the promise is pending, the nearest Suspense ancestor will pause rendering and display a fallback UI (specified by the fallback prop).</p>
+  <li class="ml-points">Once the promise resolves or rejects, the rendering continues as usual.</p><br/>
+  <p class="text-content ml-content font-semibold">Here's an example of how to use Suspense with React.lazy:</p>
+  <p class="text-content ml-content">import React, { Suspense } from 'react';</p>
+  <p class="text-content ml-content">const LazyComponent = React.lazy(() => import('./LazyComponent'));</p>
+  <p class="text-content ml-content">const App = () => {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;return (</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Suspense fallback={&lt;div&gt;Loading...&lt;/div&gt;}&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;LazyComponent /&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Suspense&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;);</p>
+  <p class="text-content ml-content">};</p>
+  <p class="text-content ml-content">export default App;</p><br/>
+  <p class="text-content ml-content font-semibold">In this example:</p>
+  <p class="text-content ml-content">&lt;Suspense&gt; is used to wrap the component that might throw a promise (in this case, the LazyComponent).</p>
+  <p class="text-content ml-content font-semibold">The fallback prop specifies the fallback UI to display while the LazyComponent is loading.</p><br/>
+  <h3 class="text-subhead font-semibold">Using Suspense for Data Fetching:</h3>
+  <p class="text-content ml-content">Suspense can also be used for data fetching, although it's an experimental feature.</p>
+  <p class="text-content ml-content">import React, { Suspense } from 'react';</p>
+  <p class="text-content ml-content">import { fetchUserData } from './api'; // Example data fetching function</p>
+  <p class="text-content ml-content">const UserData = React.lazy(() => fetchUserData());</p>
+  <p class="text-content ml-content">const App = () => {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;return (</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Suspense fallback={&lt;div&gt;Loading user data...&lt;/div&gt;}&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;UserData /&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Suspense&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;);</p>
+  <p class="text-content ml-content">};</p>
+  <p class="text-content ml-content">export default App;</p><br/>
+  <p class="text-content ml-content font-semibold">In this example, UserData is a component that is dynamically imported using React.lazy, and it might throw a promise due to data fetching.</p>
+  <p class="text-content ml-content">If the data fetching takes some time, the Suspense component will display the fallback UI ("Loading user data...") until the data is ready.</p><br/>
+  <p class="text-content ml-content">Suspense is a powerful tool for managing loading states in your React application, whether for code splitting or data fetching. It allows you to declaratively handle loading states, making your code more readable and maintainable.</p>
+  </div>

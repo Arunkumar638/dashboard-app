@@ -1,0 +1,164 @@
+[
+    {
+      "label":"C Programming for Beginners",
+      "key":"c_programming"
+    },
+    {
+      "label":"Introduction to C",
+      "key":"c_introduction_to_c"
+    },
+    {
+      "label":"Tokens and Data Types",
+      "key":"c_tokens_and_data_types",
+      "children":[
+        {
+          "label":"Keywords and Identifiers",
+          "key":"c_keywords_and_identifiers"
+        },
+        {
+          "label":"Variables",
+          "key":"c_variables"
+        },
+        {
+          "label":"Datatypes",
+          "key":"c_datatypes"
+        },
+        {
+          "label":"Constants",
+          "key":"c_constants"
+        },
+        {
+          "label":"Printing and Dynamic Inputs",
+          "key":"c_printing_and_dynamic_inputs"
+        }
+      ]
+    },
+    {
+      "label":"Comments",
+      "key":"c_comments"
+    },
+    {
+      "label":"Operators",
+      "key":"c_operators"
+    },
+    {
+      "label":"Control Statements",
+      "key":"c_control_statements",
+    "children":[
+      {
+      "label":"Introduction",
+      "key":"c_control_statements_introduction"
+    },
+    {
+      "label":"Conditional Statements",     
+      "key":"c_conditional_statements"
+    },
+    {
+      "label":"Looping Statements",     
+      "key":"c_looping_statements"
+    },
+    {
+      "label":"Jumping Statements",   
+      "key":"c_jumping_statements"
+    }
+  ]
+  },
+    {
+      "label":"Functions",
+      "key":"c_functions",
+      "children":[
+        {
+          "label":"Function basics",
+          "key":"c_Function basics"
+        },{
+          "label":"Function with input parameter example",
+          "key":"c_Function with input parameter example"
+        },{
+          "label":"Function Call by value example",
+          "key":"c_Function Call by value example"
+        },{
+          "label":"Function call by reference example",
+          "key":"c_Function call by reference example"
+        },{
+          "label":"Recursion and inline function in C",
+          "key":"c_Recursion and inline function in C"
+        }
+      ]
+    },
+    {
+      "label":"Arrays",
+      "key":"c_Arrays"
+    },
+    {
+      "label":"Pointers",
+      "key":"c_pointers",
+      "children":[
+        {
+          "label":"Pointer and types of Pointers",
+          "key":"c_Pointer and types of Pointers"
+        },{
+          "label":"Pointer to pointer",
+          "key":"c_Pointer to pointer"
+        },{
+          "label":"Pointer arithmetic",
+          "key":"c_Pointer arithmetic"
+        },{
+          "label":"Direct and Indirect Access Pointers",
+          "key":"c_Direct and Indirect Access Pointers"
+        },{
+          "label":"Dynamic memory allocation malloc",
+          "key":"c_Dynamic memory allocation malloc"
+        },
+        {
+          "label":"C Pointers & Arrays with Examples",
+          "key":"c_C Pointers & Arrays with Examples"
+        },
+        {
+          "label":"C Pointers and Strings with Examples",
+          "key":"c_C Pointers and Strings with Examples"
+        }
+      ]
+    },
+    {
+      "label":"Functions Pointers",
+      "key":"c_Functions Pointers",
+      "children":[
+        {
+          "label":"Functions Pointers Example",
+          "key":"c_Functions Pointers Example"
+        },{
+          "label":"Functions with Array Parameters",
+          "key":"c_Functions with Array Parameters"
+        },{
+          "label":"Functions that Return an Array",
+          "key":"c_Functions that Return an Array"
+        },{
+          "label":"Function Pointers",
+          "key":"c_Function Pointers"
+        },{
+          "label":"Array of Function Pointers",
+          "key":"c_Array of Function Pointers"
+        },
+        {
+          "label":"Functions Using void Pointers",
+          "key":"c_Functions Using void Pointers"
+        },
+        {
+          "label":"Function Pointers as Arguments",
+          "key":"c_Function Pointers as Arguments"
+        }
+      ]
+    },
+    {
+          "label":"String and Method",
+          "key":"c_String and Method"
+        },
+        {
+          "label":"Structures and Unions",
+          "key":"c_Structures and Unions"
+        },
+        {
+          "label":"File Handling",
+          "key":"c_File Handling"
+        }
+      ]

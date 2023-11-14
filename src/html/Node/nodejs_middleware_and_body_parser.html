@@ -1,0 +1,81 @@
+<div>
+  <h3 class="text-subhead font-head">Working with middleware</b></h3>
+  <p class="text-content ml-content">Working with middleware in Node.js is a crucial aspect of building web applications. Middleware functions have access to the request object (req), the response object (res), and the next middleware function in the application's request-response cycle.</p>
+  <p class="text-content ml-content">They can perform tasks such as modifying the request and response objects, ending the request-response cycle, and calling the next middleware function.</p>
+  <p class="text-content ml-content">Here's how you can work with middleware in Node.js:</p><br/>
+  <h4 class="text-subhead font-head">Understanding Middleware:</b></h4>
+  <p class="text-content ml-content">Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle. These functions can:</p>
+  <ol class="list-disc">
+  <li class="ml-points">Execute code.</li>
+  <li class="ml-points">Modify req and res objects.</li>
+  <li class="ml-points">End the request-response cycle.</li>
+  <li class="ml-points">Call the next middleware function.</li>
+  </ol><br/>
+  <h4 class="text-subhead font-head">Using Middleware:</b></h4>
+  <p class="text-content ml-content">In Node.js, you can use middleware in several ways. The most common way is by using the app.use() method from a web framework like Express.</p>
+  <p class="text-content ml-content">const express = require('express');</p>
+  <p class="text-content ml-content">const app = express();</p>
+  <p class="text-content ml-content">// Middleware function</p>
+  <p class="text-content ml-content">function myMiddleware(req, res, next) {</p>
+  <p class="text-content ml-content">  // Do something with the request or response</p>
+  <p class="text-content ml-content">  next(); // Call the next middleware function</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">// Use the middleware</p>
+  <p class="text-content ml-content">app.use(myMiddleware);</p>
+  <p class="text-content ml-content">// Define routes and handle requests</p>
+  <p class="text-content ml-content">app.get('/', (req, res) => {</p>
+  <p class="text-content ml-content">  res.send('Hello World!');</p>
+  <p class="text-content ml-content">});</p>
+  <p class="text-content ml-content">// Start the server</p>
+  <p class="text-content ml-content">app.listen(3000, () => {</p>
+  <p class="text-content ml-content">  console.log('Server is running on http://localhost:3000');</p>
+  <p class="text-content ml-content">});</p><br/>
+  <h4 class="text-subhead font-head">Order of Middleware:</b></h4>
+  <p class="text-content ml-content">The order in which you apply middleware matters. Middleware functions are executed in the order they are added using app.use(). This means that if you want a particular middleware to run before others, you need to place it above them.</p>
+  <h4 class="text-subhead font-head">Error Handling Middleware:</b></h4>
+  <p class="text-content ml-content">You can also create middleware specifically for handling errors. These middleware functions have four parameters (err, req, res, next) and are used to catch errors and handle them in a centralized way.</p>
+  <p class="text-content ml-content">app.use((err, req, res, next) => {</p>
+  <p class="text-content ml-content">  console.error(err.stack);</p>
+  <p class="text-content ml-content">  res.status(500).send('Something broke!');</p>
+  <p class="text-content ml-content">});</p><br/>
+  <h4 class="text-subhead font-head">Third-party Middleware:</b></h4>
+  <p class="text-content ml-content">There are many third-party middleware packages available for Express.js that add functionality to your application. For example, body-parser for parsing incoming request bodies.</p>
+  <p class="text-content ml-content">const bodyParser = require('body-parser');</p>
+  <p class="text-content ml-content">app.use(bodyParser.json()); // Parse JSON requests</p>
+  <p class="text-content ml-content">app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded requests</p>
+  <h4 class="text-subhead font-head">Creating Custom Middleware:</b></h4>
+  <p class="text-content ml-content">You can create your own middleware functions by following the same pattern as above. Just make sure they have the signature (req, res, next).</p>
+  <p class="text-content ml-content">function myCustomMiddleware(req, res, next) {</p>
+  <p class="text-content ml-content">  // Do something with the request or response</p>
+  <p class="text-content ml-content">  next();</p>
+  <p class="text-content ml-content">}</p><br/>
+  <h4 class="text-subhead font-head">Using Middleware in Other Node Environments:</b></h4>
+  <p class="text-content ml-content">Middleware can also be used in frameworks other than Express, but the concept remains the same - functions that have access to req, res, and next.</p>
+  <p class="text-content ml-content">Remember that middleware is a powerful tool, but it should be used judiciously to maintain code readability and maintainability. It's a good practice to keep your middleware functions focused on specific tasks.</p><br/>
+  <h3 class="text-subhead font-head">Body Parser</b></h3>
+  <p class="text-content ml-content">To handle HTTP POST request in Express.js version 4 and above, you need to install middleware module called body-parser. The middleware was a part of Express.js earlier but now you have to install it separately.</p>
+  <p class="text-content ml-content">This body-parser module parses the JSON, buffer, string and url encoded data submitted using HTTP POST request. Install body-parser using NPM as shown below.</p>
+  <b>npm install body-parser --save</b></p>
+  <p class="text-content ml-content">Now, import body-parser and get the POST request data as shown below.</p>
+  <p class="text-content ml-content">app.js: Handle POST Route in Express.js</p>
+  <p class="text-content ml-content">const express = require('express');</p>
+  <p class="text-content ml-content">const app = express();</p>
+  <p class="text-content ml-content">const bodyParser = require("body-parser");</p>
+  <p class="text-content ml-content">app.use(bodyParser.urlencoded({ extended: false }));</p>
+  <p class="text-content ml-content">app.get('/', function (req, res) {</p>
+  <p class="text-content ml-content">    res.sendFile('index.html');</p>
+  <p class="text-content ml-content">});</p>
+  <p class="text-content ml-content">app.post('/submit-student-data', function (req, res) {</p>
+  <p class="text-content ml-content">    var name = req.body.firstName + ' ' + req.body.lastName;</p>
+  <p class="text-content ml-content">        res.send(name + ' Submitted Successfully!');</p>
+  <p class="text-content ml-content">});</p>
+  <p class="text-content ml-content">const server = app.listen(5000, function () {</p>
+  <p class="text-content ml-content">    console.log('Node server is running..');</p>
+  <p class="text-content ml-content">});</p><br/>
+  <p class="text-content ml-content">In the above example, POST data can be accessed using req.body. The req.body is an object that includes properties for each submitted form. Index.html contains firstName and lastName input types, so you can access it using req.body.firstName and req.body.lastName.</p>
+  <p class="text-content ml-content">Now, run the above example using <b>node server.js</b> command, point your browser to http://localhost:5000 and see the 
+    following result.</p><br/>
+  <img src="/public/Assets/body parser.jpg" height="400" width="400"/><br/>
+  <p class="text-content ml-content">Fill the First Name and Last Name in the above example and click on submit. For example, enter "Gyro" in First Name textbox and "neb" in Last Name textbox and click the submit button. The following result is displayed.</p>
+  <p class="text-content ml-content">Gyro neb Submitted Sucessfully!</p>
+  </div>

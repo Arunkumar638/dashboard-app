@@ -1,0 +1,71 @@
+<div><h2><b>File handling</b></h2>
+File handling in C allows you to perform operations on files like creating, reading, writing, and closing them. To work with files in C, you'll need to include the stdio.h header file, which contains functions like fopen, fclose, fprintf, fscanf, and more.
+Here are some basic file operations in C:<br/>
+<b>1. Opening a File (fopen):</b><br/>
+#include &lt;stdio.h&gt;<br/>
+int main() {<br/>
+    FILE *filePtr; // File pointer<br/>
+    filePtr = fopen("example.txt", "w"); // Opens a file in write mode<br/>
+
+    if (filePtr == NULL) {<br/>
+        printf("Error opening file.\n");<br/>
+        return 1;<br/>
+    }<br/>
+
+    fprintf(filePtr, "This is a test.\n");<br/>
+    fclose(filePtr);<br/>
+    return 0;<br/>
+}<br/>
+In this example, a file named example.txt is opened in write mode ("w") using fopen. If the file can't be opened, it returns a NULL pointer. If successful, it writes "This is a test." to the file and then closes it using fclose.<br/>
+<b> 2.Reading from a File (fscanf):</b><br/>
+#include &lt;stdio.h&gt;<br/>
+int main() {<br/>
+    FILE *filePtr;<br/>
+    filePtr = fopen("example.txt", "r"); // Opens the file in read mode<br/>
+    if (filePtr == NULL) {<br/>
+        printf("Error opening file.\n");<br/>
+        return 1;<br/>
+    }<br/>
+    char buffer[100];<br/>
+    fscanf(filePtr, "%s", buffer); // Reads a string from the file<br/>
+    printf("Read from file: %s\n", buffer);<br/>
+    fclose(filePtr);<br/>
+    return 0;<br/>
+}<br/>
+This example opens the example.txt file in read mode ("r") using fopen. It then uses fscanf to read a string from the file and prints it.<br/>
+<b>3. Appending to a File ("a" Mode):</b><br/>
+#include &lt;stdio.h&gt;<br/>
+int main() {<br/>
+    FILE *filePtr;<br/>
+    filePtr = fopen("example.txt", "a"); // Opens the file in append mode<br/>
+    if (filePtr == NULL) {<br/>
+        printf("Error opening file.\n");<br/>
+        return 1;<br/>
+    }<br/>
+    fprintf(filePtr, "Appending some text.\n");<br/>
+    fclose(filePtr);<br/>
+    return 0;<br/>
+}<br/>
+Here, the file is opened in append mode ("a"), which allows you to add content to the end of the file. It appends "Appending some text." to the file.<br/>
+<b>4. Checking for End-of-File (EOF):</b><br/>
+#include &lt;stdio.h&gt;<br/>
+int main() {<br/>
+    FILE *filePtr;<br/>
+    filePtr = fopen("example.txt", "r");<br/>
+    if (filePtr == NULL) {<br/>
+        printf("Error opening file.\n");<br/>
+        return 1;<br/>
+    }<br/>
+    char buffer[100];<br/>
+    while (fscanf(filePtr, "%s", buffer) != EOF) {<br/>
+        printf("%s ", buffer);<br/>
+    }<br/>
+    fclose(filePtr);<br/>
+    return 0;<br/>
+}<br/>
+This program reads words from the file until it reaches the end of the file (EOF). It checks for EOF as the return value of fscanf.<br/>
+<b>5. Error Handling:</b><br/>
+Always check if the file opening was successful by comparing the file pointer to NULL. This ensures that you don't attempt operations on a non-existent or inaccessible file.<br/>
+Remember to close files using fclose when you're done with them to free up system resources.<br/>
+These are some basic file handling operations in C. File handling is an important topic, and there are more advanced operations and error handling techniques to learn as you progress.<br/>
+</div>

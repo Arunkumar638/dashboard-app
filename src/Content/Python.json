@@ -1,0 +1,204 @@
+[
+  {
+    "label":"Python for Beginners",
+    "key":"python_programming"
+  },
+  {
+    "label":"Introduction",
+    "key":"python_introduction"  
+  },
+  {
+    "label":"Indentation",
+    "key":"python_indentation"
+  },
+  {
+    "label":"Comments",
+    "key":"python_comments"
+      },
+  {
+    "label":"Variables",
+    "key":"python_variables",
+    "children":[
+      {
+        "label":"Introduction",
+        "key":"python_variables_introduction"
+      },      
+      {
+        "label":"Variable Names",
+        "key":"python_variable_names"
+      },      
+      {
+        "label":"Assign Multiple Values",
+        "key":"python_assign_multiple_values"
+      },    
+      {
+        "label":"Variable Types",
+        "key":"python_variables_types"    
+      }
+    ]
+  },
+  {
+    "label":"Data Types",
+    "key":"python_data_types"
+  },
+  {
+    "label":"Numbers",
+    "key":"python_numbers" 
+  },
+  {
+    "label":"Keywords",
+    "key":"python_keywords",
+    "children":[
+      {
+        "label":"Introduction",
+        "key":"python_keywords_introduction"
+      },
+      {
+        "label":"Various Keywords",
+        "key":"python_various_keywords"
+      }
+    ]
+  },
+  {
+    "label":"Operators",
+    "key":"python_operators",
+    "children":[
+      {
+        "label":"Introduction",
+        "key":"python_operators_introduction"
+      },
+      {
+        "label":"Basic Operators",
+        "key":"python_basic_Operators"
+      },
+      {
+        "label":"Other Operators",
+        "key":"python_other_Operators"
+      },
+      {
+        "label":"Operator Precedence",
+        "key":"python_operator_precedence"
+      }
+    ]
+  },
+  {
+    "label":"Casting",
+    "key":"python_casting"
+  },
+  {
+    "label":"Statements",
+    "key":"python_statements",
+    "children":[
+      {
+        "label":"Introduction",
+        "key":"python_statements_introduction"
+      },
+      {
+        "label":"Conditional Statements",
+        "key":"python_conditional_statements",
+        "children":[
+          {
+            "label":"Introduction",
+            "key":"python_conditional_statement_introduction"
+          },
+          {
+            "label":"if and else-if statement",
+            "key":"python_if_and_if-else_statement"
+          },        
+          {
+            "label":"elif statement",
+            "key":"python_elif_statement"
+          },
+          {
+            "label":"Nested (if and if-else)",
+            "key":"python_nested_if_and_nested_if_else_statement"
+          }     
+        ]
+      },
+      {
+        "label":"Looping Statements",
+        "key":"python_looping_statement",
+        "children":[
+          {
+            "label":"Introduction",
+            "key":"python_looping_statement_introduction"
+          },
+          {
+            "label":"For and While Loop",
+            "key":"python_for_and_while_loop"
+           
+          }                 
+        ]
+      },
+      {
+        "label":"Transfer Statements",
+        "key":"python_transfer_statement",
+        "children":[
+          {
+            "label":"Introduction",
+            "key":"python_transfer_statement_introduction"
+          },
+          {
+            "label":"Break, Continue and Pass",
+            "key":"python_break_continue_and_pass"
+           
+          }          
+        ]
+      }
+    ]
+  },
+  
+  {
+    "label":"Input and Output",
+    "key":"python_input_and_output"  
+  },      
+  {
+    "label":"Functions",
+    "key":"python_functions",
+    "children":[
+      {
+        "label":"Introduction",
+        "key":"python_function_introduction"
+      },
+      {
+        "label":"Function with Arguments",
+        "key":"python_function_arguments"     
+      },
+      {
+        "label":"Library Functions ",
+        "key":"python_library_functions"
+      },
+      {
+        "label":"Function With Arbitrary Arguments",
+        "key":"python_function_with_arbitrary_arguments"
+      }
+    ]
+  },
+  {
+    "label":"Keyword Argument",
+    "key":"python_keyword_argument"
+  },
+  {
+    "label":"Variable Scope",
+    "key":"python_variable_scope"
+  },
+  {
+    "label":"Exception Handling",
+    "key":"python_exception_handling",
+    "children":[
+      {
+        "label":"Introduction",
+        "key":"python_exception_handling_introduction"
+      },
+      {
+        "label":"try...except and Catch Block",
+        "key":"python_try...except_and_catch_block"
+      },
+      
+      {
+        "label":"try with else and try...finally",
+        "key":"python_try_with_else_and_try...finally"
+      }  
+    ]
+  }  
+]

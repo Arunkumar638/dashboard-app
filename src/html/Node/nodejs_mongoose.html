@@ -1,0 +1,33 @@
+<div>
+    <h3 class="text-subhead font-head">Mongoose</h3>
+    <p class="text-content ml-content">Mongoose is an ODM(Object Data Modeling) tool that helps to define the model based on the schema. A schema is a kind of structure that defines how we can store data in the database. 
+    It helps us to validate types like objects, strings, booleans, numbers, etc.</p><br/>
+    <p class="text-content ml-content">Consider, We want to make a list of npm libraries, then we will use the following format to store information in the database.</p>
+    <p class="text-content ml-content">const npmSchema = {</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;id:'',</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;packageName:'',</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;homePage:'',</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;repository:''</p>
+    <p class="text-content ml-content">}</p>
+    <p class="text-content ml-content">In this way, We can store data in the MongoDB database but it is not validated. Hence, We use mongoose to define a schema, validate data and create a model as shown below</p><br/>
+    <p class="text-content ml-content">// Define schema and validate using mongoose</p>
+    <p class="text-content ml-content">const npmList = new mongoose.Schema({</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;id: { type: Number },</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;packageName: { type: String },</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;homePage: { type: String },</p>
+    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;repository: { type: String }</p>
+    <p class="text-content ml-content">})</p><br/>
+    <p class="text-content ml-content">// Create model for schema `npmList` using mongoose</p>
+    <p class="text-content ml-content">const NpmList = mongoose.model('NpmList', npmList)</p>
+    <p class="text-content ml-content">mongoose map our JSON data with the mongoose model, validate the data with a defined schema, and interacts with the MongoDB database with available methods in mongoose.</p><br/>
+    <h3><b>Finally,</b></h3>
+    <ol class="list-disc">
+    <li class="ml-points">MongoDB is a NoSQL database that uses collection and documents to store data.</li>
+    <li class="ml-points">Mongodb driver for nodejs helps to connect and interact with the MongoDB database for nodejs.</li>
+    <li class="ml-points">We can install the mongodb driver for nodejs using the npm library.</li>
+    <li class="ml-points">We use MongoClient() to create a new instance of MongoDB.</li>
+    <li class="ml-points">We use the connect() method of MongoClient to connect with the database.</li>
+    <li class="ml-points">We can create, read, update and delete single/multiple documents in MongoDB.</li>
+    <li class="ml-points">Mongoose use the Schema() method to define a schema, the type property to validate data-types, and the model() method to create a model.</li>
+    </ol>
+    </div>

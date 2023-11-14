@@ -1,0 +1,49 @@
+const Testcomponent = () => (
+  <div>
+  <h2 class="text-subhead font-head">Variables</h2>
+  <p class="text-content ml-content">Variables in JavaScript are containers that hold reusable data. It is the basic unit of storage in a program. The value stored in a variable can be changed during program execution.</p>
+  <p class="text-content ml-content">A variable is only a name given to a memory location, all the operations done on the variable effects that memory location.</p>
+  <p class="text-content ml-content">In JavaScript, all the variables must be declared before they can be used.</p>
+  <p class="text-content ml-content">Before ES2015, JavaScript variables were solely declared using the var keyword followed by the name of the variable and semi-colon. Below is the syntax to create variables in JavaScript: </p>
+  <p class="text-content ml-content">var var_name;</p>
+  <p class="text-content ml-content">var x;</p>
+  <p class="text-content ml-content">{"The var_name is the name of the variable which should be defined by the user and should be unique. 
+  These types of names are also known as identifiers. The rules for creating an identifier in JavaScript are, the name of the identifier
+   should not be any pre-defined word(known as keywords), the first character must be a letter, an underscore (_), or a dollar sign ($)."} </p>
+  <p class="text-content ml-content">Subsequent characters may be any letter or digit or an underscore or dollar sign. </p>
+  <p class="text-content ml-content">Notice in the above code sample, we didn’t assign any values to the variables. We are only saying they exist. If you were to look at the value of each variable in the above code sample, it would be undefined.</p>
+  <p class="text-content ml-content">We can initialize the variables either at the time of declaration or also later when we want to use them. Below are some examples of declaring and initializing variables in JavaScript:</p>
+  <p class="text-content ml-content">// Declaring single variable</p>
+  <p class="text-content ml-content">var name;</p>
+  <p class="text-content ml-content">// Declaring multiple variables</p>
+  <p class="text-content ml-content">var name, title, num;</p>
+  <p class="text-content ml-content">// Initializing variables</p>
+  <p class="text-content ml-content">var name = "Harsh";</p>
+  <p class="text-content ml-content">name = "Rakesh";</p>
+  <p class="text-content ml-content">JavaScript is also known as untyped language. This means, that once a variable is created in JavaScript using the keyword var, we can store any type of value in this variable supported by JavaScript. Below is an example of this:</p>
+  <p class="text-content ml-content">// Creating variable to store a number</p>
+  <p class="text-content ml-content">var num = 5;</p>
+  <p class="text-content ml-content">// Store string in the variable num</p>
+  <p class="text-content ml-content">num = "Gyroneb";</p>
+  <p class="text-content ml-content">The above example executes well without any error in JavaScript, unlike other programming languages. </p>
+  <p class="text-content ml-content">Variables in JavaScript can also evaluate simple mathematical expressions and assume their value. </p> 
+  <p class="text-content ml-content">// Storing a mathematical expression</p>
+  <p class="text-content ml-content">var x = 5 + 10 + 1;</p>
+  <p class="text-content ml-content">console.log(x); // 16</p>
+  <p class="text-content ml-content">After ES2015, we now have two new variable containers: let and const. Now we shall look at both of them one by one. The variable type Let shares lots of similarities with var but unlike var, it has scope constraints. To know more about them visit let vs var. Let’s make use of the let variable:</p>  
+  <p class="text-content ml-content">// let variable</p>
+  <p class="text-content ml-content">let x; // undefined</p>
+  <p class="text-content ml-content">let name = 'Mukul';</p>
+  <p class="text-content ml-content">// Can also declare multiple values</p>
+  <p class="text-content ml-content">let a=1,b=2,c=3;</p>
+  <p class="text-content ml-content">// Assignment</p>
+  <p class="text-content ml-content">let a = 3;</p>
+  <p class="text-content ml-content">a = 4; // works same as var.</p>
+  <p class="text-content ml-content">Const is another variable type assigned to data whose value cannot and will not change throughout the script. It is a stricter version of let.</p>
+  <p class="text-content ml-content">// const variable</p>
+  <p class="text-content ml-content">const name = 'Mukul';</p>
+  <p class="text-content ml-content">name = 'Mayank'; // will give Assignment to constant variable error.</p>
+  </div>
+);
+
+export default Testcomponent;

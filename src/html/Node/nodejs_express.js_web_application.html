@@ -1,0 +1,18 @@
+<div>
+    <h3 class="text-subhead font-head"><b>Express.js Web Application</b></h3>
+    <p class="text-content ml-content">In this section, you will learn how to create a web application using Express.js.</p>
+    <p class="text-content ml-content">Express.js provides an easy way to create web server and render HTML pages for different HTTP requests by configuring routes for your application.</p><br/>
+    <h4 class="text-subhead font-head"><b>Web Server</b></h4>
+    <p class="text-content ml-content">First of all, import the Express.js module and create the web server as shown below.</p>
+    <b>app.js: Express.js Web Server</b> 
+    <p class="text-content ml-content">const express = require('express');</p>
+    <p class="text-content ml-content">const app = express();</p>
+    <p class="text-content ml-content">// define routes here..</p>
+    <p class="text-content ml-content">const server = app.listen(5000, function () {</p>
+    <p class="text-content ml-content">    console.log('Node server is running..');</p>
+    <p class="text-content ml-content">});</p><br/>
+    <p class="text-content ml-content">In the above example, we imported Express.js module using require() function. The express module returns a function. This function returns an object which can be used to configure Express application (app in the above example).</p>
+    <p class="text-content ml-content">The app object includes methods for routing HTTP requests, configuring middleware, rendering HTML views and registering a template engine.</p>
+    <p class="text-content ml-content">The app.listen() function creates the Node.js web server at the specified host and port. It is identical to Node's http.Server.listen() method.</p>
+    <p class="text-content ml-content">Run the above example using node app.js command and point your browser to http://localhost:5000. It will display Cannot GET / because we have not configured any routes yet.</p>
+    </div>

@@ -1,0 +1,207 @@
+ <div>
+  <h3 class="text-head font-head"><b>Variable Scope in Javascript</b></h3>
+  <p class="text-content ml-content">The scope of a variable is the part of the program from which the variable may directly be accessible. </p><br/>
+  <p class="text-content ml-content">In JavaScript, there are two types of scopes: </p><br/>
+  <h4 class="text-subhead font-head"><b>Global Scope</b></h4>
+  <p class="text-content ml-content">variables declared outside of any function or block have global scope.
+    This means they can be accessed and modified anywhere in the code. </p>
+  <p> Here's an example:</p> <br/>
+  <p class="text-content ml-content">// Global variable</p>
+  <p class="text-content ml-content">var globalVariable = "I'm a global variable";</p>
+  <p class="text-content ml-content">{"function sayGlobalVariable() {"}</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;console.log(globalVariable); // Accessible here</p>
+  <p class="text-content ml-content">{"}"}</p>
+  <p class="text-content ml-content">sayGlobalVariable(); // Outputs: I'm a global variable</p>
+  <p class="text-content ml-content">{"function modifyGlobalVariable() {"}</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;globalVariable = "I've been modified";</p>
+  <p class="text-content ml-content">{"}"}</p>
+  <p class="text-content ml-content">modifyGlobalVariable();</p>
+  <p class="text-content ml-content">sayGlobalVariable(); // Outputs: I've been modified</p> </p>
+  <p class="text-content ml-content">In this example, globalVariable is declared outside of any function, making it a global variable. It can be accessed both
+     inside and outside of functions. The function sayGlobalVariable can access and print the value of globalVariable. 
+     The function modifyGlobalVariable can also modify the value of globalVariable, and those changes are reflected when we call sayGlobalVariable again.</p><br/>
+  <h4 class="text-subhead font-head"><b>Local Scope:</b></h4> 
+  <p class="text-content ml-content">In JavaScript, variables declared within a function have local scope. This means they are only accessible within that specific function. </p>Here's an example:</p>
+  <p class="text-content ml-content">function myFunction() {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;var localVar = "I'm a local variable"; // This is a local variable</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;console.log(localVar); // Accessible here</p>
+  <p class="text-content ml-content">{"}"}</p>
+  <p class="text-content ml-content">myFunction(); // Outputs: I'm a local variable</p>
+  <p class="text-content ml-content">console.log(localVar); // Error! localVar is not defined</p><br/>
+  <p class="text-content ml-content">In this example, localVar is declared within the function myFunction(). This makes it a local variable, which means it is only accessible within the context of that function. Trying to access localVar outside of myFunction() will result in an error, as demonstrated in the last line.</p>
+  <p class="text-content ml-content">Local variables are useful for storing data that is specific to a particular function and doesn't need to be accessible elsewhere in the program. They also help prevent naming conflicts and improve code organization.</p>
+  <p class="text-content ml-content">Keep in mind that if you declare a variable without using var, let, or const inside a function, it will become a global 
+    variable (or throw an error in strict mode). Therefore, it's a good practice to always use var, let, or const to declare variables, 
+    even within functions, to avoid unintentionally creating global variables.</p><br/>
+  <h4 class="text-subhead font-head"><b>JavaScript Let</b></h4>
+  <p class="text-content ml-content">"let" is a keyword in JavaScript used to declare variables with block scope. It was introduced in ECMAScript 6 (ES6) as an alternative to the older "var" keyword.</p>
+  <p class="text-content ml-content">Here's an example of how you might use "let" in JavaScript:</p>
+  <p class="text-content ml-content">let x = 10;</p>
+  <p class="text-content ml-content">{"if (true) {"}</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;let y = 20;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;console.log(x); // Output: 10</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;console.log(y); // Output: 20</p>
+  <p class="text-content ml-content">{"}"}</p>
+  <p class="text-content ml-content">console.log(x); // Output: 10</p>
+  <p class="text-content ml-content">console.log(y); // Error: y is not defined</p>
+  <p class="text-content ml-content">In this example, x and y are both declared using "let". The key thing to notice is that y is only accessible within the block (the area between the curly braces) where it was declared. This is called block scope. Outside of that block, y is not accessible.</p>
+  <p class="text-content ml-content">In contrast, if you had used var to declare y, it would have function scope, which means it would be accessible throughout the function, regardless of block scopes.</p>
+  <p class="text-content ml-content">var x = 10;</p>
+  <p class="text-content ml-content">{"if (true) {"}</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;var y = 20;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;console.log(x); // Output: 10</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;console.log(y); // Output: 20</p>
+  <p class="text-content ml-content">{"}"}</p>
+  <p class="text-content ml-content">console.log(x); // Output: 10</p>
+  <p class="text-content ml-content">console.log(y); // Output: 20</p><br/>
+  <h4 class="text-subhead font-head"><b>JavaScript var</b></h4>
+  <p class="text-content ml-content">JavaScript var is a keyword used to declare variables in JavaScript that are function scoped. Before the introduction of ES6 all the keywords in JavaScript were declared with only “var” keyword. The var keyword is also used to declare global-scope variables.</p>
+  <b>Syntax:</b></p>
+  <p class="text-content ml-content">var variableName = valueOfVar;</p>
+  <h4 class="text-subhead font-head"><b>Function Scope:</b></h4>
+  <p class="text-content ml-content"> The variables declared inside a function are function scoped and cannot be accessed outside the function. The variables declared with var can only be accessed inside that function and its enclosing function.</p><p class="text-content ml-content">
+  <p class="text-content ml-content">The variables declared using the var keyword are hoisted at the top and are initialized before the execution of code 
+    with a default value of undefined. The variables declared in the global scope that is outside any function cannot be deleted</p><br/>
+  <b>Example 1:</b> In this example, we will declare a global variable and access it anywhere inside the program</p>
+  <p class="text-content ml-content">var test = 12 </p>
+  <p class="text-content ml-content">{"function foo(){ "}</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log(test); </p>
+  <p class="text-content ml-content">{"{"} "}"}</p>
+  <p class="text-content ml-content">foo();</p>
+  <b>Output:</b></p>
+  <p class="text-content ml-content">12</p><br/>
+  <b>Example 2:</b> In this example, we will declare multiple variables in a single statement</p>
+  <p class="text-content ml-content">var test1 = 12, </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;test2= 14, </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;test3 = 16 </p>
+  <p class="text-content ml-content">{"function foo(){ "}</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log(test1, test2, test3); </p>
+  <p class="text-content ml-content">{"} "}</p>
+  <p class="text-content ml-content">foo();</p>
+  <b>Output:</b></p>
+  <p class="text-content ml-content">12 14 16</p><br/>
+  <p class="text-content ml-content">Example 3: In this example, we will see the hoisting of variables declared using var</p>
+  <p class="text-content ml-content">console.log(test); </p>
+  <p class="text-content ml-content">var test = 12;</p>
+  <b>Output:</b></p>
+  <p class="text-content ml-content">undefined</p>
+  <b>Explanation:</b> We get the output without any error because the variable test is hoisted at the top even before the execution of the program began and 
+  the variable is initialized with a default value of undefined</p><br/>
+  <b>Example 4:</b> In this example, we will redeclare a variable in the same global block</p>
+  <p class="text-content ml-content">var test = 12; </p>
+  <p class="text-content ml-content">var test = 100; </p>
+  <p class="text-content ml-content">console.log(test);</p>
+  <b>Output:</b></p>
+  <p class="text-content ml-content">100</p>
+  <b>Explanation:</b> We did not get any error when redeclaring the variable if we did the same with the let keyword an error would be thrown</p><br/>
+  <b>Example 5:</b> In this example, we will redeclare the variable in another scope and see how it is the original variable.</p>
+  <p class="text-content ml-content">var test = 12;</p> 
+  <p class="text-content ml-content">function foo(){ </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;var test = 100; </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log(test);</p>
+  <p class="text-content ml-content">} </p>
+  <p class="text-content ml-content">foo(); </p>
+  <p class="text-content ml-content">console.log(test);</p>
+  <b>Output:</b>
+  <p class="text-content ml-content">100</p>
+  <p class="text-content ml-content">12</p>
+  <b>Explanation:</b> We did not get any error while redeclaring the variable inside another function scope and the original value of the variable is 
+  preserved.<br/>
+  <h4 class="text-subhead font-head"><b>JavaScript Const</b></h4>
+  ES2015 (ES6) introduced the const keyword to define a new variable. The difference in const variable declaration to others is that it cannot be re-assigned.</p>
+  <b>Properties:</b>
+  <li class="ml-points">Cannot be reassigned.</li>
+  <li class="ml-points">It’s Block Scope</li>
+  <li class="ml-points">It can be assigned to the variable on the declaration line.</li>
+  <li class="ml-points">It’s a Primitive value.</li>
+  <li class="ml-points">The property of a const object can be changed but it cannot be changed to a reference to the new object</li>
+  <li class="ml-points">The values inside the const array can be changed, it can add new items to const arrays but it cannot reference a new array.</li>
+  <li class="ml-points">Re-declaring of a const variable inside different block scopes is allowed.</li>
+  <li class="ml-points">Cannot be Hoisted.</li>
+  <li class="ml-points">Creates only read-only references to value.</li><br/>
+  <b>Syntax:</b>
+  <p class="text-content ml-content">const const_name;</p>
+  <p class="text-content ml-content">const x;</p>
+  <b>Example 1:</b> It describes that the const variable cannot be reassigned.</p> 
+  <p class="text-content ml-content">const x = 12; </p>
+  <p class="text-content ml-content">x = 13; </p>
+  <p class="text-content ml-content">x += 1; </p>
+  <b>Output:</b></p><br/>
+  <p class="text-content ml-content">Uncaught TypeError: Assignment to constant variable.</p>
+  <b>Example 2:</b> It describes the const variable which contains the Block Scope. </p>
+  <p class="text-content ml-content">const x = 22; </p>
+  <p class="text-content ml-content">{ </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;const x = 90; </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log(x); </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;{ </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const x = 77; </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(x); </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;} </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;{ </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const x = 45; </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; console.log(x); </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;} </p>
+  <p class="text-content ml-content">} </p>
+  <p class="text-content ml-content">console.log(x); </p>
+  <b>Output:</b> </p>
+  <p class="text-content ml-content">90</p>
+  <p class="text-content ml-content">77</p>
+  <p class="text-content ml-content">45</p>
+  <p class="text-content ml-content">22</p><br/>
+  <b>Example 3:</b> It describes the const variable and assigned it after declaration. </p>
+  <p class="text-content ml-content">const x; </p>
+  <p class="text-content ml-content">x = 12; </p>
+  <b>Output:</b> </p>
+  <p class="text-content ml-content">Uncaught SyntaxError: Missing initializer in const declaration</p><br/>
+  <b>Example 4:</b> It describes the const variable cannot be Hoisted. </p>
+  <p class="text-content ml-content">x = 3; </p>
+  <p class="text-content ml-content">console.log(x); </p>
+  <p class="text-content ml-content">const x; </p>
+  <b>Output:</b></p> 
+  <p class="text-content ml-content">Uncaught SyntaxError: Missing initializer in const declaration</p><br/>
+  <b>Example 5:</b> It describes that the array values can be modified only reference to the array cannot be changed. </p>
+  <p class="text-content ml-content">// Changing the content of array is </p>
+  <p class="text-content ml-content">// possible in cost array </p>
+  <p class="text-content ml-content">const arr1 = ["pankaj", "sumit", "chandan", "ajay"]; </p>
+  <p class="text-content ml-content">console.log(arr1.toString()); </p>
+  <p class="text-content ml-content">arr1[2] = "Narayan"; // possible </p>
+  <p class="text-content ml-content">console.log(arr1.toString()); </p>
+  <b>Output:</b> </p>
+  <p class="text-content ml-content">pankaj, sumit, chandan, ajay</p>
+  <p class="text-content ml-content">pankaj, sumit, Narayan, ajay</p><br/>
+  <b>Example 6:</b> It describes that the object properties can be modified only reference to the object cannot be changed. </p>
+  <p class="text-content ml-content">const person = {"{"} </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;first_name: "Pankaj",</p> 
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;last_name: "Singh",</p> 
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;Age: 20, </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;About: "Web Developer and Competitive Programmer"</p>
+  <p class="text-content ml-content">{"}; "}</p>
+  <p class="text-content ml-content">console.log(person); </p>
+  <p class="text-content ml-content">// It is possible </p>
+  <p class="text-content ml-content">person.first_name = "Aryan"; </p>
+  <p class="text-content ml-content">person.last_name = "Yadav"; </p>
+  <p class="text-content ml-content">person.Age = 22; </p>
+  <p class="text-content ml-content">person.About = "Commerce undergraduate";</p> 
+  <p class="text-content ml-content">console.log(person); </p>
+  <p class="text-content ml-content">// it is not possible </p>
+  <p class="text-content ml-content">{"// const person={"} </p>
+  <p class="text-content ml-content">// "first_name":"Aryan", </p>
+  <p class="text-content ml-content">// "last_name":"Yadav",</p> 
+  <p class="text-content ml-content">// "Age":22, </p>
+  <p class="text-content ml-content">// "About":"Commerce undergraduate" </p>
+  <p class="text-content ml-content">{"// } "}</p><br/>
+  <p class="text-content ml-content">Output:</p>
+  <p class="text-content ml-content">{"{"}</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;first_name: 'Pankaj',</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;last_name: 'Singh',</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;Age: 20,</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;About: 'Web Developer and Competitive Programmer'</p>
+  <p class="text-content ml-content">{"}"}</p>
+  <p class="text-content ml-content">{"{"}</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;first_name: 'Aryan',</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;last_name: 'Yadav',</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;Age: 22,</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;About:'Commerce Undergraduate'</p>
+  <p class="text-content ml-content">{"}&nbsp;&nbsp;"}</p>
+</div>

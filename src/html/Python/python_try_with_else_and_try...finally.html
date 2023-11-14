@@ -1,0 +1,32 @@
+<div>
+  <h4 class="text-subhead font-head">Python try with else clause</h4>
+  <p class="text-content ml-content">In some situations, we might want to run a certain block of code if the code block inside try runs without any errors.</p>  
+  <p class="text-content ml-content">For these cases, you can use the optional else keyword with the try statement.</p><br/> 
+  <h5 class="text-content font-head">Example: program to print the reciprocal of even numbers</h5>  
+  <p class="text-content ml-content">try:</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;num = int(input("Enter a number: "))</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;assert num % 2 == 0</p>
+  <p class="text-content ml-content">except:</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;print("Not an even number!")</p>
+  <p class="text-content ml-content">else:</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;reciprocal = 1/num</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;print(reciprocal)</p><br/>
+  <p class="text-content ml-content font-bold">Note: Exceptions in the else clause are not handled by the preceding except clauses.</p><br/> 
+  <h4 class="text-subhead font-head">Python try...finally</h4>
+  <p class="text-content ml-content">In Python, the finally block is always executed no matter whether there is an exception or not.
+    The finally block is optional. 
+    And, for each try block, there can be only one finally block.
+  </p><br/>
+  <h5 class="text-content font-head">Let's see an example,</h5> 
+  <p class="text-content ml-content">try:</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;numerator = 10</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;denominator = 0</p>  
+  <p class="text-content ml-content">&nbsp;&nbsp;result = numerator/denominator</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;print(result)</p>
+  <p class="text-content ml-content">except:</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;print("Error: Denominator cannot be 0.")</p>
+  <p class="text-content ml-content">finally:</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;print("This is finally block.")</p><br/> 
+  <p class="text-content ml-content">In the above example, we are dividing a number by 0 inside the try block. Here, this code generates an exception.</p> 
+  <p class="text-content ml-content">The exception is caught by the except block. And, then the finally block is executed.</p>
+</div>
