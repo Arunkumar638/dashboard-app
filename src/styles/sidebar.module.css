@@ -1,6 +1,6 @@
 .position{
  position: absolute;
- margin-left:600px;
+ margin-left:610px;
 }
 
 .compile{
@@ -20,6 +20,5 @@
 .editorPosition{
     position: relative;
     margin-top: 70px;
-
     
 }

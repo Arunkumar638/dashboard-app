@@ -68,20 +68,20 @@
       "key":"c_functions",
       "children":[
         {
-          "label":"Function basics",
-          "key":"c_Function basics"
+          "label":"Functions",
+          "key":"c_functions_introduction"
         },{
-          "label":"Function with input parameter example",
-          "key":"c_Function with input parameter example"
+          "label":"Function with parameter",
+          "key":"c_Function_with_input_parameter"
         },{
-          "label":"Function Call by value example",
-          "key":"c_Function Call by value example"
+          "label":"Call by value",
+          "key":"c_Function_call_by_value"
         },{
-          "label":"Function call by reference example",
-          "key":"c_Function call by reference example"
+          "label":"Call by reference ",
+          "key":"c_Function_call_by_reference"
         },{
-          "label":"Recursion and inline function in C",
-          "key":"c_Recursion and inline function in C"
+          "label":"Recursion and inline function",
+          "key":"c_Recursion_and_inline_function"
         }
       ]
     },

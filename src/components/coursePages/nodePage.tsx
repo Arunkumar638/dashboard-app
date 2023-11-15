@@ -78,7 +78,7 @@ const ReactPage: React.FC = () => {
         
           <div className={styles.position}>
             <div className={styles.editorPosition}>
-            <Card title="Node Editor" bordered={true} className={`${collapsed?"w-card-expand":"w-card-collapse"} transition-all duration-500 bg-orange h-card`}>
+            <Card title="Node JS Editor" bordered={true} className={`${collapsed?"w-card-expand":"w-card-collapse"} transition-all duration-500 bg-orange h-card`}>
             <FloatButton
              shape="square"
              type="primary"

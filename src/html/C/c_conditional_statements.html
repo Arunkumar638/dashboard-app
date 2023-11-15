@@ -1,275 +1,276 @@
-<div><h2><b>Simple if Statement</b></h2>
-Simple if statements are carried out to perform some operation when the condition is only true. If the condition of the if statement is true then the statements under the if block is executed else the control is transferred to the statements outside the if block.<br/>  
-<b>Syntax:</b><br/>
-if (condition) {<br/>
-  // block of code to be executed if the condition is true<br/>
-} <br/>
-<b>Example :</b> <br/>
-// Program to display a number if it is negative<br/>
-#include &lt;stdio.h&gt;<br/>
-int main() {<br/>
-    int number;<br/>
-    printf("Enter an integer: ");<br/>
-    scanf("%d", &number);<br/>
-    // true if number is less than 0<br/>
-    if (number < 0) {<br/>
-        printf("You entered %d.\n", number);<br/>
-    }<br/>
-    printf("The if statement is easy.");<br/>
-    return 0;<br/>
-}<br/>
-<b>Output 1</b><br/>
-Enter an integer: -2<br/>
-You entered -2.<br/>
-The if statement is easy.<br/>
-When the user enters -2, the test expression number<0 is evaluated to true. Hence, You entered -2 is displayed on the screen.<br/>
-
-<b>Output 2</b><br/>
-Enter an integer: 5<br/>
-The if statement is easy.<br/>
-When the user enters 5, the test expression number<0 is evaluated to false and the statement inside the body of if is not executed<br/>
-<h2><b>If-else Statement</b></h2> 
-In some situations, you may have to execute statements based on true or false under certain conditions, therefore; you use if-else statements. If the condition is true, then if block will be executed otherwise the else block is executed.<br/>
-<b>Syntax:</b><br/>
-if (condition) {<br/>
-  // block of code to be executed if the condition is true<br/>
-} else {<br/>
-  // block of code to be executed if the condition is false<br/>
-}         <br/>           
-<b>Example :</b><br/>
-// Check whether an integer is odd or even<br/>
-#include &lt;stdio.h&gt;<br/>
-int main() {<br/>
-    int number;<br/>
-    printf("Enter an integer: ");<br/>
-    scanf("%d", &number);<br/>
-    // True if the remainder is 0<br/>
-    if  (number%2 == 0) {<br/>
-        printf("%d is an even integer.",number);<br/>
-    }<br/>
-    else {<br/>
-        printf("%d is an odd integer.",number);<br/>
-    }<br/>
-
-    return 0;<br/>
-}<br/>
-<b>Output</b><br/>
-Enter an integer: 7<br/>
-7 is an odd integer.<br/>
-When the user enters 7, the test expression number%2==0 is evaluated to false. Hence, the statement inside the body of else is executed.<br/>
-<h2><b>Nested if-else Statements</b></h2>
-	<li>The nested if-else statements consist of another if or else. Therefore; if the condition of “if” is true (i.e., an outer if) then outer if’s if block is executed which contains another if (that is inner if) and if the condition of if block is true, statements under if block will be executed else the statements of inner if’s “else” block will be executed.<br/>
-	<li>If the outer “if” condition is not true then the outer if’s “else” block is executed which consists of another if. The outer else’s inner if the condition is true then the statement under outer else’s inner if is executed else the outer else’s else block is executed. <br/> 
-<b>Syntax:</b><br/>
-if (condition1) {  <br/>
-   /* code to be executed if condition1 is true */<br/>  
-   if (condition2) {  <br/>
-      /* code to be executed if condition2 is true */  <br/>
-   } else {  <br/>
-      /* code to be executed if condition2 is false */  <br/>
-   }  <br/>
-} else {  <br/>
-   /* code to be executed if condition1 is false */  <br/>
-}  <br/>
-<b>Example:</b><br/>
+<div>
+    <h2 class="text-subhead font-head"><b>Simple if Statement</b></h2>
+    <p class="text-content ml-content">Simple if statements are carried out to perform some operation when the condition is only true. If the condition of the if statement is true then the statements under the if block is executed else the control is transferred to the statements outside the if block.
+    <br/><br/>
+    <b>Syntax:</b><br/>
+    if (condition) {<br/>
+      // block of code to be executed if the condition is true<br/>
+    } <br/><br/>
+    <b>Example :</b> <br/>
+    // Program to display a number if it is negative<br/>
     #include &lt;stdio.h&gt;<br/>
-      int main() {  <br/>
-       int num;  <br/>
-    printf("Enter a number: ");  <br/>
-    scanf("%d", &num);  <br/>
-      if (num > 0) { <br/> 
-    printf("%d is positive.\n", num); <br/> 
+    int main() {<br/>
+    &nbsp;&nbsp;int number;<br/>
+    &nbsp;&nbsp;printf("Enter an integer: ");<br/>
+    &nbsp;&nbsp;scanf("%d", &number);<br/>
+    &nbsp;&nbsp;// true if number is less than 0<br/>
+    &nbsp;&nbsp;if (number &lt; 0) {<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;printf("You entered %d.\n", number);<br/>
+    &nbsp;&nbsp;}<br/>
+    &nbsp;&nbsp;printf("The if statement is easy.");<br/>
+    &nbsp;&nbsp;return 0;<br/>
+    }<br/><br/>
+    <b>Output 1</b><br/>
+    Enter an integer: -2<br/>
+    You entered -2.<br/>
+    The if statement is easy.<br/>
+    When the user enters -2, the test expression number &lt; 0 is evaluated to true. Hence, You entered -2 is displayed on the screen.<br/><br/>
+    <b>Output 2</b><br/>
+    Enter an integer: 5<br/>
+    The if statement is easy.<br/>
+    When the user enters 5, the test expression number &lt; 0 is evaluated to false and the statement inside the body of if is not executed</p><br/><br/>
+    <h2 class="text-subhead font-head"><b>If-else Statement</b></h2> 
+    <p class="text-content ml-content">In some situations, you may have to execute statements based on true or false under certain conditions, therefore; you use if-else statements. If the condition is true, then if block will be executed otherwise the else block is executed.<br/>
+    <b>Syntax:</b><br/>
+    if (condition) {<br/>
+      // block of code to be executed if the condition is true<br/>
+    } else {<br/>
+      // block of code to be executed if the condition is false<br/>
+    }&nbsp;&nbsp;&nbsp;&nbsp; <br/><br/> 
+    <b>Example :</b><br/>
+    // Check whether an integer is odd or even<br/>
+    #include &lt;stdio.h&gt;<br/>
+    int main() {<br/>
+    &nbsp;&nbsp;int number;<br/>
+    &nbsp;&nbsp;printf("Enter an integer: ");<br/>
+    &nbsp;&nbsp;scanf("%d", &number);<br/>
+    &nbsp;&nbsp;// True if the remainder is 0<br/>
+    &nbsp;&nbsp;if  (number%2 == 0) {<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;printf("%d is an even integer.",number);<br/>
+    &nbsp;&nbsp;}<br/>
+    &nbsp;&nbsp;else {<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;printf("%d is an odd integer.",number);<br/>
+    &nbsp;&nbsp;}<br/>
+    
+    &nbsp;&nbsp;return 0;<br/>
+    }<br/><br/>
+    <b>Output</b><br/>
+    Enter an integer: 7<br/>
+    7 is an odd integer.<br/>
+    When the user enters 7, the test expression number%2==0 is evaluated to false. Hence, the statement inside the body of else is executed.</p><br/>
+    <h2 class="text-subhead font-head"><b>Nested if-else Statements</b></h2>
+    &nbsp;&nbsp;<p class="text-content ml-content"><li>The nested if-else statements consist of another if or else. Therefore; if the condition of “if” is true (i.e., an outer if) then outer if’s if block is executed which contains another if (that is inner if) and if the condition of if block is true, statements under if block will be executed else the statements of inner if’s “else” block will be executed.</li><br/>
+    &nbsp;&nbsp;<li>If the outer “if” condition is not true then the outer if’s “else” block is executed which consists of another if. The outer else’s inner if the condition is true then the statement under outer else’s inner if is executed else the outer else’s else block is executed.</li><br/><br/>
+    <b>Syntax:</b><br/>
+    if (condition1) {  <br/>
+       /* code to be executed if condition1 is true */<br/>  
+       if (condition2) {  <br/>
+    &nbsp;&nbsp;  /* code to be executed if condition2 is true */  <br/>
        } else {  <br/>
-          if (num < 0) { <br/> 
-    printf("%d is negative.\n", num);<br/>  
-          } else {  <br/>
-    printf("%d is zero.\n", num);  <br/>
-          }  <br/>
+    &nbsp;&nbsp;  /* code to be executed if condition2 is false */  <br/>
        }  <br/>
-             return 0; <br/> 
-    }  <br/>
-<b>Output</b><br/>
-Let's run the above program with some sample inputs and see the output.<br/>
-
-Enter a number: 10<br/>
-10 is positive.<br/>
-
-Enter a number: -5<br/>
--5 is negative.<br/>
-
-Enter a number: 0<br/>
-0 is zero.<br/>
-
-<h2><b>else-if ladder</b></h2>
-if else if ladder in C programming is used to test a series of conditions sequentially. Furthermore, if a condition is tested only when all previous if conditions in the if-else ladder are false. If any of the conditional expressions evaluate to be true, the appropriate code block will be executed, and the entire if-else ladder will be terminated.<br/>
-<b>Syntax:</b><br/>
-// any if-else ladder starts with an if statement only<br/>
-if(condition) {  <br/>
-}<br/>
-else if(condition) { <br/>
- // this else if will be executed when condition in if is false and<br/>
- // the condition of this else if is true<br/>
-}<br/>
-.... // once if-else ladder can have multiple else if <br/>
-else { // at the end we put else     <br/> 
-}<br/>
-<b>Example</b> <br/>
-#include &lt;stdio.h&gt;<br/>
-int main()<br/>
-{<br/>
-    int marks = 91;<br/>
-    if (marks <= 100 && marks >= 90)<br/>
-        printf("A+ Grade");<br/>
-    else if (marks < 90 && marks >= 80)<br/>
-        printf("A Grade");<br/>
-    else if (marks < 80 && marks >= 70)<br/>
-        printf("B Grade");<br/>
-    else if (marks < 70 && marks >= 60)<br/>
-        printf("C Grade");<br/>
-    else if (marks < 60 && marks >= 50)<br/>
-        printf("D Grade");<br/>
-    else<br/>
-        printf("F Failed");<br/>
-    return 0;<br/>
-}<br/>
-<b>Output</b><br/>
-	A+ Grade<br/>
-
-<h2><b>Switch Statement</b></h2>
-
-The switch statement allows us to execute one code block among many alternatives.<br/>
-
-You can do the same thing with the if...else..if ladder. However, the syntax of the switch statement is much easier to read and write.<br/>
-<b>Syntax</b> <br/>
-switch (expression)<br/>
-{<br/>
-    case constant1:<br/>
-      // statements<br/>
-      break;<br/>
-    case constant2:<br/>
-      // statements<br/>
-      break;<br/>
-    .<br/>
-    .<br/>
-    .<br/>
-    default:<br/>
-      // default statements<br/>
-}<br/>
-
-<b>How does the switch statement work?</b><br/>
-
-The expression is evaluated once and compared with the values of each case label.<br/>
-
-    If there is a match, the corresponding statements after the matching label are executed. For example, if the value of the expression is equal to constant2, statements after case constant2: are executed until break is encountered.<br/>
-    If there is no match, the default statements are executed.<br/>
-
-<b>Notes:</b><br/>
-
-    If we do not use the break statement, all statements after the matching label are also executed.
-    The default clause inside the switch statement is optional.<br/>
-
-<b>Example: Simple Calculator</b><br/>
-
-// Program to create a simple calculator<br/>
-#include &lt;stdio.h&gt;<br/>
-
-int main() {<br/>
-    char operation;<br/>
-    double n1, n2;<br/>
-
-    printf("Enter an operator (+, -, *, /): ");<br/>
-    scanf("%c", &operation);<br/>
-    printf("Enter two operands: ");<br/>
-    scanf("%lf %lf",&n1, &n2);<br/>
-
-    switch(operation)<br/>
-    {<br/>
-        case '+':<br/>
-            printf("%.1lf + %.1lf = %.1lf",n1, n2, n1+n2);<br/>
-            break;<br/>
-
-        case '-':<br/>
-            printf("%.1lf - %.1lf = %.1lf",n1, n2, n1-n2);<br/>
-            break;<br/>
-
-        case '*':<br/>
-            printf("%.1lf * %.1lf = %.1lf",n1, n2, n1*n2);<br/>
-            break;<br/>
-
-        case '/':<br/>
-            printf("%.1lf / %.1lf = %.1lf",n1, n2, n1/n2);<br/>
-            break;<br/>
-
-        // operator doesn't match any case constant +, -, *, /<br/>
-        default:<br/>
-            printf("Error! operator is not correct");<br/>
+    } else {  <br/>
+       /* code to be executed if condition1 is false */  <br/>
+    }  <br/><br/>
+    <b>Example:</b><br/>
+    &nbsp;&nbsp;#include &lt;stdio.h&gt;<br/>
+    &nbsp;&nbsp;  int main() {<br/>
+    &nbsp;&nbsp;   int num;<br/>
+    &nbsp;&nbsp;printf("Enter a number: ");<br/>
+    &nbsp;&nbsp;scanf("%d", &num);<br/>
+    &nbsp;&nbsp;  if (num > 0) {<br/> 
+    &nbsp;&nbsp;printf("%d is positive.\n", num); <br/> 
+    &nbsp;&nbsp;   } else {<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;  if (num &lt; 0) {<br/> 
+    &nbsp;&nbsp;printf("%d is negative.\n", num);<br/>  
+    &nbsp;&nbsp;&nbsp;&nbsp;  } else {<br/>
+    &nbsp;&nbsp;printf("%d is zero.\n", num);<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;  }<br/>
+    &nbsp;&nbsp;   }<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 0; <br/> 
+    &nbsp;&nbsp;}<br/><br/>
+    <b>Output</b><br/>
+    Let's run the above program with some sample inputs and see the output.<br/>
+    
+    Enter a number: 10<br/>
+    10 is positive.<br/>
+    
+    Enter a number: -5<br/>
+    -5 is negative.<br/>
+    
+    Enter a number: 0<br/>
+    0 is zero.</p><br/>
+    
+    <h2 class="text-subhead font-head"><b>else-if ladder</b></h2>
+    <p class="text-content ml-content">else if ladder in C programming is used to test a series of conditions sequentially. Furthermore, if a condition is tested only when all previous if conditions in the if-else ladder are false. If any of the conditional expressions evaluate to be true, the appropriate code block will be executed, and the entire if-else ladder will be terminated.<br/><br/>
+    <b>Syntax:</b><br/>
+    // any if-else ladder starts with an if statement only<br/>
+    if(condition) {  <br/>
     }<br/>
-
-    return 0;<br/>
-}<br/>
-<b>Output</b><br/>
-Enter an operator (+, -, *, /): -<br/>
-Enter two operands: 32.5<br/>
-12.4<br/>
-32.5 - 12.4 = 20.1<br/>
-
-The - operator entered by the user is stored in the operation variable. And, two operands 32.5 and 12.4 are stored in variables n1 and n2 respectively.<br/>
-
-Since the operation is -, the control of the program jumps to<br/>
-
-printf("%.1lf - %.1lf = %.1lf", n1, n2, n1-n2);<br/>
-
-Finally, the break statement terminates the switch statement.<br/>
-<h2><b>Nested Switch in C</b></h2>
-
-In C, we can use a nested switch statement, where a switch statement is placed inside another switch statement.<br/>
-
-If the case constants of both the inner and outer switch statements have the same value, there will be no issues with the code.<br/>
-
-The syntax of the nested switch case in c is as follows:<br/>
-
-switch (expression1) {<br/>
-   case 1:<br/>
-      printf("Outer Switch");<br/>
-      switch (expression2) {<br/>
-         case 1:<br/>
-            printf("Inner Switch");<br/>
-            break;<br/>
-         case 2:<br/>
-            statements;<br/>
-      }<br/>
-      break;<br/>
-   case 2:<br/>
-      statements;<br/>
-}<br/>
-
-C program for Nested switch case<br/>
-
-#include &lt;stdio.h&gt;<br/>
-
-int main() {<br/>
-   int a = 10;<br/>
-   int b = 20;<br/>
-
-   switch (a) {<br/>
-      case 10:
-         printf("Outer switch\n");<br/>
-
-         switch (b) {<br/>
-            case 20:<br/>
-               printf("Inner switch\n");<br/>
-         }<br/>
-   }<br/>
-   printf("Value of a is: %d\n", a);<br/>
-   printf("Value of b is: %d\n", b);<br/>
-
-   return 0;<br/>
-}<br/>
-
-<b>Output</b><br/>
-
-Outer switch<br/>
-Inner switch<br/>
-Value of a is :10<br/>
-Value of b is :20<br/>
-</div>
+    else if(condition) { <br/>
+     // this else if will be executed when condition in if is false and<br/>
+     // the condition of this else if is true<br/>
+    }<br/>
+    .... // once if-else ladder can have multiple else if <br/>
+    else { // at the end we put else<br/> 
+    }<br/><br/>
+    <b>Example</b> <br/>
+    #include &lt;stdio.h&gt;<br/>
+    int main()<br/>
+    {<br/>
+    &nbsp;&nbsp;int marks = 91;<br/>
+    &nbsp;&nbsp;if (marks &lt;= 100 && marks >= 90)<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;printf("A+ Grade");<br/>
+    &nbsp;&nbsp;else if (marks &lt; 90 && marks >= 80)<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;printf("A Grade");<br/>
+    &nbsp;&nbsp;else if (marks &lt; 80 && marks >= 70)<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;printf("B Grade");<br/>
+    &nbsp;&nbsp;else if (marks &lt; 70 && marks >= 60)<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;printf("C Grade");<br/>
+    &nbsp;&nbsp;else if (marks &lt; 60 && marks >= 50)<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;printf("D Grade");<br/>
+    &nbsp;&nbsp;else<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;printf("F Failed");<br/>
+    &nbsp;&nbsp;return 0;<br/>
+    }<br/><br/>
+    <b>Output</b><br/>
+    &nbsp;&nbsp;A+ Grade</p><br/>
+    
+    <h2 class="text-subhead font-head"><b>Switch Statement</b></h2>
+    
+    <p class="text-content ml-content">The switch statement allows us to execute one code block among many alternatives.<br/>
+    
+    You can do the same thing with the if...else..if ladder. However, the syntax of the switch statement is much easier to read and write.<br/><br/>
+    <b>Syntax</b> <br/>
+    switch (expression)<br/>
+    {<br/>
+    &nbsp;&nbsp;case constant1:<br/>
+    &nbsp;&nbsp;  // statements<br/>
+    &nbsp;&nbsp;  break;<br/>
+    &nbsp;&nbsp;case constant2:<br/>
+    &nbsp;&nbsp;  // statements<br/>
+    &nbsp;&nbsp;  break;<br/>
+    &nbsp;&nbsp;.<br/>
+    &nbsp;&nbsp;.<br/>
+    &nbsp;&nbsp;.<br/>
+    &nbsp;&nbsp;default:<br/>
+    &nbsp;&nbsp;  // default statements<br/>
+    }<br/><br/>
+    
+    <b>How does the switch statement work?</b><br/>
+    
+    The expression is evaluated once and compared with the values of each case label.<br/>
+    
+    &nbsp;&nbsp;If there is a match, the corresponding statements after the matching label are executed. For example, if the value of the expression is equal to constant2, statements after case constant2: are executed until break is encountered.<br/>
+    &nbsp;&nbsp;If there is no match, the default statements are executed.<br/><br/>
+    
+    <b>Notes:</b><br/>
+    
+    &nbsp;&nbsp;If we do not use the break statement, all statements after the matching label are also executed.
+    &nbsp;&nbsp;The default clause inside the switch statement is optional.<br/><br/>
+    
+    <b>Example: Simple Calculator</b><br/>
+    
+    // Program to create a simple calculator<br/>
+    #include &lt;stdio.h&gt;<br/>
+    
+    int main() {<br/>
+    &nbsp;&nbsp;char operation;<br/>
+    &nbsp;&nbsp;double n1, n2;<br/>
+    
+    &nbsp;&nbsp;printf("Enter an operator (+, -, *, /): ");<br/>
+    &nbsp;&nbsp;scanf("%c", &operation);<br/>
+    &nbsp;&nbsp;printf("Enter two operands: ");<br/>
+    &nbsp;&nbsp;scanf("%lf %lf",&n1, &n2);<br/>
+    
+    &nbsp;&nbsp;switch(operation)<br/>
+    &nbsp;&nbsp;{<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;case '+':<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%.1lf + %.1lf = %.1lf",n1, n2, n1+n2);<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;case '-':<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%.1lf - %.1lf = %.1lf",n1, n2, n1-n2);<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;case '*':<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%.1lf * %.1lf = %.1lf",n1, n2, n1*n2);<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;case '/':<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%.1lf / %.1lf = %.1lf",n1, n2, n1/n2);<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;// operator doesn't match any case constant +, -, *, /<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;default:<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Error! operator is not correct");<br/>
+    &nbsp;&nbsp;}<br/>
+    
+    &nbsp;&nbsp;return 0;<br/>
+    }<br/><br/>
+    <b>Output</b><br/>
+    Enter an operator (+, -, *, /): -<br/>
+    Enter two operands: 32.5<br/>
+    12.4<br/>
+    32.5 - 12.4 = 20.1<br/><br/>
+    
+    The - operator entered by the user is stored in the operation variable. And, two operands 32.5 and 12.4 are stored in variables n1 and n2 respectively.<br/><br/>
+    
+    Since the operation is -, the control of the program jumps to<br/><br/>
+    
+    printf("%.1lf - %.1lf = %.1lf", n1, n2, n1-n2);<br/><br/>
+    
+    Finally, the break statement terminates the switch statement.</p><br/><br/>
+    <h2 class="text-subhead font-head"><b>Nested Switch in C</b></h2>
+    
+    <p class="text-content ml-content">In C, we can use a nested switch statement, where a switch statement is placed inside another switch statement.<br/>
+    
+    If the case constants of both the inner and outer switch statements have the same value, there will be no issues with the code.<br/>
+    
+    The syntax of the nested switch case in c is as follows:<br/><br/>
+    
+    switch (expression1) {<br/>
+       case 1:<br/>
+    &nbsp;&nbsp;  printf("Outer Switch");<br/>
+    &nbsp;&nbsp;  switch (expression2) {<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp; case 1:<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Inner Switch");<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp; case 2:<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements;<br/>
+    &nbsp;&nbsp;  }<br/>
+    &nbsp;&nbsp;  break;<br/>
+       case 2:<br/>
+    &nbsp;&nbsp;  statements;<br/>
+    }<br/><br/>
+    
+    C program for Nested switch case<br/>
+    
+    #include &lt;stdio.h&gt;<br/>
+    
+    int main() {<br/>
+       int a = 10;<br/>
+       int b = 20;<br/>
+    
+       switch (a) {<br/>
+    &nbsp;&nbsp;  case 10:
+    &nbsp;&nbsp;&nbsp;&nbsp; printf("Outer switch\n");<br/>
+    
+    &nbsp;&nbsp;&nbsp;&nbsp; switch (b) {<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 20:<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   printf("Inner switch\n");<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp; }<br/>
+       }<br/>
+       printf("Value of a is: %d\n", a);<br/>
+       printf("Value of b is: %d\n", b);<br/>
+    
+       return 0;<br/>
+    }<br/><br/>
+    
+    <b>Output</b><br/>
+    
+    Outer switch<br/>
+    Inner switch<br/>
+    Value of a is :10<br/>
+    Value of b is :20</p><br/>
+    </div>

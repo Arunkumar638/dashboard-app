@@ -97,7 +97,7 @@ const Python: React.FC = () => {
             <Editor 
             height="400px" 
             defaultLanguage="python" 
-            defaultValue="# Enter your code here" 
+            defaultValue="// Enter your code here" 
             onChange={handleEditorChange} 
             value={value}   
             options={{wordWrap:'on'}}                 

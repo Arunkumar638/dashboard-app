@@ -36,7 +36,7 @@ const config: Config = {
 
       },
       height:{
-        'card-content':'50.3rem',
+        'card-content':'50rem',
         'card-output':'17.5rem',
         'button':'2.1875rem',
         'profile':'1.875rem',

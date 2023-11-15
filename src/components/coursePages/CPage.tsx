@@ -74,6 +74,7 @@ const CLang: React.FC = () => {
       <Layout className=' bg-gradient-to-r from-orange to-coral'>
       <Header style={{ padding: 0}} className='bg-gradient-to-r from-orange to-coral shadow-lg'>
         <Button type="primary" icon={<ArrowLeftOutlined />} className='ml-top bg-blue' onClick={route}>Dashboard</Button>
+        {/* <img src="/Assets/datatypes.jpg" height="400" width="500"/> */}
         </Header>
         
           <div className={styles.position}>
@@ -96,7 +97,7 @@ const CLang: React.FC = () => {
             <Editor 
             height="400px" 
             defaultLanguage="c" 
-            defaultValue="//Enter your code here" 
+            defaultValue="// Enter your code here" 
             onChange={handleEditorChange} 
             value={value}   
             options={{wordWrap:'on'}}                 
