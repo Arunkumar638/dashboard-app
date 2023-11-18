@@ -1,27 +1,49 @@
 <div>
-    <h3 class="text-subhead font-head">Install the MongoDB Node.js Driver</h3>
-    <li class="text-content ml-content">Create a new file named mongodb-nodejs and go to the current folder mongodb-nodejs with CLI (Command Line Interface) as shown below:</li>
-    <p class="text-content ml-content"><b>mkdir mongodb-nodejs</b></p>
-    <p class="text-content ml-content"><b>cd mongodb-nodejs</b></p><br/>
-    <li class="text-content ml-content">Create a new node project with npm that add the package.json file inside mongodb-nodejs folder</li>
-    <p class="text-content ml-content"><b>npm init -y</b></p><br/>
-    <li class="text-content ml-content">Install the mongodb driver for nodejs to use the MongoDB database with nodejs</li>
-    <p class="text-content ml-content"><b>npm install mongodb --save</b></p><br/>
-    <li class="text-content ml-content">mongodb driver helps us to connect and easily manage queries in MongoDB with nodejs.</li><br/>
-    <h3><b>Connecting to The Local MongoDB Database</b></h3>
-    <li class="text-content ml-content">We will define a path to store data for MongoDB on the local machine. We will add the path C:\Program Files\MongoDB\data\db. Also, We make sure that the specified path/folder exists.</li>
-    <p class="text-content ml-content"><b>mongod --dbpath 'C:\Program Files\MongoDB\data\db'</b></p><br/>
-    <li class="text-content ml-content">In the above code block, We are using --dbpath to add a path for the MongoDB database and start the server locally.</li><br/>
-    <h3 class="text-subhead font-head">Configuring The MongoDB Node.js Connection</h3>
-    <li class="text-content ml-content">Create a file named server.js and add the following code to the server.js file</li>
-    <p class="text-content ml-content">const { MongoClient } = require('mongodb')</p>
-    <p class="text-content ml-content">// Create Instance of MongoClient for mongodb</p>
-    <p class="text-content ml-content">const client = new MongoClient('mongodb://localhost:27017')</p>
-    <p class="text-content ml-content">// Connect to database</p>
-    <p class="text-content ml-content">client.connect()</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;.then(() => console.log('Connected Successfully'))</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;.catch(error => console.log('Failed to connect', error))</p>
-    <li class="text-content ml-content">Run the node server.js command and We will see the following output</li>
-    <p class="text-content ml-content"><b>$ node server.js</b></p>
-    <p class="text-content ml-content">Connected Successfully!</p>
-    </div>
+  <h3 class="text-subhead font-head">Install the MongoDB Node.js Driver</h3>
+  <li class="text-content ml-content">
+    Create a new file named mongodb-nodejs and go to the current folder mongodb-nodejs with CLI (Command Line Interface)
+    as shown below:
+  </li>
+  <p class="text-content ml-content"><b>mkdir mongodb-nodejs</b></p>
+  <p class="text-content ml-content"><b>cd mongodb-nodejs</b></p>
+  <br />
+  <li class="text-content ml-content">
+    Create a new node project with npm that add the package.json file inside mongodb-nodejs folder
+  </li>
+  <p class="text-content ml-content"><b>npm init -y</b></p>
+  <br />
+  <li class="text-content ml-content">Install the mongodb driver for nodejs to use the MongoDB database with nodejs</li>
+  <p class="text-content ml-content"><b>npm install mongodb --save</b></p>
+  <br />
+  <li class="text-content ml-content">
+    mongodb driver helps us to connect and easily manage queries in MongoDB with nodejs.
+  </li>
+  <br />
+  <h3><b>Connecting to The Local MongoDB Database</b></h3>
+  <li class="text-content ml-content">
+    We will define a path to store data for MongoDB on the local machine. We will add the path C:\Program
+    Files\MongoDB\data\db. Also, We make sure that the specified path/folder exists.
+  </li>
+  <p class="text-content ml-content"><b>mongod --dbpath 'C:\Program Files\MongoDB\data\db'</b></p>
+  <br />
+  <li class="text-content ml-content">
+    In the above code block, We are using --dbpath to add a path for the MongoDB database and start the server locally.
+  </li>
+  <br />
+  <h3 class="text-subhead font-head">Configuring The MongoDB Node.js Connection</h3>
+  <li class="text-content ml-content">
+    Create a file named server.js and add the following code to the server.js file
+  </li>
+  <p class="text-content ml-content">const { MongoClient } = require('mongodb')</p>
+  <p class="text-content ml-content">// Create Instance of MongoClient for mongodb</p>
+  <p class="text-content ml-content">const client = new MongoClient('mongodb://localhost:27017')</p>
+  <p class="text-content ml-content">// Connect to database</p>
+  <p class="text-content ml-content">client.connect()</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;.then(() => console.log('Connected Successfully'))</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;.catch(error => console.log('Failed to connect', error))
+  </p>
+  <li class="text-content ml-content">Run the node server.js command and We will see the following output</li>
+  <p class="text-content ml-content"><b>$ node server.js</b></p>
+  <p class="text-content ml-content">Connected Successfully!</p>
+</div>

@@ -1,13 +1,28 @@
 <div>
-  <h4 class="text-subhead font-head">Writing file Asynchronously</h4> 
-  <p class="text-content ml-content">For writing a file asynchronously, we need to use the fs.writeFile() function. It will follow the same process that we followed in the reading file asynchronously. Instead of read we will use fs.writeFile(). It is the easiest way to write data files in Node.Js.</p> 
-  <p class="text-content ml-content">This function takes three arguments - the file name, the data to write, and a callback function. The callback() function only accepts one argument for error handling in this case.</p><br/>
-  <p class="text-content ml-content">const fs = require('fs'); </p>
-  <p class="text-content ml-content">const data = "This is the new content of the file."; </p>
-  <p class="text-content ml-content">fs.writeFile('file.txt', data, (err) => { </p>
-  <p class="text-content ml-content">if(err) { </p>
-  <p class="text-content ml-content">throw err; </p>
-  <p class="text-content ml-content">console.log("Data has been written to file successfully."); </p>
-  <p class="text-content ml-content">}); </p><br/>
-  <p class="text-content ml-content">Our file has been successfully created using the text that we specified previously. This is how you can use NodeJS to read and write files asynchronously.</p>
-  </div>
+  <h4 class="text-subhead font-head">Writing file Asynchronously</h4>
+  <p class="text-content ml-content">
+    For writing a file asynchronously, we need to use the fs.writeFile() function. It will follow the same process that
+    we followed in the reading file asynchronously. Instead of read we will use fs.writeFile(). It is the easiest way to
+    write data files in Node.Js.
+  </p>
+  <p class="text-content ml-content">
+    This function takes three arguments - the file name, the data to write, and a callback function. The callback()
+    function only accepts one argument for error handling in this case.
+  </p>
+  <br />
+  <p class="text-content ml-content">const fs = require('fs');</p>
+  <p class="text-content ml-content">const data = "This is the new content of the file.";</p>
+  <p class="text-content ml-content">fs.writeFile('file.txt', data, (err) => {</p>
+  <p class="text-content ml-content">if(err) {</p>
+  <p class="text-content ml-content">throw err;</p>
+  <p class="text-content ml-content">
+    console.log("Data has been written to file successfully.");<br />
+    }
+  </p>
+  <p class="text-content ml-content">});</p>
+  <br />
+  <p class="text-content ml-content">
+    Our file has been successfully created using the text that we specified previously. This is how you can use NodeJS
+    to read and write files asynchronously.
+  </p>
+</div>

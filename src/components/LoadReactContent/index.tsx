@@ -1,1 +1,1 @@
-export {default} from "./LoadReactContent";
+export { default } from './LoadReactContent';

@@ -21,29 +21,14 @@
     "DescribeImageScanFindings": {
       "input_token": "nextToken",
       "limit_key": "maxResults",
-      "non_aggregate_keys": [
-        "registryId",
-        "repositoryName",
-        "imageId",
-        "imageScanStatus",
-        "imageScanFindings"
-      ],
+      "non_aggregate_keys": ["registryId", "repositoryName", "imageId", "imageScanStatus", "imageScanFindings"],
       "output_token": "nextToken",
-      "result_key": [
-        "imageScanFindings.findings",
-        "imageScanFindings.enhancedFindings"
-      ]
+      "result_key": ["imageScanFindings.findings", "imageScanFindings.enhancedFindings"]
     },
     "GetLifecyclePolicyPreview": {
       "input_token": "nextToken",
       "limit_key": "maxResults",
-      "non_aggregate_keys": [
-        "registryId",
-        "repositoryName",
-        "lifecyclePolicyText",
-        "status",
-        "summary"
-      ],
+      "non_aggregate_keys": ["registryId", "repositoryName", "lifecyclePolicyText", "status", "summary"],
       "output_token": "nextToken",
       "result_key": "previewResults"
     },

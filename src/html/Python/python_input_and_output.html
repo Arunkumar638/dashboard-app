@@ -1,72 +1,98 @@
 <div>
-  <h3 class="text-head font-head">Input and Output:</h3><br/>
+  <h3 class="text-head font-head">Input and Output:</h3>
+  <br />
   <h4 class="text-subhead font-head">Input:</h4>
-  <p class="text-content ml-content">While programming, we might want to take the input from the user. 
-    In Python, we can use the input() function.
-  </p><br/>
-  <h3 class="text-content font-head">Syntax:</h5>
+  <p class="text-content ml-content">
+    While programming, we might want to take the input from the user. In Python, we can use the input() function.
+  </p>
+  <br />
+  <h3 class="text-content font-head">Syntax:</h3>
   <p class="text-content ml-content">input(prompt)</p>
   <p class="text-content ml-content">Here, prompt is the string we wish to display on the screen. It is optional.</p>
-  <h3 class="text-content font-head">Example 1:</h5>
+  <h3 class="text-content font-head">Example 1:</h3>
   <p class="text-content ml-content"># Here we take input from the user and then display it.</p>
   <p class="text-content ml-content">name = input("Enter your first name: ")</p>
   <p class="text-content ml-content">print("Hey! " + name)</p>
-  <h3 class="text-content font-head">Example 2:</h5>
+  <h3 class="text-content font-head">Example 2:</h3>
   <p class="text-content ml-content"># Taking input from the user as integer</p>
   <p class="text-content ml-content">num = int(input("Enter a number: "))</p>
-  <p class="text-content ml-content"> add = num + 1</p>
-  <p class="text-content ml-content"> # Output</p>
+  <p class="text-content ml-content">add = num + 1</p>
+  <p class="text-content ml-content"># Output</p>
   <p class="text-content ml-content">print(add)</p>
-  <h3 class="text-content font-head">Example 3:</h5>
+  <h3 class="text-content font-head">Example 3:</h3>
   <p class="text-content ml-content"># Here we will take two numbers as input from the user.</p>
   <p class="text-content ml-content">num2 = float(input("Enter second number: "))</p>
   <p class="text-content ml-content">mul = num1 * num2</p>
   <p class="text-content ml-content">print("The multiplication of num1 & num2 is: %.2f" % mul)</p>
-  <p class="text-content ml-content">In the print() statement we have mentioned “%.2f”. 
-    This “.2” specifies that the answer that is to be printed should be up to 2 decimal places.
-  </p><br/>
-  <h4 class="text-subhead font-head">Output:</h4>
-  <p class="text-content ml-content">We use the widely used print() statement to display some data on the screen. 
-    We can output the particular data on some device(screen) or even in some file.
+  <p class="text-content ml-content">
+    In the print() statement we have mentioned “%.2f”. This “.2” specifies that the answer that is to be printed should
+    be up to 2 decimal places.
   </p>
-  <p class="text-content ml-content">Let’s take an example to display a simple text.</p><br/>
-  <h3 class="text-content font-head">Example:</h5>
+  <br />
+  <h4 class="text-subhead font-head">Output:</h4>
+  <p class="text-content ml-content">
+    We use the widely used print() statement to display some data on the screen. We can output the particular data on
+    some device(screen) or even in some file.
+  </p>
+  <p class="text-content ml-content">Let’s take an example to display a simple text.</p>
+  <br />
+  <h3 class="text-content font-head">Example:</h3>
   <p class="text-content ml-content">print("Welcome to Gyroneb.")</p>
-  <h3 class="text-content font-head">Output:</h5>
+  <h3 class="text-content font-head">Output:</h3>
   <p class="text-content ml-content">Welcome to Gyroneb.</p>
-  <p class="text-content ml-content">Don’t worry much about double or single quotes. Either of them will work fine in python.</p>
-  <p class="text-content ml-content">let’s understand the actual syntax of the print() function. 
-    This function takes some additional arguments other than objects/values that offer more control over the output format.
-  </p><br/>
+  <p class="text-content ml-content">
+    Don’t worry much about double or single quotes. Either of them will work fine in python.
+  </p>
+  <p class="text-content ml-content">
+    let’s understand the actual syntax of the print() function. This function takes some additional arguments other than
+    objects/values that offer more control over the output format.
+  </p>
+  <br />
   <h4 class="text-subhead font-head">Additional Arguments:</h4>
   <p class="text-content ml-content">print(object(s), sep=' ', end='\n', file=file, flush=False)</p>
-  <p class="text-content ml-content">For your better understanding of the syntax here we have defined a few keywords of the above statement:</p>
+  <p class="text-content ml-content">
+    For your better understanding of the syntax here we have defined a few keywords of the above statement:
+  </p>
   <p class="text-content ml-content">object - value(s) to be printed</p>
   <p class="text-content ml-content">sep (optional) - allows us to separate multiple objects inside print().</p>
-  <p class="text-content ml-content">end (optional) - allows us to add add specific values like new line "\n", tab "\t"</p>
-  <p class="text-content ml-content">file (optional) - where the values are printed. It's default value is sys.stdout (screen)</p>
-  <p class="text-content ml-content">flush (optional) - boolean specifying if the output is flushed or buffered. Default: False</p><br/>
-  <h3 class="text-content font-head">Example 1:</h5>
+  <p class="text-content ml-content">
+    end (optional) - allows us to add add specific values like new line "\n", tab "\t"
+  </p>
+  <p class="text-content ml-content">
+    file (optional) - where the values are printed. It's default value is sys.stdout (screen)
+  </p>
+  <p class="text-content ml-content">
+    flush (optional) - boolean specifying if the output is flushed or buffered. Default: False
+  </p>
+  <br />
+  <h3 class="text-content font-head">Example 1:</h3>
   <p class="text-content ml-content">print(0, 1, 2)</p>
   <p class="text-content ml-content">print(0, 1, 2, sep='$')</p>
   <p class="text-content ml-content">print(1, 2, sep='@', end='%')</p>
-  <p class="text-content ml-content">Note: All the values are followed by a comma( , ), distinguishing between themselves as separate values/objects. 
-    By default, this adds a space between the values printed as output.
+  <p class="text-content ml-content">
+    Note: All the values are followed by a comma( , ), distinguishing between themselves as separate values/objects. By
+    default, this adds a space between the values printed as output.
   </p>
-  <h3 class="text-content font-head">Example 2:</h5>
-  <p class="text-content ml-content">We can even perform arithmetic operations directly in the print statement in python.</p>
-  <p class="text-content ml-content">print(2 + 3)   # addition</p>
-  <p class="text-content ml-content">print(5 * 4)   # multiplication</p>
-  <p class="text-content ml-content">print(9 % 2)   # modulo(remainder)</p>
+  <h3 class="text-content font-head">Example 2:</h3>
+  <p class="text-content ml-content">
+    We can even perform arithmetic operations directly in the print statement in python.
+  </p>
+  <p class="text-content ml-content">print(2 + 3) # addition</p>
+  <p class="text-content ml-content">print(5 * 4) # multiplication</p>
+  <p class="text-content ml-content">print(9 % 2) # modulo(remainder)</p>
   <h3 class="text-content font-head">Example 3:</h3>
   <p class="text-content ml-content">print("Gyro", end=' ')</p>
   <p class="text-content ml-content">print("neb")</p>
-  <p class="text-content ml-content">In the above code snippet, both words were printed in the same line because the end by default wasn’t ‘\n’, instead was ' ' (space).</p>
-  <h3 class="text-content font-head">Example 4: We can print a string and number together.</h5>
+  <p class="text-content ml-content">
+    In the above code snippet, both words were printed in the same line because the end by default wasn’t ‘\n’, instead
+    was ' ' (space).
+  </p>
+  <h3 class="text-content font-head">Example 4: We can print a string and number together.</h3>
   <p class="text-content ml-content">students = 50</p>
-  <p class="text-content ml-content">print("Gyroneb has " + str(students) + " employees")</p><br/>
-  <p class="text-content ml-content">While printing numbers and strings together, 
-    we need to convert the number into a string to concatenate. 
-    The str() is another inbuilt function that converts an integer into a string.
+  <p class="text-content ml-content">print("Gyroneb has " + str(students) + " employees")</p>
+  <br />
+  <p class="text-content ml-content">
+    While printing numbers and strings together, we need to convert the number into a string to concatenate. The str()
+    is another inbuilt function that converts an integer into a string.
   </p>
 </div>

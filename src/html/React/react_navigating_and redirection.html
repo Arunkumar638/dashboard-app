@@ -3,7 +3,7 @@
   <p class="text-content ml-content">Working with nested routes in React Router allows you to create a hierarchical structure of components and routes within your application. 
     This is useful for building complex user interfaces with multiple levels of navigation.</p><br/>
   <p class="text-content ml-content">Here's how you can work with nested routes in React:</p>
-  <b>Step 1:</b> Set Up Parent Component</p>
+  <b>Step 1:</b> <span>Set Up Parent Component</span>
   <p class="text-content ml-content">First, you'll need to set up a parent component that will serve as the container for the nested routes.</p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">import { Route, Link } from 'react-router-dom';</p>
@@ -21,14 +21,14 @@
   <p class="text-content ml-content">export default ParentComponent;</p>
   <p class="text-content ml-content">In this example, ParentComponent contains a link to navigate to the child route (/parent/child) and a Route component that renders 
     ChildComponent when the path matches.</p><br/>
-  <b>Step 2:</b> Define Child Component</p>
+  <b>Step 2:</b> <span>Define Child Component</span>
   <p class="text-content ml-content">Create the child component that will be rendered when the nested route is activated.</p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">const ChildComponent = () => {</p>
   <p class="text-content ml-content">&nbsp;&nbsp;return &lt;div&gt;Child Component&lt;/div&gt;;</p>
   <p class="text-content ml-content">};</p>
   <p class="text-content ml-content">export default ChildComponent;</p><br/>
-  <b>Step 3:</b> Set Up Routes in App.js</p>
+  <b>Step 3:</b> <span>Set Up Routes in App.js</span>
   <p class="text-content ml-content">In your main application file (usually App.js), configure the routes for the parent and child components.</p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';</p>
@@ -43,7 +43,7 @@
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
   <p class="text-content ml-content">export default App;</p><br/>
-  <b>Step 4:</b> Add Navigation Links</p>
+  <b>Step 4:</b> <span>Add Navigation Links</span>
   <p class="text-content ml-content">You can include navigation links within your components to navigate between the parent and child routes.</p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">import { Link } from 'react-router-dom';</p>
@@ -55,14 +55,14 @@
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
   <p class="text-content ml-content">export default Navigation;</p><br/>
-  <b>Important Points:</b></p>
-  <b>Nested Routes:</b>In the example above, the child route (/parent/child) is nested within the parent route (/parent). 
+  <b>Important Points:</b>
+  <b>Nested Routes:</b><p>In the example above, the child route (/parent/child) is nested within the parent route (/parent). 
   This allows for a hierarchical structure of components.</p><br/>
-  <b>Linking to Nested Routes:</b>Use the Link component to navigate to nested routes. In the example, the link takes the user to the parent route (/parent), 
+  <b>Linking to Nested Routes:</b><p>Use the Link component to navigate to nested routes. In the example, the link takes the user to the parent route (/parent), 
   which contains the nested route.</p><br/>
-  <b>Route Matching:</b>React Router will match the first route that matches the current location. In nested routes, ensure that the parent route 
+  <b>Route Matching:</b><p>React Router will match the first route that matches the current location. In nested routes, ensure that the parent route 
   is matched before the child route.</p><br/>
-  <b>Route Component Rendering:</b>Each Route component will render the specified component when the path matches. This allows for dynamic rendering of 
+  <b>Route Component Rendering:</b><p>Each Route component will render the specified component when the path matches. This allows for dynamic rendering of 
   components based on the URL.</p><br/>
   <b>Switch Component:</b>
   <p class="text-content ml-content">In a more complex application with multiple routes, consider using the Switch component to ensure that only the first matching route is rendered.</p><br/>

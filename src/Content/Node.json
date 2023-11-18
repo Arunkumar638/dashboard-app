@@ -1,116 +1,118 @@
 [
-    {
-      "label":"Node.js Programming for Beginners",
-      "key":"nodejs_programming"
-    },
-    {
-      "label":"Introduction",
-      "key":"nodejs_introduction"
-    },
-    {
-      "label":"Modules",
-      "key":"nodejs_modules",
-      "children":[
-        {
-          "label":"Introduction",
-          "key":"nodejs_module_introduction"   
-        },
-        {
-          "label":"Module functionalities",       
-          "key":"nodejs_module_functionalities"
-        }  
-      ]
-    },
-    {
-      "label":"Node Package Manager",           
-      "key":"nodejs_node_package_manager"
-    },
-    {
-      "label":"Creating Web Server",      
-      "key":"nodejs_creating_web_server"
-    },
-    {
-      "label":"File System",
-      "key":"nodejs_file_system",
-      "children":[
-        {
-          "label":"Introduction",
-          "key":"nodejs_file_system_introduction"
-        },{
-          "label":"Writing file Asynchronously",
-          "key":"nodejs_writing_file_asynchronously"
-        }
-      ]
-    },
-    {
-      "label":"Events",
-      "key":"nodejs_events",
-      "children":[
-        {
-          "label":"Introduction",
-          "key":"nodejs_events_introduction"
-        }, {
-          "label":"Common Patterns for EventEmitters",
-          "key":"nodejs_common_patterns_for_eventEmitters"
-        }
-      ]
-    },
-    {
-      "label":"Express.js",
-      "key":"nodejs_express.js",
-      "children":[
-        {
-          "label":"Introduction",
-          "key":"nodejs_express.js_introduction"
-        },
-        {
-          "label":"Routing and configure routes",        
-          "key":"nodejs_basic_routing"
-        },
-        {
-          "label":"Serving static files in Express",
-          "key":"nodejs_serving_static_files_in_express"
-        },
-        {
-          "label":"Express.js Web Application",
-          "key":"nodejs_express.js_web_application"
-        },
-        {
-          "label":"Middleware and Body Parser",      
-          "key":"nodejs_middleware_and_body_parser"
-        }
-      ]
-    },
-    {
-      "label":"Database Connectivity",
-      "key":"nodejs_database_connectivity",
-      "children":[
-        {
-          "label":"Connect MongoDB with Node JS",
-          "key":"nodejs_connect_mongoDB_with_nodejs"
-        },
-        {
-          "label":"Install the MongoDB Node.js Driver",
-          "key":"nodejs_install_the_mongoDB_node.js_driver"
-        },
-        {
-          "label":"Closing The Connection",
-          "key":"nodejs_closing_the_connection",
-          "children":[
-            {
-              "label":"Introduction",
-              "key":"nodejs_closing_the_connection_introduction"
-            },            
-            {
-              "label":"Insert/Update/Delete Documents",
-              "key":"nodejs_closing_the_connection_insert_update_and_delete_documents"
-            }
-          ]
-        },
-        {
-          "label":"Mongoose",
-          "key":"nodejs_mongoose"
-        }
-      ]
-    }
-  ]
+  {
+    "label": "Node.js Programming for Beginners",
+    "key": "nodejs_programming"
+  },
+  {
+    "label": "Introduction",
+    "key": "nodejs_introduction"
+  },
+  {
+    "label": "Modules",
+    "key": "nodejs_modules",
+    "children": [
+      {
+        "label": "Introduction",
+        "key": "nodejs_module_introduction"
+      },
+      {
+        "label": "Module functionalities",
+        "key": "nodejs_module_functionalities"
+      }
+    ]
+  },
+  {
+    "label": "Node Package Manager",
+    "key": "nodejs_node_package_manager"
+  },
+  {
+    "label": "Creating Web Server",
+    "key": "nodejs_creating_web_server"
+  },
+  {
+    "label": "File System",
+    "key": "nodejs_file_system",
+    "children": [
+      {
+        "label": "Introduction",
+        "key": "nodejs_file_system_introduction"
+      },
+      {
+        "label": "Writing file Asynchronously",
+        "key": "nodejs_writing_file_asynchronously"
+      }
+    ]
+  },
+  {
+    "label": "Events",
+    "key": "nodejs_events",
+    "children": [
+      {
+        "label": "Introduction",
+        "key": "nodejs_events_introduction"
+      },
+      {
+        "label": "Common Patterns for EventEmitters",
+        "key": "nodejs_common_patterns_for_eventEmitters"
+      }
+    ]
+  },
+  {
+    "label": "Express.js",
+    "key": "nodejs_express.js",
+    "children": [
+      {
+        "label": "Introduction",
+        "key": "nodejs_express.js_introduction"
+      },
+      {
+        "label": "Routing and configure routes",
+        "key": "nodejs_basic_routing"
+      },
+      {
+        "label": "Serving static files in Express",
+        "key": "nodejs_serving_static_files_in_express"
+      },
+      {
+        "label": "Express.js Web Application",
+        "key": "nodejs_express.js_web_application"
+      },
+      {
+        "label": "Middleware and Body Parser",
+        "key": "nodejs_middleware_and_body_parser"
+      }
+    ]
+  },
+  {
+    "label": "Database Connectivity",
+    "key": "nodejs_database_connectivity",
+    "children": [
+      {
+        "label": "Connect MongoDB with Node JS",
+        "key": "nodejs_connect_mongoDB_with_nodejs"
+      },
+      {
+        "label": "Install the MongoDB Node.js Driver",
+        "key": "nodejs_install_the_mongoDB_node.js_driver"
+      },
+      {
+        "label": "Closing The Connection",
+        "key": "nodejs_closing_the_connection",
+        "children": [
+          {
+            "label": "Introduction",
+            "key": "nodejs_closing_the_connection_introduction"
+          },
+          {
+            "label": "Insert/Update/Delete Documents",
+            "key": "nodejs_closing_the_connection_insert_update_and_delete_documents"
+          }
+        ]
+      },
+      {
+        "label": "Mongoose",
+        "key": "nodejs_mongoose"
+      }
+    ]
+  }
+]

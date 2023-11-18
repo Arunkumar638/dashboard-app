@@ -28,7 +28,6 @@ const LoadNodeContent = ({ id }: { id: string }) => {
       </Suspense>
     </div>
   );
-
-  };
+};
 
 export default LoadNodeContent;

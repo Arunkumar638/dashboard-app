@@ -2,11 +2,11 @@
   <h3 class="text-subhead font-head"><b>Serving static files in Express</b></h3>
   <p class="text-content ml-content">To serve static files such as images, CSS files, and JavaScript files, use the express.static built-in middleware function in Express.</p>
   <p class="text-content ml-content">The function signature is:</p>
-  <b>express.static(root, [options])</b></p>
+  <b>express.static(root, [options])</b>
   <p class="text-content ml-content">The root argument specifies the root directory from which to serve static assets. For more information on the options 
     argument, see express.static.</p>
   <p class="text-content ml-content">For example, use the following code to serve images, CSS files, and JavaScript files in a directory named public:</p>
-  <b>app.use(express.static('public'))</b></p>
+  <b>app.use(express.static('public'))</b><br/>
   <b>Now, you can load the files that are in the public directory:</b></p>
   <p class="text-content ml-content">http://localhost:3000/images/kitten.jpg</p>
   <p class="text-content ml-content">http://localhost:3000/css/style.css</p>

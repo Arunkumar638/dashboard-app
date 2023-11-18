@@ -1,472 +1,485 @@
-<div><h2><b>Structure</b></h2>
-In C programming, a struct (or structure) is a collection of variables (can be of different types) under a single name.<br/>
-<h3><b>Define Structures</b></h3>
-Before you can create structure variables, you need to define its data type. To define a struct, the struct keyword is used.<br/>
-<h4><b>Syntax of struct</b></h4>
-struct structureName {<br/>
-  dataType member1;<br/>
-  dataType member2;<br/>
-  ...<br/>
-};<br/>
-For example,<br/>
-
-struct Person {<br/>
-  char name[50];<br/>
-  int citNo;<br/>
-  float salary;<br/>
-};<br/>
-Here, a derived type struct Person is defined. Now, you can create variables of this type.
-<h3><b>Create struct Variables</b></h3>
-When a struct type is declared, no storage or memory is allocated. To allocate memory of a given structure type and work with it, we need to create variables.<br/>
-
-Here's how we create structure variables:<br/>
-
-struct Person {<br/>
-  // code<br/>
-};<br/>
-
-int main() {<br/>
-  struct Person person1, person2, p[20];<br/>
-  return 0;<br/>
-}<br/>
-Another way of creating a struct variable is:<br/>
-
-struct Person {<br/>
-   // code<br/>
-} person1, person2, p[20];<br/>
-In both cases,<br/>
-
-person1 and person2 are struct Person variables<br/>
-p[] is a struct Person array of size 20.
-<h3><b>Access Members of a Structure</b></h3>
-There are two types of operators used for accessing members of a structure.<br/>
-
-. - Member operator<br/>
--> - Structure pointer operator (will be discussed in the next tutorial)<br/>
-Suppose, you want to access the salary of person2. Here's how you can do it.<br/>
-
-person2.salary<br/>
-<b>Example 1: C structs</b><br/>
-#include lt;stdio.h&gt;<br/>
-#include lt;string.h&gt;<br/>
-// create struct with person1 variable<br/>
-struct Person {<br/>
-  char name[50];<br/>
-  int citNo;<br/>
-  float salary;<br/>
-} person1;<br/>
-
-int main() {<br/>
-  // assign value to name of person1<br/>
-  strcpy(person1.name, "George Orwell");<br/>
-
-  // assign values to other person1 variables<br/>
-  person1.citNo = 1984;<br/>
-  person1. salary = 2500;<br/>
-  // print struct variables<br/>
-  printf("Name: %s\n", person1.name);<br/>
-  printf("Citizenship No.: %d\n", person1.citNo);<br/>
-  printf("Salary: %.2f", person1.salary);<br/>
-
-  return 0;<br/>
-}<br/>
-<b>Output</b>
-
-Name: George Orwell<br/>
-Citizenship No.: 1984<br/>
-Salary: 2500.00<br/>
-In this program, we have created a struct named Person. We have also created a variable of Person named person1.<br/>
-
-In main(), we have assigned values to the variables defined in Person for the person1 object.<br/>
-
-strcpy(person1.name, "George Orwell");<br/>
-person1.citNo = 1984;<br/>
-person1. salary = 2500;<br/>
-Notice that we have used strcpy() function to assign the value to person1.name.<br/>
-
-This is because name is a char array (C-string) and we cannot use the assignment operator = with it after we have declared the string.<br/>
-
-Finally, we printed the data of person1.<br/>
-
-<h3><b>Keyword typedef</b></h3>
-We use the typedef keyword to create an alias name for data types. It is commonly used with structures to simplify the syntax of declaring variables.<br/>
-
-For example, let us look at the following code:<br/>
-
-struct Distance{<br/>
-  int feet;<br/>
-  float inch;<br/>
-};<br/>
-
-int main() {<br/>
-  struct Distance d1, d2;<br/>
-}<br/>
-We can use typedef to write an equivalent code with a simplified syntax:<br/>
-
-typedef struct Distance {<br/>
-  int feet;<br/>
-  float inch;<br/>
-} distances;<br/>
-
-int main() {<br/>
-  distances d1, d2;<br/>
-}<br/>
-<b>Example 2: C typedef</b><br/>
-#include lt;stdio.h&gt;<br/>
-#include lt;string.h&gt;<br/>
-
-// struct with typedef person<br/>
-typedef struct Person {<br/>
-  char name[50];<br/>
-  int citNo;<br/>
-  float salary;<br/>
-} person;<br/>
-
-int main() {<br/>
-
-  // create  Person variable<br/>
-  person p1;<br/>
-
-  // assign value to name of p1<br/>
-  strcpy(p1.name, "George Orwell");<br/>
-
-  // assign values to other p1 variables<br/>
-  p1.citNo = 1984;<br/>
-  p1. salary = 2500;<br/>
-
-  // print struct variables<br/>
-  printf("Name: %s\n", p1.name);<br/>
-  printf("Citizenship No.: %d\n", p1.citNo);<br/>
-  printf("Salary: %.2f", p1.salary);<br/>
-
-  return 0;<br/>
-}<br/>
-<b>Output</b><br/>
-
-Name: George Orwell<br/>
-Citizenship No.: 1984<br/>
-Salary: 2500.00<br/>
-Here, we have used typedef with the Person structure to create an alias person.<br/>
-
-// struct with typedef person<br/>
-typedef struct Person {<br/>
-  // code<br/>
-} person;<br/>
-Now, we can simply declare a Person variable using the person alias:<br/>
-
-// equivalent to struct Person p1<br/>
-person p1;<br/>
-Nested Structures<br/>
-You can create structures within a structure in C programming. For example,<br/>
-
-struct complex {<br/>
-  int imag;<br/>
-  float real;<br/>
-};<br/>
-
-struct number {<br/>
-  struct complex comp;<br/>
-  int integers;<br/>
-} num1, num2;<br/>
-Suppose, you want to set imag of num2 variable to 11. Here's how you can do it:<br/>
-
-num2.comp.imag = 11;<br/>
-<b>Example 3: C Nested Structures</b><br/>
-#include lt;stdio.h&gt;<br/>
-
-struct complex {<br/>
-  int imag;<br/>
-  float real;<br/>
-};<br/>
-struct number {<br/>
-  struct complex comp;<br/>
-  int integer;<br/>
-} num1;<br/>
-
-int main() {<br/>
-
-  // initialize complex variables<br/>
-  num1.comp.imag = 11;<br/>
-  num1.comp.real = 5.25;<br/>
-
-  // initialize number variable<br/>
-  num1.integer = 6;<br/>
-	
-  // print struct variables<br/>
-  printf("Imaginary Part: %d\n", num1.comp.imag);<br/>
-  printf("Real Part: %.2f\n", num1.comp.real);<br/>
-  printf("Integer: %d", num1.integer);<br/>
-
-  return 0;<br/>
-}<br/>
-<b>Output</b><br/>
-Imaginary Part: 11<br/>
-Real Part: 5.25<br/>
-Integer: 6<br/>
-<h3><b>Why structs in C?</b></h3>
-Suppose you want to store information about a person: his/her name, citizenship number, and salary. You can create different variables name, citNo and salary to store this information.<br/>
-
-What if you need to store information of more than one person? Now, you need to create different variables for each information per person: name1, citNo1, salary1, name2, citNo2, salary2, etc.<br/>
-
-A better approach would be to have a collection of all related information under a single name Person structure and use it for every person.<br/>
-
-<h3><b>C structs and Pointers</b></h3>
-Before you learn about how pointers can be used with structs, be sure to check these tutorials:<br/>
-
-<h3><b>Pointers</b></h3>
-<h4><b>C struct</b></h4>
-<b>C Pointers to struct</b><br/>
-Here's how you can create pointers to structs.<br/>
-struct name {<br/>
-    member1;<br/>
-    member2;<br/>
-    .<br/>
-    .<br/>
-};<br/>
-
-int main()<br/>
-{<br/>
-    struct name *ptr, Harry;<br/>
-}<br/>
-Here, ptr is a pointer to struct.<br/>
-
-<b>Example: Access members using Pointer</b><br/>
-To access members of a structure using pointers, we use the -> operator.<br/>
-
-#include lt;stdio.h&gt;<br/>
-struct person<br/>
-{<br/>
-   int age;<br/>
-   float weight;<br/>
-};<br/>
-int main()<br/>
-{<br/>
-    struct person *personPtr, person1;<br/>
-    personPtr = &person1;  <br/> 
-
-    printf("Enter age: ");<br/>
-    scanf("%d", &personPtr->age);<br/>
-
-    printf("Enter weight: ");<br/>
-    scanf("%f", &personPtr->weight);
-<br/>
-    printf("Displaying:\n");<br/>
-    printf("Age: %d\n", personPtr->age);<br/>
-    printf("weight: %f", personPtr->weight);<br/>
-
-    return 0;<br/>
-}<br/>
-In this example, the address of person1 is stored in the personPtr pointer using personPtr = &person1;.<br/>
-
-Now, you can access the members of person1 using the personPtr pointer.<br/>
-
-By the way,<br/>
-
-personPtr->age is equivalent to (*personPtr).age<br/>
-personPtr->weight is equivalent to (*personPtr).weight<br/>
-Dynamic memory allocation of structs<br/>
-Before you proceed this section, we recommend you to check C dynamic memory allocation.<br/>
-
-Sometimes, the number of struct variables you declared may be insufficient. You may need to allocate memory during run-time. Here's how you can achieve this in C programming.<br/>
-
-<b>Example: Dynamic memory allocation of structs</b><br/>
-#include lt;stdio.h&gt;<br/>
-#include lt;stdlib.h&gt;<br/>
-struct person {<br/>
-   int age;<br/>
-   float weight;<br/>
-   char name[30];<br/>
-};<br/>
-
-int main()<br/>
-{<br/>
-   struct person *ptr;<br/>
-   int i, n;<br/>
-   printf("Enter the number of persons: ");<br/>
-   scanf("%d", &n);<br/>
-
-   // allocating memory for n numbers of struct person<br/>
-   ptr = (struct person*) malloc(n * sizeof(struct person));<br/>
-
-   for(i = 0; i < n; ++i)<br/>
-   {
-       printf("Enter first name and age respectively: ");<br/>
-
-       // To access members of 1st struct person,<br/>
-       // ptr->name and ptr->age is used<br/>
-
-       // To access members of 2nd struct person,<br/>
-       // (ptr+1)->name and (ptr+1)->age is used<br/>
-       scanf("%s %d", (ptr+i)->name, &(ptr+i)->age);<br/>
-   }<br/>
-
-   printf("Displaying Information:\n");<br/>
-   for(i = 0; i < n; ++i)<br/>
-       printf("Name: %s\tAge: %d\n", (ptr+i)->name, (ptr+i)->age);<br/>
-
-   return 0;<br/>
-}<br/>
-When you run the program, the output will be:<br/>
-
-Enter the number of persons:  2<br/>
-Enter first name and age respectively:  Harry 24<br/>
-Enter first name and age respectively:  Gary 32<br/>
-Displaying Information:<br/>
-Name: Harry	Age: 24<br/>
-Name: Gary	Age: 32<br/>
-In the above example, n number of struct variables are created where n is entered by the user.<br/>
-
-To allocate the memory for n number of struct person, we used,<br/>
-
-ptr = (struct person*) malloc(n * sizeof(struct person));<br/>
-Then, we used the ptr pointer to access elements of person.<br/>
-
-<b>C Structure and Function</b><br/>
-Similar to variables of built-in types, you can also pass structure variables to a function.<br/>
-
-<b>Passing structs to functions</b><br/>
-We recommended you to learn these tutorials before you learn how to pass structs to functions.<br/>
-<h3><b>Functions</b></h3>
-<h4><b>User-defined Function</b></h4>
-Here's how you can pass structures to a function<br/>
-
-#include lt;stdio.h&gt;<br/>
-struct student {<br/>
-   char name[50];<br/>
-   int age;<br/>
-};<br/>
-
-// function prototype<br/>
-void display(struct student s);<br/>
-
-int main() {<br/>
-   struct student s1;<br/>
-
-   printf("Enter name: ");<br/>
-
-   // read string input from the user until \n is entered<br/>
-   // \n is discarded<br/>
-   scanf("%[^\n]%*c", s1.name);<br/>
-
-   printf("Enter age: ");<br/>
-   scanf("%d", &s1.age);<br/>
-
-   display(s1); // passing struct as an argument<br/>
-
-   return 0;<br/>
-}<br/>
-
-void display(struct student s) {<br/>
-   printf("\nDisplaying information\n");<br/>
-   printf("Name: %s", s.name);<br/>
-   printf("\nAge: %d", s.age);<br/>
-}<br/>
-<b>Output</b><br/>
-
-Enter name: Bond<br/>
-Enter age: 13<br/>
-
-Displaying information<br/>
-Name: Bond<br/>
-Age: 13  <br/>
-Here, a struct variable s1 of type struct student is created. The variable is passed to the display() function using display(s1); statement.<br/>
-
-<h4><b>Return struct from a function</b></h4>
-Here's how you can return structure from a function:<br/>
-
-#include lt;stdio.h&gt;<br/>
-struct student<br/>
-{<br/>
-    char name[50];<br/>
-    int age;<br/>
-};<br/>
-
-// function prototype<br/>
-struct student getInformation();<br/>
-
-int main()<br/>
-{<br/>
-    struct student s;<br/>
-
-    s = getInformation();<br/>
-
-    printf("\nDisplaying information\n");<br/>
-    printf("Name: %s", s.name);<br/>
-    printf("\nRoll: %d", s.age);<br/>
-    
-    return 0;<br/>
-}<br/>
-struct student getInformation() <br/>
-{<br/>
-  struct student s1;<br/>
-
-  printf("Enter name: ");<br/>
-  scanf ("%[^\n]%*c", s1.name);<br/>
-
-  printf("Enter age: ");<br/>
-  scanf("%d", &s1.age);<br/>
-  
-  return s1;<br/>
-}	<br/>
-
-Here, the getInformation() function is called using s = getInformation(); statement. The function returns a structure of type struct student. The returned structure is displayed from the main() function.<br/>
-
-Notice that, the return type of getInformation() is also struct student.<br/>
-
-<h4><b>Passing struct by reference</b></h4>
-You can also pass structs by reference (in a similar way like you pass variables of built-in type by reference). We suggest you to read pass by reference tutorial before you proceed.<br/>
-
-During pass by reference, the memory addresses of struct variables are passed to the function.<br/>
-
-#include lt;stdio.h&gt;<br/>
-typedef struct Complex<br/>
-{<br/>
-    float real;<br/>
-    float imag;<br/>
-} complex;<br/>
-
-void addNumbers(complex c1, complex c2, complex *result); <br/>
-
-int main()<br/>
-{<br/>
-    complex c1, c2, result;<br/>
-    printf("For first number,\n");<br/>
-    printf("Enter real part: ");<br/>
-    scanf("%f", &c1.real);<br/>
-    printf("Enter imaginary part: ");<br/>
-    scanf("%f", &c1.imag);<br/>
-
-    printf("For second number, \n");<br/>
-    printf("Enter real part: ");<br/>
-    scanf("%f", &c2.real);<br/>
-    printf("Enter imaginary part: ");<br/>
-    scanf("%f", &c2.imag);<br/>
-
-    addNumbers(c1, c2, &result); <br/>
-    printf("\nresult.real = %.1f\n", result.real);<br/>
-    printf("result.imag = %.1f", result.imag);<br/>
-    
-    return 0;<br/>
-}<br/>
-void addNumbers(complex c1, complex c2, complex *result) <br/>
-{<br/>
-     result->real = c1.real + c2.real;<br/>
-     result->imag = c1.imag + c2.imag; <br/>
-}<br/>
-
-<b>Output</b><br/>
-
-For first number,<br/>
-Enter real part:  1.1<br/>
-Enter imaginary part:  -2.4<br/>
-For second number, <br/>
-Enter real part:  3.4<br/>
-Enter imaginary part:  -3.2<br/>
-
-result.real = 4.5<br/>
-result.imag = -5.6  <br/>
-In the above program, three structure variables c1, c2 and the address of result is passed to the addNumbers() function. Here, result is passed by reference.<br/>
-
-When the result variable inside the addNumbers() is altered, the result variable inside the main() function is also altered accordingly.<br/>
-
+<div>
+  <h2><b>Structure</b></h2>
+  In C programming, a struct (or structure) is a collection of variables (can be of different types) under a single
+  name.<br />
+  <h3><b>Define Structures</b></h3>
+  Before you can create structure variables, you need to define its data type. To define a struct, the struct keyword is
+  used.<br />
+  <h4><b>Syntax of struct</b></h4>
+  struct structureName {<br />
+  dataType member1;<br />
+  dataType member2;<br />
+  ...<br />
+  };<br />
+  For example,<br />
+
+  struct Person {<br />
+  char name[50];<br />
+  int citNo;<br />
+  float salary;<br />
+  };<br />
+  Here, a derived type struct Person is defined. Now, you can create variables of this type.
+  <h3><b>Create struct Variables</b></h3>
+  When a struct type is declared, no storage or memory is allocated. To allocate memory of a given structure type and
+  work with it, we need to create variables.<br />
+
+  Here's how we create structure variables:<br />
+
+  struct Person {<br />
+  // code<br />
+  };<br />
+
+  int main() {<br />
+  struct Person person1, person2, p[20];<br />
+  return 0;<br />
+  }<br />
+  Another way of creating a struct variable is:<br />
+
+  struct Person {<br />
+  // code<br />
+  } person1, person2, p[20];<br />
+  In both cases,<br />
+
+  person1 and person2 are struct Person variables<br />
+  p[] is a struct Person array of size 20.
+  <h3><b>Access Members of a Structure</b></h3>
+  There are two types of operators used for accessing members of a structure.<br />
+
+  . - Member operator<br />
+  -> - Structure pointer operator (will be discussed in the next tutorial)<br />
+  Suppose, you want to access the salary of person2. Here's how you can do it.<br />
+
+  person2.salary<br />
+  <b>Example 1: C structs</b><br />
+  #include lt;stdio.h&gt;<br />
+  #include lt;string.h&gt;<br />
+  // create struct with person1 variable<br />
+  struct Person {<br />
+  char name[50];<br />
+  int citNo;<br />
+  float salary;<br />
+  } person1;<br />
+
+  int main() {<br />
+  // assign value to name of person1<br />
+  strcpy(person1.name, "George Orwell");<br />
+
+  // assign values to other person1 variables<br />
+  person1.citNo = 1984;<br />
+  person1. salary = 2500;<br />
+  // print struct variables<br />
+  printf("Name: %s\n", person1.name);<br />
+  printf("Citizenship No.: %d\n", person1.citNo);<br />
+  printf("Salary: %.2f", person1.salary);<br />
+
+  return 0;<br />
+  }<br />
+  <b>Output</b>
+
+  Name: George Orwell<br />
+  Citizenship No.: 1984<br />
+  Salary: 2500.00<br />
+  In this program, we have created a struct named Person. We have also created a variable of Person named person1.<br />
+
+  In main(), we have assigned values to the variables defined in Person for the person1 object.<br />
+
+  strcpy(person1.name, "George Orwell");<br />
+  person1.citNo = 1984;<br />
+  person1. salary = 2500;<br />
+  Notice that we have used strcpy() function to assign the value to person1.name.<br />
+
+  This is because name is a char array (C-string) and we cannot use the assignment operator = with it after we have
+  declared the string.<br />
+
+  Finally, we printed the data of person1.<br />
+
+  <h3><b>Keyword typedef</b></h3>
+  We use the typedef keyword to create an alias name for data types. It is commonly used with structures to simplify the
+  syntax of declaring variables.<br />
+
+  For example, let us look at the following code:<br />
+
+  struct Distance{<br />
+  int feet;<br />
+  float inch;<br />
+  };<br />
+
+  int main() {<br />
+  struct Distance d1, d2;<br />
+  }<br />
+  We can use typedef to write an equivalent code with a simplified syntax:<br />
+
+  typedef struct Distance {<br />
+  int feet;<br />
+  float inch;<br />
+  } distances;<br />
+
+  int main() {<br />
+  distances d1, d2;<br />
+  }<br />
+  <b>Example 2: C typedef</b><br />
+  #include lt;stdio.h&gt;<br />
+  #include lt;string.h&gt;<br />
+
+  // struct with typedef person<br />
+  typedef struct Person {<br />
+  char name[50];<br />
+  int citNo;<br />
+  float salary;<br />
+  } person;<br />
+
+  int main() {<br />
+
+  // create Person variable<br />
+  person p1;<br />
+
+  // assign value to name of p1<br />
+  strcpy(p1.name, "George Orwell");<br />
+
+  // assign values to other p1 variables<br />
+  p1.citNo = 1984;<br />
+  p1. salary = 2500;<br />
+
+  // print struct variables<br />
+  printf("Name: %s\n", p1.name);<br />
+  printf("Citizenship No.: %d\n", p1.citNo);<br />
+  printf("Salary: %.2f", p1.salary);<br />
+
+  return 0;<br />
+  }<br />
+  <b>Output</b><br />
+
+  Name: George Orwell<br />
+  Citizenship No.: 1984<br />
+  Salary: 2500.00<br />
+  Here, we have used typedef with the Person structure to create an alias person.<br />
+
+  // struct with typedef person<br />
+  typedef struct Person {<br />
+  // code<br />
+  } person;<br />
+  Now, we can simply declare a Person variable using the person alias:<br />
+
+  // equivalent to struct Person p1<br />
+  person p1;<br />
+  Nested Structures<br />
+  You can create structures within a structure in C programming. For example,<br />
+
+  struct complex {<br />
+  int imag;<br />
+  float real;<br />
+  };<br />
+
+  struct number {<br />
+  struct complex comp;<br />
+  int integers;<br />
+  } num1, num2;<br />
+  Suppose, you want to set imag of num2 variable to 11. Here's how you can do it:<br />
+
+  num2.comp.imag = 11;<br />
+  <b>Example 3: C Nested Structures</b><br />
+  #include lt;stdio.h&gt;<br />
+
+  struct complex {<br />
+  int imag;<br />
+  float real;<br />
+  };<br />
+  struct number {<br />
+  struct complex comp;<br />
+  int integer;<br />
+  } num1;<br />
+
+  int main() {<br />
+
+  // initialize complex variables<br />
+  num1.comp.imag = 11;<br />
+  num1.comp.real = 5.25;<br />
+
+  // initialize number variable<br />
+  num1.integer = 6;<br />
+
+  // print struct variables<br />
+  printf("Imaginary Part: %d\n", num1.comp.imag);<br />
+  printf("Real Part: %.2f\n", num1.comp.real);<br />
+  printf("Integer: %d", num1.integer);<br />
+
+  return 0;<br />
+  }<br />
+  <b>Output</b><br />
+  Imaginary Part: 11<br />
+  Real Part: 5.25<br />
+  Integer: 6<br />
+  <h3><b>Why structs in C?</b></h3>
+  Suppose you want to store information about a person: his/her name, citizenship number, and salary. You can create
+  different variables name, citNo and salary to store this information.<br />
+
+  What if you need to store information of more than one person? Now, you need to create different variables for each
+  information per person: name1, citNo1, salary1, name2, citNo2, salary2, etc.<br />
+
+  A better approach would be to have a collection of all related information under a single name Person structure and
+  use it for every person.<br />
+
+  <h3><b>C structs and Pointers</b></h3>
+  Before you learn about how pointers can be used with structs, be sure to check these tutorials:<br />
+
+  <h3><b>Pointers</b></h3>
+  <h4><b>C struct</b></h4>
+  <b>C Pointers to struct</b><br />
+  Here's how you can create pointers to structs.<br />
+  struct name {<br />
+  member1;<br />
+  member2;<br />
+  .<br />
+  .<br />
+  };<br />
+
+  int main()<br />
+  {<br />
+  struct name *ptr, Harry;<br />
+  }<br />
+  Here, ptr is a pointer to struct.<br />
+
+  <b>Example: Access members using Pointer</b><br />
+  To access members of a structure using pointers, we use the -> operator.<br />
+
+  #include lt;stdio.h&gt;<br />
+  struct person<br />
+  {<br />
+  int age;<br />
+  float weight;<br />
+  };<br />
+  int main()<br />
+  {<br />
+  struct person *personPtr, person1;<br />
+  personPtr = &person1; <br />
+
+  printf("Enter age: ");<br />
+  scanf("%d", &personPtr->age);<br />
+
+  printf("Enter weight: ");<br />
+  scanf("%f", &personPtr->weight);
+  <br />
+  printf("Displaying:\n");<br />
+  printf("Age: %d\n", personPtr->age);<br />
+  printf("weight: %f", personPtr->weight);<br />
+
+  return 0;<br />
+  }<br />
+  In this example, the address of person1 is stored in the personPtr pointer using personPtr = &person1;.<br />
+
+  Now, you can access the members of person1 using the personPtr pointer.<br />
+
+  By the way,<br />
+
+  personPtr->age is equivalent to (*personPtr).age<br />
+  personPtr->weight is equivalent to (*personPtr).weight<br />
+  Dynamic memory allocation of structs<br />
+  Before you proceed this section, we recommend you to check C dynamic memory allocation.<br />
+
+  Sometimes, the number of struct variables you declared may be insufficient. You may need to allocate memory during
+  run-time. Here's how you can achieve this in C programming.<br />
+
+  <b>Example: Dynamic memory allocation of structs</b><br />
+  #include lt;stdio.h&gt;<br />
+  #include lt;stdlib.h&gt;<br />
+  struct person {<br />
+  int age;<br />
+  float weight;<br />
+  char name[30];<br />
+  };<br />
+
+  int main()<br />
+  {<br />
+  struct person *ptr;<br />
+  int i, n;<br />
+  printf("Enter the number of persons: ");<br />
+  scanf("%d", &n);<br />
+
+  // allocating memory for n numbers of struct person<br />
+  ptr = (struct person*) malloc(n * sizeof(struct person));<br />
+
+  for(i = 0; i < n; ++i)<br />
+  { printf("Enter first name and age respectively: ");<br />
+
+  // To access members of 1st struct person,<br />
+  // ptr->name and ptr->age is used<br />
+
+  // To access members of 2nd struct person,<br />
+  // (ptr+1)->name and (ptr+1)->age is used<br />
+  scanf("%s %d", (ptr+i)->name, &(ptr+i)->age);<br />
+  }<br />
+
+  printf("Displaying Information:\n");<br />
+  for(i = 0; i < n; ++i)<br />
+  printf("Name: %s\tAge: %d\n", (ptr+i)->name, (ptr+i)->age);<br />
+
+  return 0;<br />
+  }<br />
+  When you run the program, the output will be:<br />
+
+  Enter the number of persons: 2<br />
+  Enter first name and age respectively: Harry 24<br />
+  Enter first name and age respectively: Gary 32<br />
+  Displaying Information:<br />
+  Name: Harry Age: 24<br />
+  Name: Gary Age: 32<br />
+  In the above example, n number of struct variables are created where n is entered by the user.<br />
+
+  To allocate the memory for n number of struct person, we used,<br />
+
+  ptr = (struct person*) malloc(n * sizeof(struct person));<br />
+  Then, we used the ptr pointer to access elements of person.<br />
+
+  <b>C Structure and Function</b><br />
+  Similar to variables of built-in types, you can also pass structure variables to a function.<br />
+
+  <b>Passing structs to functions</b><br />
+  We recommended you to learn these tutorials before you learn how to pass structs to functions.<br />
+  <h3><b>Functions</b></h3>
+  <h4><b>User-defined Function</b></h4>
+  Here's how you can pass structures to a function<br />
+
+  #include lt;stdio.h&gt;<br />
+  struct student {<br />
+  char name[50];<br />
+  int age;<br />
+  };<br />
+
+  // function prototype<br />
+  void display(struct student s);<br />
+
+  int main() {<br />
+  struct student s1;<br />
+
+  printf("Enter name: ");<br />
+
+  // read string input from the user until \n is entered<br />
+  // \n is discarded<br />
+  scanf("%[^\n]%*c", s1.name);<br />
+
+  printf("Enter age: ");<br />
+  scanf("%d", &s1.age);<br />
+
+  display(s1); // passing struct as an argument<br />
+
+  return 0;<br />
+  }<br />
+
+  void display(struct student s) {<br />
+  printf("\nDisplaying information\n");<br />
+  printf("Name: %s", s.name);<br />
+  printf("\nAge: %d", s.age);<br />
+  }<br />
+  <b>Output</b><br />
+
+  Enter name: Bond<br />
+  Enter age: 13<br />
+
+  Displaying information<br />
+  Name: Bond<br />
+  Age: 13 <br />
+  Here, a struct variable s1 of type struct student is created. The variable is passed to the display() function using
+  display(s1); statement.<br />
+
+  <h4><b>Return struct from a function</b></h4>
+  Here's how you can return structure from a function:<br />
+
+  #include lt;stdio.h&gt;<br />
+  struct student<br />
+  {<br />
+  char name[50];<br />
+  int age;<br />
+  };<br />
+
+  // function prototype<br />
+  struct student getInformation();<br />
+
+  int main()<br />
+  {<br />
+  struct student s;<br />
+
+  s = getInformation();<br />
+
+  printf("\nDisplaying information\n");<br />
+  printf("Name: %s", s.name);<br />
+  printf("\nRoll: %d", s.age);<br />
+
+  return 0;<br />
+  }<br />
+  struct student getInformation() <br />
+  {<br />
+  struct student s1;<br />
+
+  printf("Enter name: ");<br />
+  scanf ("%[^\n]%*c", s1.name);<br />
+
+  printf("Enter age: ");<br />
+  scanf("%d", &s1.age);<br />
+
+  return s1;<br />
+  } <br />
+
+  Here, the getInformation() function is called using s = getInformation(); statement. The function returns a structure
+  of type struct student. The returned structure is displayed from the main() function.<br />
+
+  Notice that, the return type of getInformation() is also struct student.<br />
+
+  <h4><b>Passing struct by reference</b></h4>
+  You can also pass structs by reference (in a similar way like you pass variables of built-in type by reference). We
+  suggest you to read pass by reference tutorial before you proceed.<br />
+
+  During pass by reference, the memory addresses of struct variables are passed to the function.<br />
+
+  #include lt;stdio.h&gt;<br />
+  typedef struct Complex<br />
+  {<br />
+  float real;<br />
+  float imag;<br />
+  } complex;<br />
+
+  void addNumbers(complex c1, complex c2, complex *result); <br />
+
+  int main()<br />
+  {<br />
+  complex c1, c2, result;<br />
+  printf("For first number,\n");<br />
+  printf("Enter real part: ");<br />
+  scanf("%f", &c1.real);<br />
+  printf("Enter imaginary part: ");<br />
+  scanf("%f", &c1.imag);<br />
+
+  printf("For second number, \n");<br />
+  printf("Enter real part: ");<br />
+  scanf("%f", &c2.real);<br />
+  printf("Enter imaginary part: ");<br />
+  scanf("%f", &c2.imag);<br />
+
+  addNumbers(c1, c2, &result); <br />
+  printf("\nresult.real = %.1f\n", result.real);<br />
+  printf("result.imag = %.1f", result.imag);<br />
+
+  return 0;<br />
+  }<br />
+  void addNumbers(complex c1, complex c2, complex *result) <br />
+  {<br />
+  result->real = c1.real + c2.real;<br />
+  result->imag = c1.imag + c2.imag; <br />
+  }<br />
+
+  <b>Output</b><br />
+
+  For first number,<br />
+  Enter real part: 1.1<br />
+  Enter imaginary part: -2.4<br />
+  For second number, <br />
+  Enter real part: 3.4<br />
+  Enter imaginary part: -3.2<br />
+
+  result.real = 4.5<br />
+  result.imag = -5.6 <br />
+  In the above program, three structure variables c1, c2 and the address of result is passed to the addNumbers()
+  function. Here, result is passed by reference.<br />
+
+  When the result variable inside the addNumbers() is altered, the result variable inside the main() function is also
+  altered accordingly.<br />
 </div>

@@ -1,6 +1,11 @@
 <div>
   <h3 class="text-subhead font-head"><b>Using Switch component to define routing rules in react</b></h3>
-  <p>The Switch component in React Router is used to render the first Route or Redirect that matches the current location. It helps ensure that only one route is rendered at a time. If multiple routes match, only the first one will be rendered.</p><br/>
+  <p>
+    The Switch component in React Router is used to render the first Route or Redirect that matches the current
+    location. It helps ensure that only one route is rendered at a time. If multiple routes match, only the first one
+    will be rendered.
+  </p>
+  <br />
   <p>Here's an example of how to use the Switch component to define routing rules in React:</p>
   <p>import React from 'react';</p>
   <p>import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';</p>
@@ -20,24 +25,42 @@
   <p>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Router&gt;</p>
   <p>&nbsp;&nbsp;);</p>
   <p>};</p>
-  <p>export default App;</p><br/>
-  <b>In this example:</b></p>
-  <li>We import the necessary components from react-router-dom.</li>
-  <li>Inside the Switch component, we define multiple Route components with different paths and corresponding components to render.</li>
-  <li>The exact prop is used to ensure that a route matches exactly (and not partially).</p>
-  <li>The NotFound component is provided as a fallback route. If none of the specified routes match, this component will be rendered.</li><br/>
+  <p>export default App;</p>
+  <br />
+  <b>In this example:</b><br />
+  <li class="ml-points">We import the necessary components from react-router-dom.</li>
+  <li class="ml-points">
+    Inside the Switch component, we define multiple Route components with different paths and corresponding components
+    to render.
+  </li>
+  <li class="ml-points">The exact prop is used to ensure that a route matches exactly (and not partially).</li>
+  <li class="ml-points">
+    The NotFound component is provided as a fallback route. If none of the specified routes match, this component will
+    be rendered.
+  </li>
+  <br />
   <h4><b>How Switch Works:</b></h4>
   <li>When a Switch is rendered, it searches through its children (Route or Redirect components).</li>
   <li>It renders the first child Route or Redirect that matches the current location's path.</li>
-  <li>If no matching Route or Redirect is found, the Switch renders null (nothing).</li><br/>
+  <li>If no matching Route or Redirect is found, the Switch renders null (nothing).</li>
+  <br />
   <h4><b>Use Cases for Switch:</b></h4>
   <h5><b>404 Page:</b></h5>
   <p>The Switch component is often used to define a 404 (Not Found) route that renders when no other routes match.</p>
   <h4><b>Conditional Routing:</b></h4>
   <p>You can use the Switch to conditionally render routes based on certain conditions in your application.</p>
   <h4><b>Specific Order of Routes:</b></h4>
-  <p>If you have routes that have similar paths, you can use the Switch to ensure that the most specific route is matched first.</p>
+  <p>
+    If you have routes that have similar paths, you can use the Switch to ensure that the most specific route is matched
+    first.
+  </p>
   <h4><b>Exclusive Routes:</b></h4>
-  <p>If you have routes that should not be rendered together (e.g., login and register pages), you can use the Switch to ensure only one is rendered at a time.</p>
-  <p>The Switch component is a powerful tool for controlling the flow of your application based on the current URL path. It ensures that only one route is rendered at a time, providing a smooth and predictable navigation experience.</p>
-  </div>
+  <p>
+    If you have routes that should not be rendered together (e.g., login and register pages), you can use the Switch to
+    ensure only one is rendered at a time.
+  </p>
+  <p>
+    The Switch component is a powerful tool for controlling the flow of your application based on the current URL path.
+    It ensures that only one route is rendered at a time, providing a smooth and predictable navigation experience.
+  </p>
+</div>

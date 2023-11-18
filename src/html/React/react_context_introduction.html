@@ -1,110 +1,188 @@
 <div>
   <h3 class="text-subhead font-head">What is context?</h3>
-  <p class="text-content ml-content">In React, context is a feature that allows you to share data or 
-    state between components without the need to pass the data down manually through props at every level of the component tree. </p>
-  <p class="text-content ml-content">It provides a way to create a global state that can be accessed by any component in the tree, 
-    without having to pass props explicitly through each intermediate component.</p>
-  <p class="text-content ml-content">Context is particularly useful for managing global application state, such as user authentication, theme preferences, 
-    language preferences, and other data that needs to be accessible by various parts of the application.</p><br/>
+  <p class="text-content ml-content">
+    In React, context is a feature that allows you to share data or state between components without the need to pass
+    the data down manually through props at every level of the component tree.
+  </p>
+  <p class="text-content ml-content">
+    It provides a way to create a global state that can be accessed by any component in the tree, without having to pass
+    props explicitly through each intermediate component.
+  </p>
+  <p class="text-content ml-content">
+    Context is particularly useful for managing global application state, such as user authentication, theme
+    preferences, language preferences, and other data that needs to be accessible by various parts of the application.
+  </p>
+  <br />
   <h3 class="text-subhead font-head">Key Components of React Context:</h3>
   <h4 class="font-head">React.createContext:</h4>
-  <p class="text-content ml-content">This method creates a new Context object.
-    It returns an object with a Provider component and a Consumer component.</p>
+  <p class="text-content ml-content">
+    This method creates a new Context object. It returns an object with a Provider component and a Consumer component.
+  </p>
   <p class="text-content ml-content">const MyContext = React.createContext();</p>
-  <p class="text-content ml-content">&lt;MyContext.Provider&gt;:</p><br/>
-  <p class="text-content ml-content">The Provider component is used to wrap a part of 
-    your component tree where you want to make the context available.</p>
+  <p class="text-content ml-content">&lt;MyContext.Provider&gt;:</p>
+  <br />
+  <p class="text-content ml-content">
+    The Provider component is used to wrap a part of your component tree where you want to make the context available.
+  </p>
   <p class="text-content ml-content">&lt;MyContext.Provider value={/* some value */}&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;{/* Components inside here can access the context */}</p>
   <p class="text-content ml-content">&lt;/MyContext.Provider&gt;</p>
   <p class="text-content ml-content">The value prop is what's passed down to components that consume this context.</p>
-  <p class="text-content ml-content">&lt;MyContext.Consumer&gt; or useContext Hook:</p><br/>
+  <p class="text-content ml-content">&lt;MyContext.Consumer&gt; or useContext Hook:</p>
+  <br />
   <p class="text-content ml-content">The Consumer component (or the useContext hook) is used to consume the context.</p>
   <p class="text-content ml-content">&lt;MyContext.Provider&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;{value => /* render something based on the context value */}</p>
   <p class="text-content ml-content">&lt;/MyContext.Provider&gt;</p>
-  <p class="text-content ml-content">const value = useContext(MyContext);</p><br/>
+  <p class="text-content ml-content">const value = useContext(MyContext);</p>
+  <br />
   <p class="text-content ml-content">Use Cases for Context:</p>
   <h4 class="font-head">Managing Themes and Styles:</h4>
-  <p class="text-content ml-content">Context can be used to manage the theme of a website or application. 
-    Components can access the current theme without having to pass it down explicitly.</p><br/>
+  <p class="text-content ml-content">
+    Context can be used to manage the theme of a website or application. Components can access the current theme without
+    having to pass it down explicitly.
+  </p>
+  <br />
   <h4 class="font-head">User Authentication:</h4>
-  <p class="text-content ml-content">Context can be used to manage the authentication state of a user. 
-    Components can access whether a user is logged in or not without the need for prop drilling.</p><br/>
+  <p class="text-content ml-content">
+    Context can be used to manage the authentication state of a user. Components can access whether a user is logged in
+    or not without the need for prop drilling.
+  </p>
+  <br />
   <h4 class="font-head">Localization and Language Preferences:</h4>
-  <p class="text-content ml-content">Context is useful for managing localization preferences or language settings that need to be accessible by 
-    various parts of the application.</p><br/>
+  <p class="text-content ml-content">
+    Context is useful for managing localization preferences or language settings that need to be accessible by various
+    parts of the application.
+  </p>
+  <br />
   <h4 class="font-head">Styling Libraries and UI Frameworks:</h4>
-  <p class="text-content ml-content">Context can be used in conjunction with styling libraries or UI frameworks to provide theming options.</p><br/>
+  <p class="text-content ml-content">
+    Context can be used in conjunction with styling libraries or UI frameworks to provide theming options.
+  </p>
+  <br />
   <h4 class="font-head">App-wide Settings:</h4>
-  <p class="text-content ml-content">Any application-wide settings or configurations can be managed using Context, making them easily accessible 
-    throughout the application.</p><br/>
-  <p class="text-content ml-content">Overall, React Context is a powerful tool for managing global state and making it available to various 
-    components without having to pass props down manually. It simplifies component composition and helps in 
-    creating more maintainable and organized code.</p><br/>
+  <p class="text-content ml-content">
+    Any application-wide settings or configurations can be managed using Context, making them easily accessible
+    throughout the application.
+  </p>
+  <br />
+  <p class="text-content ml-content">
+    Overall, React Context is a powerful tool for managing global state and making it available to various components
+    without having to pass props down manually. It simplifies component composition and helps in creating more
+    maintainable and organized code.
+  </p>
+  <br />
   <h3 class="text-subhead font-head">b.When to use context in react?</h3>
-  <p class="text-content ml-content">Context in React is used to provide a way to pass data through the component tree without having 
-    to pass props down manually at every level. It is particularly useful for passing down global data or configurations that many components 
-    in an application might need.Here are some situations when you might consider using context in React</p><br/>
+  <p class="text-content ml-content">
+    Context in React is used to provide a way to pass data through the component tree without having to pass props down
+    manually at every level. It is particularly useful for passing down global data or configurations that many
+    components in an application might need.Here are some situations when you might consider using context in React
+  </p>
+  <br />
   <h4 class="font-head">Theme Configuration:</h4>
-  <p class="text-content ml-content">If you have a theme (like light mode and dark mode) that many components need to access, 
-    using context can help avoid prop drilling.</p><br/>
+  <p class="text-content ml-content">
+    If you have a theme (like light mode and dark mode) that many components need to access, using context can help
+    avoid prop drilling.
+  </p>
+  <br />
   <h4 class="font-head">User Authentication:</h4>
-  <p class="text-content ml-content">Storing information about the authenticated user (like their username, authentication status, etc.) 
-    that multiple components might need to access.</p><br/>
+  <p class="text-content ml-content">
+    Storing information about the authenticated user (like their username, authentication status, etc.) that multiple
+    components might need to access.
+  </p>
+  <br />
   <h4 class="font-head">Localization or Language Preferences:</h4>
-  <p class="text-content ml-content">If you have a multilingual application, you might want to provide language preferences that can be accessed by 
-    various components.</p><br/>
+  <p class="text-content ml-content">
+    If you have a multilingual application, you might want to provide language preferences that can be accessed by
+    various components.
+  </p>
+  <br />
   <h4 class="font-head">Styling Information:</h4>
-  <p class="text-content ml-content">Providing styling information or configurations to components, like font sizes, colors, etc.</p><br/>
+  <p class="text-content ml-content">
+    Providing styling information or configurations to components, like font sizes, colors, etc.
+  </p>
+  <br />
   <h4 class="font-head">Managing State Globally:</h4>
-  <p class="text-content ml-content">When you have a global state (for example, a shopping cart in an e-commerce application) that many components 
-    across the application need access to.</p><br/>
+  <p class="text-content ml-content">
+    When you have a global state (for example, a shopping cart in an e-commerce application) that many components across
+    the application need access to.
+  </p>
+  <br />
   <h4 class="font-head">Managing Application Configuration:</h4>
-  <p class="text-content ml-content">Storing configurations for an application, like API endpoints, server URLs, or other settings.</p><br/>
+  <p class="text-content ml-content">
+    Storing configurations for an application, like API endpoints, server URLs, or other settings.
+  </p>
+  <br />
   <h4 class="font-head">Managing UI State:</h4>
-  <p class="text-content ml-content">When you need to manage UI state (like showing/hiding a modal, toggling a sidebar) across different parts 
-    of your application.</p><br/>
-  <h4 class="font-head">Context-Specific Functionality:</h4></p>
-  <p class="text-content ml-content">When a certain functionality or data is specific to a part of your application and doesn't make sense to be 
-    passed down as props to every component.</p><br/>
+  <p class="text-content ml-content">
+    When you need to manage UI state (like showing/hiding a modal, toggling a sidebar) across different parts of your
+    application.
+  </p>
+  <br />
+  <h4 class="font-head">Context-Specific Functionality:</h4>
+  <p class="text-content ml-content">
+    When a certain functionality or data is specific to a part of your application and doesn't make sense to be passed
+    down as props to every component.
+  </p>
+  <br />
   <h4 class="font-head">Simplifying Component Composition:</h4>
-  <p class="text-content ml-content">For components that need to be composed with various other components, context can help simplify the 
-    process of providing necessary data.</p><br/>
+  <p class="text-content ml-content">
+    For components that need to be composed with various other components, context can help simplify the process of
+    providing necessary data.
+  </p>
+  <br />
   <h4 class="font-head">Avoiding Prop Drilling:</h4>
-  <p class="text-content ml-content">When you find yourself passing props through multiple levels of components just to get it to a deeply 
-    nested component, context can help you avoid this prop drilling.</p><br/>
-  <p class="text-content ml-content">It's important to note that while context can be a powerful tool, it's recommended to use it judiciously 
-    and not to abuse it for everything. Overusing context can make your application harder to understand and maintain. 
-    It's generally best used for data or configurations that truly need to be shared across multiple components.</p><br/>
+  <p class="text-content ml-content">
+    When you find yourself passing props through multiple levels of components just to get it to a deeply nested
+    component, context can help you avoid this prop drilling.
+  </p>
+  <br />
+  <p class="text-content ml-content">
+    It's important to note that while context can be a powerful tool, it's recommended to use it judiciously and not to
+    abuse it for everything. Overusing context can make your application harder to understand and maintain. It's
+    generally best used for data or configurations that truly need to be shared across multiple components.
+  </p>
+  <br />
   <h3 class="text-subhead font-head">c.Create Context</h3>
-  <p class="text-content ml-content">Creating a context in React involves using the createContext function provided by the React library. 
-    This function creates a new context object that consists of a Provider and a Consumer.</p><br/>
+  <p class="text-content ml-content">
+    Creating a context in React involves using the createContext function provided by the React library. This function
+    creates a new context object that consists of a Provider and a Consumer.
+  </p>
+  <br />
   <p class="text-content ml-content">Here's an example of how to create a context:</p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">const MyContext = React.createContext();</p>
-  <p class="text-content ml-content font-semibold">In this example, we've created a new context called MyContext using React.createContext(). 
-    This context now has two components: a Provider and a Consumer.</p><br/>
+  <p class="text-content ml-content font-semibold">
+    In this example, we've created a new context called MyContext using React.createContext(). This context now has two
+    components: a Provider and a Consumer.
+  </p>
+  <br />
   <h4 class="font-head">Using the Created Context:</h4>
   <h5>Provider:</h5>
-  <p class="text-content ml-content">The Provider component is used to wrap a part of your component tree where you want to make the context available. 
-    It accepts a value prop which represents the current value of the context.</p>
+  <p class="text-content ml-content">
+    The Provider component is used to wrap a part of your component tree where you want to make the context available.
+    It accepts a value prop which represents the current value of the context.
+  </p>
   <p class="text-content ml-content">&lt;MyContext.Provider value={/* some value */}&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;{/* Components inside here can access the context */}</p>
-  <p class="text-content ml-content">&lt;/MyContext.Provider&gt;</p><br/>
-  <h5 class="font-semibold">Consumer:</h5></p>
-  <p class="text-content ml-content">The Consumer component is used to consume the context. It accepts a function as a child component, 
-    which receives the current value of the context.</p>
+  <p class="text-content ml-content">&lt;/MyContext.Provider&gt;</p>
+  <br />
+  <h5 class="font-semibold">Consumer:</h5>
+  <p class="text-content ml-content">
+    The Consumer component is used to consume the context. It accepts a function as a child component, which receives
+    the current value of the context.
+  </p>
   <p class="text-content ml-content">&lt;MyContext.Consumer&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;{value => /* render something based on the context value */}</p>
-  <p class="text-content ml-content">&lt;/MyContext.Consumer&gt;</p><br/>
+  <p class="text-content ml-content">&lt;/MyContext.Consumer&gt;</p>
+  <br />
   <p class="text-content ml-content font-semibold">Example:</p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">const MyContext = React.createContext();</p>
   <p class="text-content ml-content">const ParentComponent = () => {</p>
   <p class="text-content ml-content">&nbsp;&nbsp;return (</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;MyContext.Provider value="Hello from Context"&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp; &lt;ChildComponent /&gt; </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp; &lt;ChildComponent /&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/MyContext.Provider&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
@@ -115,16 +193,28 @@
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/MyContext.Consumer&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
-  <p class="text-content ml-content">export default ParentComponent;</p><br/>
-  <p class="text-content ml-content">In this example, ParentComponent provides a value to the context using the Provider. ChildComponent consumes 
-    this value using the Consumer. It will render a div containing the value provided by the ParentComponent.</p><br/>
-  <p class="text-content ml-content">Creating a context is the first step in using the Context API to manage global state or data in 
-    your React application. It allows you to share data or state between components without the need to pass props explicitly.</p><br/>
+  <p class="text-content ml-content">export default ParentComponent;</p>
+  <br />
+  <p class="text-content ml-content">
+    In this example, ParentComponent provides a value to the context using the Provider. ChildComponent consumes this
+    value using the Consumer. It will render a div containing the value provided by the ParentComponent.
+  </p>
+  <br />
+  <p class="text-content ml-content">
+    Creating a context is the first step in using the Context API to manage global state or data in your React
+    application. It allows you to share data or state between components without the need to pass props explicitly.
+  </p>
+  <br />
   <h3 class="text-subhead font-head">d.Context.Provider</h3>
-  <p class="text-content ml-content">Context.Provider is a component provided by the React Context API. It is used to wrap a part of your 
-    component tree where you want to make a particular context available to its child components.</p>
-  <p class="text-content ml-content">The Provider component accepts a value prop, which represents the current value of the context that will 
-    be provided to its child components. This value can be of any data type, including objects, arrays, strings, numbers, etc.</p><br/>
+  <p class="text-content ml-content">
+    Context.Provider is a component provided by the React Context API. It is used to wrap a part of your component tree
+    where you want to make a particular context available to its child components.
+  </p>
+  <p class="text-content ml-content">
+    The Provider component accepts a value prop, which represents the current value of the context that will be provided
+    to its child components. This value can be of any data type, including objects, arrays, strings, numbers, etc.
+  </p>
+  <br />
   <p class="text-content ml-content">Here is an example of how to use Context.Provider:</p>
   <p class="text-content ml-content">import React, { createContext, useState } from 'react';</p>
   <p class="text-content ml-content">// Create a Context</p>
@@ -146,25 +236,46 @@
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/MyContext.Consumer&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
-  <p class="text-content ml-content">export default MyComponent;</p><br/>
+  <p class="text-content ml-content">export default MyComponent;</p>
+  <br />
   <p class="text-content ml-content font-semibold">In this example:</p>
-   <li class="ml-points">&nbsp;&nbsp;&nbsp;&nbsp;We first create a context using createContext.</li>
-   <li class="ml-points">&nbsp;&nbsp;&nbsp;&nbsp;In MyComponent, we wrap ChildComponent with MyContext.Provider.</li>
-   <li class="ml-points">&nbsp;&nbsp;&nbsp;&nbsp;We pass a value prop to the Provider, which will be available to any components that consume this context.</li>
-   <li class="ml-points">&nbsp;&nbsp;&nbsp;&nbsp;In ChildComponent, we use MyContext.Consumer to access the value provided by the Provider.</li> 
-    <p>The value is rendered inside a &lt;div&gt;.</p><br/>
+  <li class="ml-points">&nbsp;&nbsp;&nbsp;&nbsp;We first create a context using createContext.</li>
+  <li class="ml-points">&nbsp;&nbsp;&nbsp;&nbsp;In MyComponent, we wrap ChildComponent with MyContext.Provider.</li>
+  <li class="ml-points">
+    &nbsp;&nbsp;&nbsp;&nbsp;We pass a value prop to the Provider, which will be available to any components that consume
+    this context.
+  </li>
+  <li class="ml-points">
+    &nbsp;&nbsp;&nbsp;&nbsp;In ChildComponent, we use MyContext.Consumer to access the value provided by the Provider.
+  </li>
+  <p>The value is rendered inside a &lt;div&gt;.</p>
+  <br />
   <p class="text-content ml-content">Here are some key points about Context.Provider:</p>
   <li class="ml-points">&nbsp;&nbsp;&nbsp;&nbsp;It creates a new context scope for its descendants.</li>
-   <li class="ml-points">&nbsp;&nbsp;&nbsp;&nbsp;It accepts a value prop, which represents the current value of the context.</li>
-   <li class="ml-points">&nbsp;&nbsp;&nbsp;&nbsp;Any components within the subtree of a Provider can consume the context using Context.Consumer or the useContext hook.</li>
-   <li class="ml-points">&nbsp;&nbsp;&nbsp;&nbsp;The Provider should be placed higher up in the component tree to ensure that its value is available to all 
-    components that need it.</li>
-   <li class="ml-points">&nbsp;&nbsp;&nbsp;&nbsp;Using Context.Provider is a fundamental step in implementing the React Context API to manage global state 
-    or data in your application. It allows you to make data available to components without having to pass it explicitly through props.</li><br/>
+  <li class="ml-points">
+    &nbsp;&nbsp;&nbsp;&nbsp;It accepts a value prop, which represents the current value of the context.
+  </li>
+  <li class="ml-points">
+    &nbsp;&nbsp;&nbsp;&nbsp;Any components within the subtree of a Provider can consume the context using
+    Context.Consumer or the useContext hook.
+  </li>
+  <li class="ml-points">
+    &nbsp;&nbsp;&nbsp;&nbsp;The Provider should be placed higher up in the component tree to ensure that its value is
+    available to all components that need it.
+  </li>
+  <li class="ml-points">
+    &nbsp;&nbsp;&nbsp;&nbsp;Using Context.Provider is a fundamental step in implementing the React Context API to manage
+    global state or data in your application. It allows you to make data available to components without having to pass
+    it explicitly through props.
+  </li>
+  <br />
   <h3 class="text-subhead font-head">e.Context.Consumer</h3>
-  <p class="text-content ml-content">Context.Consumer is a component provided by the React Context API that allows you to subscribe 
-    to a context within a functional component. It provides a way to access the value of a context without the need for a Provider component 
-    higher up in the component tree.</p><br/>
+  <p class="text-content ml-content">
+    Context.Consumer is a component provided by the React Context API that allows you to subscribe to a context within a
+    functional component. It provides a way to access the value of a context without the need for a Provider component
+    higher up in the component tree.
+  </p>
+  <br />
   <p class="text-content ml-content font-semibold">Here's an example of how to use Context.Consumer:</p>
   <p class="text-content ml-content">import React, { createContext } from 'react';</p>
   <p class="text-content ml-content">// Create a Context</p>
@@ -177,13 +288,28 @@
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/MyContext.Consumer&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
-  <p class="text-content ml-content">export default ChildComponent;</p><br/>
-  <p class="text-content ml-content">In this example, ChildComponent uses MyContext.Consumer to access the value provided by the 
-    Provider of MyContext. The Consumer component takes a function as its child, which receives the current value of the context as an argument. </p>
-  <p class="text-content ml-content">In this case, it renders a div containing the context value.</p><br/>
+  <p class="text-content ml-content">export default ChildComponent;</p>
+  <br />
+  <p class="text-content ml-content">
+    In this example, ChildComponent uses MyContext.Consumer to access the value provided by the Provider of MyContext.
+    The Consumer component takes a function as its child, which receives the current value of the context as an
+    argument.
+  </p>
+  <p class="text-content ml-content">In this case, it renders a div containing the context value.</p>
+  <br />
   <p class="text-content ml-content">Keep in mind the following points about Context.Consumer:</p>
-   <li class="ml-points">It must be used within a functional component.</li>
-   <li class="ml-points">It expects a function as its child. This function takes the current value of the context as an argument and returns the JSX that should be rendered.</li>
-   <li class="ml-points">The function passed to Consumer is called with the current context value every time the value of the context changes.</li>
-  <p class="text-content ml-content">Using Context.Consumer is especially useful when you want to consume context values in functional components. However, with the introduction of the useContext hook in React 16.8, consuming context in functional components has become even more straightforward. </p>
-  </div>
+  <li class="ml-points">It must be used within a functional component.</li>
+  <li class="ml-points">
+    It expects a function as its child. This function takes the current value of the context as an argument and returns
+    the JSX that should be rendered.
+  </li>
+  <li class="ml-points">
+    The function passed to Consumer is called with the current context value every time the value of the context
+    changes.
+  </li>
+  <p class="text-content ml-content">
+    Using Context.Consumer is especially useful when you want to consume context values in functional components.
+    However, with the introduction of the useContext hook in React 16.8, consuming context in functional components has
+    become even more straightforward.
+  </p>
+</div>

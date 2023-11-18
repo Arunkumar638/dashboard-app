@@ -1,73 +1,102 @@
 <div>
   <h4 class="text-subhead font-head">Bitwise Operators</h4>
-  <p class="text-content ml-content">The two operands' values are processed bit by bit by the bitwise operators. 
-    The examples of Bitwise operators are bitwise OR (|), bitwise AND (&), bitwise XOR (^), negation (~), Left shift (&lt;&lt;), and Right shift (>>). 
-    Consider the case below.</p><br/>
+  <p class="text-content ml-content">
+    The two operands' values are processed bit by bit by the bitwise operators. The examples of Bitwise operators are
+    bitwise OR (|), bitwise AND (&), bitwise XOR (^), negation (~), Left shift (&lt;&lt;), and Right shift (>>).
+    Consider the case below.
+  </p>
+  <br />
   <h5 class="text-content font-head">For example,</h5>
-  <p class="text-content ml-content">if a = 7</p>    
-  <p class="text-content ml-content">b = 6</p>    
-  <p class="text-content ml-content">then, binary (a) = 0111</p>       
-  <p class="text-content ml-content">binary (b) = 0110</p>            
-  <p class="text-content ml-content">hence, a & b = 0011</p>      
-  <p class="text-content ml-content">a | b = 0111</p>    
-  <p class="text-content ml-content">a ^ b = 0100</p>       
-  <p class="text-content ml-content">~ a = 1000</p>  
-  <p class="text-content ml-content">Let, Binary of x = 0101</p> 
+  <p class="text-content ml-content">if a = 7</p>
+  <p class="text-content ml-content">b = 6</p>
+  <p class="text-content ml-content">then, binary (a) = 0111</p>
+  <p class="text-content ml-content">binary (b) = 0110</p>
+  <p class="text-content ml-content">hence, a & b = 0011</p>
+  <p class="text-content ml-content">a | b = 0111</p>
+  <p class="text-content ml-content">a ^ b = 0100</p>
+  <p class="text-content ml-content">~ a = 1000</p>
+  <p class="text-content ml-content">Let, Binary of x = 0101</p>
   <p class="text-content ml-content">Binary of y = 1000</p>
-  <p class="text-content ml-content">Bitwise OR = 1101</p> 
+  <p class="text-content ml-content">Bitwise OR = 1101</p>
   <p class="text-content ml-content">8 4 2 1</p>
-  <p class="text-content ml-content">1 1 0 1 = 8 + 4 + 1 = 13</p><br/>  
+  <p class="text-content ml-content">1 1 0 1 = 8 + 4 + 1 = 13</p>
+  <br />
   <p class="text-content ml-content">Bitwise AND = 0000</p>
   <p class="text-content ml-content">0000 = 0</p>
   <p class="text-content ml-content">Bitwise XOR = 1101</p>
   <p class="text-content ml-content">8 4 2 1</p>
   <p class="text-content ml-content">1 1 0 1 = 8 + 4 + 1 = 13</p>
-  <p class="text-content ml-content">Negation of x = ~x = (-x) - 1 = (-5) - 1 = -6</p> 
-  <p class="text-content ml-content">~x = -6</p><br/>
+  <p class="text-content ml-content">Negation of x = ~x = (-x) - 1 = (-5) - 1 = -6</p>
+  <p class="text-content ml-content">~x = -6</p>
+  <br />
   <p class="text-content ml-content">In the below table, we are explaining the works of the bitwise operators.</p>
-  <img src="/public/Assets/Logicaloperator.png" height="500" width="500"/><br/> 
-  <h5 class="text-content font-head">Example</h5>  
-  <p class="text-content ml-content">Now we give code examples of Bitwise operators in Python. The code is given below -</p><p class="text-content ml-content">  
-  <p class="text-content ml-content">a = 5&nbsp;&nbsp;# initialize the value of a  </p>
-  <p class="text-content ml-content">b = 6&nbsp;&nbsp;# initialize the value of b </p> 
-  <p class="text-content ml-content">print('a&b:', a&b)  </p>
-  <p class="text-content ml-content">print('a|b:', a|b) </p> 
-  <p class="text-content ml-content">print('a^b:', a^b) </p> 
-  <p class="text-content ml-content">print('~a:', ~a)  </p>
-  <p class="text-content ml-content">print('a &lt;&lt; b:', a &lt;&lt; b)  </p>
-  <p class="text-content ml-content">print('a>>b:', a>>b) </p><br/>   
+  <img src="/Assets/Logicaloperator.png" height="500" width="500" /><br />
+  <h5 class="text-content font-head">Example</h5>
+  <p class="text-content ml-content">
+    Now we give code examples of Bitwise operators in Python. The code is given below -
+  </p>
+  <p class="text-content ml-content"></p>
+  <p class="text-content ml-content">a = 5&nbsp;&nbsp;# initialize the value of a</p>
+  <p class="text-content ml-content">b = 6&nbsp;&nbsp;# initialize the value of b</p>
+  <p class="text-content ml-content">print('a&b:', a&b)</p>
+  <p class="text-content ml-content">print('a|b:', a|b)</p>
+  <p class="text-content ml-content">print('a^b:', a^b)</p>
+  <p class="text-content ml-content">print('~a:', ~a)</p>
+  <p class="text-content ml-content">print('a &lt;&lt; b:', a &lt;&lt; b)</p>
+  <p class="text-content ml-content">print('a>>b:', a>>b)</p>
+  <br />
   <h4 class="text-subhead font-head">Logical Operators</h4>
-  <p class="text-content ml-content">The assessment of expressions to make decisions typically uses logical operators. 
-    The examples of logical operators are and, or, and not. In the case of logical AND, if the first one is 0, it does not depend upon the second one. In <p class="text-content ml-content">the case of logical OR, if the first one is 1, it does not depend on the second one. Python supports the following logical operators. 
-    In the below table, we explain the works of the logical operators.</p><br/> 
-  <img src="/public/Assets/Bitwiseoperator.png" height="500" width="500"/><br/>
+  <p class="text-content ml-content">
+    The assessment of expressions to make decisions typically uses logical operators. The examples of logical operators
+    are and, or, and not. In the case of logical AND, if the first one is 0, it does not depend upon the second one. In
+  </p>
+  <p class="text-content ml-content">
+    the case of logical OR, if the first one is 1, it does not depend on the second one. Python supports the following
+    logical operators. In the below table, we explain the works of the logical operators.
+  </p>
+  <br />
+  <img src="/Assets/Bitwiseoperator.png" height="500" width="500" /><br />
   <h5 class="text-content font-head">Example</h5>
-  <p class="text-content ml-content">Now we give code examples of arithmetic operators in Python. The code is given below</p>
-  <p class="text-content ml-content">a = 5&nbsp;&nbsp;# initialize the value of a  </p>        
-  <p class="text-content ml-content">print(Is this statement true?:',a > 3 and a &lt; 5)  </p>
-  <p class="text-content ml-content">print('Any one statement is true?:',a > 3 or a &lt; 5) </p> 
-  <p class="text-content ml-content">print('Each statement is true then return False and vice-versa:',(not(a > 3 and a &lt; 5)))  </p><br/>
+  <p class="text-content ml-content">
+    Now we give code examples of arithmetic operators in Python. The code is given below
+  </p>
+  <p class="text-content ml-content">a = 5&nbsp;&nbsp;# initialize the value of a</p>
+  <p class="text-content ml-content">print(Is this statement true?:',a > 3 and a &lt; 5)</p>
+  <p class="text-content ml-content">print('Any one statement is true?:',a > 3 or a &lt; 5)</p>
+  <p class="text-content ml-content">
+    print('Each statement is true then return False and vice-versa:',(not(a > 3 and a &lt; 5)))
+  </p>
+  <br />
   <h4 class="text-subhead font-head">Membership Operators</h4>
-  <p class="text-content ml-content">The membership of a value inside a Python data structure can be verified using Python membership operators. 
-    The result is true if the value is in the data structure; otherwise, it returns false.</p><br/>
-  <img src="/public/Assets/IdentityOperators.png"/><br/>
+  <p class="text-content ml-content">
+    The membership of a value inside a Python data structure can be verified using Python membership operators. The
+    result is true if the value is in the data structure; otherwise, it returns false.
+  </p>
+  <br />
+  <img src="/Assets/IdentityOperators.png" /><br />
   <h5 class="text-content font-head">Example</h5>
-  <p class="text-content ml-content">Now we give code examples of Membership operators in Python. The code is given below</p>
-  <p class="text-content ml-content">x = ["Rose", "Lotus"] </p>
+  <p class="text-content ml-content">
+    Now we give code examples of Membership operators in Python. The code is given below
+  </p>
+  <p class="text-content ml-content">x = ["Rose", "Lotus"]</p>
   <p class="text-content ml-content">print(' Is value Present?', "Rose" in x)</p>
-  <p class="text-content ml-content">print(' Is value not Present?', "Riya" not in x)</p><br/>
-  <h4 class="text-subhead font-head">Identity Operators</h4><br/>
-  <img src="/public/Assets/IdentityOperators.png"/><br/>
+  <p class="text-content ml-content">print(' Is value not Present?', "Riya" not in x)</p>
+  <br />
+  <h4 class="text-subhead font-head">Identity Operators</h4>
+  <br />
+  <img src="/Assets/IdentityOperators.png" /><br />
   <h5 class="text-content font-head">Example</h5>
-  <p class="text-content ml-content">Now we give code examples of Identity operators in Python. The code is given below</p>
+  <p class="text-content ml-content">
+    Now we give code examples of Identity operators in Python. The code is given below
+  </p>
   <p class="text-content ml-content">a = ["Rose", "Lotus"]</p>
-  <p class="text-content ml-content">b = ["Rose", "Lotus"]</p> 
+  <p class="text-content ml-content">b = ["Rose", "Lotus"]</p>
   <p class="text-content ml-content">c = a</p>
   <p class="text-content ml-content">print(a is c)</p>
-  <p class="text-content ml-content">print(a is not c)</p> 
-  <p class="text-content ml-content">print(a is b)</p> 
-  <p class="text-content ml-content">print(a is not b)</p> 
-  <p class="text-content ml-content">print(a == b)</p> 
-  <p class="text-content ml-content">print(a != b)</p> 
-  <br/>      
+  <p class="text-content ml-content">print(a is not c)</p>
+  <p class="text-content ml-content">print(a is b)</p>
+  <p class="text-content ml-content">print(a is not b)</p>
+  <p class="text-content ml-content">print(a == b)</p>
+  <p class="text-content ml-content">print(a != b)</p>
+  <br />
 </div>

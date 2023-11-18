@@ -1,79 +1,181 @@
 <div>
-    <h2 class="text-subhead font-head"><b>Introduction</b></h2>
-    <p class="text-content ml-content">In this section, we will learn how to create a simple Node.js web server and handle HTTP requests.</p>
-    <p class="text-content ml-content">To access web pages of any web application, you need a web server. The web server will handle all the http requests for the web application e.g IIS is a web server for ASP.NET web applications and Apache is a web server for PHP or Java web applications.</p>
-    <p class="text-content ml-content">Node.js provides capabilities to create your own web server which will handle HTTP requests asynchronously. You can use IIS or Apache to run Node.js web application but it is recommended to use Node.js web server.</p><br/>
-    <h3 class="text-subhead font-head"><b>Create Node.js Web Server</b></h3>
-    <p class="text-content ml-content">Node.js makes it easy to create a simple web server that processes incoming requests asynchronously.</p>
-    <p class="text-content ml-content">The following example is a simple Node.js web server contained in server.js file.</p>
-    <h4><b>server.js </b></h4>
-    <p class="text-content ml-content">var http = require('http'); // 1 - Import Node.js core module</p>
-    <p class="text-content ml-content">var server = http.createServer(function (req, res) {&nbsp;&nbsp; // 2 - creating server
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;//handle incomming requests here..</p>
-    <p class="text-content ml-content">});</p>
-    <p class="text-content ml-content">server.listen(5000); //3 - listen for any incoming requests</p>
-    <p class="text-content ml-content">console.log('Node.js web server at port 5000 is running..')</p><br/>
-    <p class="text-content ml-content">In the above example, we import the http module using require() function. The http module is a core module of Node.js, so no need to install it using NPM. The next step is to call createServer() method of http and specify callback function with request and response parameter. Finally, call listen() method of server object which was returned from createServer() method with port number, to start listening to incoming requests on port 5000. You can specify any unused port here.</p>
-    <p class="text-content ml-content">Run the above web server by writing node server.js command in command prompt or terminal window and it will display message as shown below.</p>
-    <p class="text-content ml-content">&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;<b>node server.js</b></p>
-    <p class="text-content ml-content"><b>Node.js web server at port 5000 is running..</b></p>
-    <p class="text-content ml-content">This is how you create a Node.js web server using simple steps. Now, let's see how to handle HTTP request and send response in Node.js web server.</p><br/>
-    <h3 class="text-subhead font-head"><b>Handle HTTP Request</b></h3>
-    <p class="text-content ml-content">The http.createServer() method includes request and response parameters which is supplied by Node.js. The request object can be used to get information about the current HTTP request e.g., url, request header, and data. The response object can be used to send a response for a current HTTP request.</p>
-    <p class="text-content ml-content">The following example demonstrates handling HTTP request and response in Node.js.</p><br/>
-    <h4><b>server.js </b></h4>
-    <p class="text-content ml-content">var http = require('http'); // Import Node.js core module</p>
-    <p class="text-content ml-content">var server = http.createServer(function (req, res) {&nbsp;&nbsp; //create web server</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;if (req.url == '/') { //check the URL of the current request</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// set response header</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.writeHead(200, { 'Content-Type': 'text/html' }); </p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// set response content&nbsp;&nbsp;&nbsp;&nbsp;</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.write('<html><body><p class="text-content ml-content">This is home Page.</p></body></html>');</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.end();</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;}</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;else if (req.url == "/student") {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.writeHead(200, { 'Content-Type': 'text/html' });</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.write('<html><body><p class="text-content ml-content">This is student Page.</p></body></html>');</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.end();</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;}</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;else if (req.url == "/admin") {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.writeHead(200, { 'Content-Type': 'text/html' });</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.write('<html><body><p class="text-content ml-content">This is admin Page.</p></body></html>');</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.end();</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;}</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;else</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.end('Invalid Request!');</p>
-    <p class="text-content ml-content">});</p>
-    <p class="text-content ml-content">server.listen(5000); //6 - listen for any incoming requests</p>
-    <p class="text-content ml-content">console.log('Node.js web server at port 5000 is running..')</p><br/>
-    <p class="text-content ml-content">In the above example, req.url is used to check the url of the current request and based on that it sends the response. To send a response, first it sets the response header using writeHead() method and then writes a string as a response body using write() method. 
-    <p class="text-content ml-content">Finally, Node.js web server sends the response using end() method.</p><br/>
-    <p class="text-content ml-content">Now, run the above web server as shown below.</p>
-    <p class="text-content ml-content">&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;<b>node server.js</b></p>
-    <p class="text-content ml-content"><b>Node.js web server at port 5000 is running..</b></p>
-    <p class="text-content ml-content">You should see the following response.</p>
-    <p class="text-content ml-content">HTTP/1.1 200 OK</p>
-    <p class="text-content ml-content">Content-Type: text/plain</p>
-    <p class="text-content ml-content">Date: Tue, 8 Sep 2015 03:05:08 GMT</p>
-    <p class="text-content ml-content">Connection: keep-alive</p>
-    <p class="text-content ml-content">This is home page.</p><br/>
-    <p class="text-content ml-content">For Windows users, point your browser to http://localhost:5000 and see the following result.</p>
-    <p class="text-content ml-content">&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;<b>This is home Page.</b></p>
-    <p class="text-content ml-content">The same way, point your browser to http://localhost:5000/student and see the following result.</p>
-    <p class="text-content ml-content">&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;<b>This is student Page.</b></p>
-    <p class="text-content ml-content">It will display "Invalid Request" for all requests other than the above URLs.
-    <h3 class="text-subhead font-head"><b>Sending JSON Response</b></h3>
-    <p class="text-content ml-content">The following example demonstrates how to serve JSON response from the Node.js web server.</p><br/>
-    <h4><b>server.js</b></h4> 
-    <p class="text-content ml-content">var http = require('http'); </p>
-    <p class="text-content ml-content">var server = http.createServer(function (req, res) {&nbsp;&nbsp;</p> 
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;if (req.url == '/data') { //check the URL of the current request</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.writeHead(200, { 'Content-Type': 'application/json' });</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.write(JSON.stringify({ message: "Hello World"})); </p> 
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.end(); </p> 
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;}</p>
-    <p class="text-content ml-content">});</p>
-    <p class="text-content ml-content">server.listen(5000);</p>
-    <p class="text-content ml-content">console.log('Node.js web server at port 5000 is running..')</p><br/>
-    <p class="text-content ml-content">So, this way you can create a simple web server that serves different responses.</p>
-    </div>
+  <h2 class="text-subhead font-head"><b>Introduction</b></h2>
+  <p class="text-content ml-content">
+    In this section, we will learn how to create a simple Node.js web server and handle HTTP requests.
+  </p>
+  <p class="text-content ml-content">
+    To access web pages of any web application, you need a web server. The web server will handle all the http requests
+    for the web application e.g IIS is a web server for ASP.NET web applications and Apache is a web server for PHP or
+    Java web applications.
+  </p>
+  <p class="text-content ml-content">
+    Node.js provides capabilities to create your own web server which will handle HTTP requests asynchronously. You can
+    use IIS or Apache to run Node.js web application but it is recommended to use Node.js web server.
+  </p>
+  <br />
+  <h3 class="text-subhead font-head"><b>Create Node.js Web Server</b></h3>
+  <p class="text-content ml-content">
+    Node.js makes it easy to create a simple web server that processes incoming requests asynchronously.
+  </p>
+  <p class="text-content ml-content">
+    The following example is a simple Node.js web server contained in server.js file.
+  </p>
+  <h4><b>server.js </b></h4>
+  <p class="text-content ml-content">var http = require('http'); // 1 - Import Node.js core module</p>
+  <p class="text-content ml-content">
+    var server = http.createServer(function (req, res) {&nbsp;&nbsp; // 2 - creating server
+  </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;//handle incomming requests here..</p>
+  <p class="text-content ml-content">});</p>
+  <p class="text-content ml-content">server.listen(5000); //3 - listen for any incoming requests</p>
+  <p class="text-content ml-content">console.log('Node.js web server at port 5000 is running..')</p>
+  <br />
+  <p class="text-content ml-content">
+    In the above example, we import the http module using require() function. The http module is a core module of
+    Node.js, so no need to install it using NPM. The next step is to call createServer() method of http and specify
+    callback function with request and response parameter. Finally, call listen() method of server object which was
+    returned from createServer() method with port number, to start listening to incoming requests on port 5000. You can
+    specify any unused port here.
+  </p>
+  <p class="text-content ml-content">
+    Run the above web server by writing node server.js command in command prompt or terminal window and it will display
+    message as shown below.
+  </p>
+  <p class="text-content ml-content">&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;<b>node server.js</b></p>
+  <p class="text-content ml-content"><b>Node.js web server at port 5000 is running..</b></p>
+  <p class="text-content ml-content">
+    This is how you create a Node.js web server using simple steps. Now, let's see how to handle HTTP request and send
+    response in Node.js web server.
+  </p>
+  <br />
+  <h3 class="text-subhead font-head"><b>Handle HTTP Request</b></h3>
+  <p class="text-content ml-content">
+    The http.createServer() method includes request and response parameters which is supplied by Node.js. The request
+    object can be used to get information about the current HTTP request e.g., url, request header, and data. The
+    response object can be used to send a response for a current HTTP request.
+  </p>
+  <p class="text-content ml-content">
+    The following example demonstrates handling HTTP request and response in Node.js.
+  </p>
+  <br />
+  <h4><b>server.js </b></h4>
+  <p class="text-content ml-content">var http = require('http'); // Import Node.js core module</p>
+  <p class="text-content ml-content">
+    var server = http.createServer(function (req, res) {&nbsp;&nbsp; //create web server
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;if (req.url == '/') { //check the URL of the current request
+  </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// set response header</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.writeHead(200, { 'Content-Type': 'text/html' });
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// set response content&nbsp;&nbsp;&nbsp;&nbsp;
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.write('
+    <html>
+      <body>
+        <p class="text-content ml-content">This is home Page.</p>
+      </body>
+    </html>
+    ');
+  </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.end();</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;}</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;else if (req.url == "/student") {</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.writeHead(200, { 'Content-Type': 'text/html' });
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.write('
+    <html>
+      <body>
+        <p class="text-content ml-content">This is student Page.</p>
+      </body>
+    </html>
+    ');
+  </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.end();</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;else if (req.url == "/admin") {</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.writeHead(200, { 'Content-Type': 'text/html' });
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.write('
+    <html>
+      <body>
+        <p class="text-content ml-content">This is admin Page.</p>
+      </body>
+    </html>
+    ');
+  </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.end();</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;else</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.end('Invalid Request!');</p>
+  <p class="text-content ml-content">});</p>
+  <p class="text-content ml-content">server.listen(5000); //6 - listen for any incoming requests</p>
+  <p class="text-content ml-content">console.log('Node.js web server at port 5000 is running..')</p>
+  <br />
+  <p class="text-content ml-content">
+    In the above example, req.url is used to check the url of the current request and based on that it sends the
+    response. To send a response, first it sets the response header using writeHead() method and then writes a string as
+    a response body using write() method.
+  </p>
+  <p class="text-content ml-content">Finally, Node.js web server sends the response using end() method.</p>
+  <br />
+  <p class="text-content ml-content">Now, run the above web server as shown below.</p>
+  <p class="text-content ml-content">&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;<b>node server.js</b></p>
+  <p class="text-content ml-content"><b>Node.js web server at port 5000 is running..</b></p>
+  <p class="text-content ml-content">You should see the following response.</p>
+  <p class="text-content ml-content">HTTP/1.1 200 OK</p>
+  <p class="text-content ml-content">Content-Type: text/plain</p>
+  <p class="text-content ml-content">Date: Tue, 8 Sep 2015 03:05:08 GMT</p>
+  <p class="text-content ml-content">Connection: keep-alive</p>
+  <p class="text-content ml-content">This is home page.</p>
+  <br />
+  <p class="text-content ml-content">
+    For Windows users, point your browser to http://localhost:5000 and see the following result.
+  </p>
+  <p class="text-content ml-content">&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;<b>This is home Page.</b></p>
+  <p class="text-content ml-content">
+    The same way, point your browser to http://localhost:5000/student and see the following result.
+  </p>
+  <p class="text-content ml-content">
+    &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;<b>This is student Page.</b>
+  </p>
+  <p class="text-content ml-content">It will display "Invalid Request" for all requests other than the above URLs.</p>
+  <h3 class="text-subhead font-head"><b>Sending JSON Response</b></h3>
+  <p class="text-content ml-content">
+    The following example demonstrates how to serve JSON response from the Node.js web server.
+  </p>
+  <br />
+  <h4><b>server.js</b></h4>
+  <p class="text-content ml-content">var http = require('http');</p>
+  <p class="text-content ml-content">var server = http.createServer(function (req, res) {&nbsp;&nbsp;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;if (req.url == '/data') { //check the URL of the current request
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.writeHead(200, { 'Content-Type':
+    'application/json' });
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.write(JSON.stringify({ message: "Hello
+    World"}));
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.end();
+  </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+  <p class="text-content ml-content">});</p>
+  <p class="text-content ml-content">server.listen(5000);</p>
+  <p class="text-content ml-content">console.log('Node.js web server at port 5000 is running..')</p>
+  <br />
+  <p class="text-content ml-content">
+    So, this way you can create a simple web server that serves different responses.
+  </p>
+</div>

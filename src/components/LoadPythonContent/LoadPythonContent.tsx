@@ -28,7 +28,6 @@ const LoadPythonContent = ({ id }: { id: string }) => {
       </Suspense>
     </div>
   );
-
-  };
+};
 
 export default LoadPythonContent;

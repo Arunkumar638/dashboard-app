@@ -1,129 +1,157 @@
-<div><h3><b>Strings in c</b></h3>
-In C programming, a "string" is a sequence of characters that represents text. It is stored as an array of characters, terminated by a null character ('\0') which marks the end of the string. Here are some key points about strings in C:<br/>
-<b>String Literal:</b> A string literal is a sequence of characters enclosed in double quotes ("). <br/>For example, "Hello" is a string literal.<br/>
-<b>Character Array:</b> In C, strings are represented as arrays of characters. You can
-declare a string as follows:<br/>
-char myString[6] = {'H', 'e', 'l', 'l', 'o', '\0'};<br/>
-or more commonly using string literals:<br/>
-char myString[] = "Hello";<br/>
-In the second example, the compiler automatically determines the size of the array based on the length of the string.<br/>
-Null Termination: Strings in C are null-terminated, meaning that the last character in the string is '\0'. This is how C knows where the string ends.<br/>
-<b>String Handling Functions:</b> C provides a number of functions for working with strings in the string.h header file. Some commonly used functions include strlen, strcpy, strcat, strcmp, etc.<br/>
-<b>String Input:</b> You can use the scanf function to read a string from the user, but it's recommended to use fgets for safer input handling.<br/>
-<b>String Output:</b> You can use printf to print strings to the console.<br/>
-<b>String Manipulation:</b> You can manipulate strings by assigning new values to individual characters or by using string manipulation functions.<br/>
-<b>String Comparison:</b> You can compare two strings using functions like strcmp, which returns a value indicating the lexicographical relationship between the strings.<br/>
-<b>String Concatenation:</b> You can concatenate two strings using the strcat function or by using the strncat function if you want to limit the number of characters to concatenate.<br/>
-<b>String Copy:</b> You can copy one string to another using the strcpy function, or use strncpy if you want to specify a maximum number of characters to copy.<br/>
-<b>String Length:</b> You can find the length of a string (excluding the null terminator) using the strlen function.<br/>
-Here's an example of a C program that demonstrates some basic string operations:
-#include &lt;stdio.h&gt;<br/>
-#include &lt;string.h&gt;<br/>
-int main() {<br/>
-    char myString[] = "Hello";<br/>
-    printf("The length of the string is: %d\n", strlen(myString));<br/>
-   char anotherString[20];<br/>
-    strcpy(anotherString, "World");<br/>
-    printf("Concatenated string: %s\n", strcat(myString, anotherString));<br/>
-        return 0;<br/>
-}<br/>
-This program declares two strings, calculates the length of the first string, and then concatenates the two strings using strcat. Keep in mind that you need to have enough space allocated in the destination string to accommodate the concatenated result.<br/>
-<h3><b>C gets and puts method for string</b></h3><br/>
-In C programming, gets and puts are standard library functions used for reading and writing strings, respectively. However, it's important to note that gets has been deprecated in C11 and removed from C99, and it is considered unsafe due to the lack of bounds checking. It's recommended to use fgets instead for safer string input.<br/>
-Here's a brief explanation of gets and puts:<br/>
-gets Function (Deprecated)<br/>
-The gets function is used to read a line of text from the standard input (usually the keyboard) and store it as a string. It reads characters until a newline ('\n') character is encountered, and then it adds a null character ('\0') to mark the end of the string.<br/>
-<b>Example of gets:</b><br/>
-char myString[50];<br/>
-printf("Enter a string: ");<br/>
-gets(myString); // Deprecated and unsafe, don't use in modern C programming<br/>
-puts Function<br/>
-The puts function is used to print a string to the standard output (usually the console) followed by a newline character ('\n').<br/>
-<b>Example of puts:</b><br/>
-char myString[] = "Hello, World!";<br/>
-puts(myString);<br/>
-<h4><b>Using fgets for Safer Input</b></h4>
-Instead of using gets, it's recommended to use fgets for reading strings as it allows you to specify a maximum number of characters to read, which helps prevent buffer overflow.<br/>
-<b>Example of fgets:</b><br/>
-char myString[50];<br/>
-printf("Enter a string: ");<br/>
-fgets(myString, sizeof(myString), stdin);<br/>
-In this example, fgets reads up to sizeof(myString)-1 characters (to leave room for the null terminator) from the standard input (specified by stdin) and stores them in myString.<br/> It ensures that the input will not exceed the allocated buffer size.<br/>
-<h3><b>C String Functions</b></h3>
-C provides a set of string manipulation functions in the string.h header file. These functions are commonly used for various operations on strings. Here are some of the most commonly used C string functions:<br/>
+<div>
+  <h3><b>Strings in c</b></h3>
+  In C programming, a "string" is a sequence of characters that represents text. It is stored as an array of characters,
+  terminated by a null character ('\0') which marks the end of the string. Here are some key points about strings in
+  C:<br />
+  <b>String Literal:</b> A string literal is a sequence of characters enclosed in double quotes ("). <br />For example,
+  "Hello" is a string literal.<br />
+  <b>Character Array:</b> In C, strings are represented as arrays of characters. You can declare a string as follows:<br />
+  char myString[6] = {'H', 'e', 'l', 'l', 'o', '\0'};<br />
+  or more commonly using string literals:<br />
+  char myString[] = "Hello";<br />
+  In the second example, the compiler automatically determines the size of the array based on the length of the
+  string.<br />
+  Null Termination: Strings in C are null-terminated, meaning that the last character in the string is '\0'. This is how
+  C knows where the string ends.<br />
+  <b>String Handling Functions:</b> C provides a number of functions for working with strings in the string.h header
+  file. Some commonly used functions include strlen, strcpy, strcat, strcmp, etc.<br />
+  <b>String Input:</b> You can use the scanf function to read a string from the user, but it's recommended to use fgets
+  for safer input handling.<br />
+  <b>String Output:</b> You can use printf to print strings to the console.<br />
+  <b>String Manipulation:</b> You can manipulate strings by assigning new values to individual characters or by using
+  string manipulation functions.<br />
+  <b>String Comparison:</b> You can compare two strings using functions like strcmp, which returns a value indicating
+  the lexicographical relationship between the strings.<br />
+  <b>String Concatenation:</b> You can concatenate two strings using the strcat function or by using the strncat
+  function if you want to limit the number of characters to concatenate.<br />
+  <b>String Copy:</b> You can copy one string to another using the strcpy function, or use strncpy if you want to
+  specify a maximum number of characters to copy.<br />
+  <b>String Length:</b> You can find the length of a string (excluding the null terminator) using the strlen
+  function.<br />
+  Here's an example of a C program that demonstrates some basic string operations: #include &lt;stdio.h&gt;<br />
+  #include &lt;string.h&gt;<br />
+  int main() {<br />
+  char myString[] = "Hello";<br />
+  printf("The length of the string is: %d\n", strlen(myString));<br />
+  char anotherString[20];<br />
+  strcpy(anotherString, "World");<br />
+  printf("Concatenated string: %s\n", strcat(myString, anotherString));<br />
+  return 0;<br />
+  }<br />
+  This program declares two strings, calculates the length of the first string, and then concatenates the two strings
+  using strcat. Keep in mind that you need to have enough space allocated in the destination string to accommodate the
+  concatenated result.<br />
+  <h3><b>C gets and puts method for string</b></h3>
+  <br />
+  In C programming, gets and puts are standard library functions used for reading and writing strings, respectively.
+  However, it's important to note that gets has been deprecated in C11 and removed from C99, and it is considered unsafe
+  due to the lack of bounds checking. It's recommended to use fgets instead for safer string input.<br />
+  Here's a brief explanation of gets and puts:<br />
+  gets Function (Deprecated)<br />
+  The gets function is used to read a line of text from the standard input (usually the keyboard) and store it as a
+  string. It reads characters until a newline ('\n') character is encountered, and then it adds a null character ('\0')
+  to mark the end of the string.<br />
+  <b>Example of gets:</b><br />
+  char myString[50];<br />
+  printf("Enter a string: ");<br />
+  gets(myString); // Deprecated and unsafe, don't use in modern C programming<br />
+  puts Function<br />
+  The puts function is used to print a string to the standard output (usually the console) followed by a newline
+  character ('\n').<br />
+  <b>Example of puts:</b><br />
+  char myString[] = "Hello, World!";<br />
+  puts(myString);<br />
+  <h4><b>Using fgets for Safer Input</b></h4>
+  Instead of using gets, it's recommended to use fgets for reading strings as it allows you to specify a maximum number
+  of characters to read, which helps prevent buffer overflow.<br />
+  <b>Example of fgets:</b><br />
+  char myString[50];<br />
+  printf("Enter a string: ");<br />
+  fgets(myString, sizeof(myString), stdin);<br />
+  In this example, fgets reads up to sizeof(myString)-1 characters (to leave room for the null terminator) from the
+  standard input (specified by stdin) and stores them in myString.<br />
+  It ensures that the input will not exceed the allocated buffer size.<br />
+  <h3><b>C String Functions</b></h3>
+  C provides a set of string manipulation functions in the string.h header file. These functions are commonly used for
+  various operations on strings. Here are some of the most commonly used C string functions:<br />
 
-<b>strlen - </b>Calculates the length of a string.<br/>
-size_t strlen(const char *str);<br/>
-<b>strcpy -</b> Copies one string to another.<br/>
-char *strcpy(char *dest, const char *src);<br/>
-<b>strncpy - </b>Copies a specified number of characters from one string to another.<br/>
-char *strncpy(char *dest, const char *src, size_t n);<br/>
-<b>strcat -</b> Concatenates two strings.<br/>
-char *strcat(char *dest, const char *src);<br/>
-<b>strncat - </b>Concatenates a specified number of characters from one string to another.<br/>
-char *strncat(char *dest, const char *src, size_t n);<br/>
-<b>strcmp - </b>Compares two strings lexicographically.<br/>
-int strcmp(const char *str1, const char *str2);<br/>
-<b>strncmp - </b>Compares a specified number of characters from two strings.<br/>
-int strncmp(const char *str1, const char *str2, size_t n);<br/>
-<b>strchr - </b>Finds the first occurrence of a character in a string.<br/>
-char *strchr(const char *str, int c);<br/>
-<b>strrchr - </b>Finds the last occurrence of a character in a string.<br/>
-char *strrchr(const char *str, int c);<br/>
-<b>strstr -</b> Finds the first occurrence of one string in another.<br/>
-char *strstr(const char *haystack, const char *needle);<br/>
-<b>strtok - </b>Breaks a string into a series of tokens.<br/>
-char *strtok(char *str, const char *delim);<br/>
-<b>sprintf - </b>Formats a string and stores it in a buffer.<br/>
-int sprintf(char *str, const char *format, ...);<br/>
-<b>sscanf -</b> Reads formatted input from a string.<br/>
-int sscanf(const char *str, const char *format, ...);<br/>
-<b>memset -</b> Sets a block of memory to a specified value.<br/>
-void *memset(void *ptr, int value, size_t num);<br/>
-<b>memcpy - </b>Copies a block of memory from one location to another.<br/>
-void *memcpy(void *dest, const void *src, size_t num);<br/>
-<b>memmove -</b> Moves a block of memory from one location to another, even if the source and destination overlap.<br/>
-void *memmove(void *dest, const void *src, size_t num);<br/>
-<b>memcmp - </b>Compares two blocks of memory.<br/>
-int memcmp(const void *ptr1, const void *ptr2, size_t num);<br/>
-These are just some of the commonly used string functions in C. There are additional functions available in the string.h header file that provide more specialized string manipulation capabilities. Always remember to include the string.h header file in your C program when using these functions.<br/>
-<h3><b>	C math function</b></h3>
-C provides a variety of mathematical functions that can be used for performing common mathematical operations. These functions are available in the math.h header file. Here are some commonly used C math functions:<br/>
-<b>sqrt - </b>Calculates the square root of a number.<br/>
-double sqrt(double x);<br/>
-<b>pow -</b> Raises a number to a specified power.<br/>
-double pow(double x, double y);<br/>
-<b>exp - </b>Calculates the exponential value of a number.<br/>
-double exp(double x);<br/>
-<b>log -</b> Calculates the natural logarithm of a number.<br/>
-double log(double x);<br/>
-<b>log10 -</b> Calculates the base-10 logarithm of a number.<br/>
-double log10(double x);<br/>
-<b>fabs -</b> Returns the absolute value of a number (float or double).<br/>
-double fabs(double x);<br/>
-<b>ceil - </b>Rounds a number up to the nearest integer.<br/>
-double ceil(double x);<br/>
-<b>floor - </b>Rounds a number down to the nearest integer.<br/>
-double floor(double x);<br/>
-<b>sin - </b>Calculates the sine of an angle (in radians).<br/>
-double sin(double x);<br/>
-<b>cos - </b>Calculates the cosine of an angle (in radians).<br/>
-double cos(double x);<br/>
-<b>tan -</b> Calculates the tangent of an angle (in radians).<br/>
-double tan(double x);<br/>
-<b>asin -</b> Calculates the arcsine (inverse sine) of a value, returning the result in radians.<br/>
-double asin(double x);<br/>
-<b>acos - </b>Calculates the arccosine (inverse cosine) of a value, returning the result in radians.<br/>
-double acos(double x);<br/>
-<b>atan -</b> Calculates the arctangent (inverse tangent) of a value, returning the result in radians.<br/>
-double atan(double x);<br/>
-<b>atan2 -</b> Calculates the arctangent of the quotient of two specified numbers.<br/>
-double atan2(double y, double x);<br/>
-<b>fmod - </b>Computes the remainder of the division operation between two numbers.<br/>
-double fmod(double x, double y);<br/>
-<b>round -</b> Rounds a floating-point number to the nearest integer.<br/>
-double round(double x);<br/>
-<b>trunc - </b>Truncates a floating-point number to its integer part.<br/>
-double trunc(double x);<br/>
-These are just some of the commonly used mathematical functions in C. There are additional functions available in the math.h header file that provide more specialized mathematical operations. Always remember to include the math.h header file in your C program when using these functions.<br/>
+  <b>strlen - </b>Calculates the length of a string.<br />
+  size_t strlen(const char *str);<br />
+  <b>strcpy -</b> Copies one string to another.<br />
+  char *strcpy(char *dest, const char *src);<br />
+  <b>strncpy - </b>Copies a specified number of characters from one string to another.<br />
+  char *strncpy(char *dest, const char *src, size_t n);<br />
+  <b>strcat -</b> Concatenates two strings.<br />
+  char *strcat(char *dest, const char *src);<br />
+  <b>strncat - </b>Concatenates a specified number of characters from one string to another.<br />
+  char *strncat(char *dest, const char *src, size_t n);<br />
+  <b>strcmp - </b>Compares two strings lexicographically.<br />
+  int strcmp(const char *str1, const char *str2);<br />
+  <b>strncmp - </b>Compares a specified number of characters from two strings.<br />
+  int strncmp(const char *str1, const char *str2, size_t n);<br />
+  <b>strchr - </b>Finds the first occurrence of a character in a string.<br />
+  char *strchr(const char *str, int c);<br />
+  <b>strrchr - </b>Finds the last occurrence of a character in a string.<br />
+  char *strrchr(const char *str, int c);<br />
+  <b>strstr -</b> Finds the first occurrence of one string in another.<br />
+  char *strstr(const char *haystack, const char *needle);<br />
+  <b>strtok - </b>Breaks a string into a series of tokens.<br />
+  char *strtok(char *str, const char *delim);<br />
+  <b>sprintf - </b>Formats a string and stores it in a buffer.<br />
+  int sprintf(char *str, const char *format, ...);<br />
+  <b>sscanf -</b> Reads formatted input from a string.<br />
+  int sscanf(const char *str, const char *format, ...);<br />
+  <b>memset -</b> Sets a block of memory to a specified value.<br />
+  void *memset(void *ptr, int value, size_t num);<br />
+  <b>memcpy - </b>Copies a block of memory from one location to another.<br />
+  void *memcpy(void *dest, const void *src, size_t num);<br />
+  <b>memmove -</b> Moves a block of memory from one location to another, even if the source and destination overlap.<br />
+  void *memmove(void *dest, const void *src, size_t num);<br />
+  <b>memcmp - </b>Compares two blocks of memory.<br />
+  int memcmp(const void *ptr1, const void *ptr2, size_t num);<br />
+  These are just some of the commonly used string functions in C. There are additional functions available in the
+  string.h header file that provide more specialized string manipulation capabilities. Always remember to include the
+  string.h header file in your C program when using these functions.<br />
+  <h3><b> C math function</b></h3>
+  C provides a variety of mathematical functions that can be used for performing common mathematical operations. These
+  functions are available in the math.h header file. Here are some commonly used C math functions:<br />
+  <b>sqrt - </b>Calculates the square root of a number.<br />
+  double sqrt(double x);<br />
+  <b>pow -</b> Raises a number to a specified power.<br />
+  double pow(double x, double y);<br />
+  <b>exp - </b>Calculates the exponential value of a number.<br />
+  double exp(double x);<br />
+  <b>log -</b> Calculates the natural logarithm of a number.<br />
+  double log(double x);<br />
+  <b>log10 -</b> Calculates the base-10 logarithm of a number.<br />
+  double log10(double x);<br />
+  <b>fabs -</b> Returns the absolute value of a number (float or double).<br />
+  double fabs(double x);<br />
+  <b>ceil - </b>Rounds a number up to the nearest integer.<br />
+  double ceil(double x);<br />
+  <b>floor - </b>Rounds a number down to the nearest integer.<br />
+  double floor(double x);<br />
+  <b>sin - </b>Calculates the sine of an angle (in radians).<br />
+  double sin(double x);<br />
+  <b>cos - </b>Calculates the cosine of an angle (in radians).<br />
+  double cos(double x);<br />
+  <b>tan -</b> Calculates the tangent of an angle (in radians).<br />
+  double tan(double x);<br />
+  <b>asin -</b> Calculates the arcsine (inverse sine) of a value, returning the result in radians.<br />
+  double asin(double x);<br />
+  <b>acos - </b>Calculates the arccosine (inverse cosine) of a value, returning the result in radians.<br />
+  double acos(double x);<br />
+  <b>atan -</b> Calculates the arctangent (inverse tangent) of a value, returning the result in radians.<br />
+  double atan(double x);<br />
+  <b>atan2 -</b> Calculates the arctangent of the quotient of two specified numbers.<br />
+  double atan2(double y, double x);<br />
+  <b>fmod - </b>Computes the remainder of the division operation between two numbers.<br />
+  double fmod(double x, double y);<br />
+  <b>round -</b> Rounds a floating-point number to the nearest integer.<br />
+  double round(double x);<br />
+  <b>trunc - </b>Truncates a floating-point number to its integer part.<br />
+  double trunc(double x);<br />
+  These are just some of the commonly used mathematical functions in C. There are additional functions available in the
+  math.h header file that provide more specialized mathematical operations. Always remember to include the math.h header
+  file in your C program when using these functions.<br />
 </div>

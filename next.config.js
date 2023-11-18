@@ -1,4 +1,3 @@
-
 // const {NextFederationPlugin} = require('@module-federation/nextjs-mf');
 
 // module.exports = {
@@ -59,14 +58,12 @@ const withPlugins = require('next-compose-plugins');
 const withImages = require('next-images');
 
 module.exports = withPlugins([withImages], {
-  experimental: {
-    outputStandalone: true,
-},
+  output: 'standalone',
   webpack: (config, { isServer }) => {
     config.module.rules.push({
       test: /\.html$/,
-      use: 'html-loader',
+      use: 'raw-loader'
     });
     return config;
-  },
+  }
 });

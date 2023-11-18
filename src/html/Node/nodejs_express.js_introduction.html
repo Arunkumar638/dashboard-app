@@ -1,55 +1,97 @@
 <div>
   <h3 class="text-subhead font-head"><b>Introduction</b></h3>
-  <p class="text-content ml-content">Express.js is a small framework that works on top of Node.js web server functionality to simplify its APIs and add helpful new features. It makes it easier to organize your application’s functionality with middleware and routing. It adds helpful utilities to Node.js HTTP objects and facilitates the rendering of dynamic HTTP objects. </p><br/>
+  <p class="text-content ml-content">
+    Express.js is a small framework that works on top of Node.js web server functionality to simplify its APIs and add
+    helpful new features. It makes it easier to organize your application’s functionality with middleware and routing.
+    It adds helpful utilities to Node.js HTTP objects and facilitates the rendering of dynamic HTTP objects.
+  </p>
+  <br />
   <h3 class="text-subhead font-head"><b>Why Express.js?</b></h3>
   <ol class="list-disc">
-  <li class="ml-points">Develops Node.js web applications quickly and easily.</li>
-  <li class="ml-points">It’s simple to set up and personalise.</li>
-  <li class="ml-points">Allows you to define application routes using HTTP methods and URLs.</li>
-  <li class="ml-points">Includes a number of middleware modules that can be used to execute additional requests and responses activities.</li>
-  <li class="ml-points">Simple to interface with a variety of template engines, including Jade, Vash, and EJS.</li>
-  <li class="ml-points">Allows you to specify a middleware for handling errors.</li></ol><br/>
+    <li class="ml-points">Develops Node.js web applications quickly and easily.</li>
+    <li class="ml-points">It’s simple to set up and personalise.</li>
+    <li class="ml-points">Allows you to define application routes using HTTP methods and URLs.</li>
+    <li class="ml-points">
+      Includes a number of middleware modules that can be used to execute additional requests and responses activities.
+    </li>
+    <li class="ml-points">Simple to interface with a variety of template engines, including Jade, Vash, and EJS.</li>
+    <li class="ml-points">Allows you to specify a middleware for handling errors.</li>
+  </ol>
+  <br />
   <h3 class="text-subhead font-head"><b>Advantages of Express.js</b></h3>
   <ol class="list-disc">
-  <li class="ml-points">Makes Node.js web application development fast and easy.</li>
-  <li class="ml-points">Easy to configure and customize.</li>
-  <li class="ml-points">Allows you to define routes of your application based on HTTP methods and URLs.</li>
-  <li class="ml-points">Includes various middleware modules which you can use to perform additional tasks on request and response.</li>
-  <li class="ml-points">Easy to integrate with different template engines like Jade, Vash, EJS etc.</li>
-  <li class="ml-points">Allows you to define an error handling middleware.</li>
-  <li class="ml-points">Easy to serve static files and resources of your application</li>
-  <li class="ml-points">Allows you to create REST API server.</li>
-  <li class="ml-points">Easy to connect with databases such as MongoDB, Redis, MySQL</li>
-  </ol><br/>
+    <li class="ml-points">Makes Node.js web application development fast and easy.</li>
+    <li class="ml-points">Easy to configure and customize.</li>
+    <li class="ml-points">Allows you to define routes of your application based on HTTP methods and URLs.</li>
+    <li class="ml-points">
+      Includes various middleware modules which you can use to perform additional tasks on request and response.
+    </li>
+    <li class="ml-points">Easy to integrate with different template engines like Jade, Vash, EJS etc.</li>
+    <li class="ml-points">Allows you to define an error handling middleware.</li>
+    <li class="ml-points">Easy to serve static files and resources of your application</li>
+    <li class="ml-points">Allows you to create REST API server.</li>
+    <li class="ml-points">Easy to connect with databases such as MongoDB, Redis, MySQL</li>
+  </ol>
+  <br />
   <h3 class="text-subhead font-head"><b>Installing</b></h3>
-  <p class="text-content ml-content">Assuming you’ve already installed Node.js, create a directory to hold your application, and make that your working directory.</p>
+  <p class="text-content ml-content">
+    Assuming you’ve already installed Node.js, create a directory to hold your application, and make that your working
+    directory.
+  </p>
   <p class="text-content ml-content"><b>$ mkdir myapp</b></p>
   <p class="text-content ml-content"><b>$ cd myapp</b></p>
-  <p class="text-content ml-content">Use the npm init command to create a package.json file for your application. For more information on how package.json works, see Specifics of npm’s package.json handling.</p>
+  <p class="text-content ml-content">
+    Use the npm init command to create a package.json file for your application. For more information on how
+    package.json works, see Specifics of npm’s package.json handling.
+  </p>
   <p class="text-content ml-content"><b>$ npm init</b></p>
-  <p class="text-content ml-content">This command prompts you for a number of things, such as the name and version of your application. For now, you can simply hit RETURN to accept the defaults for most of them, with the following exception:</p>
+  <p class="text-content ml-content">
+    This command prompts you for a number of things, such as the name and version of your application. For now, you can
+    simply hit RETURN to accept the defaults for most of them, with the following exception:
+  </p>
   <p class="text-content ml-content"><b>entry point: (index.js)</b></p>
-  <p class="text-content ml-content">Enter app.js, or whatever you want the name of the main file to be. If you want it to be index.js, hit RETURN to accept the suggested default file name.</p>
-  <p class="text-content ml-content">Now install Express in the myapp directory and save it in the dependencies list. For example:</p>
+  <p class="text-content ml-content">
+    Enter app.js, or whatever you want the name of the main file to be. If you want it to be index.js, hit RETURN to
+    accept the suggested default file name.
+  </p>
+  <p class="text-content ml-content">
+    Now install Express in the myapp directory and save it in the dependencies list. For example:
+  </p>
   <p class="text-content ml-content"><b>$ npm install express</b></p>
   <p class="text-content ml-content">To install Express temporarily and not add it to the dependencies list:</p>
-  <p class="text-content ml-content"><b>$ npm install express --no-save</b> </p><br/>
+  <p class="text-content ml-content"><b>$ npm install express --no-save</b></p>
+  <br />
   <h4><b>Hello world example</b></h4>
   <p class="text-content ml-content">const express = require('express');</p>
   <p class="text-content ml-content">const app = express();</p>
   <p class="text-content ml-content">const port = 3000;</p>
   <p class="text-content ml-content">app.get('/', (req, res) => {</p>
-  <p class="text-content ml-content">  res.send('Hello World!');</p>
+  <p class="text-content ml-content">res.send('Hello World!');</p>
   <p class="text-content ml-content">});</p>
   <p class="text-content ml-content">app.listen(port, () => {</p>
-  <p class="text-content ml-content">  console.log(`Example app listening on port ${port}`);</p>
-  <p class="text-content ml-content">});</p><br/>
-  <p class="text-content ml-content">This app starts a server and listens on port 3000 for connections. The app responds with “Hello World!” for requests to the root URL (/) or route. For every other path, it will respond with a 404 Not Found.</p>
-  <p class="text-content ml-content">The example above is actually a working server: Go ahead and click on the URL shown. You’ll get a response, with real-time logs on the page, and any changes you make will be reflected in real time. This is powered by RunKit, which provides an interactive JavaScript playground connected to a complete Node environment that runs in your web browser. Below are instructions for running the same app on your local machine.</p>
-  <h3 class="text-subhead font-head"><b>Running Locally</b></h3><br/>
-  <p class="text-content ml-content">First create a directory named myapp, change to it and run npm init. Then install express as a dependency, as per the installation guide.</p>
-  <p class="text-content ml-content">In the myapp directory, create a file named app.js and copy in the code from the example above.</p>
+  <p class="text-content ml-content">console.log(`Example app listening on port ${port}`);</p>
+  <p class="text-content ml-content">});</p>
+  <br />
+  <p class="text-content ml-content">
+    This app starts a server and listens on port 3000 for connections. The app responds with “Hello World!” for requests
+    to the root URL (/) or route. For every other path, it will respond with a 404 Not Found.
+  </p>
+  <p class="text-content ml-content">
+    The example above is actually a working server: Go ahead and click on the URL shown. You’ll get a response, with
+    real-time logs on the page, and any changes you make will be reflected in real time. This is powered by RunKit,
+    which provides an interactive JavaScript playground connected to a complete Node environment that runs in your web
+    browser. Below are instructions for running the same app on your local machine.
+  </p>
+  <h3 class="text-subhead font-head"><b>Running Locally</b></h3>
+  <br />
+  <p class="text-content ml-content">
+    First create a directory named myapp, change to it and run npm init. Then install express as a dependency, as per
+    the installation guide.
+  </p>
+  <p class="text-content ml-content">
+    In the myapp directory, create a file named app.js and copy in the code from the example above.
+  </p>
   <h4><b>Run the app with the following command:</b></h4>
-  <b>$ node app.js</b></p>
+  <b>$ node app.js</b>
   <p class="text-content ml-content">Then, load http://localhost:3000/ in a browser to see the output.</p>
-  </div>
+</div>

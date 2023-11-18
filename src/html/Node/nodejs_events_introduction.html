@@ -1,52 +1,87 @@
 <div>
-    <h3 class="text-subhead font-head">Introduction</h3>
-    <p class="text-content ml-content">Node.js is perfect for event-driven applications.</p><br/>
-    <h4 class="text-subhead font-head"><b>Events in Node.js</b></h4>
-    <p class="text-content ml-content">Every action on a computer is an event. Like when a connection is made or a file is opened.</p>
-    <p class="text-content ml-content">Objects in Node.js can fire events, like the readStream object fires events when opening and closing a file:</p><br/>
-    <b>Example</b></p>
-    <p class="text-content ml-content">var fs = require('fs');</p>
-    <p class="text-content ml-content">var rs = fs.createReadStream('./demofile.txt');</p>
-    <p class="text-content ml-content">rs.on('open', function () {</p>
-    <p class="text-content ml-content">  console.log('The file is open');</p>
-    <p class="text-content ml-content">});</p><br/>
-    <h4 class="text-subhead font-head"><b>Events Module</b></h4>
-    <p class="text-content ml-content">Node.js has a built-in module, called "Events", where you can create-, fire-, and listen for- your own events.</p>
-    <p class="text-content ml-content">To include the built-in Events module use the require() method. In addition, all event properties and methods are an instance of an EventEmitter object. To be able to access these properties and methods, create an EventEmitter object:</p>
-    <p class="text-content ml-content">var events = require('events');</p>
-    <p class="text-content ml-content">var eventEmitter = new events.EventEmitter();</p><br/>
-    <h4 class="text-subhead font-head"><b>EventEmitter:</b></h4>
-    <p class="text-content ml-content">Node.js allows us to create and handle custom events easily by using events module. Event module includes EventEmitter class which can be used to raise and handle custom events.</p>
-    <p class="text-content ml-content">The following example demonstrates EventEmitter class for raising and handling a custom event.</p><br/>
-    <b>Example: Raise and Handle Node.js</b></p>
-    <p class="text-content ml-content">// get the reference of EventEmitter class of events module</p>
-    <p class="text-content ml-content">var events = require('events');</p>
-    <p class="text-content ml-content">//create an object of EventEmitter class by using above reference</p>
-    <p class="text-content ml-content">var em = new events.EventEmitter();</p>
-    <p class="text-content ml-content">//Subscribe for FirstEvent</p>
-    <p class="text-content ml-content">em.on('FirstEvent', function (data) {</p>
-    <p class="text-content ml-content">    console.log('First subscriber: ' + data);</p>
-    <p class="text-content ml-content">});</p>
-    <p class="text-content ml-content">// Raising FirstEvent</p>
-    <p class="text-content ml-content">em.emit('FirstEvent', 'This is my first Node.js event emitter example.');</p><br/>
-    <p class="text-content ml-content">In the above example, we first import the 'events' module and then create an object of EventEmitter class. We then specify event handler function using on() function. The on() method requires name of the event to handle and callback function which is called when an event <p class="text-content ml-content">is raised.</p>
-    <p class="text-content ml-content">The emit() function raises the specified event. First parameter is name of the event as a string and then arguments. An event can be emitted with zero or more arguments. You can specify any name for a custom event in the emit() function.</p>
-    <p class="text-content ml-content">You can also use addListener() methods to subscribe for an event as shown below.</p><br/>
-    <b>Example: EventEmitter</b></p>
-    <p class="text-content ml-content">var emitter = require('events').EventEmitter;</p>
-    <p class="text-content ml-content">var em = new emitter();</p>
-    <p class="text-content ml-content">//Subscribe FirstEvent</p>
-    <p class="text-content ml-content">em.addListener('FirstEvent', function (data) {</p>
-    <p class="text-content ml-content">    console.log('First subscriber: ' + data);</p>
-    <p class="text-content ml-content">});</p>
-    <p class="text-content ml-content">//Subscribe SecondEvent</p>
-    <p class="text-content ml-content">em.on('SecondEvent', function (data) {</p>
-    <p class="text-content ml-content">    console.log('First subscriber: ' + data);</p>
-    <p class="text-content ml-content">});</p>
-    <p class="text-content ml-content">// Raising FirstEvent</p>
-    <p class="text-content ml-content">em.emit('FirstEvent', 'This is my first Node.js event emitter example.');</p>
-    <p class="text-content ml-content">// Raising SecondEvent</p>
-    <p class="text-content ml-content">em.emit('SecondEvent', 'This is my second Node.js event emitter example.');</p><br/>
-    <p class="text-content ml-content">The following table lists all the important methods of EventEmitter class.</p><br/>
-    <img src="/public/Assets/eventemitter-1.jpg" height="500" width="700"/>
-    </div>
+  <h3 class="text-subhead font-head">Introduction</h3>
+  <p class="text-content ml-content">Node.js is perfect for event-driven applications.</p>
+  <br />
+  <h4 class="text-subhead font-head"><b>Events in Node.js</b></h4>
+  <p class="text-content ml-content">
+    Every action on a computer is an event. Like when a connection is made or a file is opened.
+  </p>
+  <p class="text-content ml-content">
+    Objects in Node.js can fire events, like the readStream object fires events when opening and closing a file:
+  </p>
+  <br />
+  <b>Example</b>
+  <p class="text-content ml-content">var fs = require('fs');</p>
+  <p class="text-content ml-content">var rs = fs.createReadStream('./demofile.txt');</p>
+  <p class="text-content ml-content">rs.on('open', function () {</p>
+  <p class="text-content ml-content">console.log('The file is open');</p>
+  <p class="text-content ml-content">});</p>
+  <br />
+  <h4 class="text-subhead font-head"><b>Events Module</b></h4>
+  <p class="text-content ml-content">
+    Node.js has a built-in module, called "Events", where you can create-, fire-, and listen for- your own events.
+  </p>
+  <p class="text-content ml-content">
+    To include the built-in Events module use the require() method. In addition, all event properties and methods are an
+    instance of an EventEmitter object. To be able to access these properties and methods, create an EventEmitter
+    object:
+  </p>
+  <p class="text-content ml-content">var events = require('events');</p>
+  <p class="text-content ml-content">var eventEmitter = new events.EventEmitter();</p>
+  <br />
+  <h4 class="text-subhead font-head"><b>EventEmitter:</b></h4>
+  <p class="text-content ml-content">
+    Node.js allows us to create and handle custom events easily by using events module. Event module includes
+    EventEmitter class which can be used to raise and handle custom events.
+  </p>
+  <p class="text-content ml-content">
+    The following example demonstrates EventEmitter class for raising and handling a custom event.
+  </p>
+  <br />
+  <b>Example: Raise and Handle Node.js</b><br />
+  <p class="text-content ml-content">// get the reference of EventEmitter class of events module</p>
+  <p class="text-content ml-content">var events = require('events');</p>
+  <p class="text-content ml-content">//create an object of EventEmitter class by using above reference</p>
+  <p class="text-content ml-content">var em = new events.EventEmitter();</p>
+  <p class="text-content ml-content">//Subscribe for FirstEvent</p>
+  <p class="text-content ml-content">em.on('FirstEvent', function (data) {</p>
+  <p class="text-content ml-content">console.log('First subscriber: ' + data);</p>
+  <p class="text-content ml-content">});</p>
+  <p class="text-content ml-content">// Raising FirstEvent</p>
+  <p class="text-content ml-content">em.emit('FirstEvent', 'This is my first Node.js event emitter example.');</p>
+  <br />
+  <p class="text-content ml-content">
+    In the above example, we first import the 'events' module and then create an object of EventEmitter class. We then
+    specify event handler function using on() function. The on() method requires name of the event to handle and
+    callback function which is called when an event
+  </p>
+  <p class="text-content ml-content">is raised.</p>
+  <p class="text-content ml-content">
+    The emit() function raises the specified event. First parameter is name of the event as a string and then arguments.
+    An event can be emitted with zero or more arguments. You can specify any name for a custom event in the emit()
+    function.
+  </p>
+  <p class="text-content ml-content">
+    You can also use addListener() methods to subscribe for an event as shown below.
+  </p>
+  <br />
+  <b>Example: EventEmitter</b><br />
+  <p class="text-content ml-content">var emitter = require('events').EventEmitter;</p>
+  <p class="text-content ml-content">var em = new emitter();</p>
+  <p class="text-content ml-content">//Subscribe FirstEvent</p>
+  <p class="text-content ml-content">em.addListener('FirstEvent', function (data) {</p>
+  <p class="text-content ml-content">console.log('First subscriber: ' + data);</p>
+  <p class="text-content ml-content">});</p>
+  <p class="text-content ml-content">//Subscribe SecondEvent</p>
+  <p class="text-content ml-content">em.on('SecondEvent', function (data) {</p>
+  <p class="text-content ml-content">console.log('First subscriber: ' + data);</p>
+  <p class="text-content ml-content">});</p>
+  <p class="text-content ml-content">// Raising FirstEvent</p>
+  <p class="text-content ml-content">em.emit('FirstEvent', 'This is my first Node.js event emitter example.');</p>
+  <p class="text-content ml-content">// Raising SecondEvent</p>
+  <p class="text-content ml-content">em.emit('SecondEvent', 'This is my second Node.js event emitter example.');</p>
+  <br />
+  <p class="text-content ml-content">The following table lists all the important methods of EventEmitter class.</p>
+  <br />
+  <img src="/Assets/eventemitter-1.jpg" height="500" width="700" />
+</div>

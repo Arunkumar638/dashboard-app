@@ -1,7 +1,10 @@
 <div>
   <h3 class="text-head font-head">Reading context in class</h3>
-  <p class="text-content ml-content">In a class component, you can read context using the Context.Consumer component. 
-    This allows you to access the context value within the render method or any other method of the class component.</p><br/>
+  <p class="text-content ml-content">
+    In a class component, you can read context using the Context.Consumer component. This allows you to access the
+    context value within the render method or any other method of the class component.
+  </p>
+  <br />
   <p class="text-content ml-content">Here's an example of how to read context in a class component:</p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">import MyContext from './MyContext'; // Assuming you have a context created</p>
@@ -9,17 +12,26 @@
   <p class="text-content ml-content">&nbsp;&nbsp;render() {</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;return (</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MyContext.Consumer&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{value => &lt;div&gt;{value}&lt;/div&gt;}</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{value => &lt;div&gt;{value}&lt;/div&gt;}
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/MyContext.Consumer&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">&nbsp;&nbsp;}</p>
   <p class="text-content ml-content">}</p>
   <p class="text-content ml-content">export default MyClassComponent;</p>
-  <p class="text-content ml-content font-semibold">In this example, MyClassComponent consumes the context using the Context.Consumer component. The value of the context will be available as an argument to the function passed to Consumer.</p>
-  <p class="text-content ml-content">Remember to replace MyContext with the actual context you have created.</p><br/>
-  <h3 class="text-subhead font-head">Accessing Context Outside of Render:</h4>
-  <p class="text-content ml-content">If you want to access the context value in methods other than render, you can do so by using a pattern commonly 
-    referred to as "render props". This involves using a function as a child to the Context.Consumer component.</p><br/>
+  <p class="text-content ml-content font-semibold">
+    In this example, MyClassComponent consumes the context using the Context.Consumer component. The value of the
+    context will be available as an argument to the function passed to Consumer.
+  </p>
+  <p class="text-content ml-content">Remember to replace MyContext with the actual context you have created.</p>
+  <br />
+  <h3 class="text-subhead font-head">Accessing Context Outside of Render:</h3>
+  <p class="text-content ml-content">
+    If you want to access the context value in methods other than render, you can do so by using a pattern commonly
+    referred to as "render props". This involves using a function as a child to the Context.Consumer component.
+  </p>
+  <br />
   <p class="text-content ml-content">Here's an example:</p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">import MyContext from './MyContext'; // Assuming you have a context created</p>
@@ -30,11 +42,17 @@
   <p class="text-content ml-content">&nbsp;&nbsp;render() {</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;return (</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MyContext.Consumer&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{value => this.renderContent(value)}</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{value => this.renderContent(value)}
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/MyContext.Consumer&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">&nbsp;&nbsp;}</p>
   <p class="text-content ml-content">}</p>
-  <p class="text-content ml-content">export default MyClassComponent;</p><br/>
-  <p class="text-content ml-content font-semibold">In this example, renderContent is a class method that takes the context value as an argument and returns JSX. The Context.Consumer component calls this method, passing the context value as an argument.
-  </div>
+  <p class="text-content ml-content">export default MyClassComponent;</p>
+  <br />
+  <p class="text-content ml-content font-semibold">
+    In this example, renderContent is a class method that takes the context value as an argument and returns JSX. The
+    Context.Consumer component calls this method, passing the context value as an argument.
+  </p>
+</div>

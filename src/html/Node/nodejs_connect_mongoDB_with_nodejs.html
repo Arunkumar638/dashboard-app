@@ -1,33 +1,52 @@
 <div>
-    <h2 class="text-subhead font-head">Connect MongoDB with Node JS</h2>
-    <p class="text-content ml-content">MongoDB is a NoSQL database for nodejs. We will use MongoDB driver for nodejs to manage MongoDB database. MongoDB uses binary JSON to store data. </p>
-    <p class="text-content ml-content">We will also use the mongoose tool to connect MongoDB with Node js and manage the database (i.e. create, read, update, and delete documents).</p>
-    <p class="text-content ml-content">Alike traditional databases, MongoDB is easy to use and saves time.</p><br/>
-    <h3 class="text-subhead font-head">Introduction</h3>
-    <p class="text-content ml-content">Consider, We have a table schema defined in a relational database as shown below. We can not insert new data into the 
-        table that contains the new field phoneNumber. Because Field phoneNumber is not defined in the table schema.</p><br/>
-    <img src="/public/Assets/database-1.jpg" height="500" width="500"/><br/>
-    <p class="text-content ml-content">But, MongoDB doesn't need a pre-defined schema. We can insert new data in the object format with any additional fields. MongoDB store data as a document shown below:</p>
-    <p class="text-content ml-content">// document 1</p>
-    <p class="text-content ml-content">{</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;id:'1',</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;firstName:'Suhani',</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;lastName:'Singh'</p>
-    <p class="text-content ml-content">}</p>
-    <p class="text-content ml-content">// document 2</p>
-    <p class="text-content ml-content">{</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;id:'2',</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;firstName:'Modi',</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;lastName:'Kumar',</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;phoneNumber:'+91999999'</p>
-    <p class="text-content ml-content">}</p>
-    <p class="text-content ml-content">// document 3</p>
-    <p class="text-content ml-content">{</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;id:'3',</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;email:'ambesh@example.com',</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;firstName:'Ambesh',</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;lastName:'Yadav',</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;phoneNumber:['+9199999999','+9199999999'],</p>
-    <p class="text-content ml-content">}</p><br/>
-    <p class="text-content ml-content">Therefore, MongoDB is different from relational databases. It comes in the category of NoSQL databases that uses JSON-like format to store documents. Relational database use table, raw, and column to store the data while NoSql Databases uses collection, and documents to store the data. the collection contains documents and documents store the data in object format.</p>
-    </div>
+  <h2 class="text-subhead font-head">Connect MongoDB with Node JS</h2>
+  <p class="text-content ml-content">
+    MongoDB is a NoSQL database for nodejs. We will use MongoDB driver for nodejs to manage MongoDB database. MongoDB
+    uses binary JSON to store data.
+  </p>
+  <p class="text-content ml-content">
+    We will also use the mongoose tool to connect MongoDB with Node js and manage the database (i.e. create, read,
+    update, and delete documents).
+  </p>
+  <p class="text-content ml-content">Alike traditional databases, MongoDB is easy to use and saves time.</p>
+  <br />
+  <h3 class="text-subhead font-head">Introduction</h3>
+  <p class="text-content ml-content">
+    Consider, We have a table schema defined in a relational database as shown below. We can not insert new data into
+    the table that contains the new field phoneNumber. Because Field phoneNumber is not defined in the table schema.
+  </p>
+  <br />
+  <img src="/Assets/database-1.jpg" height="500" width="500" /><br />
+  <p class="text-content ml-content">
+    But, MongoDB doesn't need a pre-defined schema. We can insert new data in the object format with any additional
+    fields. MongoDB store data as a document shown below:
+  </p>
+  <p class="text-content ml-content">// document 1</p>
+  <p class="text-content ml-content">{</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;id:'1',</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;firstName:'Suhani',</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;lastName:'Singh'</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">// document 2</p>
+  <p class="text-content ml-content">{</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;id:'2',</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;firstName:'Modi',</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;lastName:'Kumar',</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;phoneNumber:'+91999999'</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">// document 3</p>
+  <p class="text-content ml-content">{</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;id:'3',</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;email:'ambesh@example.com',</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;firstName:'Ambesh',</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;lastName:'Yadav',</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;phoneNumber:['+9199999999','+9199999999'],</p>
+  <p class="text-content ml-content">}</p>
+  <br />
+  <p class="text-content ml-content">
+    Therefore, MongoDB is different from relational databases. It comes in the category of NoSQL databases that uses
+    JSON-like format to store documents. Relational database use table, raw, and column to store the data while NoSql
+    Databases uses collection, and documents to store the data. the collection contains documents and documents store
+    the data in object format.
+  </p>
+</div>

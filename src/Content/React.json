@@ -1,167 +1,167 @@
 [
   {
-    "label":"REACT for Beginners",
-    "key":"react_programming"
+    "label": "REACT for Beginners",
+    "key": "react_programming"
   },
   {
-    "label":"Introduction to React",
-    "key":"react_introduction",
-    "children":[
+    "label": "Introduction to React",
+    "key": "react_introduction",
+    "children": [
       {
-        "label":"Introduction",
-        "key":"react_react_introduction"    
+        "label": "Introduction",
+        "key": "react_react_introduction"
       },
       {
-        "label":"Anatomy of react project",
-        "key":"react_anatomy_of_react_project"
+        "label": "Anatomy of react project",
+        "key": "react_anatomy_of_react_project"
       }
     ]
   },
   {
-    "label":"Templating using JSX",
-    "key":"react_templating_using_jsx",
-    "children":[
+    "label": "Templating using JSX",
+    "key": "react_templating_using_jsx",
+    "children": [
       {
-        "label":"Introduction",
-        "key":"react_templating_using_jsx_introduction"
+        "label": "Introduction",
+        "key": "react_templating_using_jsx_introduction"
       },
       {
-        "label":"Working with React.",
-        "key":"react_working_with_react"
+        "label": "Working with React.",
+        "key": "react_working_with_react"
       },
       {
-        "label":"Expressions",
-        "key":"react_expressions"
+        "label": "Expressions",
+        "key": "react_expressions"
       },
       {
-        "label":"Logical operators",  
-        "key":"react_using_logical_operators"
+        "label": "Logical operators",
+        "key": "react_using_logical_operators"
       },
       {
-        "label":"Fragments",
-        "key":"react_fragments"
+        "label": "Fragments",
+        "key": "react_fragments"
       }
     ]
   },
   {
-    "label":"Components",
-    "key":"react_components"
+    "label": "Components",
+    "key": "react_components"
   },
   {
-    "label":"Working with state and props",
-    "key":"react_working_with_state_and_props",
-    "children":[
+    "label": "Working with state and props",
+    "key": "react_working_with_state_and_props",
+    "children": [
       {
-        "label":"Introduction to state and props",
-        "key":"react_introduction_to_state_and_props"
+        "label": "Introduction to state and props",
+        "key": "react_introduction_to_state_and_props"
       },
       {
-        "label":"Working with State in React",    
-        "key":"react_working_with_state"
+        "label": "Working with State in React",
+        "key": "react_working_with_state"
       },
       {
-        "label":"Working with Props in React",    
-        "key":"react_working_with_props"
+        "label": "Working with Props in React",
+        "key": "react_working_with_props"
       }
     ]
   },
   {
-    "label":"Rendering lists",
-    "key":"react_rendering_lists"
+    "label": "Rendering lists",
+    "key": "react_rendering_lists"
   },
   {
-    "label":"Event handling",
-    "key":"react_event_handling"
+    "label": "Event handling",
+    "key": "react_event_handling"
   },
   {
-    "label":"Understanding component lifecycle and handling errors",
-    "key":"react_understanding_component_lifecycle_and_handling_errors"
+    "label": "Understanding component lifecycle and handling errors",
+    "key": "react_understanding_component_lifecycle_and_handling_errors"
   },
   {
-    "label":"Working with forms</str",
-    "key":"react_working_with_forms_str"
+    "label": "Working with forms</str",
+    "key": "react_working_with_forms_str"
   },
   {
-    "label":"Context",
-    "key":"react_context",
-    "children":[
+    "label": "Context",
+    "key": "react_context",
+    "children": [
       {
-        "label":"Introduction",  
-        "key":"react_context_introduction"
+        "label": "Introduction",
+        "key": "react_context_introduction"
       },
       {
-        "label":"Reading context in class",
-        "key":"react_reading context_in_class"
+        "label": "Reading context in class",
+        "key": "react_reading context_in_class"
       }
     ]
   },
   {
-    "label":"Code-Splitting",
-    "key":"react_code_splitting",
-    "children":[
+    "label": "Code-Splitting",
+    "key": "react_code_splitting",
+    "children": [
       {
-        "label":"Introduction",     
-        "key":"react_code_splitting_introduction"
-      },   
-      {
-        "label":"React.lazy",
-        "key":"react_react.lazy"
+        "label": "Introduction",
+        "key": "react_code_splitting_introduction"
       },
       {
-        "label":"Suspense",
-        "key":"react_suspense"
+        "label": "React.lazy",
+        "key": "react_react.lazy"
       },
       {
-        "label":"Route-based code splitting",
-        "key":"react_route-based_code_splitting"
+        "label": "Suspense",
+        "key": "react_suspense"
+      },
+      {
+        "label": "Route-based code splitting",
+        "key": "react_route-based_code_splitting"
       }
     ]
   },
   {
-    "label":"Hooks",
-    "key":"react_hooks",
-    "children":[
+    "label": "Hooks",
+    "key": "react_hooks",
+    "children": [
       {
-        "label":"Introduction",
-        "key":"react_hooks_introduction"
+        "label": "Introduction",
+        "key": "react_hooks_introduction"
       },
       {
-        "label":"Different types of hooks",
-        "key":"react_different_types_of_hooks"
+        "label": "Different types of hooks",
+        "key": "react_different_types_of_hooks"
       },
       {
-        "label":"Using state and effect hooks",
-        "key":"react_using_state_and_effect_hooks"
+        "label": "Using state and effect hooks",
+        "key": "react_using_state_and_effect_hooks"
       },
       {
-        "label":"Rules of hooks",
-        "key":"react_rules_of_hooks"
+        "label": "Rules of hooks",
+        "key": "react_rules_of_hooks"
       }
     ]
   },
   {
-    "label":"Routing with react router",
-    "key":"react_routing_with_react_router",
-    "children":[
+    "label": "Routing with react router",
+    "key": "react_routing_with_react_router",
+    "children": [
       {
-        "label":"Introduction",        
-        "key":"react_router_introduction"
+        "label": "Introduction",
+        "key": "react_router_introduction"
       },
       {
-        "label":"Using Switch component to define routing rules",
-        "key":"react_using_switch_component_to_define_routing_rules"
+        "label": "Using Switch component to define routing rules",
+        "key": "react_using_switch_component_to_define_routing_rules"
       },
       {
-        "label":"Making dynamic routes using route params",
-        "key":"react_making_routes_dynamic_using_route_params"
+        "label": "Making dynamic routes using route params",
+        "key": "react_making_routes_dynamic_using_route_params"
       },
       {
-        "label":"Navigation and Redirecting",      
-        "key":"react_navigating_and redirection"
+        "label": "Navigation and Redirecting",
+        "key": "react_navigating_and redirection"
       },
       {
-        "label":"Other Routing Functionalities",    
-        "key":"react_other_routing_functionalities"
+        "label": "Other Routing Functionalities",
+        "key": "react_other_routing_functionalities"
       }
     ]
   }

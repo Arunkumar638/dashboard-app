@@ -1,50 +1,70 @@
 <div>
   <h2 class="text-head font-head"><b>Print f and scan f functions in C</b></h2>
-  <p class="text-content ml-content">The printf() function is used to display output and the scanf() function is used to take input from users.<br/>
-  The printf() and scanf() functions are commonly used functions in C Language. 
-  These functions are inbuilt library functions in header files of C programming.</p><br/>
+  <p class="text-content ml-content">
+    The printf() function is used to display output and the scanf() function is used to take input from users.<br />
+    The printf() and scanf() functions are commonly used functions in C Language. These functions are inbuilt library
+    functions in header files of C programming.
+  </p>
+  <br />
   <h3 class="text-subhead font-head"><b>printf() Function</b></h3>
-  <p class="text-content ml-content">In C Programming language, the printf() function is used for output.
-  printf() function can take any number of arguments. First argument must be enclosed within the double quotes “hello” and every other argument 
-  should be separated by comma ( , ) within the double quotes.</p><br/>
+  <p class="text-content ml-content">
+    In C Programming language, the printf() function is used for output. printf() function can take any number of
+    arguments. First argument must be enclosed within the double quotes “hello” and every other argument should be
+    separated by comma ( , ) within the double quotes.
+  </p>
+  <br />
   <h3 class="text-subhead font-head"><b>Important points about printf():</b></h3>
-  <p class="text-content ml-content">printf() function is defined in stdio.h header file. By using this function, we can print the data or user-defined message on monitor (also called the console).<br/>
-  printf() can print a different kind of data format on the output string.
-  To print on a new line on the screen, we use “\n” in printf() statement.<br/>
-  C language is case sensitive programming language.<br/><br/>
-   For example, printf() and scanf() in lowercase letters treated are different from Printf() and Scanf(). All characters in printf() and scanf() 
-   builtin functions must be in lower case.</p><br/>
-  <b>Syntax</b><br/>
-  printf("format specifier",argument_list);<br/>
-  The format string for output can be %d (integer), %c (character), %s (string), %f (float) %lf (double) and %x (hexadecimal) variable.<br/>
+  <p class="text-content ml-content">
+    printf() function is defined in stdio.h header file. By using this function, we can print the data or user-defined
+    message on monitor (also called the console).<br />
+    printf() can print a different kind of data format on the output string. To print on a new line on the screen, we
+    use “\n” in printf() statement.<br />
+    C language is case sensitive programming language.<br /><br />
+    For example, printf() and scanf() in lowercase letters treated are different from Printf() and Scanf(). All
+    characters in printf() and scanf() builtin functions must be in lower case.
+  </p>
+  <br />
+  <b>Syntax</b><br />
+  printf("format specifier",argument_list);<br />
+  The format string for output can be %d (integer), %c (character), %s (string), %f (float) %lf (double) and %x
+  (hexadecimal) variable.<br />
   <b>Simple Example of printf() Function</b>
-  <p class="text-content ml-content">#include&lt;stdio.h&gt;<br/>
-  int  main()<br/>
-  {<br/>
-  int num = 450;<br/>
-  // print number<br/>
-  printf("Number is %d \n", num);<br/><br/>
-  return 0;<br/>
-  }<br/>
-  <b>Output</b><br/>
-  Number is 450</p><br/>
+  <p class="text-content ml-content">
+    #include&lt;stdio.h&gt;<br />
+    int main()<br />
+    {<br />
+    int num = 450;<br />
+    // print number<br />
+    printf("Number is %d \n", num);<br /><br />
+    return 0;<br />
+    }<br />
+    <b>Output</b><br />
+    Number is 450
+  </p>
+  <br />
   <h3 class="text-subhead font-head"><b>scanf() Function</b></h3>
-  <p class="text-content ml-content">The scanf() function is used to read input data from the console.<br/>
-  The scanf() function is builtin function available in the C library. <br/>scanf() function can read character, string, numeric & other data from keyboard in C language.<br/>
-  scanf() reads formatted data from user and assign them in the variables provided the additional arguments. Additional arguments must point to variables that have the same datatype as of user input data format.
-  <b>Syntax</b>
-  scanf("format specifier",argument_list);</p>
+  <p class="text-content ml-content">
+    The scanf() function is used to read input data from the console.<br />
+    The scanf() function is builtin function available in the C library. <br />scanf() function can read character,
+    string, numeric & other data from keyboard in C language.<br />
+    scanf() reads formatted data from user and assign them in the variables provided the additional arguments.
+    Additional arguments must point to variables that have the same datatype as of user input data format.
+    <b>Syntax</b>
+    scanf("format specifier",argument_list);
+  </p>
   <h3 class="text-subhead font-head"><b>Simple Example of scanf() Function</b></h3>
-  <p class="text-content ml-content">#include&lt;stdio.h&gt;<br/>
-  int main()<br/>
-  {<br/>
-  int x;<br/>
-  printf("enter the number =");<br/>
-  scanf("%d",&x);<br/>
-  printf("The number is=%d",x);<br/>
-  return 0;<br/>
-  }<br/>
-  <b>Output</b> <br/>
-  enter the number =10<br/>
-  The number is=10</p>
-  </div>
+  <p class="text-content ml-content">
+    #include&lt;stdio.h&gt;<br />
+    int main()<br />
+    {<br />
+    int x;<br />
+    printf("enter the number =");<br />
+    scanf("%d",&x);<br />
+    printf("The number is=%d",x);<br />
+    return 0;<br />
+    }<br />
+    <b>Output</b> <br />
+    enter the number =10<br />
+    The number is=10
+  </p>
+</div>

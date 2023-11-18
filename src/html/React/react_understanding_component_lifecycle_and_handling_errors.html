@@ -24,7 +24,7 @@
   <h4><b>Error Handling:</b></h4>
   <b>static getDerivedStateFromError():</b> <p class="text-content ml-content">Called during the "render" phase, if an error occurs in a child component.</p>
   <b>componentDidCatch():</b> <p class="text-content ml-content">Called during the "commit" phase, if an error occurs in a child component.</p><br/>
-  <h3><b>b.Error Handling in React:</b></h4>
+  <h3><b>b.Error Handling in React:</b></h3>
   <p class="text-content ml-content">React provides a way to catch JavaScript errors anywhere in the component tree and log those errors, and display fallback UIs instead of crashing the component tree. This can be particularly useful in large applications where one component's error should not affect the entire application.</p>
   <h4><b>static getDerivedStateFromError():</b></h4>
   <p class="text-content ml-content">This static lifecycle method is used to handle errors during the render phase.It receives an error and returns an object to update the state.</p>
@@ -103,10 +103,10 @@
   <h4><b>componentDidCatch():</b></h4>
   <p class="text-content ml-content">This method is called during the "commit" phase if an error occurs in a child component.</p>
   <p class="text-content ml-content">It's used for logging errors or performing side effects in response to errors.</p>
-  <b>Deprecated Lifecycle Methods (React 17 and above):</b></p>
-  <b>componentWillMount():</b> Replaced with constructor and componentDidMount.</p>
-  <b>componentWillReceiveProps():</b> Replaced with static getDerivedStateFromProps and componentDidUpdate.</p>
-  <b>componentWillUpdate():</b> Replaced with shouldComponentUpdate, render, and componentDidUpdate.</p><br/>
+  <b>Deprecated Lifecycle Methods (React 17 and above):</b>
+  <b>componentWillMount():</b> <p>Replaced with constructor and componentDidMount.</p>
+  <b>componentWillReceiveProps():</b> <p>Replaced with static getDerivedStateFromProps and componentDidUpdate.</p>
+  <b>componentWillUpdate():</b> <p>Replaced with shouldComponentUpdate, render, and componentDidUpdate.</p><br/>
   <h4><b>Handle errors using error boundaries</b></h4>
   <p class="text-content ml-content">Error boundaries are a powerful tool in React for handling errors that occur during rendering, in lifecycle methods, or in constructors of the whole tree below them. They work like a JavaScript catch block, but for components.</p>
   <p class="text-content ml-content">To create an error boundary, you need to define a component that includes static getDerivedStateFromError and componentDidCatch methods. These methods will be called when an error is thrown in a component within the boundary.</p>

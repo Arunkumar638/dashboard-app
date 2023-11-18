@@ -28,7 +28,6 @@ const LoadCourseContent = ({ id }: { id: string }) => {
       </Suspense>
     </div>
   );
-
-  };
+};
 
 export default LoadCourseContent;

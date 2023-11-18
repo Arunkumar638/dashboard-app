@@ -1,11 +1,22 @@
 <div>
   <h2 class="text-subhead font-head">d.React.lazy</h2>
-  <p class="text-content ml-content">React.lazy is a function introduced in React 16.6 that allows you to dynamically import components. 
-    This is particularly useful for implementing code splitting in React applications.</p><br/>
+  <p class="text-content ml-content">
+    React.lazy is a function introduced in React 16.6 that allows you to dynamically import components. This is
+    particularly useful for implementing code splitting in React applications.
+  </p>
+  <br />
   <p class="text-content ml-content font-semibold">Here's how React.lazy works:</p>
-   <li class="ml-points">It enables you to dynamically load a component only when it's needed, rather than including it in the initial bundle.</p>
-   <li class="ml-points">It returns a component that will automatically load the target component (via code splitting) when rendered.</p>
-   <li class="ml-points">It's typically used in combination with React's Suspense component to handle loading states.</p><br/>
+  <li class="ml-points">
+    It enables you to dynamically load a component only when it's needed, rather than including it in the initial
+    bundle.
+  </li>
+  <li class="ml-points">
+    It returns a component that will automatically load the target component (via code splitting) when rendered.
+  </li>
+  <li class="ml-points">
+    It's typically used in combination with React's Suspense component to handle loading states.
+  </li>
+  <br />
   <p class="text-content ml-content font-semibold">Here's an example of how to use React.lazy:</p>
   <p class="text-content ml-content">import React, { Suspense } from 'react';</p>
   <p class="text-content ml-content">const LazyComponent = React.lazy(() => import('./LazyComponent'));</p>
@@ -15,14 +26,23 @@
   <p class="text-content ml-content">&lt;Suspense fallback={ &lt;div&gt;Loading... &lt;/div&gt;}&gt;</p>
   <p class="text-content ml-content">&lt;LazyComponent /&gt;</p>
   <p class="text-content ml-content">&lt;/Suspense&gt;</p>
-  <p class="text-content ml-content"> &lt;/div&gt;</p>
+  <p class="text-content ml-content">&lt;/div&gt;</p>
   <p class="text-content ml-content">);</p>
   <p class="text-content ml-content">};</p>
-  <p class="text-content ml-content">export default App;</p><br/>
+  <p class="text-content ml-content">export default App;</p>
+  <br />
   <p class="text-content ml-content font-semibold">In this example:</p>
-  <p class="text-content ml-content">React.lazy(() => import('./LazyComponent')) dynamically imports the LazyComponent. It will be loaded on-demand when LazyComponent is first rendered.</p>
-  <p class="text-content ml-content">&lt;Suspense&gt; is a component provided by React that allows you to specify a fallback content 
-    to display while the lazy component is loading. 
-    In this case, we're showing a "Loading..." message.</p><br/>
-  <p class="text-content ml-content">Using React.lazy along with Suspense simplifies the process of implementing code splitting in your React application, allowing you to load components on-demand and improve performance by reducing the initial bundle size.
+  <p class="text-content ml-content">
+    React.lazy(() => import('./LazyComponent')) dynamically imports the LazyComponent. It will be loaded on-demand when
+    LazyComponent is first rendered.
+  </p>
+  <p class="text-content ml-content">
+    &lt;Suspense&gt; is a component provided by React that allows you to specify a fallback content to display while the
+    lazy component is loading. In this case, we're showing a "Loading..." message.
+  </p>
+  <br />
+  <p class="text-content ml-content">
+    Using React.lazy along with Suspense simplifies the process of implementing code splitting in your React
+    application, allowing you to load components on-demand and improve performance by reducing the initial bundle size.
+  </p>
 </div>

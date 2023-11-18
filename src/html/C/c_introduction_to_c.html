@@ -1,66 +1,136 @@
 <div>
-    <h2 class="text-head font-head"><b>C Programming introduction and history</b></h2>
-    <p class="text-content ml-content">C is a general-purpose, procedural programming language developed at Bell Laboratories in the early 1970s by Dennis Ritchie. It was designed for system programming to be used in the Unix operating system, which was also created at Bell Labs. The language was named "C" because it was a successor to an earlier programming language called "B."</p><br/>
-    <h2 class="text-subhead font-head"><b>Key Points about C Programming:</b></h2><br/>
-    <h3><b>Procedural Language:</b></h3> <p class="text-content ml-content">C is a procedural programming language, which means it follows a set of procedures or functions that execute in a sequence. It is well-suited for writing system software and application software alike.</p>
-    <h3><b>Low-level Language:</b></h3> <p class="text-content ml-content">While C provides high-level constructs, it also allows low-level manipulation of system resources. This makes it a powerful language for tasks like system programming, where direct control over hardware resources is essential.</p>
-    <h3><b>Portability:</b></h3> <p class="text-content ml-content">C programs can be compiled and executed on different platforms with little or no modification. This is because C compilers are available for a wide range of operating systems and architectures.</p>
-    <h3><b>Influential:</b></h3> <p class="text-content ml-content">C has had a significant influence on many other programming languages. Languages like C++, C#, Objective-C, and even parts of Java and Python were inspired by or derived from C.</p>
-    <h3><b>Standardization:</b></h3> <p class="text-content ml-content">In the early 1980s, the American National Standards Institute (ANSI) developed a standardized version of the C language, known as ANSI C. This standardization helped ensure that C code written for one compiler could be easily ported to another.</p>
-    <h3><b>Efficiency:</b></h3> <p class="text-content ml-content">C is known for its efficiency and speed. It allows direct manipulation of hardware resources, which is crucial for tasks where performance is a critical factor.</p><br/>
-    <h2 class="text-head font-head"><b>Historical Context:</b></h2>
-    <p class="text-content ml-content">In the late 1960s, Bell Laboratories developed an operating system called Multics. Dennis Ritchie and Brian Kernighan were involved in the development of this system using a language called ALGOL.<br/>
-    Multics faced some challenges and was eventually abandoned. This led Ritchie and his colleagues to develop a simpler, more efficient operating system called Unix. They needed a language that was suitable for systems programming, so they created C.<br/>
-    The first edition of "The C Programming Language" book, written by Brian Kernighan and Dennis Ritchie, was published in 1978. This book became the de facto reference for C programmers and played a significant role in popularizing the language.<br/>
-    The adoption of Unix by various organizations, including universities, contributed to the spread of the C language.<br/>
-    Today, C remains a foundational language in the field of computer science and is widely used in systems programming, embedded systems, and various applications where performance and efficiency are crucial. Its influence can be seen in many modern programming languages and operating systems.</p><br/>
-    <h2 class="text-subhead font-head"><b>Hello World program using C</b></h2>
-    <p class="text-content ml-content">Below is a simple "Hello World" program written in the C programming language:<br/>
-    #include &lt;stdio.h&gt;<br/>
-    int main() {<br/>
-        printf("Hello, World!\n");<br/>
-        return 0;<br/>
-    }</p><br/>
-    <h3><b>Explanation:</b></h3>
-    <p class="text-content ml-content"><b>#include &lt;stdio.h&gt;:</b> This line includes the standard input-output header file, which provides functions like printf and scanf for input and output operations.<br/>
-    <b>int main():</b> This is the entry point of the program. The main function is where the execution of the program begins. It returns an integer value to the operating system.<br/>
-    <b>{}:</b> These curly braces define the body of the main function.<br/>
-    <b>printf("Hello, World!\n");:</b> This line uses the printf function to print the message "Hello, World!" to the console. The \n is an escape sequence that represents a newline character, which moves the cursor to the next line.<br/>
-    <b>return 0;:</b> The main function returns an integer value. By convention, a return value of 0 indicates that the program executed successfully.<br/><br/>
-    To run this program, you'll need a C compiler installed on your system. Save the code in a file with a .c extension (e.g., hello_world.c) and then use the compiler to build and execute the program.</p><br/>
-    <h2 class="text-subhead font-head"><b>Flow of C Program</b></h2>
-    <p class="text-content ml-content">The flow of a C program can be broadly understood in the following sequence of steps:<br/>
-    <b>Preprocessing Phase:</b><br/>
-    The preprocessor processes directives starting with # before the actual compilation. These directives include #include for including header files, #define for defining constants and macros, etc.<br/>
-    <b>Compilation Phase:</b><br/>
-    The preprocessed code is passed to the compiler. The compiler checks the syntax and semantics of the code. If errors are found, it generates error messages. If the code is error-free, it produces an object file (usually with a .o extension) containing machine code specific to the target platform.<br/>
-    <b>Linking Phase:</b><br/>
-    If the program consists of multiple source files or uses external libraries, the linker combines all necessary object files and libraries into a single executable file. It resolves references to functions and variables.<br/>
-    <b>Loading Phase (if separate from linking):</b><br/>
-    The operating system loads the executable file into memory. The program's instructions and data are placed into the appropriate memory locations.<br/>
-    <b>Execution Phase:</b><br/>
-    The CPU executes the instructions stored in memory, following the flow of the program logic defined by the source code.<br/>
-    <b>Termination Phase:</b><br/>
-    Once the program completes its execution, it may return a status code (usually 0 for success) to the operating system.</p><br/>
-    <h2 class="text-subhead font-head"><b>Example Program Flow:</b></h2>
-    <p>Let's consider a simple example program:<br/>
-    #include &lt;stdio.h&gt;<br/>
-    int main() {<br/>
-        printf("Hello, World!\n");<br/>
-        return 0;<br/>
-    }<br/>
-    Here's how the flow works for this program:<br/>
-    <b>Preprocessing Phase:</b><br/>
-    The #include &lt;stdio.h&gt; directive tells the preprocessor to include the contents of the stdio.h header file.<br/>
-    <b>Compilation Phase:</b><br/>
-    The compiler checks the syntax and semantics of the code. It generates an object file (e.g., program.o) containing machine code specific to the target platform.<br/>
-    <b>Linking Phase:</b><br/>
-    In this case, there are no external dependencies, so linking is straightforward. The object file is linked to create an executable file (e.g., program.exe).<br/>
-    <b>Loading Phase:</b><br/>
-    The operating system loads the executable file program.exe into memory.<br/>
-    <b>Execution Phase:</b><br/>
-    The CPU executes the instructions stored in memory. It starts with the main function.<br/>
-    <b>Termination Phase:</b><br/>
-    The program completes its execution and returns a status code (0 for success) to the operating system.<br/>
-    In this case, the program prints "Hello, World!" to the console, and since there are no errors, it returns a status code of 0 to the operating system.</p>
-    </div>
+  <h2 class="text-head font-head"><b>C Programming introduction and history</b></h2>
+  <p class="text-content ml-content">
+    C is a general-purpose, procedural programming language developed at Bell Laboratories in the early 1970s by Dennis
+    Ritchie. It was designed for system programming to be used in the Unix operating system, which was also created at
+    Bell Labs. The language was named "C" because it was a successor to an earlier programming language called "B."
+  </p>
+  <br />
+  <h2 class="text-subhead font-head"><b>Key Points about C Programming:</b></h2>
+  <br />
+  <h3><b>Procedural Language:</b></h3>
+  <p class="text-content ml-content">
+    C is a procedural programming language, which means it follows a set of procedures or functions that execute in a
+    sequence. It is well-suited for writing system software and application software alike.
+  </p>
+  <h3><b>Low-level Language:</b></h3>
+  <p class="text-content ml-content">
+    While C provides high-level constructs, it also allows low-level manipulation of system resources. This makes it a
+    powerful language for tasks like system programming, where direct control over hardware resources is essential.
+  </p>
+  <h3><b>Portability:</b></h3>
+  <p class="text-content ml-content">
+    C programs can be compiled and executed on different platforms with little or no modification. This is because C
+    compilers are available for a wide range of operating systems and architectures.
+  </p>
+  <h3><b>Influential:</b></h3>
+  <p class="text-content ml-content">
+    C has had a significant influence on many other programming languages. Languages like C++, C#, Objective-C, and even
+    parts of Java and Python were inspired by or derived from C.
+  </p>
+  <h3><b>Standardization:</b></h3>
+  <p class="text-content ml-content">
+    In the early 1980s, the American National Standards Institute (ANSI) developed a standardized version of the C
+    language, known as ANSI C. This standardization helped ensure that C code written for one compiler could be easily
+    ported to another.
+  </p>
+  <h3><b>Efficiency:</b></h3>
+  <p class="text-content ml-content">
+    C is known for its efficiency and speed. It allows direct manipulation of hardware resources, which is crucial for
+    tasks where performance is a critical factor.
+  </p>
+  <br />
+  <h2 class="text-head font-head"><b>Historical Context:</b></h2>
+  <p class="text-content ml-content">
+    In the late 1960s, Bell Laboratories developed an operating system called Multics. Dennis Ritchie and Brian
+    Kernighan were involved in the development of this system using a language called ALGOL.<br />
+    Multics faced some challenges and was eventually abandoned. This led Ritchie and his colleagues to develop a
+    simpler, more efficient operating system called Unix. They needed a language that was suitable for systems
+    programming, so they created C.<br />
+    The first edition of "The C Programming Language" book, written by Brian Kernighan and Dennis Ritchie, was published
+    in 1978. This book became the de facto reference for C programmers and played a significant role in popularizing the
+    language.<br />
+    The adoption of Unix by various organizations, including universities, contributed to the spread of the C
+    language.<br />
+    Today, C remains a foundational language in the field of computer science and is widely used in systems programming,
+    embedded systems, and various applications where performance and efficiency are crucial. Its influence can be seen
+    in many modern programming languages and operating systems.
+  </p>
+  <br />
+  <h2 class="text-subhead font-head"><b>Hello World program using C</b></h2>
+  <p class="text-content ml-content">
+    Below is a simple "Hello World" program written in the C programming language:<br />
+    #include &lt;stdio.h&gt;<br />
+    int main() {<br />
+    printf("Hello, World!\n");<br />
+    return 0;<br />
+    }
+  </p>
+  <br />
+  <h3><b>Explanation:</b></h3>
+  <p class="text-content ml-content">
+    <b>#include &lt;stdio.h&gt;:</b> This line includes the standard input-output header file, which provides functions
+    like printf and scanf for input and output operations.<br />
+    <b>int main():</b> This is the entry point of the program. The main function is where the execution of the program
+    begins. It returns an integer value to the operating system.<br />
+    <b>{}:</b> These curly braces define the body of the main function.<br />
+    <b>printf("Hello, World!\n");:</b> This line uses the printf function to print the message "Hello, World!" to the
+    console. The \n is an escape sequence that represents a newline character, which moves the cursor to the next
+    line.<br />
+    <b>return 0;:</b> The main function returns an integer value. By convention, a return value of 0 indicates that the
+    program executed successfully.<br /><br />
+    To run this program, you'll need a C compiler installed on your system. Save the code in a file with a .c extension
+    (e.g., hello_world.c) and then use the compiler to build and execute the program.
+  </p>
+  <br />
+  <h2 class="text-subhead font-head"><b>Flow of C Program</b></h2>
+  <p class="text-content ml-content">
+    The flow of a C program can be broadly understood in the following sequence of steps:<br />
+    <b>Preprocessing Phase:</b><br />
+    The preprocessor processes directives starting with # before the actual compilation. These directives include
+    #include for including header files, #define for defining constants and macros, etc.<br />
+    <b>Compilation Phase:</b><br />
+    The preprocessed code is passed to the compiler. The compiler checks the syntax and semantics of the code. If errors
+    are found, it generates error messages. If the code is error-free, it produces an object file (usually with a .o
+    extension) containing machine code specific to the target platform.<br />
+    <b>Linking Phase:</b><br />
+    If the program consists of multiple source files or uses external libraries, the linker combines all necessary
+    object files and libraries into a single executable file. It resolves references to functions and variables.<br />
+    <b>Loading Phase (if separate from linking):</b><br />
+    The operating system loads the executable file into memory. The program's instructions and data are placed into the
+    appropriate memory locations.<br />
+    <b>Execution Phase:</b><br />
+    The CPU executes the instructions stored in memory, following the flow of the program logic defined by the source
+    code.<br />
+    <b>Termination Phase:</b><br />
+    Once the program completes its execution, it may return a status code (usually 0 for success) to the operating
+    system.
+  </p>
+  <br />
+  <h2 class="text-subhead font-head"><b>Example Program Flow:</b></h2>
+  <p>
+    Let's consider a simple example program:<br />
+    #include &lt;stdio.h&gt;<br />
+    int main() {<br />
+    printf("Hello, World!\n");<br />
+    return 0;<br />
+    }<br />
+    Here's how the flow works for this program:<br />
+    <b>Preprocessing Phase:</b><br />
+    The #include &lt;stdio.h&gt; directive tells the preprocessor to include the contents of the stdio.h header file.<br />
+    <b>Compilation Phase:</b><br />
+    The compiler checks the syntax and semantics of the code. It generates an object file (e.g., program.o) containing
+    machine code specific to the target platform.<br />
+    <b>Linking Phase:</b><br />
+    In this case, there are no external dependencies, so linking is straightforward. The object file is linked to create
+    an executable file (e.g., program.exe).<br />
+    <b>Loading Phase:</b><br />
+    The operating system loads the executable file program.exe into memory.<br />
+    <b>Execution Phase:</b><br />
+    The CPU executes the instructions stored in memory. It starts with the main function.<br />
+    <b>Termination Phase:</b><br />
+    The program completes its execution and returns a status code (0 for success) to the operating system.<br />
+    In this case, the program prints "Hello, World!" to the console, and since there are no errors, it returns a status
+    code of 0 to the operating system.
+  </p>
+</div>

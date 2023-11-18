@@ -1,4 +1,4 @@
-version: "0.1"
+version: '0.1'
 title: Configure the AWS CLI
 description: This wizard will create a new CLI config profile for you
 plan:
@@ -6,7 +6,7 @@ plan:
     values:
       config_type:
         type: prompt
-        description: "What would you like to configure"
+        description: 'What would you like to configure'
         choices:
           # There's also Web Identity and SAML but we're skipping that.
           - display: Static Credentials
@@ -50,7 +50,7 @@ plan:
         type: apicall
         operation: iam.ListRoles
         params: {}
-        query: "sort_by(Roles[].{display: RoleName, actual_value: Arn}, &display)"
+        query: 'sort_by(Roles[].{display: RoleName, actual_value: Arn}, &display)'
       role_arn:
         type: prompt
         description: Select the role you want to assume
@@ -86,26 +86,26 @@ plan:
     values:
       region:
         type: prompt
-        description: "Enter the region name"
+        description: 'Enter the region name'
 execute:
   # All the logic needed when the user selects assume role.
   assume_role:
     - type: sharedconfig
       operation: SetValues
-      profile: "{profile_name}"
+      profile: '{profile_name}'
       condition:
         variable: config_type
         equals: assume_role
       params:
-        role_arn: "{role_arn}"
+        role_arn: '{role_arn}'
     - type: sharedconfig
       operation: SetValues
       condition:
         variable: credential_source_type
         equals: source_profile
-      profile: "{profile_name}"
+      profile: '{profile_name}'
       params:
-        source_profile: "{source_profile}"
+        source_profile: '{source_profile}'
     - type: sharedconfig
       operation: SetValues
       condition:
@@ -113,34 +113,34 @@ execute:
           equals: null
         - variable: config_type
           equals: assume_role
-      profile: "{profile_name}"
+      profile: '{profile_name}'
       params:
-        credential_source: "{credential_source_type}"
+        credential_source: '{credential_source_type}'
   static_creds:
     - type: sharedconfig
       operation: SetValues
-      profile: "{profile_name}"
+      profile: '{profile_name}'
       condition:
         variable: config_type
         equals: static_creds
       params:
-        aws_access_key_id: "{access_key_id}"
-        aws_secret_access_key: "{secret_key}"
+        aws_access_key_id: '{access_key_id}'
+        aws_secret_access_key: '{secret_key}'
   proc_provider:
     - type: sharedconfig
       operation: SetValues
-      profile: "{profile_name}"
+      profile: '{profile_name}'
       condition:
         variable: config_type
         equals: proc_provider
       params:
-        credential_process: "{creds_process}"
+        credential_process: '{creds_process}'
   additional_config:
     - type: sharedconfig
       operation: SetValues
-      profile: "{profile_name}"
+      profile: '{profile_name}'
       condition:
         variable: config_type
         equals: additional_config
       params:
-        region: "{region}"
+        region: '{region}'

@@ -28,7 +28,6 @@ const LoadReactContent = ({ id }: { id: string }) => {
       </Suspense>
     </div>
   );
-
-  };
+};
 
 export default LoadReactContent;

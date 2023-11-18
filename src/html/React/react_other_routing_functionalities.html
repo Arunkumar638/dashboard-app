@@ -1,6 +1,10 @@
 <div>
   <h3 class="text-subhead font-head">Using Prompt component to get consent of user for navigation in react</h3>
-  <p class="text-content ml-content">In React Router, the Prompt component is used to prompt the user for confirmation before navigating away from a page. This can be useful in situations where the user has unsaved changes on a form and you want to prevent them from accidentally leaving the page.</p>
+  <p class="text-content ml-content">
+    In React Router, the Prompt component is used to prompt the user for confirmation before navigating away from a
+    page. This can be useful in situations where the user has unsaved changes on a form and you want to prevent them
+    from accidentally leaving the page.
+  </p>
   <p class="text-content ml-content">Here's how you can use the Prompt component in React:</p>
   <p class="text-content ml-content">import React, { useState } from 'react';</p>
   <p class="text-content ml-content">import { Prompt } from 'react-router-dom';</p>
@@ -14,10 +18,14 @@
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Form with Prompt&lt;/h2&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Prompt</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when={isDirty}</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;message="You have unsaved changes. Are you sure you want to leave?"</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;message="You have unsaved changes. Are you sure you want to leave?"
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;form&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" onChange={handleInputChange} /&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" onChange={handleInputChange} /&gt;
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
@@ -26,12 +34,22 @@
   <b>In this example:</b>
   <li class="ml-points">We import the Prompt component from react-router-dom.</li>
   <li class="ml-points">The isDirty state variable is used to track whether there are unsaved changes in the form.</li>
-  <li class="ml-points">When the user interacts with the form (e.g., types something), the handleInputChange function is called, setting isDirty to true.</li>
-  <li class="ml-points">The Prompt component is used to conditionally render a confirmation prompt based on the value of isDirty.</li>
-  <li class="ml-points">The when prop determines whether the prompt should be shown. In this case, it is based on the value of isDirty.</li>
+  <li class="ml-points">
+    When the user interacts with the form (e.g., types something), the handleInputChange function is called, setting
+    isDirty to true.
+  </li>
+  <li class="ml-points">
+    The Prompt component is used to conditionally render a confirmation prompt based on the value of isDirty.
+  </li>
+  <li class="ml-points">
+    The when prop determines whether the prompt should be shown. In this case, it is based on the value of isDirty.
+  </li>
   <li class="ml-points">The message prop specifies the message that will be displayed in the confirmation dialog.</li>
-  <h4 class=" font-head">Using Prompt with Functional Components</h4>
-  <p class="text-content ml-content">If you're using a functional component and you need to perform additional actions when navigating, you can use the useHistory hook to programmatically navigate after getting user consent.</p>
+  <h4 class="font-head">Using Prompt with Functional Components</h4>
+  <p class="text-content ml-content">
+    If you're using a functional component and you need to perform additional actions when navigating, you can use the
+    useHistory hook to programmatically navigate after getting user consent.
+  </p>
   <p class="text-content ml-content">import React, { useState } from 'react';</p>
   <p class="text-content ml-content">import { Prompt, useHistory } from 'react-router-dom';</p>
   <p class="text-content ml-content">const FormWithPrompt = () => {</p>
@@ -50,20 +68,36 @@
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Form with Prompt&lt;/h2&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Prompt</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when={isDirty}</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;message="You have unsaved changes. Are you sure you want to leave?"</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;message="You have unsaved changes. Are you sure you want to leave?"
+  </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;form&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="text" onChange={handleInputChange} /&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="text" onChange={handleInputChange} /&gt;
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button onClick={handleNavigate}&gt;Navigate&lt;/button&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button onClick={handleNavigate}&gt;Navigate&lt;/button&gt;
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
   <p class="text-content ml-content">export default FormWithPrompt;</p>
-  <p class="text-content ml-content">In this example, we've added a button that, when clicked, will navigate to a new route. Before navigating, it checks if there are unsaved changes. If there are, it shows the confirmation prompt.</p>
-  <p class="text-content ml-content">Using the Prompt component allows you to implement a confirmation dialog to prevent users from accidentally leaving a page with unsaved changes. This is especially useful in form-heavy applications where data preservation is important.</p>
-  <h4 class=" font-head">Path less Route to handle failed matches in react</h3>
-  <p class="text-content ml-content">In React Router, a pathless route (also known as a wildcard route or a catch-all route) can be used to handle failed matches. This means that if none of the defined routes match the current URL, this route will be rendered.</p>
+  <p class="text-content ml-content">
+    In this example, we've added a button that, when clicked, will navigate to a new route. Before navigating, it checks
+    if there are unsaved changes. If there are, it shows the confirmation prompt.
+  </p>
+  <p class="text-content ml-content">
+    Using the Prompt component allows you to implement a confirmation dialog to prevent users from accidentally leaving
+    a page with unsaved changes. This is especially useful in form-heavy applications where data preservation is
+    important.
+  </p>
+  <h4 class="font-head">Path less Route to handle failed matches in react</h4>
+  <p class="text-content ml-content">
+    In React Router, a pathless route (also known as a wildcard route or a catch-all route) can be used to handle failed
+    matches. This means that if none of the defined routes match the current URL, this route will be rendered.
+  </p>
   <p class="text-content ml-content">Here's how you can set up a pathless route in React:</p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';</p>
@@ -74,10 +108,18 @@
   <p class="text-content ml-content">&nbsp;&nbsp;return (</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;Router&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Switch&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route exact path="/" component={Home} /&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route path="/about" component={About} /gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{/* Pathless route for handling failed matches */}</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route component={NotFound} /&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route exact path="/" component={Home} /&gt;
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route path="/about" component={About} /gt;
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{/* Pathless route for handling failed matches */}
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route component={NotFound} /&gt;
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Switch&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Router&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
@@ -86,18 +128,37 @@
   <p class="text-content ml-content">In this example:</p>
   <li class="ml-points">The Switch component is used to wrap a set of routes.</li>
   <li class="ml-points">The first two Route components specify exact paths for the Home and About pages.</li>
-  <li class="ml-points">The third Route component does not have a specified path. This makes it a pathless route, which will be matched if none of the previous routes match.</li>
-  <li class="ml-points">The NotFound component will be rendered if none of the defined routes match the current URL.</li>
-  <h4 class=" font-head">Creating the NotFound Component:</h4>
+  <li class="ml-points">
+    The third Route component does not have a specified path. This makes it a pathless route, which will be matched if
+    none of the previous routes match.
+  </li>
+  <li class="ml-points">
+    The NotFound component will be rendered if none of the defined routes match the current URL.
+  </li>
+  <h4 class="font-head">Creating the NotFound Component:</h4>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">const NotFound = () => {</p>
   <p class="text-content ml-content">&nbsp;&nbsp;return &lt;div&gt;404 - Page Not Found&lt;/div&gt;;</p>
   <p class="text-content ml-content">};</p>
   <p class="text-content ml-content">export default NotFound;</p>
-  <p class="text-content ml-content">In this example, the NotFound component is a simple component that will be rendered when none of the other routes match.</p>
-  <p class="text-content ml-content font-semibold">Important Points:
-  <li class="ml-points">The pathless route should be placed at the end of your Switch component. This ensures that it is only matched if none of the previous routes match.</li>
-  <li class="ml-points">The pathless route acts as a fallback route for any routes that do not have a specific match.</li>
-  <li class="ml-points">This technique is often used to create a custom 404 page for your application.</li>
-  <p class="text-content ml-content">By using a pathless route, you can handle failed matches in your React application and provide a meaningful user experience for routes that do not exist or are not matched.</p>
-  </div>
+  <p class="text-content ml-content">
+    In this example, the NotFound component is a simple component that will be rendered when none of the other routes
+    match.
+  </p>
+  <p class="text-content ml-content font-semibold">
+    Important Points:
+    <li class="ml-points">
+      The pathless route should be placed at the end of your Switch component. This ensures that it is only matched if
+      none of the previous routes match.
+    </li>
+    <li class="ml-points">
+      The pathless route acts as a fallback route for any routes that do not have a specific match.
+    </li>
+    <li class="ml-points">This technique is often used to create a custom 404 page for your application.</li>
+  </p>
+
+  <p class="text-content ml-content">
+    By using a pathless route, you can handle failed matches in your React application and provide a meaningful user
+    experience for routes that do not exist or are not matched.
+  </p>
+</div>

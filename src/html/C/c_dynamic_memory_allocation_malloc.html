@@ -1,49 +1,57 @@
-<div><h2><b>Dynamic memory allocation malloc</b></h2>
-Dynamic memory allocation is a feature in C that allows you to allocate memory at runtime. This is particularly useful when you don't know the size of the data you need to store beforehand, or if you need to dynamically resize data structures.<br/>
+<div>
+  <h2><b>Dynamic memory allocation malloc</b></h2>
+  Dynamic memory allocation is a feature in C that allows you to allocate memory at runtime. This is particularly useful
+  when you don't know the size of the data you need to store beforehand, or if you need to dynamically resize data
+  structures.<br />
 
-The malloc() function is used for dynamic memory allocation in C. It stands for "memory allocation." Here's how you use it:<br/>
-#include &lt;stdio.h&gt;<br/>
-#include &lt;stdlib.h&gt;<br/>
+  The malloc() function is used for dynamic memory allocation in C. It stands for "memory allocation." Here's how you
+  use it:<br />
+  #include &lt;stdio.h&gt;<br />
+  #include &lt;stdlib.h&gt;<br />
 
-int main() {<br/>
-    int *ptr;<br/>
+  int main() {<br />
+  int *ptr;<br />
 
-    // Allocate memory for one integer<br/>
-    ptr = (int *)malloc(sizeof(int));<br/>
+  // Allocate memory for one integer<br />
+  ptr = (int *)malloc(sizeof(int));<br />
 
-    if (ptr == NULL) {<br/>
-        printf("Memory allocation failed\n");<br/>
-        return 1;  // Indicate an error<br/>
-    }<br/>
+  if (ptr == NULL) {<br />
+  printf("Memory allocation failed\n");<br />
+  return 1; // Indicate an error<br />
+  }<br />
 
-    // Use the allocated memory<br/><br/>
-    *ptr = 42;<br/>
-    printf("Value: %d\n", *ptr);<br/>
+  // Use the allocated memory<br /><br />
+  *ptr = 42;<br />
+  printf("Value: %d\n", *ptr);<br />
 
-    // Free the allocated memory when done<br/>
-    free(ptr);<br/>
+  // Free the allocated memory when done<br />
+  free(ptr);<br />
 
-    return 0;<br/>
-}<br/>
-<b>Explanation:</b><br/>
+  return 0;<br />
+  }<br />
+  <b>Explanation:</b><br />
 
-#include &lt;stdlib.h&gt;<br/>: This header file provides the malloc() and free() functions.<br/>
+  #include &lt;stdlib.h&gt;<br />: This header file provides the malloc() and free() functions.<br />
 
-int *ptr;: Declares a pointer ptr to hold the address of the dynamically allocated memory.<br/>
+  int *ptr;: Declares a pointer ptr to hold the address of the dynamically allocated memory.<br />
 
-ptr = (int *)malloc(sizeof(int));: Allocates memory for one integer using malloc(). The sizeof(int) is used to determine the size of the integer in bytes. malloc() returns a pointer to the allocated memory, which is then typecasted to an int*.<br/>
+  ptr = (int *)malloc(sizeof(int));: Allocates memory for one integer using malloc(). The sizeof(int) is used to
+  determine the size of the integer in bytes. malloc() returns a pointer to the allocated memory, which is then
+  typecasted to an int*.<br />
 
-if (ptr == NULL) { ... }: Checks if malloc() was successful. If it returns NULL, it means that the allocation failed (perhaps due to insufficient memory).<br/>
+  if (ptr == NULL) { ... }: Checks if malloc() was successful. If it returns NULL, it means that the allocation failed
+  (perhaps due to insufficient memory).<br />
 
-*ptr = 42;: Assigns a value to the allocated memory.<br/>
+  *ptr = 42;: Assigns a value to the allocated memory.<br />
 
-printf("Value: %d\n", *ptr);: Prints the value stored in the allocated memory.<br/>
+  printf("Value: %d\n", *ptr);: Prints the value stored in the allocated memory.<br />
 
-free(ptr);: Releases the dynamically allocated memory. This is crucial to avoid memory leaks.<br/>
+  free(ptr);: Releases the dynamically allocated memory. This is crucial to avoid memory leaks.<br />
 
-<b>Remember:</b><br/>
+  <b>Remember:</b><br />
 
-Always check if malloc() returns NULL to handle the case where memory allocation fails.
-After allocating memory with malloc(), you should always free it using free() when you're done with it. This helps prevent memory leaks.
-Dynamic memory allocation is powerful, but it also requires you to manage memory manually, which can lead to errors if not done carefully. It's important to free the memory when you're done using it to avoid memory leaks.
+  Always check if malloc() returns NULL to handle the case where memory allocation fails. After allocating memory with
+  malloc(), you should always free it using free() when you're done with it. This helps prevent memory leaks. Dynamic
+  memory allocation is powerful, but it also requires you to manage memory manually, which can lead to errors if not
+  done carefully. It's important to free the memory when you're done using it to avoid memory leaks.
 </div>

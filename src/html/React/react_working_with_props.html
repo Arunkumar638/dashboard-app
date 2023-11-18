@@ -1,10 +1,15 @@
 <div>
   <h2 class="text-subhead font-bold">Passing data to component using props</h2>
-  <p class="text-content ml-content">Passing data to a component using props is a fundamental concept in React. 
-    It allows you to customize and configure a component when it is used in a parent component. </p>
-  <p class="text-content ml-content font-head">Here's how you can pass data to a component using props:</p><br/>
+  <p class="text-content ml-content">
+    Passing data to a component using props is a fundamental concept in React. It allows you to customize and configure
+    a component when it is used in a parent component.
+  </p>
+  <p class="text-content ml-content font-head">Here's how you can pass data to a component using props:</p>
+  <br />
   <h3 class="font-head">Parent Component:</h3>
-  <p class="text-content ml-content">In the parent component, you include the child component and pass data to it as props.</p>
+  <p class="text-content ml-content">
+    In the parent component, you include the child component and pass data to it as props.
+  </p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">import ChildComponent from './ChildComponent';</p>
   <p class="text-content ml-content">const ParentComponent = () => {</p>
@@ -12,9 +17,12 @@
   <p class="text-content ml-content">&nbsp;&nbsp;const age = 30;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;return &lt;ChildComponent name={name} age={age} /&gt;;</p>
   <p class="text-content ml-content">};</p>
-  <p class="text-content ml-content">export default ParentComponent;</p><br/>
+  <p class="text-content ml-content">export default ParentComponent;</p>
+  <br />
   <h3 class="font-head">Child Component:</h3>
-  <p class="text-content ml-content">In the child component, you can access the props passed down from the parent component.</p>
+  <p class="text-content ml-content">
+    In the child component, you can access the props passed down from the parent component.
+  </p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">const ChildComponent = (props) => {</p>
   <p class="text-content ml-content">&nbsp;&nbsp;return (</p>
@@ -25,7 +33,10 @@
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
   <p class="text-content ml-content">export default ChildComponent;</p>
-  <p class="text-content ml-content">Here, props.name and props.age are accessing the name and age props passed from the parent component.</p><br/>
+  <p class="text-content ml-content">
+    Here, props.name and props.age are accessing the name and age props passed from the parent component.
+  </p>
+  <br />
   <h3 class="font-head">Using the Child Component:</h3>
   <p class="text-content ml-content">Finally, you use the ParentComponent in your application:</p>
   <p class="text-content ml-content">import React from 'react';</p>
@@ -36,22 +47,34 @@
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;My App&lt;/h1&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;ParentComponent /&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&lt;/div&gt;</p>
-  <p class="text-content ml-content">  );</p>
+  <p class="text-content ml-content">);</p>
   <p class="text-content ml-content">};</p>
   <p class="text-content ml-content">export default App;</p>
-  <p class="text-content ml-content">When you render App, it will include ParentComponent, which in turn renders ChildComponent with the provided props.</p><br/>
-  
+  <p class="text-content ml-content">
+    When you render App, it will include ParentComponent, which in turn renders ChildComponent with the provided props.
+  </p>
+  <br />
+
   <h2>Validating props using prop Types</h2>
-  <p class="text-content ml-content">PropTypes is a way to validate the data passed to a React component through its props. It helps catch bugs related to incorrect or missing props, providing a form of type-checking in your React applications.</p>
-  <p class="text-content ml-content">To use PropTypes, you need to install the prop-types package if it's not already installed:</p>
+  <p class="text-content ml-content">
+    PropTypes is a way to validate the data passed to a React component through its props. It helps catch bugs related
+    to incorrect or missing props, providing a form of type-checking in your React applications.
+  </p>
+  <p class="text-content ml-content">
+    To use PropTypes, you need to install the prop-types package if it's not already installed:
+  </p>
   <p class="text-content ml-content">npm install prop-types</p>
-  <p class="text-content ml-content">Here's how you can validate props using PropTypes:</p><br/>
+  <p class="text-content ml-content">Here's how you can validate props using PropTypes:</p>
+  <br />
   <h3 class="font-head">Import PropTypes:</h3>
   <p class="text-content ml-content">In your component file, import the PropTypes module.</p>
   <p class="text-content ml-content">import React from 'react';</p>
-  <p class="text-content ml-content">import PropTypes from 'prop-types';</p><br/>
+  <p class="text-content ml-content">import PropTypes from 'prop-types';</p>
+  <br />
   <h3 class="font-head">Define PropTypes:</h3>
-  <p class="text-content ml-content">Below your component, you can define the PropTypes for the props that the component is expecting.</p>
+  <p class="text-content ml-content">
+    Below your component, you can define the PropTypes for the props that the component is expecting.
+  </p>
   <p class="text-content ml-content">const MyComponent = (props) => {</p>
   <p class="text-content ml-content">&nbsp;&nbsp;return &lt;div&gt;{props.message}&lt;/div&gt;;</p>
   <p class="text-content ml-content">};</p>
@@ -59,13 +82,21 @@
   <p class="text-content ml-content">&nbsp;&nbsp;message: PropTypes.string.isRequired,</p>
   <p class="text-content ml-content">};</p>
   <p class="text-content ml-content">export default MyComponent;</p>
-  <p class="text-content ml-content">In this example, message is expected to be a string, and it is marked as required (isRequired), which means it must be provided.</p><br/>
-  <h3 class="font-head">Using the Component:</h3> 
-  <p class="text-content ml-content">When you use the component, make sure to pass the required props.
   <p class="text-content ml-content">
+    In this example, message is expected to be a string, and it is marked as required (isRequired), which means it must
+    be provided.
+  </p>
+  <br />
+  <h3 class="font-head">Using the Component:</h3>
+  <p class="text-content ml-content">When you use the component, make sure to pass the required props.</p>
+  <p class="text-content ml-content"></p>
   <h3 class="font-head">Handling Incorrect Props:</h3>
-  <p class="text-content ml-content">If a required prop is not provided or if a prop of the wrong type is passed, React will log a warning to the console.
-  <p class="text-content ml-content">&lt;MyComponent message="Hello, World!" /&gt;</p><br/> 
+  <p class="text-content ml-content">
+    If a required prop is not provided or if a prop of the wrong type is passed, React will log a warning to the
+    console.
+  </p>
+  <p class="text-content ml-content">&lt;MyComponent message="Hello, World!" /&gt;</p>
+  <br />
   <h3 class="font-head">PropTypes Validators:</h3>
   <p class="text-content ml-content">Here are some common PropTypes validators:</p>
   <p class="text-content ml-content">PropTypes.string</p>
@@ -76,32 +107,53 @@
   <p class="text-content ml-content">PropTypes.func</p>
   <p class="text-content ml-content">PropTypes.node (for any renderable content, including React elements)</p>
   <p class="text-content ml-content">PropTypes.element (for a React element)</p>
-  <p class="text-content ml-content">Additionally, you can use .isRequired to indicate that a prop is required.</p><br/> 
+  <p class="text-content ml-content">Additionally, you can use .isRequired to indicate that a prop is required.</p>
+  <br />
   <h3 class="font-head">Default Props:</h3>
-  <p class="text-content ml-content">You can also provide default values for props using defaultProps. These will be used if the parent component does not pass the respective prop.</p>
+  <p class="text-content ml-content">
+    You can also provide default values for props using defaultProps. These will be used if the parent component does
+    not pass the respective prop.
+  </p>
   <p class="text-content ml-content">MyComponent.defaultProps = {</p>
-  <p class="text-content ml-content">  message: 'Default Message',</p>
-  <p class="text-content ml-content">};</p><br/>
+  <p class="text-content ml-content">message: 'Default Message',</p>
+  <p class="text-content ml-content">};</p>
+  <br />
   <h2>Supplying default values to props using default Props</h2>
-  <p class="text-content ml-content">In React, you can provide default values for props using the defaultProps property. This is useful when you want to ensure that a prop has a value even if it's not explicitly provided by the parent component. Here's how you can supply default values to props using defaultProps:</p>
+  <p class="text-content ml-content">
+    In React, you can provide default values for props using the defaultProps property. This is useful when you want to
+    ensure that a prop has a value even if it's not explicitly provided by the parent component. Here's how you can
+    supply default values to props using defaultProps:
+  </p>
   <h3 class="font-head">Import PropTypes (Optional):</h3>
-  <p class="text-content ml-content">If you're also using PropTypes for type-checking, you should import it in your component file.</p>
-  <p class="text-content ml-content">import PropTypes from 'prop-types';</p><br/> 
-  <h3 class="font-head">Define the Component:</h3> 
+  <p class="text-content ml-content">
+    If you're also using PropTypes for type-checking, you should import it in your component file.
+  </p>
+  <p class="text-content ml-content">import PropTypes from 'prop-types';</p>
+  <br />
+  <h3 class="font-head">Define the Component:</h3>
   <p class="text-content ml-content">Define your component and include the defaultProps property.</p>
   <p class="text-content ml-content">const MyComponent = (props) => {</p>
   <p class="text-content ml-content">&nbsp;&nbsp;return &lt;div&gt;{props.message}&lt;/div&gt;;</p>
-  <p class="text-content ml-content">};</p><br/>  
-  <h3 class="font-head">Set Default Props:</h3> 
-  <p class="text-content ml-content">Below your component, set the default values for the props using the defaultProps property.</p>
-  <p class="text-content ml-content">MyComponent.defaultProps = {</p>
-  <p class="text-content ml-content">  message: 'Default Message'</p>
   <p class="text-content ml-content">};</p>
-  <p class="text-content ml-content">In this example, if the parent component does not provide a message prop, it will default to 'Default Message'.</p><br/> 
+  <br />
+  <h3 class="font-head">Set Default Props:</h3>
+  <p class="text-content ml-content">
+    Below your component, set the default values for the props using the defaultProps property.
+  </p>
+  <p class="text-content ml-content">MyComponent.defaultProps = {</p>
+  <p class="text-content ml-content">message: 'Default Message'</p>
+  <p class="text-content ml-content">};</p>
+  <p class="text-content ml-content">
+    In this example, if the parent component does not provide a message prop, it will default to 'Default Message'.
+  </p>
+  <br />
   <h3 class="font-head">Using the Component:</h3>
-  <p class="text-content ml-content">When you use the component, you can omit the message prop, and it will use the default value.</p>
+  <p class="text-content ml-content">
+    When you use the component, you can omit the message prop, and it will use the default value.
+  </p>
   <p class="text-content ml-content">&lt;MyComponent /&gt;</p>
-  <p class="text-content ml-content">In this case, the component will render &lt;div&gt;Default Message&lt;/div&gt;.</p><br/>
+  <p class="text-content ml-content">In this case, the component will render &lt;div&gt;Default Message&lt;/div&gt;.</p>
+  <br />
   <p class="font-head">Here's the complete example:</p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">import PropTypes from 'prop-types';</p>
@@ -115,6 +167,8 @@
   <p class="text-content ml-content">&nbsp;&nbsp;message: PropTypes.string</p>
   <p class="text-content ml-content">};</p>
   <p class="text-content ml-content">export default MyComponent;</p>
-  <p class="text-content ml-content">In this example, message is set to 'Default Message' if not provided by the parent component. The propTypes property is optional, but it's a good practice to define the expected prop types for your component.</p>
-  </div>
-
+  <p class="text-content ml-content">
+    In this example, message is set to 'Default Message' if not provided by the parent component. The propTypes property
+    is optional, but it's a good practice to define the expected prop types for your component.
+  </p>
+</div>

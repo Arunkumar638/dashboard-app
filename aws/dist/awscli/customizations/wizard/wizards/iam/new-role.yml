@@ -1,4 +1,4 @@
-version: "0.2"
+version: '0.2'
 title: Create An IAM Role and Policy
 description: This wizard will create a new IAM role for you
 plan:
@@ -98,23 +98,23 @@ plan:
         type: apicall
         operation: iam.GetPolicy
         params:
-          PolicyArn: "{policy_arn}"
-        query: "Policy.DefaultVersionId"
+          PolicyArn: '{policy_arn}'
+        query: 'Policy.DefaultVersionId'
         cache: true
       policy_document:
         type: apicall
         operation: iam.GetPolicyVersion
         params:
-          PolicyArn: "{policy_arn}"
-          VersionId: "{version_id}"
-        query: "PolicyVersion.Document"
+          PolicyArn: '{policy_arn}'
+          VersionId: '{version_id}'
+        query: 'PolicyVersion.Document'
         cache: true
       existing_policies:
         type: apicall
         operation: iam.ListPolicies
         params:
           Scope: All
-        query: "sort_by(Policies[?IsAttachable==`true`&&Path!=`/aws-service-role/`].{display: PolicyName, actual_value: Arn}, &display)"
+        query: 'sort_by(Policies[?IsAttachable==`true`&&Path!=`/aws-service-role/`].{display: PolicyName, actual_value: Arn}, &display)'
         cache: true
         paginate: true
       policy_arn:
@@ -124,7 +124,7 @@ plan:
         details:
           value: policy_document
           output: json
-          description: "Policy Document"
+          description: 'Policy Document'
   ask_profile_config:
     shortname: CLI config
     description: Determine CLI configuration
@@ -271,35 +271,35 @@ plan:
         details:
           value: preview_value
           visible: True
-          description: "Preview"
+          description: 'Preview'
   __DONE__:
 execute:
   default:
     - type: apicall
       operation: iam.CreateRole
       params:
-        RoleName: "{role_name}"
-        AssumeRolePolicyDocument: "{trust_policy}"
-        Description: "{role_description}"
+        RoleName: '{role_name}'
+        AssumeRolePolicyDocument: '{trust_policy}'
+        Description: '{role_description}'
       output_var: created_role_arn
       query: Role.Arn
     - type: apicall
       operation: iam.AttachRolePolicy
       params:
-        RoleName: "{role_name}"
-        PolicyArn: "{policy_arn}"
+        RoleName: '{role_name}'
+        PolicyArn: '{policy_arn}'
   write_config_file:
     - type: sharedconfig
       operation: SetValues
       condition:
         variable: wants_config_profile
         equals: yes
-      profile: "{new_profile_name}"
+      profile: '{new_profile_name}'
       params:
-        source_profile: "{source_profile}"
+        source_profile: '{source_profile}'
         # This role_arn comes from the `output_var` in the previous
         # executor step.
-        role_arn: "{created_role_arn}"
+        role_arn: '{created_role_arn}'
 __OUTPUT__:
   value: |
     Wizard successfully created role with following properties:

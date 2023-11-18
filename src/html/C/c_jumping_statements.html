@@ -1,162 +1,192 @@
 <div>
-    <h2 class="text-head font-head">Jumping statements</h2>
-    <p class="text-content ml-content">In C, jump statements are used to jump from one part of the code to another altering the normal flow of the program. 
-    &nbsp;&nbsp;They are used to transfer the program control to somewhere else in the program.<br/>
-    In this article, we will discuss the jump statements in C and how to use them.</p><br/>
-    <h3 class="text-subhead font-head">Types of Jump Statements in C</h3>
-    <p class="text-content ml-content">There are 4 types of jump statements in C:</p><br/>
-    <ol class="list-disc">
-    <li class="ml-points">break</li>
-    <li class="ml-points">continue</li>
-    <li class="ml-points">goto</li>
-    <li class="ml-points">return</li>
-    </ol><br/>
-    <p class="font-head">1. break</p>
-    The break statement exits or terminates the loop or switch statement based on a certain condition, without executing the remaining code.<br/>
-    <p class="font-head">Syntax</p>
-    break;<br/><br/>
-    <p class="font-head">Uses of break</p>
-    The break statement is used in C for the following purposes:<br/><br/>
-    <li class="ml-points">To come out of the loop.</li>
-    <li class="ml-points">To come out from the nested loops.</li>
-    <li class="ml-points">To come out of the switch case.</li>
-    &nbsp;&nbsp;<b>Note:</b> If the break statement is used inside an inner loop in a nested loop, it will break the inner loop without affecting the execution of the outer loop.<br/><br/>
-    <p class="font-head">Example of break Statement</p>
-    The statements inside the loop are executed sequentially. When the break statement is encountered within the loop and the condition 
-    for the break statement becomes true, the program flow breaks out of the loop, regardless of any remaining iterations.<br/><br/>
-    // C program to illustrate the break in c loop <br/>
-    #include &lt;stdio.h&gt;<br/>
-    int main() <br/>
-    { <br/>
-    &nbsp;&nbsp;int i; <br/>
-    &nbsp;&nbsp;// for loop <br/>
-    &nbsp;&nbsp;for (i = 1; i &lt;= 10; i++) { <br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;// when i = 6, the loop should end <br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;if (i == 6) { <br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break; <br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;} <br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;printf("%d ", i); <br/>
-    &nbsp;&nbsp;} <br/>
-    &nbsp;&nbsp;printf("Loop exited.\n");<br/> 
-    &nbsp;&nbsp;return 0; <br/>
-    }<br/><br/>
-    <p class="font-head">Output</p>
-    1 2 3 4 5 Loop exited.<br/><br/>
-    <p class="font-head">Explanation:</p>
-    <li class="ml-points">Loop Execution Starts and goes normally till i = 5.</li><br/>
-    <li class="ml-points">When i = 6, the condition for the break statement becomes true and the program control immediately exits the loop.</li><br/>
-    <li class="ml-points">The control continues with the remaining statements outside the loop.</li><br/>
-    &nbsp;&nbsp;<b>Note:</b> The break statement only break a single loop per usage. 
-    &nbsp;&nbsp;If we want to exit multiple loops in nested loops, we have to use multiple break statements for each of the loop.<br/>
-    The break statement is also used inside the switch statement to terminate the switch statement after the matching case is executed.<br/><br/>
-    <p class="font-head">2. Continue</p>
-    The continue statement in C is used to skip the remaining code after the continue statement within a loop and jump to the next iteration of the loop. 
-    When the continue statement is encountered, the loop control immediately jumps to the next iteration, 
-    by skipping the lines of code written after it within the loop body.<br/><br/>
-    <p class="font-head">Syntax</p> 
-    continue;<br/>
-    &nbsp;&nbsp;<b>Note:</b> Just like break, the continue statement also works for one loop at a time.<br/><br/>
-    <p class="font-head">Example of continue Statement</p>
-    // C Program to illustrate the continue statement <br/>
-    #include &lt;stdio.h&gt;<br/>
-    int main() <br/>
-    { <br/>
-    &nbsp;&nbsp;int i; <br/>
-    &nbsp;&nbsp;// loop <br/>
-    &nbsp;&nbsp;for (i = 0; i &lt; 5; i++) { <br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;if (i == 2) { <br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// continue to be executed if i = 2 <br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Skipping iteration %d\n", i); <br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue; <br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;} <br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;printf("Executing iteration %d\n", i); <br/>
-    &nbsp;&nbsp;} <br/>
-    &nbsp;&nbsp;return 0; <br/>
-    }<br/><br/>
-    <p class="font-head">Output</p>
-    
-    Executing iteration 0<br/>
-    Executing iteration 1<br/>
-    Skipping iteration 2<br/>
-    Executing iteration 3<br/>
-    Executing iteration 4<br/><br/>
-    <p><b>Explanation:</b> The for loop iterates from 0 to 4. Inside the loop, we check if i is equal to 2. If the condition is true, the continue statement is executed, and it skips the remaining code within the loop for that iteration. 
-    If the condition is false, the code proceeds normally.<br/><br/>
-    <b>Note:</b> While using continue in loop, we have to make sure that we put 
-    the continue after the loop variable updation or else it will result in an infinite loop.<br/><br/>
-    <p class="font-head">3. Goto Statement </p>
-    The goto statement is used to jump to a specific point from anywhere in a function. It is used to transfer the program control to a 
-    labeled statement within the same function.<br/><br/>
-    <p class="font-head">Syntax of goto Statement</p>
-    goto label;<br/>
-    .<br/>
-    .<br/>
-    label:<br/>
-    //code<br/><br/>
-    
-    <p class="font-head">Example of goto Statement</p>
-    Check if a number is odd or even using goto statement.<br/>
-    // C program to check if a number is <br/>
-    // even or not using goto statement <br/>
-    #include &lt;stdio.h&gt;<br/>
-      
-    // function to check even or not <br/>
-    void checkEvenOrNot(int num) <br/>
-    { <br/>
-    &nbsp;&nbsp;if (num % 2 == 0) <br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;// jump to even <br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;goto even; <br/>
-    &nbsp;&nbsp;else<br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;// jump to odd <br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;goto odd; <br/>
-      
-    even: <br/>
-    &nbsp;&nbsp;printf("%d is even", num); <br/>
-    &nbsp;&nbsp;// return if even <br/>
-    &nbsp;&nbsp;return; <br/>
-    odd: <br/>
-    &nbsp;&nbsp;printf("%d is odd", num); <br/>
-    } <br/>
-      
-    int main() <br/>
-    { 
-    &nbsp;&nbsp;int num = 26; <br/>
-    &nbsp;&nbsp;checkEvenOrNot(num); <br/>
-    &nbsp;&nbsp;return 0; <br/>
-    }<br/>
-    
-    <p class="text-content ml-content">Output</p><br/>
-    26 is even<br/>
-       <b> Note:</b> The use of goto is generally discouraged in the programmer’s community as it makes the code complex to understand.<br/><br/>
-    <p class="font-head">4. Return Statement in C</p>
-    The return statement in C is used to terminate the execution of a function and return a value to the caller. It is commonly used to provide a result back to the calling code.<br/>
-    return expression;<br/><br/>
-    <p class="font-head">Example</p>
-    #include &lt;stdio.h&gt;<br/>
-      
-    int add(int a, int b) <br/>
-    { <br/>
-    &nbsp;&nbsp;int sum = a + b; <br/>
-    &nbsp;&nbsp;return sum; // Return the sum as the result of the <br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// function <br/>
-    } <br/>
-      
-    void printMessage() <br/>
-    { <br/>
-    &nbsp;&nbsp;printf("GYRONEB\n");<br/> 
-    &nbsp;&nbsp;return; // Return from the function with no value (void) <br/>
-    } <br/>
-    int main() <br/>
-    { <br/>
-    &nbsp;&nbsp;int result = add(5, 3); <br/>
-    &nbsp;&nbsp;printf("Result: %d\n", result); <br/>
-      
-    &nbsp;&nbsp;printMessage(); <br/>
-      
-    &nbsp;&nbsp;return 0; <br/>
-    }<br/><br/>
-    <p class="font-head">Output</p>
-    Result: 8<br/>
-    GYRONEB</p><br/>
-    </div>
-    &nbsp;&nbsp;
+   <h2 class="text-head font-head">Jumping statements</h2>
+   <p class="text-content ml-content">In C, jump statements are used to jump from one part of the code to another altering the normal flow of the program. 
+     &nbsp;&nbsp;They are used to transfer the program control to somewhere else in the program.<br/>
+     In this article, we will discuss the jump statements in C and how to use them.
+   </p>
+   <h3 class="text-subhead font-head">Types of Jump Statements in C</h3>
+   <p class="text-content ml-content">There are 4 types of jump statements in C:</p>
+   <ol class="list-disc">
+     <li class="ml-points">break</li>
+     <li class="ml-points">continue</li>
+     <li class="ml-points">goto</li>
+     <li class="ml-points">return</li>
+   </ol>
+   <br/>
+   <p class="font-head">1. break</p>
+   <br/>
+   <p>The break statement exits or terminates the loop or switch statement based on a certain condition, without executing the remaining code.</p>
+   <br/>
+   <p class="font-head">Syntax</p>
+   <br/>
+   break;</p><br/>
+   <p class="font-head">Uses of break</p>
+   <br/>
+   <p>The break statement is used in C for the following purposes:</p>
+   <br/>
+   <li class="ml-points">To come out of the loop.</li>
+   <li class="ml-points">To come out from the nested loops.</li>
+   <li class="ml-points">To come out of the switch case.</li>
+   &nbsp;&nbsp;<b>Note:</b> <span>If the break statement is used inside an inner loop in a nested loop, it will break the inner loop without affecting the execution of the outer loop.</span><br/><br/>
+   <p class="font-head">Example of break Statement</p>
+   <p>The statements inside the loop are executed sequentially. When the break statement is encountered within the loop and the condition 
+     for the break statement becomes true, the program flow breaks out of the loop, regardless of any remaining iterations.<br/><br/>
+     // C program to illustrate the break in c loop <br/>
+     #include &lt;stdio.h&gt;<br/>
+     int main() <br/>
+     { <br/>
+     &nbsp;&nbsp;int i; <br/>
+     &nbsp;&nbsp;// for loop <br/>
+     &nbsp;&nbsp;for (i = 1; i &lt;= 10; i++) { <br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;// when i = 6, the loop should end <br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;if (i == 6) { <br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break; <br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;} <br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;printf("%d ", i); <br/>
+     &nbsp;&nbsp;} <br/>
+     &nbsp;&nbsp;printf("Loop exited.\n");<br/> 
+     &nbsp;&nbsp;return 0; <br/>
+     }
+   </p>
+   <br/>
+   <p class="font-head">Output</p>
+   
+   <p>1 2 3 4 5 Loop exited.</p>
+   <br/>
+   <p class="font-head">Explanation:</p>
+   <li class="ml-points">Loop Execution Starts and goes normally till i = 5.</li>
+   
+   <li class="ml-points">When i = 6, the condition for the break statement becomes true and the program control immediately exits the loop.</li>
+   
+   <li class="ml-points">The control continues with the remaining statements outside the loop.</li>
+   
+   <b>Note:</b> 
+   <p>The break statement only break a single loop per usage.<br/> 
+     If we want to exit multiple loops in nested loops, we have to use multiple break statements for each of the loop.<br/>
+     The break statement is also used inside the switch statement to terminate the switch statement after the matching case is executed.
+   </p>
+   <br/>
+   <p class="font-head">2. Continue</p>
+   <p>The continue statement in C is used to skip the remaining code after the continue statement within a loop and jump to the next iteration of the loop. 
+     When the continue statement is encountered, the loop control immediately jumps to the next iteration, 
+     by skipping the lines of code written after it within the loop body.
+   </p>
+   <br/>
+   <p class="font-head">Syntax </p>
+   <p>continue;</p>
+   
+   <b>Note:</b> 
+   <p>Just like break, the continue statement also works for one loop at a time.</p>
+   <br/>
+   <p class="font-head">Example of continue Statement</p>
+   <p>// C Program to illustrate the continue statement <br/>
+     #include &lt;stdio.h&gt;<br/>
+     int main() <br/>
+     { <br/>
+     &nbsp;&nbsp;int i; <br/>
+     &nbsp;&nbsp;// loop <br/>
+     &nbsp;&nbsp;for (i = 0; i &lt; 5; i++) { <br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;if (i == 2) { <br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// continue to be executed if i = 2 <br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Skipping iteration %d\n", i); <br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue; <br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;} <br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;printf("Executing iteration %d\n", i); <br/>
+     &nbsp;&nbsp;} <br/>
+     &nbsp;&nbsp;return 0; <br/>
+     }<br/>
+   <p class="font-head">Output</p>
+   <br/>
+   <p>Executing iteration 0<br/>
+     Executing iteration 1<br/>
+     Skipping iteration 2<br/>
+     Executing iteration 3<br/>
+     Executing iteration 4
+   </p>
+   <br/>
+   <p>
+     <b>Explanation:</b> The for loop iterates from 0 to 4. Inside the loop, we check if i is equal to 2. If the condition is true, the continue statement is executed, and it skips the remaining code within the loop for that iteration.<br/>
+     If the condition is false, the code proceeds normally.<br/><br/>
+     <b>Note:</b> While using continue in loop, we have to make sure that we put 
+     the continue after the loop variable updation or else it will result in an infinite loop.
+   </p>
+   <br/>
+   <p class="font-head">3. Goto Statement </p>
+   <br/>
+   <p>The goto statement is used to jump to a specific point from anywhere in a function. It is used to transfer the program control to a 
+     labeled statement within the same function.
+   </p>
+   <br/>
+   <p class="font-head">Syntax of goto Statement</p>
+   <br/>
+   <p>goto label;<br/>
+     .<br/>
+     .<br/>
+     label:<br/>
+     //code
+   </p>
+   <br/>
+   <p class="font-head">Example of goto Statement</p>
+   <p>Check if a number is odd or even using goto statement.<br/>
+     // C program to check if a number is <br/>
+     // even or not using goto statement <br/>
+     #include &lt;stdio.h&gt;<br/>
+     // function to check even or not <br/>
+     void checkEvenOrNot(int num) <br/>
+     { <br/>
+     &nbsp;&nbsp;if (num % 2 == 0) <br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;// jump to even <br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;goto even; <br/>
+     &nbsp;&nbsp;else<br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;// jump to odd <br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;goto odd; <br/>
+     even: <br/>
+     &nbsp;&nbsp;printf("%d is even", num); <br/>
+     &nbsp;&nbsp;// return if even <br/>
+     &nbsp;&nbsp;return; <br/>
+     odd: <br/>
+     &nbsp;&nbsp;printf("%d is odd", num); <br/>
+     } <br/>
+     int main() <br/>
+     { 
+     &nbsp;&nbsp;int num = 26; <br/>
+     &nbsp;&nbsp;checkEvenOrNot(num); <br/>
+     &nbsp;&nbsp;return 0; <br/>
+     }
+   </p>
+   <br/>
+   <p class="text-content ml-content">Output<br/>
+     26 is even<br/>
+     <b> Note:</b> The use of goto is generally discouraged in the programmer’s community as it makes the code complex to understand.
+   </p>
+   <br/>
+   <p class="font-head">4. Return Statement in C</p>
+   <p>The return statement in C is used to terminate the execution of a function and return a value to the caller. It is commonly used to provide a result back to the calling code.<br/>
+     return expression;
+   </p>
+   <br/><br/>
+   <p class="font-head">Example</p>
+   <p>#include &lt;stdio.h&gt;<br/>
+     int add(int a, int b) <br/>
+     { <br/>
+     &nbsp;&nbsp;int sum = a + b; <br/>
+     &nbsp;&nbsp;return sum; // Return the sum as the result of the <br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// function <br/>
+     } <br/>
+     void printMessage() <br/>
+     { <br/>
+     &nbsp;&nbsp;printf("GYRONEB\n");<br/> 
+     &nbsp;&nbsp;return; // Return from the function with no value (void) <br/>
+     } <br/>
+     int main() <br/>
+     { <br/>
+     &nbsp;&nbsp;int result = add(5, 3); <br/>
+     &nbsp;&nbsp;printf("Result: %d\n", result); <br/>
+     &nbsp;&nbsp;printMessage(); <br/>
+     &nbsp;&nbsp;return 0; <br/>
+     }<br/><br/>
+   <p class="font-head">Output</p>
+   Result: 8<br/>
+   GYRONEB
+   </p>
+ </div>

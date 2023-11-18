@@ -1,1 +1,1 @@
-export {default} from "./LoadJSContent";
+export { default } from './LoadJSContent';

@@ -1,26 +1,43 @@
 <div>
-  <h3 class="text-head font-head">Working with React.</h3> 
+  <h3 class="text-head font-head">Working with React.</h3>
   <h4 class="text-subhead font-head">Create Element</h4>
-  <p class="text-content ml-content">In React, you can create elements using either JSX or the React.createElement function. 
-    Using React.createElement is less common than using JSX, but it's important to understand because 
-    it's the underlying method that JSX gets transpiled into.</p></br>
-  <p class="text-content ml-content">Here's an example of how to create an element using React.createElement:</p></br>
+  <p class="text-content ml-content">
+    In React, you can create elements using either JSX or the React.createElement function. Using React.createElement is
+    less common than using JSX, but it's important to understand because it's the underlying method that JSX gets
+    transpiled into.
+  </p>
+  <br />
+  <p class="text-content ml-content">Here's an example of how to create an element using React.createElement:</p>
+  <br />
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">import ReactDOM from 'react-dom';</p>
   <p class="text-content ml-content">const element = React.createElement('h1', null, 'Hello, World!');</p>
-  <p class="text-content ml-content">ReactDOM.render(element, document.getElementById('root'));</p><br/>
-  <p class="text-content ml-content">In this example, we're creating a React element of type h1 with the text content "Hello, World!".
-    The React.createElement function takes three arguments:</p><br/>
+  <p class="text-content ml-content">ReactDOM.render(element, document.getElementById('root'));</p>
+  <br />
+  <p class="text-content ml-content">
+    In this example, we're creating a React element of type h1 with the text content "Hello, World!". The
+    React.createElement function takes three arguments:
+  </p>
+  <br />
   <ol class="list-disc">
     <li class="ml-points">The type of element you want to create (e.g., 'div', 'h1', 'span', etc.).</li>
-  <li class="ml-points">An object for the element's properties or attributes. We're passing null here, but you could pass an object with properties like className, style, etc.</li>
-  <li class="ml-points">The content of the element. This can be a string, another element, or an array of elements.</li>
-  <li class="ml-points">The React.createElement function returns a JavaScript object representing the element. It doesn't actually create any DOM nodes. 
-    To render it to the actual DOM, you use ReactDOM.render.</li>
-  </ol><br/>
-  <p class="text-content ml-content">In this example, we're rendering the element to an element with the ID of 'root'. 
-  You should have an HTML file with a <b>&lt;div id="root">&lt;/div&gt; </b>for this to work.
-  Again, it's worth noting that while understanding 
-  React.createElement is important for understanding how React works under the hood, in practice, 
-  most React developers use JSX as it provides a more concise and readable way to define UI components.</p>
+    <li class="ml-points">
+      An object for the element's properties or attributes. We're passing null here, but you could pass an object with
+      properties like className, style, etc.
+    </li>
+    <li class="ml-points">
+      The content of the element. This can be a string, another element, or an array of elements.
+    </li>
+    <li class="ml-points">
+      The React.createElement function returns a JavaScript object representing the element. It doesn't actually create
+      any DOM nodes. To render it to the actual DOM, you use ReactDOM.render.
+    </li>
+  </ol>
+  <br />
+  <p class="text-content ml-content">
+    In this example, we're rendering the element to an element with the ID of 'root'. You should have an HTML file with
+    a <b>&lt;div id="root">&lt;/div&gt; </b>for this to work. Again, it's worth noting that while understanding
+    React.createElement is important for understanding how React works under the hood, in practice, most React
+    developers use JSX as it provides a more concise and readable way to define UI components.
+  </p>
 </div>

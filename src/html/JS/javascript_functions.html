@@ -1,149 +1,255 @@
 <div>
-    <h2 class="text-head font-head"><b>Function Introduction</b></h2>
-    <p class="text-content ml-content">Functions are one of the fundamental building blocks of JavaScript, allowing you to group together a series of instructions and execute them as a single unit. They are essential for organizing and reusing code.</p>
-    <p class="text-content ml-content">Here's an introduction to JavaScript functions:</p><br/>
-    <h3 class="text-subhead font-head"><b>Definition</b></h3>
-    <p class="text-content ml-content">A function in JavaScript is a block of code that can be named, stored, and executed. It can receive data (called parameters or arguments) and return a result.</p>
-    <h3 class="text-subhead font-head"><b>Why Use Functions?</b></h3>
-    <p><b>Reusability:</b> Functions allow you to define a block of code once and use it multiple times.</p>
-    <p><b>Modularity:</b> They help in breaking down a large program into smaller, manageable parts.</p>
-    <p><b>Abstraction:</b> Functions can hide complex operations behind a simple interface, making the code more understandable.</p>
-    <h3 class="text-subhead font-head"><b>Function Declaration</b></h3>
-    <p class="text-content ml-content">A function declaration is one way to define a function. It starts with the function keyword, followed by the function name, a list of parameters in parentheses, and a block of code in curly braces.</p>
-    <p class="text-content ml-content">function greet(name) { </p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log(`Hello, ${name}!`);</p>
-    <p class="text-content ml-content">}</p><br/>
-    <h3 class="text-subhead font-head"><b>Function Expression</b></h3>
-    <p class="text-content ml-content">Another way to define a function is through a function expression. This involves assigning a function to a variable.</p>
-    <p class="text-content ml-content">const greet = function(name) {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log(`Hello, ${name}!`);</p>
-    <p class="text-content ml-content">};</p>
-    <h3 class="text-subhead font-head"><b>Arrow Functions (ES6)</b></h3>
-    <p class="text-content ml-content">Arrow functions provide a concise way to write functions. They are particularly useful for short, single-line functions.</p>
-    <p class="text-content ml-content">const square = (x) => x * x;</p>
-    <h3 class="text-subhead font-head"><b>Anonymous Functions</b></h3>
-    <p class="text-content ml-content">Functions can also be created without a name. They are usually used in scenarios where a function is used as an argument to another function.</p>
-    <p class="text-content ml-content">setTimeout(function() {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log("This is an anonymous function.");</p>
-    <p class="text-content ml-content">}, 1000);</p>
-    <h3 class="text-subhead font-head"><b>Function Parameters and Arguments</b></h3>
-    <p class="text-content ml-content">Parameters are the variables listed in the function definition. Arguments are the actual values passed to the function when it's called.</p>
-    <p class="text-content ml-content">function greet(firstName, lastName) {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log(`Hello, ${firstName} ${lastName}!`);</p>
-    <p class="text-content ml-content">}</p>
-    <p class="text-content ml-content">greet("John", "Doe"); // Output: Hello, John Doe!</p>
-    <h3 class="text-subhead font-head"><b>Return Statement</b></h3>
-    <p class="text-content ml-content">Functions can also return values using the return statement. This allows the function to produce an output that can be used in other parts of your code.</p>
-    <p class="text-content ml-content">function add(a, b) {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;return a + b;</p>
-    <p class="text-content ml-content">}</p>
-    <p class="text-content ml-content">let result = add(5, 3); // result will be 8</p><br/>
-    <h3 class="text-subhead font-head"><b>Scope</b></h3>
-    <p class="text-content ml-content">Functions have their own scope. Variables declared inside a function are only accessible within that function (unless you use closures or global variables).</p>
-    <p class="text-content ml-content">function scopeExample() {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;let localVar = "I'm a local variable";</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log(localVar); // Output: I'm a local variable</p>
-    <p class="text-content ml-content">}</p>
-    <p class="text-content ml-content">console.log(localVar); // Output: ReferenceError: localVar is not defined</p>
-    <p class="text-content ml-content">Functions are a cornerstone of JavaScript programming. They allow you to create reusable blocks of code, improving code organization, readability, and maintainability. Understanding how to define, call, and use functions effectively is essential for any JavaScript developer.</p>
-    <h2 class="text-subhead font-head"><b>Function Parameters</b></h2>
-    <p class="text-content ml-content">Function parameters are variables that are defined when a function is declared. They act as placeholders for the values that will be provided when the function is called. Parameters allow functions to accept input and perform operations on that input.</p>
-    <p class="text-content ml-content">Here's an explanation of function parameters with examples:</p>
-    <h3 class="text-subhead font-head"><b>Defining Parameters</b></h3>
-    <p class="text-content ml-content">When you define a function, you can specify parameters by placing them inside the parentheses after the function name.</p>
-    <p class="text-content ml-content">function greet(firstName, lastName) {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log(`Hello, ${firstName} ${lastName}!`);</p>
-    <p class="text-content ml-content">}</p>
-    <p class="text-content ml-content">In this example, firstName and lastName are the parameters of the greet function.</p><br/>
-    <h3 class="text-subhead font-head"><b>Using Parameters</b></h3>
-    <p class="text-content ml-content">Parameters allow you to pass values to a function when you call it.</p>
-    <p class="text-content ml-content">greet("John", "Doe"); // Output: Hello, John Doe!</p>
-    <p class="text-content ml-content">In this example, "John" and "Doe" are the arguments passed to the greet function. These arguments are assigned to the firstName and lastName parameters, respectively.</p>
-    <h3 class="text-subhead font-head"><b>Number of Parameters</b></h3>
-    <p class="text-content ml-content">The number of parameters a function can have is not fixed. A function can have any number of parameters, including none at all.</p>
-    <p class="text-content ml-content">function sayHello() {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log("Hello!");</p>
-    <p class="text-content ml-content">}</p>
-    <p class="text-content ml-content">sayHello(); // Output: Hello!</p>
-    <p class="text-content ml-content">In this example, sayHello does not have any parameters.
-    <h3 class="text-subhead font-head"><b>Default Parameters (ES6)</b></h3>
-    <p class="text-content ml-content">You can specify default values for function parameters. If an argument is not provided when calling the function, the default value will be used.</p>
-    <p class="text-content ml-content">function greet(name = "User") {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log(`Hello, ${name}!`);</p>
-    <p class="text-content ml-content">}</p>
-    <p class="text-content ml-content">greet(); // Output: Hello, User!</p>
-    <p class="text-content ml-content">greet("John"); // Output: Hello, John!</p>
-    <p class="text-content ml-content">In this example, if no argument is provided, the default value "User" will be used.</p><br/>
-    <h3 class="text-subhead font-head"><b>Rest Parameters (ES6)</b></h3>
-    <p class="text-content ml-content">Rest parameters allow a function to accept an indefinite number of arguments as an array. This is useful when you want to pass a variable number of arguments.</p>
-    <p class="text-content ml-content">function sum(...numbers) {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;return numbers.reduce((acc, curr) => acc + curr, 0);</p>
-    <p class="text-content ml-content">}</p>
-    <p class="text-content ml-content">let total = sum(1, 2, 3, 4, 5); // total will be 15</p>
-    <p class="text-content ml-content">In this example, the ...numbers syntax allows the sum function to accept any number of arguments, which are then treated as an array called numbers.</p><br/>
-    <h3 class="text-subhead font-head"><b>Arguments Object</b></h3>
-    <p class="text-content ml-content">In addition to named parameters, functions also have access to an arguments object. This object is an array-like object that contains all the arguments passed to the function.</p>
-    <p class="text-content ml-content">function displayArguments() {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; arguments.length; i++) {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(arguments[i]);</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;}</p>
-    <p class="text-content ml-content">}</p>
-    <p class="text-content ml-content">displayArguments(1, "hello", true); </p>
-    <p class="text-content ml-content">// Output:</p>
-    <p class="text-content ml-content">// 1</p>
-    <p class="text-content ml-content">// hello</p>
-    <p class="text-content ml-content">// true</p>
-    <p class="text-content ml-content">In this example, arguments allows us to loop through and access all the arguments passed to the function.</p><br/>
-    <p class="text-content ml-content">Function parameters are essential for making functions flexible and reusable. They allow you to create functions that can work with different input values. Understanding how to use parameters effectively is crucial for writing versatile and modular JavaScript code.</p>
-    <h2 class="text-subhead font-head"><b>Function Invocation</b></h2>
-    <p class="text-content ml-content">Function invocation refers to the act of calling or executing a function in JavaScript. When a function is invoked, the code inside the function's block is executed, and any specified arguments are passed to the function.</p>
-    <p class="text-content ml-content">There are several ways to invoke a function in JavaScript:</p>
-    <h3 class="text-subhead font-head"><b>Function Call</b></h3>
-    <p class="text-content ml-content">This is the most common way to invoke a function. You simply use the function name followed by parentheses ().</p>
-    <p class="text-content ml-content">function sayHello() {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log("Hello!");</p>
-    <p class="text-content ml-content">}</p>
-    <p class="text-content ml-content">sayHello(); // Output: Hello!</p><br/>
-    <h3 class="text-subhead font-head"><b>Method Invocation</b></h3>
-    <p class="text-content ml-content">If a function is a property of an object, it is called a method. You can invoke it using the object's name followed by a dot . and then the function name.</p>
-    <p class="text-content ml-content">const person = {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;firstName: "John",</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;lastName: "Doe",</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;fullName: function() {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(`${this.firstName} ${this.lastName}`);</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;}</p>
-    <p class="text-content ml-content">};</p>
-    <p class="text-content ml-content">person.fullName(); // Output: John Doe</p><br/>
-    <h3 class="text-subhead font-head"><b>Constructor Invocation</b></h3>
-    <p class="text-content ml-content">When a function is used as a constructor (i.e., it's called with the new keyword), it creates a new object and assigns this to that object. This allows the function to act as a class for creating objects.</p>
-    <p class="text-content ml-content">function Person(firstName, lastName) {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;this.firstName = firstName;</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;this.lastName = lastName;</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;this.fullName = function() {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(`${this.firstName} ${this.lastName}`);</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;};</p>
-    <p class="text-content ml-content">}</p>
-    <p class="text-content ml-content">const john = new Person("John", "Doe");</p>
-    <p class="text-content ml-content">john.fullName(); // Output: John Doe</p><br/>
-    <h3 class="text-subhead font-head"><b>Apply and Call Invocation</b></h3>
-    <p class="text-content ml-content">The apply and call methods allow you to call a function with a specified this value and arguments provided as an array.</p>
-    <p class="text-content ml-content">function sayHi() {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log(`Hi, ${this.name}!`);</p>
-    <p class="text-content ml-content">}</p>
-    <p class="text-content ml-content">const person = { name: "John" };</p>
-    <p class="text-content ml-content">sayHi.apply(person); // Output: Hi, John!</p>
-    <p class="text-content ml-content">sayHi.call(person); // Output: Hi, John!
-    <h3 class="text-subhead font-head"><b>Arrow Function Invocation</b></h3>
-    <p class="text-content ml-content">Arrow functions do not have their own this. They inherit the this value from the enclosing scope. Therefore, arrow functions cannot be used as constructors.</p>
-    <p class="text-content ml-content">const sayHello = () => {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log("Hello!");</p>
-    <p class="text-content ml-content">}</p>
-    <p class="text-content ml-content">sayHello(); // Output: Hello!</p><br/>
-    <h3 class="text-subhead font-head"><b>Immediately Invoked Function Expression (IIFE)</b></h3>
-    <p class="text-content ml-content">An IIFE is a function that is declared and invoked immediately. It's wrapped in parentheses and followed by another pair of parentheses for invocation.</p>
-    <p class="text-content ml-content">(function() {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log("This is an IIFE");</p>
-    <p class="text-content ml-content">})();</p>
-    <p class="text-content ml-content">Understanding how to properly invoke functions is crucial in JavaScript. It allows you to execute specific blocks of code and pass data in and out of functions. The method of invocation depends on the context in which the function is defined and how you intend to use it.</p>
-    </div>
-   
+  <h2 class="text-head font-head"><b>Function Introduction</b></h2>
+  <p class="text-content ml-content">
+    Functions are one of the fundamental building blocks of JavaScript, allowing you to group together a series of
+    instructions and execute them as a single unit. They are essential for organizing and reusing code.
+  </p>
+  <p class="text-content ml-content">Here's an introduction to JavaScript functions:</p>
+  <br />
+  <h3 class="text-subhead font-head"><b>Definition</b></h3>
+  <p class="text-content ml-content">
+    A function in JavaScript is a block of code that can be named, stored, and executed. It can receive data (called
+    parameters or arguments) and return a result.
+  </p>
+  <h3 class="text-subhead font-head"><b>Why Use Functions?</b></h3>
+  <p><b>Reusability:</b> Functions allow you to define a block of code once and use it multiple times.</p>
+  <p><b>Modularity:</b> They help in breaking down a large program into smaller, manageable parts.</p>
+  <p>
+    <b>Abstraction:</b> Functions can hide complex operations behind a simple interface, making the code more
+    understandable.
+  </p>
+  <h3 class="text-subhead font-head"><b>Function Declaration</b></h3>
+  <p class="text-content ml-content">
+    A function declaration is one way to define a function. It starts with the function keyword, followed by the
+    function name, a list of parameters in parentheses, and a block of code in curly braces.
+  </p>
+  <p class="text-content ml-content">function greet(name) {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log(`Hello, ${name}!`);</p>
+  <p class="text-content ml-content">}</p>
+  <br />
+  <h3 class="text-subhead font-head"><b>Function Expression</b></h3>
+  <p class="text-content ml-content">
+    Another way to define a function is through a function expression. This involves assigning a function to a variable.
+  </p>
+  <p class="text-content ml-content">const greet = function(name) {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log(`Hello, ${name}!`);</p>
+  <p class="text-content ml-content">};</p>
+  <h3 class="text-subhead font-head"><b>Arrow Functions (ES6)</b></h3>
+  <p class="text-content ml-content">
+    Arrow functions provide a concise way to write functions. They are particularly useful for short, single-line
+    functions.
+  </p>
+  <p class="text-content ml-content">const square = (x) => x * x;</p>
+  <h3 class="text-subhead font-head"><b>Anonymous Functions</b></h3>
+  <p class="text-content ml-content">
+    Functions can also be created without a name. They are usually used in scenarios where a function is used as an
+    argument to another function.
+  </p>
+  <p class="text-content ml-content">setTimeout(function() {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log("This is an anonymous function.");</p>
+  <p class="text-content ml-content">}, 1000);</p>
+  <h3 class="text-subhead font-head"><b>Function Parameters and Arguments</b></h3>
+  <p class="text-content ml-content">
+    Parameters are the variables listed in the function definition. Arguments are the actual values passed to the
+    function when it's called.
+  </p>
+  <p class="text-content ml-content">function greet(firstName, lastName) {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log(`Hello, ${firstName} ${lastName}!`);</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">greet("John", "Doe"); // Output: Hello, John Doe!</p>
+  <h3 class="text-subhead font-head"><b>Return Statement</b></h3>
+  <p class="text-content ml-content">
+    Functions can also return values using the return statement. This allows the function to produce an output that can
+    be used in other parts of your code.
+  </p>
+  <p class="text-content ml-content">function add(a, b) {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;return a + b;</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">let result = add(5, 3); // result will be 8</p>
+  <br />
+  <h3 class="text-subhead font-head"><b>Scope</b></h3>
+  <p class="text-content ml-content">
+    Functions have their own scope. Variables declared inside a function are only accessible within that function
+    (unless you use closures or global variables).
+  </p>
+  <p class="text-content ml-content">function scopeExample() {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;let localVar = "I'm a local variable";</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log(localVar); // Output: I'm a local variable</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">console.log(localVar); // Output: ReferenceError: localVar is not defined</p>
+  <p class="text-content ml-content">
+    Functions are a cornerstone of JavaScript programming. They allow you to create reusable blocks of code, improving
+    code organization, readability, and maintainability. Understanding how to define, call, and use functions
+    effectively is essential for any JavaScript developer.
+  </p>
+  <h2 class="text-subhead font-head"><b>Function Parameters</b></h2>
+  <p class="text-content ml-content">
+    Function parameters are variables that are defined when a function is declared. They act as placeholders for the
+    values that will be provided when the function is called. Parameters allow functions to accept input and perform
+    operations on that input.
+  </p>
+  <p class="text-content ml-content">Here's an explanation of function parameters with examples:</p>
+  <h3 class="text-subhead font-head"><b>Defining Parameters</b></h3>
+  <p class="text-content ml-content">
+    When you define a function, you can specify parameters by placing them inside the parentheses after the function
+    name.
+  </p>
+  <p class="text-content ml-content">function greet(firstName, lastName) {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log(`Hello, ${firstName} ${lastName}!`);</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">
+    In this example, firstName and lastName are the parameters of the greet function.
+  </p>
+  <br />
+  <h3 class="text-subhead font-head"><b>Using Parameters</b></h3>
+  <p class="text-content ml-content">Parameters allow you to pass values to a function when you call it.</p>
+  <p class="text-content ml-content">greet("John", "Doe"); // Output: Hello, John Doe!</p>
+  <p class="text-content ml-content">
+    In this example, "John" and "Doe" are the arguments passed to the greet function. These arguments are assigned to
+    the firstName and lastName parameters, respectively.
+  </p>
+  <h3 class="text-subhead font-head"><b>Number of Parameters</b></h3>
+  <p class="text-content ml-content">
+    The number of parameters a function can have is not fixed. A function can have any number of parameters, including
+    none at all.
+  </p>
+  <p class="text-content ml-content">function sayHello() {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log("Hello!");</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">sayHello(); // Output: Hello!</p>
+  <p class="text-content ml-content">In this example, sayHello does not have any parameters.</p>
+  <h3 class="text-subhead font-head"><b>Default Parameters (ES6)</b></h3>
+  <p class="text-content ml-content">
+    You can specify default values for function parameters. If an argument is not provided when calling the function,
+    the default value will be used.
+  </p>
+  <p class="text-content ml-content">function greet(name = "User") {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log(`Hello, ${name}!`);</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">greet(); // Output: Hello, User!</p>
+  <p class="text-content ml-content">greet("John"); // Output: Hello, John!</p>
+  <p class="text-content ml-content">
+    In this example, if no argument is provided, the default value "User" will be used.
+  </p>
+  <br />
+  <h3 class="text-subhead font-head"><b>Rest Parameters (ES6)</b></h3>
+  <p class="text-content ml-content">
+    Rest parameters allow a function to accept an indefinite number of arguments as an array. This is useful when you
+    want to pass a variable number of arguments.
+  </p>
+  <p class="text-content ml-content">function sum(...numbers) {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;return numbers.reduce((acc, curr) => acc + curr, 0);</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">let total = sum(1, 2, 3, 4, 5); // total will be 15</p>
+  <p class="text-content ml-content">
+    In this example, the ...numbers syntax allows the sum function to accept any number of arguments, which are then
+    treated as an array called numbers.
+  </p>
+  <br />
+  <h3 class="text-subhead font-head"><b>Arguments Object</b></h3>
+  <p class="text-content ml-content">
+    In addition to named parameters, functions also have access to an arguments object. This object is an array-like
+    object that contains all the arguments passed to the function.
+  </p>
+  <p class="text-content ml-content">function displayArguments() {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; arguments.length; i++) {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(arguments[i]);</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">displayArguments(1, "hello", true);</p>
+  <p class="text-content ml-content">// Output:</p>
+  <p class="text-content ml-content">// 1</p>
+  <p class="text-content ml-content">// hello</p>
+  <p class="text-content ml-content">// true</p>
+  <p class="text-content ml-content">
+    In this example, arguments allows us to loop through and access all the arguments passed to the function.
+  </p>
+  <br />
+  <p class="text-content ml-content">
+    Function parameters are essential for making functions flexible and reusable. They allow you to create functions
+    that can work with different input values. Understanding how to use parameters effectively is crucial for writing
+    versatile and modular JavaScript code.
+  </p>
+  <h2 class="text-subhead font-head"><b>Function Invocation</b></h2>
+  <p class="text-content ml-content">
+    Function invocation refers to the act of calling or executing a function in JavaScript. When a function is invoked,
+    the code inside the function's block is executed, and any specified arguments are passed to the function.
+  </p>
+  <p class="text-content ml-content">There are several ways to invoke a function in JavaScript:</p>
+  <h3 class="text-subhead font-head"><b>Function Call</b></h3>
+  <p class="text-content ml-content">
+    This is the most common way to invoke a function. You simply use the function name followed by parentheses ().
+  </p>
+  <p class="text-content ml-content">function sayHello() {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log("Hello!");</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">sayHello(); // Output: Hello!</p>
+  <br />
+  <h3 class="text-subhead font-head"><b>Method Invocation</b></h3>
+  <p class="text-content ml-content">
+    If a function is a property of an object, it is called a method. You can invoke it using the object's name followed
+    by a dot . and then the function name.
+  </p>
+  <p class="text-content ml-content">const person = {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;firstName: "John",</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;lastName: "Doe",</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;fullName: function() {</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(`${this.firstName} ${this.lastName}`);
+  </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+  <p class="text-content ml-content">};</p>
+  <p class="text-content ml-content">person.fullName(); // Output: John Doe</p>
+  <br />
+  <h3 class="text-subhead font-head"><b>Constructor Invocation</b></h3>
+  <p class="text-content ml-content">
+    When a function is used as a constructor (i.e., it's called with the new keyword), it creates a new object and
+    assigns this to that object. This allows the function to act as a class for creating objects.
+  </p>
+  <p class="text-content ml-content">function Person(firstName, lastName) {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;this.firstName = firstName;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;this.lastName = lastName;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;this.fullName = function() {</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(`${this.firstName} ${this.lastName}`);
+  </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;};</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">const john = new Person("John", "Doe");</p>
+  <p class="text-content ml-content">john.fullName(); // Output: John Doe</p>
+  <br />
+  <h3 class="text-subhead font-head"><b>Apply and Call Invocation</b></h3>
+  <p class="text-content ml-content">
+    The apply and call methods allow you to call a function with a specified this value and arguments provided as an
+    array.
+  </p>
+  <p class="text-content ml-content">function sayHi() {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log(`Hi, ${this.name}!`);</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">const person = { name: "John" };</p>
+  <p class="text-content ml-content">sayHi.apply(person); // Output: Hi, John!</p>
+  <p class="text-content ml-content">sayHi.call(person); // Output: Hi, John!</p>
+  <h3 class="text-subhead font-head"><b>Arrow Function Invocation</b></h3>
+  <p class="text-content ml-content">
+    Arrow functions do not have their own this. They inherit the this value from the enclosing scope. Therefore, arrow
+    functions cannot be used as constructors.
+  </p>
+  <p class="text-content ml-content">const sayHello = () => {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log("Hello!");</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">sayHello(); // Output: Hello!</p>
+  <br />
+  <h3 class="text-subhead font-head"><b>Immediately Invoked Function Expression (IIFE)</b></h3>
+  <p class="text-content ml-content">
+    An IIFE is a function that is declared and invoked immediately. It's wrapped in parentheses and followed by another
+    pair of parentheses for invocation.
+  </p>
+  <p class="text-content ml-content">(function() {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log("This is an IIFE");</p>
+  <p class="text-content ml-content">})();</p>
+  <p class="text-content ml-content">
+    Understanding how to properly invoke functions is crucial in JavaScript. It allows you to execute specific blocks of
+    code and pass data in and out of functions. The method of invocation depends on the context in which the function is
+    defined and how you intend to use it.
+  </p>
+</div>

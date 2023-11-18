@@ -1,45 +1,55 @@
 <div>
-    <h3 class="text-subhead font-head"><b>Insert Documents</b></h3>
-    <p class="text-content ml-content">const { MongoClient } = require('mongodb')</p>
-    <p class="text-content ml-content">// Create Instance of MongoClient for mongodb</p>
-    <p class="text-content ml-content">const client = new MongoClient('mongodb://localhost:27017')</p>
-    <p class="text-content ml-content">// Insert to database</p>
-    <p class="text-content ml-content">client.db('students').collection('students').insertOne({</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;name: 'Amyport',</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;email: 'Amyport@example.com'</p>
-    <p class="text-content ml-content">})</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;.then((res) => {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(res)</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;client.close()</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;})</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;.catch((err) => console.log(err))</p><br/>
-    <h3 class="text-subhead font-head"><b>Update/Delete Documents</b></h3>
-    <p class="text-content ml-content">const { MongoClient } = require('mongodb')</p>
-    <p class="text-content ml-content">// Create Instance of MongoClient for mongodb</p>
-    <p class="text-content ml-content">const client = new MongoClient('mongodb://localhost:27017')</p>
-    <p class="text-content ml-content">// Insert to database</p>
-    <p class="text-content ml-content">client.db('students').collection('students')</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;.updateOne({ name: 'Amyporter' },</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$set:</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ email: 'Amyporter12@example.com' }</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;.then((res) => {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(res)</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;client.close()</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;})</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;.catch((err) => console.log(err))</p>
-    <p class="text-content ml-content">In the above code block, We are using the updateOne() method to select the student using name or email and update it with the $set variable
-    <p class="text-content ml-content">const { MongoClient } = require('mongodb')</p>
-    <p class="text-content ml-content">// Create Instance of MongoClient for mongodb</p>
-    <p class="text-content ml-content">const client = new MongoClient('mongodb://localhost:27017')</p>
-    <p class="text-content ml-content">// Insert to database</p>
-    <p class="text-content ml-content">client.db('students').collection('students')</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;.deleteOne({ name: 'Amyporter' })</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;.then((res) => {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(res)</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;client.close()</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;})</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;.catch((err) => console.log(err))</p>
-    <p class="text-content ml-content">In the above code block, We are using the deleteOne() method to select the student using name or email and delete it.</p>
-    </div>
+  <h3 class="text-subhead font-head"><b>Insert Documents</b></h3>
+  <p class="text-content ml-content">const { MongoClient } = require('mongodb')</p>
+  <p class="text-content ml-content">// Create Instance of MongoClient for mongodb</p>
+  <p class="text-content ml-content">const client = new MongoClient('mongodb://localhost:27017')</p>
+  <p class="text-content ml-content">// Insert to database</p>
+  <p class="text-content ml-content">client.db('students').collection('students').insertOne({</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;name: 'Amyport',</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;email: 'Amyport@example.com'</p>
+  <p class="text-content ml-content">})</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;.then((res) => {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(res)</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;client.close()</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;})</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;.catch((err) => console.log(err))</p>
+  <br />
+  <h3 class="text-subhead font-head"><b>Update/Delete Documents</b></h3>
+  <p class="text-content ml-content">const { MongoClient } = require('mongodb')</p>
+  <p class="text-content ml-content">// Create Instance of MongoClient for mongodb</p>
+  <p class="text-content ml-content">const client = new MongoClient('mongodb://localhost:27017')</p>
+  <p class="text-content ml-content">// Insert to database</p>
+  <p class="text-content ml-content">client.db('students').collection('students')</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;.updateOne({ name: 'Amyporter' },</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$set:</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ email:
+    'Amyporter12@example.com' }
+  </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;.then((res) => {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(res)</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;client.close()</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;})</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;.catch((err) => console.log(err))</p>
+  <p class="text-content ml-content">
+    In the above code block, We are using the updateOne() method to select the student using name or email and update it
+    with the $set variable
+  </p>
+  <p class="text-content ml-content">const { MongoClient } = require('mongodb')</p>
+  <p class="text-content ml-content">// Create Instance of MongoClient for mongodb</p>
+  <p class="text-content ml-content">const client = new MongoClient('mongodb://localhost:27017')</p>
+  <p class="text-content ml-content">// Insert to database</p>
+  <p class="text-content ml-content">client.db('students').collection('students')</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;.deleteOne({ name: 'Amyporter' })</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;.then((res) => {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(res)</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;client.close()</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;})</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;.catch((err) => console.log(err))</p>
+  <p class="text-content ml-content">
+    In the above code block, We are using the deleteOne() method to select the student using name or email and delete
+    it.
+  </p>
+</div>

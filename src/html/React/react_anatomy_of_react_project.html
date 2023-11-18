@@ -1,62 +1,122 @@
 <div>
-   <h3 class="text-head font-head">Anatomy of react project</h3>
-   <p class="text-content ml-content">A typical React project has a specific structure to organize its files and folders. 
-      Here is the basic anatomy of a React project created using 
-      `create-react-app`, a popular React application generator
-   </p><br/>
-   <ol>
-      <li><b> **node_modules**:</b></li>  
-      <p class="text-content ml-content">This folder contains all the project dependencies (libraries and packages). 
-         It's generated automatically when you run `npm install` or `yarn install`.</p><br/>
-   <li><b>**public**:</b></li> 
-   <p class="text-content ml-content">This directory contains static assets that will be served as-is. 
-      The contents of this directory are usually not processed by Webpack. 
-      It contains:</p><br/>
-      - <b>`index.html`</b>: <p class="text-content ml-content">The main HTML file that serves as the entry point for your application.</p><br/>
-      - <b>`favicon.ico`</b>: <p class="text-content ml-content">The icon that appears in the browser tab.</p><br/>
-      - <b>`manifest.json`</b>: <p class="text-content ml-content">A JSON file used for web application configuration.</p>
-      <p class="text-content ml-content">Other static assets like images, fonts, etc.</p><br/>
-   <li><b>**src**:</b></li> 
-   <p class="text-content ml-content">This is where most of your application code will live. 
-      It contains:</p><br/><li>
-      - <span class="font-head">`index.js`</span>: <p class="text-content ml-content">The entry point of your application. It renders the root component (usually `App.js`) into the DOM.</p><br/>
-      - <span class="font-head">`App.js`</span>: <p class="text-content ml-content">The root component of your application.</p><br/>
-      - <span class="font-head">`index.css` or `App.css`</span>:<p class="text-content ml-content">CSS files for styling your application.</p><br/>
-      - <span class="font-head">`components`</span>: <p class="text-content ml-content">A directory to store reusable React components.</p><br/>
-      - <span class="font-head">`assets`</span>: <p class="text-content ml-content">A directory to store any project-specific assets like images, fonts, etc.</p><br/>
-      - <span class="font-head">`App.test.js` (optional)</span>: <p class="text-content ml-content">Unit tests for your `App` component.</p><br/>
-   <li><b>**package.json**:</b></li> 
-   <p class="text-content ml-content">This file contains metadata about the project and the list of dependencies. 
-      It also includes scripts for running various tasks like starting the development server, 
-      building the project, running tests, etc.</p><br/>
-   <li><b>**package-lock.json** or **yarn.lock**:</b></li> 
-   <p class="text-content ml-content">These files lock down the version of each installed 
-      package to ensure consistent builds across different environments.</p><br/>
-   <li><b>**README.md**:</b></li> 
-   <p class="text-content ml-content">A file containing information about the project, 
-      how to set it up, and other important details.</p><br/>
-   <li><b>**.gitignore**:</b></li> 
-   <p class="text-content ml-content">This file lists files and directories that should be ignored 
-      by version control systems (like Git). 
-      It's used to exclude certain files (like `node_modules`) from being tracked.</p><br/>
-   <li><b>**public**:</b></li> 
-   <p class="text-content ml-content">This directory is used for static files that don't need to go through webpack. 
-      Any files inside `public` will be copied into the build folder as-is.
-   </p><br/>
-   <li><b>**src**:</b></li> 
-   <p class="text-content ml-content">This is where your React application source code lives. 
-      It includes:</p>
-      - <b>`index.js`</b>: <p class="text-content ml-content">The entry point of the application.</p>
-      - <b>`App.js`</b>: <p class="text-content ml-content">The main component of the application.</p>
-        <li>Other components, styles, and assets.</li><br/>
-   <li><b> **.env**:</b></li> 
-   <p class="text-content ml-content">This file allows you to configure environment variables. 
-      For example, you can set different variables for development and production.</p><br/>
-   <li><b> **build**:</b></li> 
-   <p class="text-content ml-content">This directory contains the optimized and minified production build of your application. 
-      It's generated when you run `npm run build`.</p><br/>
-   <li><b>**config**:</b></li> 
-   <p class="text-content ml-content">Configuration files for tools like Webpack, Babel, etc. 
-      You generally won't need to touch these unless you have specific customization needs.</ol>
-   </div>
-   
+  <h3 class="text-head font-head">Anatomy of react project</h3>
+  <p class="text-content ml-content">
+    A typical React project has a specific structure to organize its files and folders. Here is the basic anatomy of a
+    React project created using `create-react-app`, a popular React application generator
+  </p>
+  <br />
+  <ol>
+    <li><b> **node_modules**:</b></li>
+    <p class="text-content ml-content">
+      This folder contains all the project dependencies (libraries and packages). It's generated automatically when you
+      run `npm install` or `yarn install`.
+    </p>
+    <br />
+    <li><b>**public**:</b></li>
+    <p class="text-content ml-content">
+      This directory contains static assets that will be served as-is. The contents of this directory are usually not
+      processed by Webpack. It contains:
+    </p>
+    <br />
+    -
+    <b>`index.html`</b
+    >:
+    <p class="text-content ml-content">The main HTML file that serves as the entry point for your application.</p>
+    <br />
+    -
+    <b>`favicon.ico`</b
+    >:
+    <p class="text-content ml-content">The icon that appears in the browser tab.</p>
+    <br />
+    -
+    <b>`manifest.json`</b
+    >:
+    <p class="text-content ml-content">A JSON file used for web application configuration.</p>
+    <p class="text-content ml-content">Other static assets like images, fonts, etc.</p>
+    <br />
+    <li><b>**src**:</b></li>
+    <p class="text-content ml-content">This is where most of your application code will live. It contains:</p>
+    <br />
+    <li>
+      - <span class="font-head">`index.js`</span>:
+      <p class="text-content ml-content">
+        The entry point of your application. It renders the root component (usually `App.js`) into the DOM.
+      </p>
+      <br />
+      - <span class="font-head">`App.js`</span>:
+      <p class="text-content ml-content">The root component of your application.</p>
+      <br />
+      - <span class="font-head">`index.css` or `App.css`</span>:
+      <p class="text-content ml-content">CSS files for styling your application.</p>
+      <br />
+      - <span class="font-head">`components`</span>:
+      <p class="text-content ml-content">A directory to store reusable React components.</p>
+      <br />
+      - <span class="font-head">`assets`</span>:
+      <p class="text-content ml-content">A directory to store any project-specific assets like images, fonts, etc.</p>
+      <br />
+      - <span class="font-head">`App.test.js` (optional)</span>:
+      <p class="text-content ml-content">Unit tests for your `App` component.</p>
+      <br />
+    </li>
+
+    <li><b>**package.json**:</b></li>
+    <p class="text-content ml-content">
+      This file contains metadata about the project and the list of dependencies. It also includes scripts for running
+      various tasks like starting the development server, building the project, running tests, etc.
+    </p>
+    <br />
+    <li><b>**package-lock.json** or **yarn.lock**:</b></li>
+    <p class="text-content ml-content">
+      These files lock down the version of each installed package to ensure consistent builds across different
+      environments.
+    </p>
+    <br />
+    <li><b>**README.md**:</b></li>
+    <p class="text-content ml-content">
+      A file containing information about the project, how to set it up, and other important details.
+    </p>
+    <br />
+    <li><b>**.gitignore**:</b></li>
+    <p class="text-content ml-content">
+      This file lists files and directories that should be ignored by version control systems (like Git). It's used to
+      exclude certain files (like `node_modules`) from being tracked.
+    </p>
+    <br />
+    <li><b>**public**:</b></li>
+    <p class="text-content ml-content">
+      This directory is used for static files that don't need to go through webpack. Any files inside `public` will be
+      copied into the build folder as-is.
+    </p>
+    <br />
+    <li><b>**src**:</b></li>
+    <p class="text-content ml-content">This is where your React application source code lives. It includes:</p>
+    -
+    <b>`index.js`</b
+    >:
+    <p class="text-content ml-content">The entry point of the application.</p>
+    -
+    <b>`App.js`</b
+    >:
+    <p class="text-content ml-content">The main component of the application.</p>
+    <li>Other components, styles, and assets.</li>
+    <br />
+    <li><b> **.env**:</b></li>
+    <p class="text-content ml-content">
+      This file allows you to configure environment variables. For example, you can set different variables for
+      development and production.
+    </p>
+    <br />
+    <li><b> **build**:</b></li>
+    <p class="text-content ml-content">
+      This directory contains the optimized and minified production build of your application. It's generated when you
+      run `npm run build`.
+    </p>
+    <br />
+    <li><b>**config**:</b></li>
+    <p class="text-content ml-content">
+      Configuration files for tools like Webpack, Babel, etc. You generally won't need to touch these unless you have
+      specific customization needs.
+    </p>
+  </ol>
+</div>

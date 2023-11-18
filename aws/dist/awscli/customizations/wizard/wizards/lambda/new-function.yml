@@ -1,4 +1,4 @@
-version: "0.2"
+version: '0.2'
 title: Create An AWS Lambda Function
 description: This wizard will create a new AWS Lambda function for you
 plan:
@@ -18,15 +18,15 @@ plan:
           - actual_value: python3.6
             display: Python 3.6
           - actual_value: python3.7
-            display:  Python 3.7
+            display: Python 3.7
           - actual_value: nodejs4.3
             display: Node.js 4.3
           - actual_value: nodejs6.10
-            display:  Node.js 6.10
+            display: Node.js 6.10
           - actual_value: nodejs8.10
-            display:  Node.js 8.10
+            display: Node.js 8.10
           - actual_value: java8
-            display:  Java 8
+            display: Java 8
           - actual_value: dotnetcore1.0
             display: .NET Core 1.0 (C#)
           - actual_value: dotnetcore2.0
@@ -34,7 +34,7 @@ plan:
           - actual_value: dotnetcore2.1
             display: .NET Core 2.1 (C#)
           - actual_value: go1.
-            display:  Go 1.x
+            display: Go 1.x
   role:
     shortname: Permissions
     description: Provide Role to be used by Lmanbda function
@@ -43,7 +43,7 @@ plan:
         type: apicall
         operation: iam.ListRoles
         params: {}
-        query: "sort_by(Roles[].{display: RoleName, actual_value: Arn}, &display)"
+        query: 'sort_by(Roles[].{display: RoleName, actual_value: Arn}, &display)'
         cache: true
       role_arn:
         type: prompt
@@ -110,7 +110,7 @@ plan:
         details:
           value: preview_value
           visible: True
-          description: "Preview"
+          description: 'Preview'
   __DONE__:
 execute:
   default:
@@ -119,20 +119,20 @@ execute:
       output_var: function_arn
       query: FunctionArn
       params:
-        FunctionName: "{function_name}"
-        Role: "{role_arn}"
-        Runtime: "{runtime}"
-        Handler: "{handler}"
+        FunctionName: '{function_name}'
+        Role: '{role_arn}'
+        Runtime: '{runtime}'
+        Handler: '{handler}'
         Code:
           ZipFile:
             __wizard__:File:
-              path: "{zip_filename}"
+              path: '{zip_filename}'
 __OUTPUT__:
   value: |
     Wizard successfully created Lambda Function:
       Function name: {function_name}
       Function ARN: {function_arn}
-   
+
     {% if {preview_type} == preview_cli_command %}
     Steps to create function is equivalent to running the following sample AWS CLI commands:
 

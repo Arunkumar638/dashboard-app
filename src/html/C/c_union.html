@@ -1,139 +1,143 @@
-<div><h2><b>Unions</b></h2>
-A union is a user-defined type similar to structs in C except for one key difference.<br/>
-Structures allocate enough space to store all their members, whereas unions can only hold one member value at a time.<br/>
-<b>How to define a union?</b><br/>
-We use the union keyword to define unions. Here's an example:<br/>
-union car<br/>
-{<br/>
-  char name[50];<br/>
-  int price;<br/>
-};<br/>
-The above code defines a derived type union car.<br/>
-<h3><b>Create union variables</b></h3>
-When a union is defined, it creates a user-defined type. However, no memory is allocated. To allocate memory for a given union type and work with it, we need to create variables.<br/>
-Here's how we create union variables.<br/>
-union car<br/>
-{<br/>
-  char name[50];<br/>
-  int price;<br/>
-};<br/>
-int main()<br/>
-{<br/>
-  union car car1, car2, *car3;<br/>
-  return 0;<br/>
-}<br/>
-Another way of creating union variables is:<br/>
-union car<br/>
-{<br/>
-  char name[50];<br/>
-  int price;<br/>
-} car1, car2, *car3;<br/>
-<br/>
-In both cases, union variables car1, car2, and a union pointer car3 of union car type are created.<br/>
-<h3><b>Access members of a union</b></h3><br/>
-We use the . operator to access members of a union. And to access pointer variables, we use the -> operator.<br/>
-In the above example,<br/>
-To access price for car1, car1.price is used.<br/>
-To access price using car3, either (*car3).price or car3->price can be used.<br/>
-<b>Difference between unions and structures</b><br/>
-Let's take an example to demonstrate the difference between unions and structures:
-#include lt;stdio.h&gt;<br/>
-union unionJob<br/>
-{<br/>
-   //defining a union<br/>
-   char name[32];<br/>
-   float salary;<br/>
-   int workerNo;<br/>
-} uJob;<br/>
-struct structJob<br/>
-{<br/>
-   char name[32];<br/>
-   float salary;<br/>
-   int workerNo;<br/>
-} sJob;<br/>
-int main()<br/>
-{<br/>
-   printf("size of union = %d bytes", sizeof(uJob));<br/>
-   printf("\nsize of structure = %d bytes", sizeof(sJob));<br/>
-   return 0;<br/>
-}<br/>
-<b>Output</b><br/>
-size of union = 32<br/>
-size of structure = 40<br/>
-<b>Why this difference in the size of union and structure variables?</b><br/>
-Here, the size of sJob is 40 bytes because<br/>
-the size of name[32] is 32 bytes<br/>
-the size of salary is 4 bytes<br/>
-the size of workerNo is 4 bytes<br/>
-However, the size of uJob is 32 bytes. It's because the size of a union variable will always be the size of its largest element. In the above example, the size of its largest element, (name[32]), is 32 bytes.<br/>
+<div>
+  <h2><b>Unions</b></h2>
+  A union is a user-defined type similar to structs in C except for one key difference.<br />
+  Structures allocate enough space to store all their members, whereas unions can only hold one member value at a
+  time.<br />
+  <b>How to define a union?</b><br />
+  We use the union keyword to define unions. Here's an example:<br />
+  union car<br />
+  {<br />
+  char name[50];<br />
+  int price;<br />
+  };<br />
+  The above code defines a derived type union car.<br />
+  <h3><b>Create union variables</b></h3>
+  When a union is defined, it creates a user-defined type. However, no memory is allocated. To allocate memory for a
+  given union type and work with it, we need to create variables.<br />
+  Here's how we create union variables.<br />
+  union car<br />
+  {<br />
+  char name[50];<br />
+  int price;<br />
+  };<br />
+  int main()<br />
+  {<br />
+  union car car1, car2, *car3;<br />
+  return 0;<br />
+  }<br />
+  Another way of creating union variables is:<br />
+  union car<br />
+  {<br />
+  char name[50];<br />
+  int price;<br />
+  } car1, car2, *car3;<br />
+  <br />
+  In both cases, union variables car1, car2, and a union pointer car3 of union car type are created.<br />
+  <h3><b>Access members of a union</b></h3>
+  <br />
+  We use the . operator to access members of a union. And to access pointer variables, we use the -> operator.<br />
+  In the above example,<br />
+  To access price for car1, car1.price is used.<br />
+  To access price using car3, either (*car3).price or car3->price can be used.<br />
+  <b>Difference between unions and structures</b><br />
+  Let's take an example to demonstrate the difference between unions and structures: #include lt;stdio.h&gt;<br />
+  union unionJob<br />
+  {<br />
+  //defining a union<br />
+  char name[32];<br />
+  float salary;<br />
+  int workerNo;<br />
+  } uJob;<br />
+  struct structJob<br />
+  {<br />
+  char name[32];<br />
+  float salary;<br />
+  int workerNo;<br />
+  } sJob;<br />
+  int main()<br />
+  {<br />
+  printf("size of union = %d bytes", sizeof(uJob));<br />
+  printf("\nsize of structure = %d bytes", sizeof(sJob));<br />
+  return 0;<br />
+  }<br />
+  <b>Output</b><br />
+  size of union = 32<br />
+  size of structure = 40<br />
+  <b>Why this difference in the size of union and structure variables?</b><br />
+  Here, the size of sJob is 40 bytes because<br />
+  the size of name[32] is 32 bytes<br />
+  the size of salary is 4 bytes<br />
+  the size of workerNo is 4 bytes<br />
+  However, the size of uJob is 32 bytes. It's because the size of a union variable will always be the size of its
+  largest element. In the above example, the size of its largest element, (name[32]), is 32 bytes.<br />
 
-With a union, all members share the same memory.<br/>
+  With a union, all members share the same memory.<br />
 
-<b>Example: Accessing Union Members</b><br/>
-#include lt;stdio.h&gt;<br/>
-union Job {<br/>
-   float salary;<br/>
-   int workerNo;<br/>
-} j;<br/>
-<br/>
-int main() {<br/>
-   j.salary = 12.3;<br/>
+  <b>Example: Accessing Union Members</b><br />
+  #include lt;stdio.h&gt;<br />
+  union Job {<br />
+  float salary;<br />
+  int workerNo;<br />
+  } j;<br />
+  <br />
+  int main() {<br />
+  j.salary = 12.3;<br />
 
-   // when j.workerNo is assigned a value,<br/>
-   // j.salary will no longer hold 12.3<br/>
-   j.workerNo = 100;<br/>
+  // when j.workerNo is assigned a value,<br />
+  // j.salary will no longer hold 12.3<br />
+  j.workerNo = 100;<br />
 
-   printf("Salary = %.1f\n", j.salary);<br/>
-   printf("Number of workers = %d", j.workerNo);<br/>
-   return 0;<br/>
-}<br/>
-<b>Output</b><br/>
+  printf("Salary = %.1f\n", j.salary);<br />
+  printf("Number of workers = %d", j.workerNo);<br />
+  return 0;<br />
+  }<br />
+  <b>Output</b><br />
 
-Salary = 0.0<br/>
-Number of workers = 100<br/>
+  Salary = 0.0<br />
+  Number of workers = 100<br />
 
+  <b>Example:</b><br />
+  C Program to Store Information of a Student Using Structure<br />
+  To understand this example, you should have the knowledge of the following C programming topics:<br />
 
-<b>Example:</b><br/>
-C Program to Store Information of a Student Using Structure<br/>
-To understand this example, you should have the knowledge of the following C programming topics:<br/>
+  <b>C struct</b><br />
+  Store Information and Display it Using Structure<br />
+  #include lt;stdio.h&gt;<br />
+  struct student {<br />
+  char name[50];<br />
+  int roll;<br />
+  float marks;<br />
+  } s;<br />
 
-<b>C struct</b><br/>
-Store Information and Display it Using Structure<br/>
-#include lt;stdio.h&gt;<br/>
-struct student {<br/>
-    char name[50];<br/>
-    int roll;<br/>
-    float marks;<br/>
-} s;<br/>
+  int main() {<br />
+  printf("Enter information:\n");<br />
+  printf("Enter name: ");<br />
+  fgets(s.name, sizeof(s.name), stdin);<br />
 
-int main() {<br/>
-    printf("Enter information:\n");<br/>
-    printf("Enter name: ");<br/>
-    fgets(s.name, sizeof(s.name), stdin);<br/>
+  printf("Enter roll number: ");<br />
+  scanf("%d", &s.roll);<br />
+  printf("Enter marks: ");<br />
+  scanf("%f", &s.marks);<br />
+  printf("Displaying Information:\n");<br />
+  printf("Name: ");<br />
+  printf("%s", s.name);<br />
+  printf("Roll number: %d\n", s.roll);<br />
+  printf("Marks: %.1f\n", s.marks);<br />
 
-    printf("Enter roll number: ");<br/>
-    scanf("%d", &s.roll);<br/>
-    printf("Enter marks: ");<br/>
-    scanf("%f", &s.marks);<br/>
-    printf("Displaying Information:\n");<br/>
-    printf("Name: ");<br/>
-    printf("%s", s.name);<br/>
-    printf("Roll number: %d\n", s.roll);<br/>
-    printf("Marks: %.1f\n", s.marks);<br/>
+  return 0;<br />
+  }<br />
+  Run Code<br />
+  <b>Output</b><br />
 
-    return 0;<br/>
-}<br/>
-Run Code<br/>
-<b>Output</b><br/>
-
-Enter information:<br/>
-Enter name: Jack<br/>
-Enter roll number: 23<br/>
-Enter marks: 34.5<br/>
-Displaying Information:<br/>
-Name: Jack<br/>
-Roll number: 23<br/>
-Marks: 34.5<br/>
-In this program, a structure student is created. The structure has three members: name (string), roll (integer) and marks (float).<br/>
-Then, a structure variable s is created to store information and display it on the screen.<br/>
+  Enter information:<br />
+  Enter name: Jack<br />
+  Enter roll number: 23<br />
+  Enter marks: 34.5<br />
+  Displaying Information:<br />
+  Name: Jack<br />
+  Roll number: 23<br />
+  Marks: 34.5<br />
+  In this program, a structure student is created. The structure has three members: name (string), roll (integer) and
+  marks (float).<br />
+  Then, a structure variable s is created to store information and display it on the screen.<br />
 </div>

@@ -1,1 +1,1 @@
-export {default} from "./LoadNodeContent"
+export { default } from './LoadNodeContent';

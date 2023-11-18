@@ -1,13 +1,9 @@
-import React from "react"
+import React from 'react';
 
-export default function reactLayout({
-    children,
-}:{
-    children:React.ReactNode
-}){
-    return(
-        <html lang="en">
-        <body>{children}</body>
-      </html>
-      )
+export default function reactLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang='en'>
+      <body>{children}</body>
+    </html>
+  );
 }

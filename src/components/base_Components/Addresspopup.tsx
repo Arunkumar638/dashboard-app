@@ -1,18 +1,14 @@
 import React from 'react';
-import styles from '../../styles/profile.module.css'
+import styles from '../../styles/profile.module.css';
 
+const AddressPopupForm = (props: any) => {
+  return props.trigger ? (
+    <div className={styles.popup}>
+      <div className={styles.popupInner}>{props.children}</div>
+    </div>
+  ) : (
+    ''
+  );
+};
 
-  const AddressPopupForm = (props:any) => {
- 
-      return (props.trigger)?(
-        <div className={styles.popup}>
-          <div className={styles.popupInner}>
-            {props.children}
-          </div>
-        </div>
-      ):"";       
-      
-    };
-
-   
-    export default AddressPopupForm
+export default AddressPopupForm;

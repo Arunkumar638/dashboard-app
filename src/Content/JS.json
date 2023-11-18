@@ -1,112 +1,112 @@
 [
   {
-    "label":"JAVASCRIPT Programming for Beginners",
-    "key":"javascript_programming"
+    "label": "JAVASCRIPT Programming for Beginners",
+    "key": "javascript_programming"
   },
   {
-    "label":"Introduction",
-    "key":"javascript_introduction"  
+    "label": "Introduction",
+    "key": "javascript_introduction"
   },
   {
-    "label":"Variables and Data Types",
-    "key":"javascript_variables_and_data_types",
-    "children":[
+    "label": "Variables and Data Types",
+    "key": "javascript_variables_and_data_types",
+    "children": [
       {
-        "label":"Introduction to Variables",
-        "key":"javascript_variables_introduction"
+        "label": "Introduction to Variables",
+        "key": "javascript_variables_introduction"
       },
       {
-        "label":"Variable Scope",
-        "key":"javascript_variable_scope"
+        "label": "Variable Scope",
+        "key": "javascript_variable_scope"
       },
       {
-        "label":"Data Types",
-        "key":"javascript_data_types"
+        "label": "Data Types",
+        "key": "javascript_data_types"
       }
     ]
   },
   {
-    "label":"Operators and Keywords",
-    "key":"javascript_operators_and_keywords",   
-    "children":[
+    "label": "Operators and Keywords",
+    "key": "javascript_operators_and_keywords",
+    "children": [
       {
-        "label":"Operators",
-        "key":"javascript_operators"
+        "label": "Operators",
+        "key": "javascript_operators"
       },
       {
-        "label":"Keywords",
-        "key":"javascript_keywords"
+        "label": "Keywords",
+        "key": "javascript_keywords"
       }
     ]
   },
   {
-    "label":"Functions",
-    "key":"javascript_functions"
+    "label": "Functions",
+    "key": "javascript_functions"
   },
   {
-    "label":"Objects and Scope",
-    "key":"javascript_objects_and_scope"
+    "label": "Objects and Scope",
+    "key": "javascript_objects_and_scope"
   },
   {
-    "label":"String",
-    "key":"javascript_string",
-    "children":[
+    "label": "String",
+    "key": "javascript_string",
+    "children": [
       {
-        "label":"Introduction",
-        "key":"javascript_string_introduction"
+        "label": "Introduction",
+        "key": "javascript_string_introduction"
       }
     ]
   },
   {
-    "label":"Number",
-    "key":"javascript_express.js"
+    "label": "Number",
+    "key": "javascript_express.js"
   },
   {
-    "label":"Arrays",
-    "key":"javascript_arrays",   
-    "children":[
+    "label": "Arrays",
+    "key": "javascript_arrays",
+    "children": [
       {
-        "label":"Introduction",
-        "key":"javascript_array_introduction"
+        "label": "Introduction",
+        "key": "javascript_array_introduction"
       },
       {
-        "label":"Array Methods",
-        "key":"javascript_array_methods"
+        "label": "Array Methods",
+        "key": "javascript_array_methods"
       },
       {
-        "label":"Working of JavaScript Arrays",
-        "key":"javascript_working_of_javaScript_arrays"
+        "label": "Working of JavaScript Arrays",
+        "key": "javascript_working_of_javaScript_arrays"
       },
       {
-        "label":"Multidimensional Array",
-        "key":"javascript_multidimensional_array"
+        "label": "Multidimensional Array",
+        "key": "javascript_multidimensional_array"
       }
     ]
   },
   {
-    "label":"Math and Date Objects",
-    "key":"javascript_math_and_date_objects",  
-    "children":[
+    "label": "Math and Date Objects",
+    "key": "javascript_math_and_date_objects",
+    "children": [
       {
-        "label":"Math Object",
-        "key":"javascript_math_object"
+        "label": "Math Object",
+        "key": "javascript_math_object"
       },
       {
-        "label":"Date Object",
-        "key":"javascript_date_object"     
+        "label": "Date Object",
+        "key": "javascript_date_object"
       }
     ]
   },
   {
-    "label":"Conditional Statements",
-    "key":"javascript_conditional_statements"
+    "label": "Conditional Statements",
+    "key": "javascript_conditional_statements"
   },
   {
-    "label":"Working with Loops",
-    "key":"javascript_working with_loops"
+    "label": "Working with Loops",
+    "key": "javascript_working with_loops"
   },
   {
-    "label":"Exception Handling and Debugging",
-    "key":"javascript_exception_handling_and_debugging"
+    "label": "Exception Handling and Debugging",
+    "key": "javascript_exception_handling_and_debugging"
   }
 ]

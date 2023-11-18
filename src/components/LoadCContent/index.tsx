@@ -1,1 +1,1 @@
-export {default} from "./LoadCContent";
+export { default } from './LoadCContent';

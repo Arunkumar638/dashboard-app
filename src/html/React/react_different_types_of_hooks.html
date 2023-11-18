@@ -1,41 +1,73 @@
 <div>
-  <h3 class="text-subhead font-head">c.Different types of hooks</h3> 
-  <p class="text-content ml-content">There are several different types of hooks in React, each serving a specific purpose. 
-    Here are the most commonly used hooks:</p><br/>
+  <h3 class="text-subhead font-head">c.Different types of hooks</h3>
+  <p class="text-content ml-content">
+    There are several different types of hooks in React, each serving a specific purpose. Here are the most commonly
+    used hooks:
+  </p>
+  <br />
   <h4 class="font-head">useState:</h4>
-  <p class="text-content ml-content">useState is used to add state to functional components. It returns an array with two elements: the current state value and a function that lets you update it.</p>
-  <h5 class="font-head">Example:</h5><br/>
+  <p class="text-content ml-content">
+    useState is used to add state to functional components. It returns an array with two elements: the current state
+    value and a function that lets you update it.
+  </p>
+  <h5 class="font-head">Example:</h5>
+  <br />
   <p class="text-content ml-content">const [count, setCount] = useState(0);</p>
   <h4 class="font-head">useEffect:</h4>
-  <p class="text-content ml-content">useEffect adds the ability to perform side effects in functional components. It's similar to componentDidMount, componentDidUpdate, and componentWillUnmount lifecycle methods in class components.</p>
-  <h5 class="font-head">Example:</h5><br/>
+  <p class="text-content ml-content">
+    useEffect adds the ability to perform side effects in functional components. It's similar to componentDidMount,
+    componentDidUpdate, and componentWillUnmount lifecycle methods in class components.
+  </p>
+  <h5 class="font-head">Example:</h5>
+  <br />
   <p class="text-content ml-content">useEffect(() => {</p>
   <p class="text-content ml-content">&nbsp;&nbsp;document.title = `Count: ${count}`;</p>
-  <p class="text-content ml-content">}, [count]);</p><br/>
+  <p class="text-content ml-content">}, [count]);</p>
+  <br />
   <h4 class="font-head">useContext:</h4>
-  <p class="text-content ml-content">useContext allows functional components to subscribe to React context without introducing nesting.</p>
+  <p class="text-content ml-content">
+    useContext allows functional components to subscribe to React context without introducing nesting.
+  </p>
   <h5 class="font-head">Example:</h5>
-  <p class="text-content ml-content">const value = useContext(MyContext);</p><br/>
+  <p class="text-content ml-content">const value = useContext(MyContext);</p>
+  <br />
   <h4 class="font-head">useReducer:</h4>
-  <p class="text-content ml-content">useReducer is typically preferable to useState when state logic is complex or involves multiple sub-values.</p>
+  <p class="text-content ml-content">
+    useReducer is typically preferable to useState when state logic is complex or involves multiple sub-values.
+  </p>
   <h5 class="font-head">Example:</h5>
-  <p class="text-content ml-content">const [state, dispatch] = useReducer(reducer, initialArg, init);</p><br/>
+  <p class="text-content ml-content">const [state, dispatch] = useReducer(reducer, initialArg, init);</p>
+  <br />
   <h4 class="font-head">useRef:</h4>
-  <p class="text-content ml-content">useRef returns a mutable object whose .current property is initialized to the passed argument (initialValue). The returned object will persist for the full lifetime of the component.</p>
+  <p class="text-content ml-content">
+    useRef returns a mutable object whose .current property is initialized to the passed argument (initialValue). The
+    returned object will persist for the full lifetime of the component.
+  </p>
   <h5 class="font-head">Example:</h5>
-  <p class="text-content ml-content">const myRef = useRef(initialValue);</p><br/>
+  <p class="text-content ml-content">const myRef = useRef(initialValue);</p>
+  <br />
   <h4 class="font-head">useMemo:</h4>
-  <p class="text-content ml-content">useMemo allows you to memoize values, which means you can store values between renders. It's useful for optimizing performance when dealing with expensive calculations.</p>
+  <p class="text-content ml-content">
+    useMemo allows you to memoize values, which means you can store values between renders. It's useful for optimizing
+    performance when dealing with expensive calculations.
+  </p>
   <h5 class="font-head">Example:</h5>
-  <p class="text-content ml-content">const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);</p><br/>
+  <p class="text-content ml-content">const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);</p>
+  <br />
   <h4 class="font-head">useCallback:</h4>
-  <p class="text-content ml-content">useCallback returns a memoized version of the callback function. It's useful for preventing unnecessary renders in child components.</p>
+  <p class="text-content ml-content">
+    useCallback returns a memoized version of the callback function. It's useful for preventing unnecessary renders in
+    child components.
+  </p>
   <h5 class="font-head">Example:</h5>
-  <p class="text-content ml-content">const memoizedCallback = useCallback(() => {</p></p>
-  <p class="text-content ml-content">&nbsp;&nbsp;doSomething(a, b);</p></p>
-  <p class="text-content ml-content">}, [a, b]);</p><br/>
+  <p class="text-content ml-content">const memoizedCallback = useCallback(() => {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;doSomething(a, b);</p>
+  <p class="text-content ml-content">}, [a, b]);</p>
+  <br />
   <h4 class="font-head">useImperativeHandle:</h4>
-  <p class="text-content ml-content">useImperativeHandle customizes the instance value that is exposed to parent components when using ref.</p>
+  <p class="text-content ml-content">
+    useImperativeHandle customizes the instance value that is exposed to parent components when using ref.
+  </p>
   <h5 class="font-head">Example:</h5>
   <p class="text-content ml-content">useImperativeHandle(ref, () => ({</p>
   <p class="text-content ml-content">&nbsp;&nbsp;methodA() {</p>
@@ -44,17 +76,26 @@
   <p class="text-content ml-content">&nbsp;&nbsp;methodB() {</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;// ...</p>
   <p class="text-content ml-content">&nbsp;&nbsp;},</p>
-  <p class="text-content ml-content">}), [/* dependencies */]);</p><br/>
+  <p class="text-content ml-content">}), [/* dependencies */]);</p>
+  <br />
   <h4 class="font-head">useLayoutEffect:</h4>
-  <p class="text-content ml-content">useLayoutEffect is similar to useEffect, but it fires synchronously after all DOM mutations. It's useful for reading layout from the DOM.</p>
+  <p class="text-content ml-content">
+    useLayoutEffect is similar to useEffect, but it fires synchronously after all DOM mutations. It's useful for reading
+    layout from the DOM.
+  </p>
   <h5 class="font-head">Example:</h5>
   <p class="text-content ml-content">useLayoutEffect(() => {</p>
   <p class="text-content ml-content">&nbsp;&nbsp;// Do something after DOM has been painted</p>
-  <p class="text-content ml-content">}, [/* dependencies */]);</p><br/>
+  <p class="text-content ml-content">}, [/* dependencies */]);</p>
+  <br />
   <h4 class="font-head">useDebugValue:</h4>
   <p class="text-content ml-content">useDebugValue is used to display a label for custom hooks in React DevTools.</p>
   <h5 class="font-head">Example:</h5>
-  <p class="text-content ml-content">useDebugValue(value);</p><br/>
-  <p class="text-content ml-content">These hooks are the building blocks that allow functional components to manage state, perform side effects, 
-    and interact with React features in a more expressive and modular way. They play a crucial role in modern React development.</p>
-  </div>
+  <p class="text-content ml-content">useDebugValue(value);</p>
+  <br />
+  <p class="text-content ml-content">
+    These hooks are the building blocks that allow functional components to manage state, perform side effects, and
+    interact with React features in a more expressive and modular way. They play a crucial role in modern React
+    development.
+  </p>
+</div>

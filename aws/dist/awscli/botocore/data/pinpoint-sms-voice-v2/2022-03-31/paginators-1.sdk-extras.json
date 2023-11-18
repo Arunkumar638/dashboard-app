@@ -3,22 +3,13 @@
   "merge": {
     "pagination": {
       "DescribeKeywords": {
-        "non_aggregate_keys": [
-          "OriginationIdentity",
-          "OriginationIdentityArn"
-        ]
+        "non_aggregate_keys": ["OriginationIdentity", "OriginationIdentityArn"]
       },
       "DescribeOptedOutNumbers": {
-        "non_aggregate_keys": [
-          "OptOutListArn",
-          "OptOutListName"
-        ]
+        "non_aggregate_keys": ["OptOutListArn", "OptOutListName"]
       },
       "ListPoolOriginationIdentities": {
-        "non_aggregate_keys": [
-          "PoolArn",
-          "PoolId"
-        ]
+        "non_aggregate_keys": ["PoolArn", "PoolId"]
       }
     }
   }

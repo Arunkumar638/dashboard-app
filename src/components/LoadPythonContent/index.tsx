@@ -1,1 +1,1 @@
-export {default} from "./LoadPythonContent";
+export { default } from './LoadPythonContent';

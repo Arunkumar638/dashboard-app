@@ -1,69 +1,77 @@
-<div><h2><b>Pointers & Arrays with Examples</b></h2>
-Pointers and arrays are closely related in C. In fact, an array name itself is essentially a pointer to the first element of the array. Here are some examples to illustrate the relationship between pointers and arrays:<br/>
+<div>
+  <h2><b>Pointers & Arrays with Examples</b></h2>
+  Pointers and arrays are closely related in C. In fact, an array name itself is essentially a pointer to the first
+  element of the array. Here are some examples to illustrate the relationship between pointers and arrays:<br />
 
-<b>Pointer to Array:</b><br/>
-#include &lt;stdio.h&gt;<br/>
+  <b>Pointer to Array:</b><br />
+  #include &lt;stdio.h&gt;<br />
 
-int main() {<br/>
-    int arr[5] = {1, 2, 3, 4, 5};<br/>
-    int *ptr = arr; // 'ptr' points to the first element of 'arr'<br/>
-    
-    for(int i = 0; i < 5; i++) {<br/>
-        printf("%d ", *(ptr + i)); // Access elements using pointer arithmetic<br/>
-    }<br/>
+  int main() {<br />
+  int arr[5] = {1, 2, 3, 4, 5};<br />
+  int *ptr = arr; // 'ptr' points to the first element of 'arr'<br />
 
-    return 0;<br/>
-}<br/>
-In this example, arr is an array of integers. When we declare int *ptr = arr;, we're making ptr point to the first element of arr. We can use pointer arithmetic to access the elements of the array.<br/>
+  for(int i = 0; i < 5; i++) {<br />
+  printf("%d ", *(ptr + i)); // Access elements using pointer arithmetic<br />
+  }<br />
 
-<b>Array of Pointers:</b><br/>
+  return 0;<br />
+  }<br />
+  In this example, arr is an array of integers. When we declare int *ptr = arr;, we're making ptr point to the first
+  element of arr. We can use pointer arithmetic to access the elements of the array.<br />
 
-#include &lt;stdio.h&gt;<br/>
+  <b>Array of Pointers:</b><br />
 
-int main() {<br/>
-    int num1 = 10, num2 = 20, num3 = 30;<br/>
-    int *ptrArr[3] = {&num1, &num2, &num3}; // 'ptrArr' is an array of integer pointers<br/>
-    
-    for(int i = 0; i < 3; i++) {<br/>
-        printf("%d ", *(ptrArr[i])); // Access elements using pointers stored in the array<br/>
-    }<br/>
+  #include &lt;stdio.h&gt;<br />
 
-    return 0;<br/>
-}<br/>
-In this example, ptrArr is an array of integer pointers. Each element of ptrArr holds the address of an integer variable (num1, num2, num3). We can use *(ptrArr[i]) to access the values stored in these variables.<br/>
+  int main() {<br />
+  int num1 = 10, num2 = 20, num3 = 30;<br />
+  int *ptrArr[3] = {&num1, &num2, &num3}; // 'ptrArr' is an array of integer pointers<br />
 
-<b>Pointer Arithmetic with Arrays:</b><br/>
-#include &lt;stdio.h&gt;<br/>
+  for(int i = 0; i < 3; i++) {<br />
+  printf("%d ", *(ptrArr[i])); // Access elements using pointers stored in the array<br />
+  }<br />
 
-int main() {<br/>
-    int arr[5] = {1, 2, 3, 4, 5};<br/>
-    int *ptr = arr; // 'ptr' points to the first element of 'arr'<br/>
-    
-    for(int i = 0; i < 5; i++) {<br/>
-        printf("%d ", *(ptr + i)); // Access elements using pointer arithmetic<br/>
-    }<br/>
+  return 0;<br />
+  }<br />
+  In this example, ptrArr is an array of integer pointers. Each element of ptrArr holds the address of an integer
+  variable (num1, num2, num3). We can use *(ptrArr[i]) to access the values stored in these variables.<br />
 
-    return 0;<br/>
-}<br/>
-In this example, we're using pointer arithmetic to access elements of the array. *(ptr + i) allows us to access the i-th element of the array.<br/>
+  <b>Pointer Arithmetic with Arrays:</b><br />
+  #include &lt;stdio.h&gt;<br />
 
-<b>Passing Arrays to Functions:</b><br/>
-#include &lt;stdio.h&gt;<br/>
+  int main() {<br />
+  int arr[5] = {1, 2, 3, 4, 5};<br />
+  int *ptr = arr; // 'ptr' points to the first element of 'arr'<br />
 
-void printArray(int *arr, int size) {<br/>
-    for(int i = 0; i < size; i++) {<br/>
-        printf("%d ", arr[i]); // Access elements using array notation<br/>
-    }<br/>
-}<br/>
+  for(int i = 0; i < 5; i++) {<br />
+  printf("%d ", *(ptr + i)); // Access elements using pointer arithmetic<br />
+  }<br />
 
-int main() {<br/>
-    int arr[5] = {1, 2, 3, 4, 5};<br/>
-    
-    printArray(arr, 5);11<br/>
+  return 0;<br />
+  }<br />
+  In this example, we're using pointer arithmetic to access elements of the array. *(ptr + i) allows us to access the
+  i-th element of the array.<br />
 
-    return 0;<br/>
-}<br/>
-In this example, we pass the array arr to the function printArray. The function takes a pointer to the first element of the array and the size of the array. Inside the function, we can access elements using array notation.<br/>
+  <b>Passing Arrays to Functions:</b><br />
+  #include &lt;stdio.h&gt;<br />
 
-These examples demonstrate the close relationship between pointers and arrays in C. <br/>Understanding how to use pointers with arrays is crucial for tasks like dynamic memory allocation and efficient manipulation of data structures.<br/>
+  void printArray(int *arr, int size) {<br />
+  for(int i = 0; i < size; i++) {<br />
+  printf("%d ", arr[i]); // Access elements using array notation<br />
+  }<br />
+  }<br />
+
+  int main() {<br />
+  int arr[5] = {1, 2, 3, 4, 5};<br />
+
+  printArray(arr, 5);11<br />
+
+  return 0;<br />
+  }<br />
+  In this example, we pass the array arr to the function printArray. The function takes a pointer to the first element
+  of the array and the size of the array. Inside the function, we can access elements using array notation.<br />
+
+  These examples demonstrate the close relationship between pointers and arrays in C. <br />Understanding how to use
+  pointers with arrays is crucial for tasks like dynamic memory allocation and efficient manipulation of data
+  structures.<br />
 </div>
