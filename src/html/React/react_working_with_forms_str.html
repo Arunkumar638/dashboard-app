@@ -1,7 +1,10 @@
 <div>
   <h2 class="text-subhead font-head"><b>Introduction:</b></h2>
-  <p class="text-content ml-content">Working with forms in React involves managing form input elements and handling their state changes. 
-    Here are the steps to work with forms in React:</p><br/>
+  <p class="text-content ml-content">
+    Working with forms in React involves managing form input elements and handling their state changes. Here are the
+    steps to work with forms in React:
+  </p>
+  <br />
   <h3><b>Basic Form Structure:</b></h3>
   <p class="text-content ml-content">Start by creating a basic form in your component's JSX:</p>
   <p class="text-content ml-content">import React, { useState } from 'react';</p>
@@ -9,7 +12,7 @@
   <p class="text-content ml-content">&nbsp;&nbsp;const [formData, setFormData] = useState({</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;username: '',</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;password: ''</p>
-  <p class="text-content ml-content"> });</p>
+  <p class="text-content ml-content">});</p>
   <p class="text-content ml-content">&nbsp;&nbsp;const handleChange = (e) => {</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;const { name, value } = e.target;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;setFormData({</p>
@@ -28,10 +31,18 @@
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Username:</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type="text"</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="username"</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value={formData.username}</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onChange={handleChange}</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type="text"
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="username"
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value={formData.username}
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onChange={handleChange}
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</p>
@@ -39,40 +50,74 @@
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password:</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type="password"</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="password"</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value={formData.password}</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onChange={handleChange}</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type="password"
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="password"
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value={formData.password}
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onChange={handleChange}
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="submit"&gt;Submit&lt;/button&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="submit"&gt;Submit&lt;/button&gt;
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
-  <p class="text-content ml-content">export default MyForm;</p><br/>
+  <p class="text-content ml-content">export default MyForm;</p>
+  <br />
   <h4><b>State Management:</b></h4>
-  <p class="text-content ml-content">Use the useState hook to manage the form data. In this example, we're using an object to hold the form fields (username and password).</p>
-  <p class="text-content ml-content">Use the handleChange function to update the form data whenever a user types in an input field.</p><br/>
+  <p class="text-content ml-content">
+    Use the useState hook to manage the form data. In this example, we're using an object to hold the form fields
+    (username and password).
+  </p>
+  <p class="text-content ml-content">
+    Use the handleChange function to update the form data whenever a user types in an input field.
+  </p>
+  <br />
   <h4><b>Handling Form Submission:</b></h4>
   <p class="text-content ml-content">Create a handleSubmit function to handle form submission.</p>
   <p class="text-content ml-content">Prevent the default behavior of the form (which would cause a page reload).</p>
-  <p class="text-content ml-content">Process the form data (e.g., send it to a server or perform some action with it).</p><br/>
+  <p class="text-content ml-content">
+    Process the form data (e.g., send it to a server or perform some action with it).
+  </p>
+  <br />
   <h4><b>Input Elements:</b></h4>
   <p class="text-content ml-content">Use the &lt;input&gt; element to create form fields.</p>
   <p class="text-content ml-content">Provide a name attribute to identify the field in the form data.</p>
   <p class="text-content ml-content">Use the value prop to set the value of the input field.</p>
-  <p class="text-content ml-content">Attach an onChange event handler to detect changes in the input.</p><br/>
+  <p class="text-content ml-content">Attach an onChange event handler to detect changes in the input.</p>
+  <br />
   <h4><b>Updating State with handleChange:</b></h4>
-  <p class="text-content ml-content">In the handleChange function, use destructuring to extract the name and value from the event target.</p>
-  <p class="text-content ml-content">Use setFormData to update the form data with the new value.</p><br/>
+  <p class="text-content ml-content">
+    In the handleChange function, use destructuring to extract the name and value from the event target.
+  </p>
+  <p class="text-content ml-content">Use setFormData to update the form data with the new value.</p>
+  <br />
   <h4><b>Conditional Rendering (Optional):</b></h4>
-  <p class="text-content ml-content">You can add conditional rendering based on the form state. For example, you might want to display a success message after the form is submitted.</p>
+  <p class="text-content ml-content">
+    You can add conditional rendering based on the form state. For example, you might want to display a success message
+    after the form is submitted.
+  </p>
   <p class="text-content ml-content">{submitted && &lt;div&gt;Form submitted successfully!&lt;/div&gt;}</p>
-  <p class="text-content ml-content">Remember to replace submitted with an actual state variable that you manage based on the form submission.</p><br/>
+  <p class="text-content ml-content">
+    Remember to replace submitted with an actual state variable that you manage based on the form submission.
+  </p>
+  <br />
   <h3><b>b.Controlled components</b></h3>
-  <p class="text-content ml-content">Controlled components in React are form elements (like &lt;input&gt;, &lt;textarea&gt;, &lt;select&gt;, etc.) whose values are controlled by the state of a React component. 
-    This means that the value of the form element is derived from the component's state and is controlled by React.</p><br/>
+  <p class="text-content ml-content">
+    Controlled components in React are form elements (like &lt;input&gt;, &lt;textarea&gt;, &lt;select&gt;, etc.) whose
+    values are controlled by the state of a React component. This means that the value of the form element is derived
+    from the component's state and is controlled by React.
+  </p>
+  <br />
   <p class="text-content ml-content font-head">Here's an example of a controlled input component:</p>
   <p class="text-content ml-content">import React, { useState } from 'react';</p>
   <p class="text-content ml-content">const ControlledInput = () => {</p>
@@ -82,31 +127,46 @@
   <p class="text-content ml-content">&nbsp;&nbsp;};</p>
   <p class="text-content ml-content">&nbsp;&nbsp;return (</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type="text"
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value={inputValue}
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onChange={handleChange}
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Input Value: {inputValue}&lt;/p&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type="text"</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value={inputValue}</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onChange={handleChange}</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Input Value: {inputValue}&lt;/p&gt;
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
-  <p class="text-content ml-content">export default ControlledInput;</p><br/>
+  <p class="text-content ml-content">export default ControlledInput;</p>
+  <br />
   <p class="text-content ml-content">In this example:</p>
-  <p class="text-content ml-content">We're using the useState hook to create a state variable inputValue and a function setInputValue to update it.</p>
-  <p class="text-content ml-content">The input element is a controlled component because its value is set to the inputValue state.</p>
-  <p class="text-content ml-content">When the user types in the input field, the handleChange function is called, updating the inputValue in the component's 
-    state.</p><br/>
+  <p class="text-content ml-content">
+    We're using the useState hook to create a state variable inputValue and a function setInputValue to update it.
+  </p>
+  <p class="text-content ml-content">
+    The input element is a controlled component because its value is set to the inputValue state.
+  </p>
+  <p class="text-content ml-content">
+    When the user types in the input field, the handleChange function is called, updating the inputValue in the
+    component's state.
+  </p>
+  <br />
   <h4><b>Advantages of Controlled Components:</b></h4>
   <p class="text-content ml-content">Single Source of Truth</p>
   <p class="text-content ml-content">Immutable State</p>
   <p class="text-content ml-content">Easy to Implement Validation</p>
   <p class="text-content ml-content">Dynamic Behavior</p>
   <p class="text-content ml-content">Easier Testing</p>
-  <p class="text-content ml-content">Compatible with React Features</p><br/>
+  <p class="text-content ml-content">Compatible with React Features</p>
+  <br />
   <h3><b>c.Uncontrolled components:</b></h3>
-  <p class="text-content ml-content">Uncontrolled components in React are form elements (like &lt;input&gt;, &lt;textarea&gt;, &lt;select&gt;, etc.) 
-    whose values are not controlled by the state of a React component. Instead, their values are determined by the DOM itself.</p><br/>
+  <p class="text-content ml-content">
+    Uncontrolled components in React are form elements (like &lt;input&gt;, &lt;textarea&gt;, &lt;select&gt;, etc.)
+    whose values are not controlled by the state of a React component. Instead, their values are determined by the DOM
+    itself.
+  </p>
+  <br />
   <p class="text-content ml-content">Here's an example of an uncontrolled input component:</p>
   <p class="text-content ml-content">import React, { useRef } from 'react';</p>
   <p class="text-content ml-content">const UncontrolledInput = () => {</p>
@@ -118,28 +178,46 @@
   <p class="text-content ml-content">&nbsp;&nbsp;return (</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;form onSubmit={handleSubmit}&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" ref={inputRef} /&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="submit"&gt;Submit&lt;/button&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" ref={inputRef} /&gt;
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="submit"&gt;Submit&lt;/button&gt;
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
-  <p class="text-content ml-content">export default UncontrolledInput;</p><br/>
+  <p class="text-content ml-content">export default UncontrolledInput;</p>
+  <br />
   <p class="text-content ml-content">In this example:</p>
-  <p class="text-content ml-content">We're using the useRef hook to create a reference to the input element (inputRef).</p>
-  <p class="text-content ml-content">When the form is submitted, we use inputRef.current.value to access the current value of the input field.</p><br/>
+  <p class="text-content ml-content">
+    We're using the useRef hook to create a reference to the input element (inputRef).
+  </p>
+  <p class="text-content ml-content">
+    When the form is submitted, we use inputRef.current.value to access the current value of the input field.
+  </p>
+  <br />
   <h4><b>Advantages of Uncontrolled Components:</b></h4>
   <p class="text-content ml-content">Simplicity</p>
   <p class="text-content ml-content">Compatibility with Non-React Code</p>
   <p class="text-content ml-content">Performance</p>
-  <p class="text-content ml-content">However, it's important to note that uncontrolled components have some limitations:</p>
+  <p class="text-content ml-content">
+    However, it's important to note that uncontrolled components have some limitations:
+  </p>
   <p class="text-content ml-content">Limited Control</p>
   <p class="text-content ml-content">Harder to Test</p>
   <p class="text-content ml-content">State Synchronization</p>
-  <p class="text-content ml-content">Overall, Controlled components provide more control and predictability, while uncontrolled components can be simpler and 
-    more compatible with certain situations.</p><br/>
+  <p class="text-content ml-content">
+    Overall, Controlled components provide more control and predictability, while uncontrolled components can be simpler
+    and more compatible with certain situations.
+  </p>
+  <br />
   <h3><b>d.Understand the significance to default Value prop</b></h3>
-  <p class="text-content ml-content">The defaultValue prop in React is used to set the initial value of an input element in an uncontrolled component. It is a property that can be applied to form elements like &lt;input&gt;, &lt;select&gt;, and &lt;textarea&gt;.</p>
+  <p class="text-content ml-content">
+    The defaultValue prop in React is used to set the initial value of an input element in an uncontrolled component. It
+    is a property that can be applied to form elements like &lt;input&gt;, &lt;select&gt;, and &lt;textarea&gt;.
+  </p>
   <p class="text-content ml-content">Here's an example of how you might use the defaultValue prop:</p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">const UncontrolledInputWithDefaultValue = () => {</p>
@@ -148,22 +226,32 @@
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type="text"</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;defaultValue="Default Value"</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;</p></p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
   <p class="text-content ml-content">export default UncontrolledInputWithDefaultValue;</p>
-  <p class="text-content ml-content">In this example, the input field will be initialized with the value "Default Value". However, once the user interacts 
-    with the input field, React no longer manages its value. The value becomes controlled by the DOM itself.</p><br/>
+  <p class="text-content ml-content">
+    In this example, the input field will be initialized with the value "Default Value". However, once the user
+    interacts with the input field, React no longer manages its value. The value becomes controlled by the DOM itself.
+  </p>
+  <br />
   <h4><b>Significance of defaultValue:</b></h4>
   <p class="text-content ml-content">Setting Initial Values</p>
   <p class="text-content ml-content">Compatible with Non-React Code</p>
   <p class="text-content ml-content">Avoiding Controlled Component Overhead</p>
   <p class="text-content ml-content">Performance Considerations</p>
-  <p class="text-content ml-content">The defaultValue prop is a useful tool for setting the initial value of an uncontrolled form element in situations where 
-    using a controlled component may not be necessary or practical.</p><br/>
+  <p class="text-content ml-content">
+    The defaultValue prop is a useful tool for setting the initial value of an uncontrolled form element in situations
+    where using a controlled component may not be necessary or practical.
+  </p>
+  <br />
   <h3><b>e.Using react ref prop to get access to DOM element</b></h3>
-  <p class="text-content ml-content">Using React's ref prop allows you to get direct access to a DOM element or a React component. This can be particularly useful when you need to interact with the DOM imperatively or access specific properties or methods of a child component.</p>
+  <p class="text-content ml-content">
+    Using React's ref prop allows you to get direct access to a DOM element or a React component. This can be
+    particularly useful when you need to interact with the DOM imperatively or access specific properties or methods of
+    a child component.
+  </p>
   <p class="text-content ml-content">Here's an example of how you might use ref to get access to a DOM element:</p>
   <p class="text-content ml-content">import React, { useRef } from 'react';</p>
   <p class="text-content ml-content">const MyComponent = () => {</p>
@@ -175,15 +263,22 @@
   <p class="text-content ml-content">&nbsp;&nbsp;return (</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" ref={inputRef} /&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button onClick={handleClick}&gt;Focus Input&lt;/button&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button onClick={handleClick}&gt;Focus Input&lt;/button&gt;
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
-  <p class="text-content ml-content">export default MyComponent;</p><br/>
+  <p class="text-content ml-content">export default MyComponent;</p>
+  <br />
   <p class="text-content ml-content font-semibold">In this example:</p>
   <li>We create a ref using the useRef hook.</li>
   <li>We assign the ref to the input element.</li>
-  <li>When the button is clicked, the handleClick function is called, which uses inputRef.current to access the DOM element and call its focus method.</li><br/>
+  <li>
+    When the button is clicked, the handleClick function is called, which uses inputRef.current to access the DOM
+    element and call its focus method.
+  </li>
+  <br />
   <h4><b>Significance of Using ref:</b></h4>
   <p class="text-content ml-content">Accessing DOM Elements</p>
   <p class="text-content ml-content">Interacting with Third-Party Libraries</p>
@@ -191,5 +286,9 @@
   <p class="text-content ml-content">Triggering Animations or Transitions</p>
   <p class="text-content ml-content">Working with Form Elements</p>
   <p class="text-content ml-content">Accessing Child Components</p>
-  <p class="text-content ml-content">As direct DOM manipulation can bypass React's virtual DOM and lead to unexpected behavior or performance issues if not used carefully. In most cases, React's declarative approach with state and props is preferred over imperative DOM manipulation.</p>
-  </div>
+  <p class="text-content ml-content">
+    As direct DOM manipulation can bypass React's virtual DOM and lead to unexpected behavior or performance issues if
+    not used carefully. In most cases, React's declarative approach with state and props is preferred over imperative
+    DOM manipulation.
+  </p>
+</div>

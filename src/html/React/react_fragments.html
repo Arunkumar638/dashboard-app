@@ -1,31 +1,49 @@
 <div>
   <h2 class="text-subhead font-bold"><b>Fragments</b></h2>
-  <p class="text-content ml-content">JSX fragments are a way to return multiple elements from a component without the need for an extra wrapping element. This is useful when you want to return adjacent JSX elements without introducing an extra level of nesting.</p>
-  <p class="text-content ml-content">Here's an example of how to use JSX fragments:</p><br/>
+  <p class="text-content ml-content">
+    JSX fragments are a way to return multiple elements from a component without the need for an extra wrapping element.
+    This is useful when you want to return adjacent JSX elements without introducing an extra level of nesting.
+  </p>
+  <p class="text-content ml-content">Here's an example of how to use JSX fragments:</p>
+  <br />
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">const MyComponent = () => {</p>
-  <p class="text-content ml-content">  return (</p>
-  <p class="text-content ml-content">    &lt;&gt;</p>
-  <p class="text-content ml-content">      &lt;h1&gt;Hello, World!&lt;/h1&gt;</p>
-  <p class="text-content ml-content">      &lt;p&gt;This is a paragraph.&lt;/p&gt;</p>
-  <p class="text-content ml-content">    &lt;/&gt;</p>
-  <p class="text-content ml-content">  );</p>
-  <p class="text-content ml-content">};<br/>
-  <p>export default MyComponent;</p><br/>
-  <p class="text-content ml-content">In this example, we're using an empty JSX fragment &lt;&gt;...&lt;/&gt; to wrap the h1 and p elements. This allows us to return multiple elements without introducing an extra div or other container element. When this component is rendered, it will generate the following HTML:</p>
+  <p class="text-content ml-content">return (</p>
+  <p class="text-content ml-content">&lt;&gt;</p>
   <p class="text-content ml-content">&lt;h1&gt;Hello, World!&lt;/h1&gt;</p>
-  <p class="text-content ml-content">&lt;p&gt;This is a paragraph.&lt;/p&gt;</p><br/>
-  <p class="text-content ml-content">You can also use keys in fragments if you need to uniquely identify each child element. For example:</p>
+  <p class="text-content ml-content">&lt;p&gt;This is a paragraph.&lt;/p&gt;</p>
+  <p class="text-content ml-content">&lt;/&gt;</p>
+  <p class="text-content ml-content">);</p>
+  <p class="text-content ml-content">};<br /></p>
+  <p class="text-content ml-content">export default MyComponent;</p>
+  <br />
+  <p class="text-content ml-content">
+    In this example, we're using an empty JSX fragment &lt;&gt;...&lt;/&gt; to wrap the h1 and p elements. This allows
+    us to return multiple elements without introducing an extra div or other container element. When this component is
+    rendered, it will generate the following HTML:
+  </p>
+  <p class="text-content ml-content">&lt;h1&gt;Hello, World!&lt;/h1&gt;</p>
+  <p class="text-content ml-content">&lt;p&gt;This is a paragraph.&lt;/p&gt;</p>
+  <br />
+  <p class="text-content ml-content">
+    You can also use keys in fragments if you need to uniquely identify each child element. For example:
+  </p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">const MyComponent = () => {</p>
-  <p class="text-content ml-content">  return (</p>
-  <p class="text-content ml-content">    &lt;&gt;</p>
-  <p class="text-content ml-content">     &lt;div key="1">&gt;First div&lt;/div&gt;</p>
-  <p class="text-content ml-content">      &lt;div key="2">&gt;Second div&lt;/div&gt;</p>
-  <p class="text-content ml-content">    &lt;/&gt;</p>
-  <p class="text-content ml-content">  );</p>
+  <p class="text-content ml-content">return (</p>
+  <p class="text-content ml-content">&lt;&gt;</p>
+  <p class="text-content ml-content">&lt;div key="1">&gt;First div&lt;/div&gt;</p>
+  <p class="text-content ml-content">&lt;div key="2">&gt;Second div&lt;/div&gt;</p>
+  <p class="text-content ml-content">&lt;/&gt;</p>
+  <p class="text-content ml-content">);</p>
   <p class="text-content ml-content">};</p>
-  export default MyComponent;</p><br/>
-  <p class="text-content ml-content">Keys are important for React to efficiently update and render components. They should be unique among siblings.</p>
-  <p class="text-content ml-content">JSX fragments are a handy feature when you want to keep your JSX clean and avoid unnecessary nesting, especially when returning multiple elements from a component.</p>
+  <p class="text-content ml-content">export default MyComponent;</p>
+  <br />
+  <p class="text-content ml-content">
+    Keys are important for React to efficiently update and render components. They should be unique among siblings.
+  </p>
+  <p class="text-content ml-content">
+    JSX fragments are a handy feature when you want to keep your JSX clean and avoid unnecessary nesting, especially
+    when returning multiple elements from a component.
+  </p>
 </div>

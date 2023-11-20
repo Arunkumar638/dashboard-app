@@ -1,26 +1,37 @@
 <div>
   <h3 class="text-subhead font-head">Setting up react router</h3>
-  <p class="text-content ml-content">Setting up React Router allows you to implement client-side routing in your React application. This enables navigation between different pages or views without requiring a full page refresh.</p>
+  <p class="text-content ml-content">
+    Setting up React Router allows you to implement client-side routing in your React application. This enables
+    navigation between different pages or views without requiring a full page refresh.
+  </p>
   <p class="text-content ml-content">Here are the steps to set up React Router:</p>
   <p class="text-content ml-content font-semibold">Step 1: Install React Router</p>
   <p class="text-content ml-content">You can install React Router using npm or yarn. Open your terminal and run:</p>
   <p class="text-content ml-content">npm install react-router-dom</p>
   <p class="text-content ml-content">or</p>
-  <p class="text-content ml-content">yarn add react-router-dom</p><br/>
+  <p class="text-content ml-content">yarn add react-router-dom</p>
+  <br />
   <p class="text-content ml-content font-semibold">Step 2: Create Router Component</p>
-  <p class="text-content ml-content">In your application's entry point (usually index.js), you need to wrap your entire application with a BrowserRouter component. This component provides the routing context for your application.</p>
+  <p class="text-content ml-content">
+    In your application's entry point (usually index.js), you need to wrap your entire application with a BrowserRouter
+    component. This component provides the routing context for your application.
+  </p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">import ReactDOM from 'react-dom';</p>
   <p class="text-content ml-content">import { BrowserRouter } from 'react-router-dom';</p>
   <p class="text-content ml-content">import App from './App'; // Your main component</p>
   <p class="text-content ml-content">ReactDOM.render(</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&lt;BrowserRouter&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<App /></p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;&lt;App /&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&lt;/BrowserRouter&gt;,</p>
   <p class="text-content ml-content">&nbsp;&nbsp;document.getElementById('root')</p>
-  <p class="text-content ml-content">);</p><br/>
+  <p class="text-content ml-content">);</p>
+  <br />
   <p class="text-content ml-content font-semibold">Step 3: Create Routes</p>
-  <p class="text-content ml-content">In your main component (usually App.js), you'll define the routes for your application. Use the Route component to specify which component to render for each route.</p>
+  <p class="text-content ml-content">
+    In your main component (usually App.js), you'll define the routes for your application. Use the Route component to
+    specify which component to render for each route.
+  </p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">import { Route, Switch } from 'react-router-dom';</p>
   <p class="text-content ml-content">import Home from './Home'; // Example component for the home page</p>
@@ -30,16 +41,26 @@
   <p class="text-content ml-content">&nbsp;&nbsp;return (</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Switch&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route exact path="/" component={Home} /&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route path="/about" component={About} /&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route component={NotFound} /&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route exact path="/" component={Home} /&gt;
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route path="/about" component={About} /&gt;
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route component={NotFound} /&gt;
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Switch&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
-  <p class="text-content ml-content">export default App;</p><br/>
-  <p class="text-content ml-content font-semibold">Step 4: Create Route Components
-  <p class="text-content ml-content">Now, you need to create the components for each route (Home, About, etc.). These components will be displayed when the corresponding route is matched.</p>
+  <p class="text-content ml-content">export default App;</p>
+  <br />
+  <p class="text-content ml-content font-semibold">Step 4: Create Route Components</p>
+  <p class="text-content ml-content">
+    Now, you need to create the components for each route (Home, About, etc.). These components will be displayed when
+    the corresponding route is matched.
+  </p>
   <p class="text-content ml-content">// Home.js</p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">const Home = () => {</p>
@@ -57,7 +78,8 @@
   <p class="text-content ml-content">const NotFound = () => {</p>
   <p class="text-content ml-content">&nbsp;&nbsp;return &lt;div&gt;404 Page Not Found&lt;/div&gt;;</p>
   <p class="text-content ml-content">};</p>
-  <p class="text-content ml-content">export default NotFound;</p><br/>
+  <p class="text-content ml-content">export default NotFound;</p>
+  <br />
   <p class="text-content ml-content font-semibold">Step 5: Linking Between Routes</p>
   <p class="text-content ml-content">To navigate between routes, use the Link component provided by React Router.</p>
   <p class="text-content ml-content">import React from 'react';</p>
@@ -70,65 +92,107 @@
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/nav&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
-  <p class="text-content ml-content">export default Navigation;</p><br/>
+  <p class="text-content ml-content">export default Navigation;</p>
+  <br />
   <p class="text-content ml-content font-semibold">Step 6: Start Development Server</p>
   <p class="text-content ml-content">Start your development server to see the React Router in action.</p>
   <p class="text-content ml-content">npm start</p>
-  <p class="text-content ml-content">Your application should now be set up with React Router, allowing you to navigate between different routes without a full page refresh. 
-    Make sure to replace the example components (Home, About, etc.) with your actual components.</p><br/>
+  <p class="text-content ml-content">
+    Your application should now be set up with React Router, allowing you to navigate between different routes without a
+    full page refresh. Make sure to replace the example components (Home, About, etc.) with your actual components.
+  </p>
+  <br />
   <h3 class="text-subhead font-head">Understand routing in single page applications in react</h3>
-  <p class="text-content ml-content">In a Single Page Application (SPA) built with React, routing is the process of navigating between different views or pages within the application without causing a full page refresh. Instead of loading a new HTML page from the server, only the necessary components and data are updated in the DOM to reflect the new view.</p>
-  <p class="text-content ml-content">React Router is a popular library used for managing routing in React applications. 
-    It provides a set of components and hooks that allow you to define routes and navigate between them.</p><br/>
-  <h4><b>Key Concepts in React Router:</b></h4>
-  <h5><b>BrowserRouter:</b></h5>
-  <p class="text-content ml-content">This component provides the routing context for your application. 
-    It uses the HTML5 history API to keep the UI in sync with the URL.</p>
+  <p class="text-content ml-content">
+    In a Single Page Application (SPA) built with React, routing is the process of navigating between different views or
+    pages within the application without causing a full page refresh. Instead of loading a new HTML page from the
+    server, only the necessary components and data are updated in the DOM to reflect the new view.
+  </p>
+  <p class="text-content ml-content">
+    React Router is a popular library used for managing routing in React applications. It provides a set of components
+    and hooks that allow you to define routes and navigate between them.
+  </p>
+  <br />
+  <h4 class="font-head">Key Concepts in React Router:</h4>
+  <h5 class="font-head">BrowserRouter:</h5>
+  <p class="text-content ml-content">
+    This component provides the routing context for your application. It uses the HTML5 history API to keep the UI in
+    sync with the URL.
+  </p>
   <b>Example:</b>
   <p class="text-content ml-content">import { BrowserRouter } from 'react-router-dom';</p>
   <p class="text-content ml-content">&lt;BrowserRouter&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&lt;App /&gt;</p>
-  <p class="text-content ml-content">&lt;/BrowserRouter&gt;</p><br/>
-  <h5><b>Route:</b></h5>
-  <p class="text-content ml-content">The Route component is used to declare a route and specify which component should be rendered when the URL matches that route.</p>
+  <p class="text-content ml-content">&lt;/BrowserRouter&gt;</p>
+  <br />
+  <h5 class="font-head">Route:</h5>
+  <p class="text-content ml-content">
+    The Route component is used to declare a route and specify which component should be rendered when the URL matches
+    that route.
+  </p>
   <b>Example:</b>
-  <p class="text-content ml-content">import { Route } from 'react-router-dom';</p>
-  &lt;Route exact path="/" component={Home} /&gt;</p><br/>
-  <h5><b>Switch:</b></h5>
-  <p class="text-content ml-content">The Switch component is used to render the first child Route or Redirect that matches the current location. This ensures that only one route is rendered at a time.</p>
-  <b>Example:</b></p>
+  <p class="text-content ml-content">
+    import { Route } from 'react-router-dom';<br />
+    &lt;Route exact path="/" component={Home} /&gt;
+  </p>
+  <br />
+  <h5 class="font-head">Switch:</h5>
+  <p class="text-content ml-content">
+    The Switch component is used to render the first child Route or Redirect that matches the current location. This
+    ensures that only one route is rendered at a time.
+  </p>
+  <b>Example:</b>
   <p class="text-content ml-content">import { Switch, Route } from 'react-router-dom';</p>
   <p class="text-content ml-content">&lt;Switch&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&lt;Route exact path="/" component={Home} /&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&lt;Route path="/about" component={About} /&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&lt;Route component={NotFound} /&gt;</p>
-  <p class="text-content ml-content">&lt;/Switch&gt;</p><br/>
-  <h5><b>Link:</b></h5>
-  <p class="text-content ml-content">The Link component is used to create hyperlinks that navigate to different routes. It prevents the default behavior of refreshing the page.</p>
-  <b>Example:</b></p>
+  <p class="text-content ml-content">&lt;/Switch&gt;</p>
+  <br />
+  <h5 class="font-head">Link:</h5>
+  <p class="text-content ml-content">
+    The Link component is used to create hyperlinks that navigate to different routes. It prevents the default behavior
+    of refreshing the page.
+  </p>
+  <b>Example:</b>
   <p class="text-content ml-content">import { Link } from 'react-router-dom';</p>
   <p class="text-content ml-content">&lt;Link to="/about"&gt;About Us&lt;/Link&gt;</p>
-  <h5><b>NavLink:</b></h5>
-  <p class="text-content ml-content">Similar to Link, but allows for styling the active link (e.g., applying a class) when the route matches.</p>
-  <b>Example:</b></p>
+  <h5 class="font-head">NavLink:</h5>
+  <p class="text-content ml-content">
+    Similar to Link, but allows for styling the active link (e.g., applying a class) when the route matches.
+  </p>
+  <b>Example:</b>
   <p class="text-content ml-content">import { NavLink } from 'react-router-dom';</p>
-  <p class="text-content ml-content">&lt;NavLink to="/about" activeClassName="active"&gt;About Us&lt;/NavLink&gt;</p><br/>
-  <h5><b>Redirect:</b></h5>
-  <p class="text-content ml-content">The Redirect component is used to redirect to a different route. It can be conditionally rendered based on some logic.</p>
-  <b>Example:</b></p>
+  <p class="text-content ml-content">&lt;NavLink to="/about" activeClassName="active"&gt;About Us&lt;/NavLink&gt;</p>
+  <br />
+  <h5 class="font-head">Redirect:</h5>
+  <p class="text-content ml-content">
+    The Redirect component is used to redirect to a different route. It can be conditionally rendered based on some
+    logic.
+  </p>
+  <b>Example:</b>
   <p class="text-content ml-content">import { Redirect } from 'react-router-dom';</p>
-  <p class="text-content ml-content">{loggedIn ? &lt;Dashboard /&gt; : &lt;Redirect to="/login" /&gt;}</p><br/>
-  <h4><b>Advantages of SPA Routing in React:</b></h4>
-  <li>&nbsp;&nbsp;Faster User Experience</p>
-  <li>&nbsp;&nbsp;Smooth Transitions</p>
-  <li>&nbsp;&nbsp;Reduced Server Load</p>
-  <li>&nbsp;&nbsp;Better User Engagement</p>
-  <li>&nbsp;&nbsp;Improved SEO with Server-Side Rendering 
+  <p class="text-content ml-content">{loggedIn ? &lt;Dashboard /&gt; : &lt;Redirect to="/login" /&gt;}</p>
+  <br />
+  <h4 class="font-head">Advantages of SPA Routing in React:</h4>
+  <ol class="list-disc">
+    <li class="ml-points">&nbsp;&nbsp;Faster User Experience</li>
+    <li class="ml-points">&nbsp;&nbsp;Smooth Transitions</li>
+    <li class="ml-points">&nbsp;&nbsp;Reduced Server Load</li>
+    <li class="ml-points">&nbsp;&nbsp;Better User Engagement</li>
+  </ol>
+  <li class="ml-points">&nbsp;&nbsp;Improved SEO with Server-Side Rendering</li>
   <h3 class="text-subhead font-head"><b>c.Working with Browser Router and Hash Router components in react</b></h3>
-  <p class="text-content ml-content">In React Router, BrowserRouter and HashRouter are two types of routers that you can use to handle routing in your application. 
-    They are used to synchronize the application's UI with the URL.</p><br/>
-  <h5><b>BrowserRouter:</b></h5>
-  <p class="text-content ml-content">BrowserRouter uses the HTML5 history API, specifically the pushState() and replaceState() methods, to keep the UI in sync with the URL. This allows for clean, semantic URLs without hash fragments.</p>
+  <p class="text-content ml-content">
+    In React Router, BrowserRouter and HashRouter are two types of routers that you can use to handle routing in your
+    application. They are used to synchronize the application's UI with the URL.
+  </p>
+  <br />
+  <h5 class="font-head">BrowserRouter:</h5>
+  <p class="text-content ml-content">
+    BrowserRouter uses the HTML5 history API, specifically the pushState() and replaceState() methods, to keep the UI in
+    sync with the URL. This allows for clean, semantic URLs without hash fragments.
+  </p>
   <p class="text-content ml-content">Here's an example of how to use BrowserRouter:</p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">import { BrowserRouter, Route, Switch } from 'react-router-dom';</p>
@@ -139,16 +203,26 @@
   <p class="text-content ml-content">&nbsp;&nbsp;return (</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;BrowserRouter&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Switch&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route exact path="/" component={Home} /&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route path="/about" component={About} /&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route component={NotFound} /&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route exact path="/" component={Home} /&gt;
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route path="/about" component={About} /&gt;
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route component={NotFound} /&gt;
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Switch&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/BrowserRouter&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
-  <p class="text-content ml-content">export default App;</p><br/>
-  <h5><b>HashRouter:</b></h5>
-  <p class="text-content ml-content">HashRouter uses the hash portion of the URL (the part after #) to keep the UI in sync with the URL. This is useful for environments that do not support the HTML5 history API, such as older browsers or static file servers.</p>
+  <p class="text-content ml-content">export default App;</p>
+  <br />
+  <h5 class="font-head">HashRouter:</h5>
+  <p class="text-content ml-content">
+    HashRouter uses the hash portion of the URL (the part after #) to keep the UI in sync with the URL. This is useful
+    for environments that do not support the HTML5 history API, such as older browsers or static file servers.
+  </p>
   <p class="text-content ml-content">Here's an example of how to use HashRouter:</p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">import { HashRouter, Route, Switch } from 'react-router-dom';</p>
@@ -159,24 +233,44 @@
   <p class="text-content ml-content">&nbsp;&nbsp;return (</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ashRouter&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Switch&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route exact path="/" component={Home} /&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route path="/about" component={About} /&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route component={NotFound} /&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route exact path="/" component={Home} /&gt;
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route path="/about" component={About} /&gt;
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route component={NotFound} /&gt;
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/HashRouter&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
-  <p class="text-content ml-content">export default App;</p><br/>
-  <h4><b>When to Use BrowserRouter vs HashRouter:</b></h4>
-  <h5><b>BrowserRouter:</b></h5>
-  <p class="text-content ml-content">Use BrowserRouter when your server can handle dynamic, client-side routing. This means the server is configured to serve the same content for any path, and the client-side router (React Router) will handle rendering different components based on the URL.</p>
-  <h5><b>HashRouter:</b></h5>
-  <p class="text-content ml-content">Use HashRouter when you have a static file server or need to support older browsers that do not handle HTML5 history API well. The HashRouter uses the hash portion of the URL, which is widely supported.</p>
+  <p class="text-content ml-content">export default App;</p>
+  <br />
+  <h4 class="font-head">When to Use BrowserRouter vs HashRouter:</h4>
+  <h5 class="font-head">BrowserRouter:</h5>
+  <p class="text-content ml-content">
+    Use BrowserRouter when your server can handle dynamic, client-side routing. This means the server is configured to
+    serve the same content for any path, and the client-side router (React Router) will handle rendering different
+    components based on the URL.
+  </p>
+  <h5 class="font-head">HashRouter:</h5>
+  <p class="text-content ml-content">
+    Use HashRouter when you have a static file server or need to support older browsers that do not handle HTML5 history
+    API well. The HashRouter uses the hash portion of the URL, which is widely supported.
+  </p>
   <p class="text-content ml-content">Remember to also install the react-router-dom package if you haven't already:</p>
   <p class="text-content ml-content">npm install react-router-dom</p>
-  <p class="text-content ml-content">Using BrowserRouter or HashRouter sets up the routing context for your application, allowing you to use other routing components like Route, Link, 
-    and Switch in your application.</p><br/>
+  <p class="text-content ml-content">
+    Using BrowserRouter or HashRouter sets up the routing context for your application, allowing you to use other
+    routing components like Route, Link, and Switch in your application.
+  </p>
+  <br />
   <h3 class="text-subhead font-head"><b>Configuring route with Route component in react</b></h3>
-  <p class="text-content ml-content">In React Router, configuring routes is done using the Route component. The Route component allows you to specify which component should be rendered based on the current URL path.</p>
+  <p class="text-content ml-content">
+    In React Router, configuring routes is done using the Route component. The Route component allows you to specify
+    which component should be rendered based on the current URL path.
+  </p>
   <p class="text-content ml-content">Here's how you can configure routes using the Route component:</p>
   <p class="text-content ml-content">Step 1: Import Dependencies</p>
   <p class="text-content ml-content">First, you need to import the necessary components from react-router-dom.</p>
@@ -187,38 +281,64 @@
   <p class="text-content ml-content">import Contact from './Contact';</p>
   <p class="text-content ml-content">import NotFound from './NotFound';</p>
   <p class="text-content ml-content">Step 2: Set Up Routes</p>
-  <p class="text-content ml-content">Next, you'll define the routes and the corresponding components that should be rendered.</p>
+  <p class="text-content ml-content">
+    Next, you'll define the routes and the corresponding components that should be rendered.
+  </p>
   <p class="text-content ml-content">const App = () => {</p>
   <p class="text-content ml-content">&nbsp;&nbsp;return (</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;BrowserRouter&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Switch&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route exact path="/" component={Home} /&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route path="/about" component={About} /&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route path="/contact" component={Contact} /&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route component={NotFound} /&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route exact path="/" component={Home} /&gt;
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route path="/about" component={About} /&gt;
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route path="/contact" component={Contact} /&gt;
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route component={NotFound} /&gt;
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Switch&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/BrowserRouter&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
-  <p class="text-content ml-content">export default App;</p><br/>
-  <h4><b>Explanation:</b></h4>
-  <h5><b>BrowserRouter:</b></h5>
-  <p class="text-content ml-content">Wrapping your entire application with BrowserRouter provides the routing context for your application.</p>
-  <h5><b>Switch:</b></h5>
-  <p class="text-content ml-content">The Switch component ensures that only the first matching Route is rendered. It stops evaluating routes as soon as a match is found.</p>
-  <h5><b>Route:</b></h5>
-  <p class="text-content ml-content">Each Route component is used to define a specific route and specify which component should be rendered when that route is matched.</p>
-  <p class="text-content ml-content">The exact prop ensures that the route matches exactly (and not partially).</p><br/>
-  <h5><b>Creating Route Components:</b></h5>
-  <p class="text-content ml-content">Each of the components (Home, About, Contact, NotFound) should be created in separate files (e.g., Home.js, About.js, etc.) and imported into the main file.</p>
+  <p class="text-content ml-content">export default App;</p>
+  <br />
+  <h4 class="font-head">Explanation:</h4>
+  <h5 class="font-head">BrowserRouter:</h5>
+  <p class="text-content ml-content">
+    Wrapping your entire application with BrowserRouter provides the routing context for your application.
+  </p>
+  <h5 class="font-head">Switch:</h5>
+  <p class="text-content ml-content">
+    The Switch component ensures that only the first matching Route is rendered. It stops evaluating routes as soon as a
+    match is found.
+  </p>
+  <h5 class="font-head">Route:</h5>
+  <p class="text-content ml-content">
+    Each Route component is used to define a specific route and specify which component should be rendered when that
+    route is matched.
+  </p>
+  <p class="text-content ml-content">The exact prop ensures that the route matches exactly (and not partially).</p>
+  <br />
+  <h5 class="font-head">Creating Route Components:</h5>
+  <p class="text-content ml-content">
+    Each of the components (Home, About, Contact, NotFound) should be created in separate files (e.g., Home.js,
+    About.js, etc.) and imported into the main file.
+  </p>
   <p class="text-content ml-content">Example Home.js:</p>
   <p class="text-content ml-content">import React from 'react'</p>
   <p class="text-content ml-content">const Home = () => {</p>
   <p class="text-content ml-content">&nbsp;&nbsp;return&nbsp;&nbsp;&lt;div&gt;Home Page &lt;/div&gt;;</p>
   <p class="text-content ml-content">};</p>
-  <p class="text-content ml-content">export default Home;</p><br/>
-  <h5><b>Navigating Between Routes:</b></h5>
-  <p class="text-content ml-content">To navigate between routes, you'll use the Link component provided by React Router.</p>
+  <p class="text-content ml-content">export default Home;</p>
+  <br />
+  <h5 class="font-head">Navigating Between Routes:</h5>
+  <p class="text-content ml-content">
+    To navigate between routes, you'll use the Link component provided by React Router.
+  </p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">import { Link } from 'react-router-dom';</p>
   <p class="text-content ml-content">const Navigation = () => {</p>
@@ -230,10 +350,17 @@
   <p class="text-content ml-content">&nbsp;&nbsp; &lt;/nav&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
-  <p class="text-content ml-content">export default Navigation;</p><br/>
+  <p class="text-content ml-content">export default Navigation;</p>
+  <br />
   <p class="text-content font-semibold">Description</p>
-  <p class="text-content ml-content">This Navigation component can be included in your Home, About, and Contact components to provide links for navigation.</p>
+  <p class="text-content ml-content">
+    This Navigation component can be included in your Home, About, and Contact components to provide links for
+    navigation.
+  </p>
   <p class="text-content ml-content">Remember to install the react-router-dom package if you haven't already:</p>
   <p class="text-content ml-content">npm install react-router-dom</p>
-  <p class="text-content ml-content">With this setup, your application will now have three routes (/, /about, and /contact) that render different components based on the current URL path. If none of the routes match, the NotFound component will be rendered.</p>
-  </div>
+  <p class="text-content ml-content">
+    With this setup, your application will now have three routes (/, /about, and /contact) that render different
+    components based on the current URL path. If none of the routes match, the NotFound component will be rendered.
+  </p>
+</div>

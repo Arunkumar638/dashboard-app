@@ -1,137 +1,225 @@
 <div>
-    <h3 class="text-subhead font-head">Introduction</h3>
-    <p class="text-content ml-content">&nbsp;&nbsp; We will replace the previous code of the server.js file with the following code:</p><br/>
-    <p class="text-content ml-content">const { MongoClient } = require('mongodb')</p>
-    <p class="text-content ml-content">// Create Instance of MongoClient for mongodb</p>
-    <p class="text-content ml-content">const client = new MongoClient('mongodb://localhost:27017')</p>
-    <p class="text-content ml-content">// Connect to database</p>
-    <p class="text-content ml-content">client.connect()</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;.then(() => {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Connected Successfully!')</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Close the database connection</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Exiting..')</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;client.close()</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;})</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;.catch(error => console.log('Failed to connect!', error))</p><br/>
-    <p class="text-content ml-content">In the above code block, We are using the close() method to disconnect the database from the node app.</p>
-    <p class="text-content ml-content">Node app will exit from the MongoDB instance after connecting the node to the database.</p>
-    <p class="text-content ml-content">Run node server.js</p>
-    <b>$ node server.js</b>
-    <p class="text-content ml-content">Connected Successfully!</p>
-    <p class="text-content ml-content">Exiting..</p><br/>
-    <b>Example</b>
-    <p class="text-content ml-content">First, We will install the following npm packages:</p>
-    <p class="text-content ml-content"><b>Nodemon:</b> It watches file changes in nodejs and restarts the node app if any changes happen to files. We will install nodemon using the command&nbsp;&nbsp;</p>
-    <p class="text-content ml-content"><b>npm install nodemon --save-dev.</b></p>
-    <p class="text-content ml-content"><b>Express:</b> It is a nodejs framework that helps to build node APIs. We will install express using the command </p>
-    <p class="text-content ml-content"><b>npm install express --save.</b></p>
-    <p class="text-content ml-content"><b>Mongoose:</b> It is a Tool for the MongoDB database. It helps to create schema, model, and manage database queries for MongoDB. We will install mongoose using the command </p>
-    <p class="text-content ml-content"><b>npm install mongoose --save.</b></p>
-    <p class="text-content ml-content"><b>Bodyparser</b> It will parse the data that is coming from the HTML body. We will install body-parser using the command </p>
-    <p class="text-content ml-content"><b>npm install body-parser --save.</b></p>
-    <p class="text-content ml-content"> We will follow the file structure to create files and folders as shown below:</p>
-    <p class="text-content ml-content">mongodb-nodejs/</p>
-    <p class="text-content ml-content">├─ public/</p>
-    <p class="text-content ml-content">│&nbsp;&nbsp;├─ index.html</p>
-    <p class="text-content ml-content">├─ index.js</p>
-    <p class="text-content ml-content">├─ package.json</p>
-    <p class="text-content ml-content">└─ server.js</p><br/>
-    <p class="text-content ml-content">&nbsp;&nbsp; In package.json, We will add the start property to scripts.</p>
-    <p class="text-content ml-content">"scripts": {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"start": "nodemon index.js",</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;}</p><br/>
-    <p class="text-content ml-content">We will require all modules to index.js file as shown below:</p>
-    <p class="text-content ml-content">const express = require('express')</p>
-    <p class="text-content ml-content">const mongoose = require('mongoose')</p>
-    <p class="text-content ml-content">const bodyParser = require('body-parser')</p>
-    <p class="text-content ml-content">We will listen to the express app at local port 4000 and add the following code to the index.js file</p>
-    <p class="text-content ml-content">const app = express()</p>
-    <p class="text-content ml-content">app.listen(4000, (res) => {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log('Listening on port 4000')</p>
-    <p class="text-content ml-content">})</p><br/>
-    <p class="text-content ml-content">We will add the following code to index.html. It is a simple student form that will get the data from the web and store the data in the local MongoDB database.</p>
-    <p class="text-content ml-content">&lt;!DOCTYPE html&gt;
-    <p class="text-content ml-content">&lt;html lang="en"&gt;
-    <p class="text-content ml-content">&lt;head&gt;
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name="viewport" content=
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"width=device-width, initial-scale=1.0"&gt;
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Student Form&lt;/title&gt;
-    <p class="text-content ml-content">&lt;/head&gt;
-    <p class="text-content ml-content">&lt;body&gt;
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;form action="/student" method="post"&gt;
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" placeholder="Enter Your Name" name="name"&gt;
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" placeholder="Enter Your Email" name="email"&gt;
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="submit"&gt;Submit&lt;/button&gt;
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;
-    <p class="text-content ml-content">&lt;/body&gt;
-    <p class="text-content ml-content">&lt;/html&gt;<br/>
-    <p class="text-content ml-content">In the above code block, We are using the action and method attribute in the form tag. action attribute sends the data to the server and the method attribute tells whether it is a POST request or GET request.</p>
-    <p class="text-content ml-content">We will tell express to serve the index.html on local port 4000 and use the body-parser to get the data from the HTTP request in a proper format.</p>
-    <p class="text-content ml-content">app.use(express.static(`${__dirname}/public`))</p>
-    <p class="text-content ml-content">app.use(bodyParser.json())</p>
-    <p class="text-content ml-content">app.use(bodyParser.urlencoded({</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;extended: true</p>
-    <p class="text-content ml-content">})) </p><br/>
-    <p class="text-content ml-content">&nbsp;&nbsp; In the above code block, We are enabling middlewares with the help of the use() method of the express app. We are using the static() method to add a path for static files.</p>
-    <p class="text-content ml-content">&nbsp;&nbsp; We need a database to store the data. Hence, We will connect the local MongoDB database using the connect() method of mongoose.</p>
-    <p class="text-content ml-content">mongoose.connect('mongodb://localhost:27017/students')</p>
-    <p class="text-content ml-content">&nbsp;&nbsp; In the above code block, We pass the database URL that creates the collection name students if it doesn't exist.</p>
-    <p class="text-content ml-content">&nbsp;&nbsp; We will create and validate the schema using the Schema() method of mongoose. We will also create a model using the model() method of mongoose.</p>
-    <p class="text-content ml-content">const studentSchema = new mongoose.Schema({</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;name: String,</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;email: String</p>
-    <p class="text-content ml-content">})</p><br/>
-    <p class="text-content ml-content">const Student = mongoose.model('Student', studentSchema)</p>
-    <p class="text-content ml-content">&nbsp;&nbsp; We will use the post() method of the express app to serve the HTTP request POST to the /student route.</p>
-    <p class="text-content ml-content">app.post('/student', (req, res) => {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;let student = new Student(req.body);</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;student.save()</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.then(doc => {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.send(doc)</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(doc)</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;.catch(err => console.log(err))</p>
-    <p class="text-content ml-content">})</p><br/>
-    <p class="text-content ml-content">Now, We will go to the URL http://localhost:4000/ and fill out the student form.</p>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>database-2.jpg</b> </p>
-    <p class="text-content ml-content">When we hit submit button, It will store the student data in the local MongoDB database and navigate to the http://localhost:4000/student URL and display the output as shown below:</p>
-    <p class="text-content ml-content">{</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;"name": "abc",</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;"email": "abc@example.com",</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;"_id": "635a46cf9e89ce7cd5e1473f",</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;"__v": 0</p>
-    <p class="text-content ml-content">}</p><br/>
-    <p class="text-content ml-content">We will use the get() method to fetch all the students from the local MongoDB database.</p>
-    <p class="text-content ml-content">// Get all students</p>
-    <p class="text-content ml-content">app.get('/students', (req, res) => {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;Student.find({})</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.then(docs => {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(docs)</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.json(docs)</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.catch(err => console.log(err))</p>
-    <p class="text-content ml-content">})</p><br/>
-    <p class="text-content ml-content">In the above code block, We are using the find() method to retrieve students' data. When we hit the URL http://localhost:4000/students, It will display the output as shown below:</p><br/>
-    <p class="text-content ml-content">[</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;{</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"_id": "635a4a55b9e33f7ab6e09ed4",</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"name": "abc",</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"email": "abc@example.com",</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"__v": 0</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;},</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;{</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"_id": "635a4a8dc7824ed2d957b882",</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"name": "xyz",</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"email": "xyz@example.com",</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"__v": 0</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;},</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;{</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"_id": "635a4b2e0c67336d6d866ca1",</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"name": "hi",</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"email": "hi@example.com",</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"__v": 0</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;}</p>
-    <p class="text-content ml-content">]</p>
-    </div>
+  <h3 class="text-subhead font-head">Introduction</h3>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp; We will replace the previous code of the server.js file with the following code:
+  </p>
+  <br />
+  <p class="text-content ml-content">const { MongoClient } = require('mongodb')</p>
+  <p class="text-content ml-content">// Create Instance of MongoClient for mongodb</p>
+  <p class="text-content ml-content">const client = new MongoClient('mongodb://localhost:27017')</p>
+  <p class="text-content ml-content">// Connect to database</p>
+  <p class="text-content ml-content">client.connect()</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;.then(() => {</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Connected Successfully!')
+  </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Close the database connection</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Exiting..')</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;client.close()</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;})</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;.catch(error => console.log('Failed to connect!', error))
+  </p>
+  <br />
+  <p class="text-content ml-content">
+    In the above code block, We are using the close() method to disconnect the database from the node app.
+  </p>
+  <p class="text-content ml-content">
+    Node app will exit from the MongoDB instance after connecting the node to the database.
+  </p>
+  <p class="text-content ml-content">Run node server.js</p>
+  <b>$ node server.js</b>
+  <p class="text-content ml-content">Connected Successfully!</p>
+  <p class="text-content ml-content">Exiting..</p>
+  <br />
+  <b>Example</b>
+  <p class="text-content ml-content">First, We will install the following npm packages:</p>
+  <p class="text-content ml-content">
+    <b>Nodemon:</b> It watches file changes in nodejs and restarts the node app if any changes happen to files. We will
+    install nodemon using the command&nbsp;&nbsp;
+  </p>
+  <p class="text-content ml-content"><b>npm install nodemon --save-dev.</b></p>
+  <p class="text-content ml-content">
+    <b>Express:</b> It is a nodejs framework that helps to build node APIs. We will install express using the command
+  </p>
+  <p class="text-content ml-content"><b>npm install express --save.</b></p>
+  <p class="text-content ml-content">
+    <b>Mongoose:</b> It is a Tool for the MongoDB database. It helps to create schema, model, and manage database
+    queries for MongoDB. We will install mongoose using the command
+  </p>
+  <p class="text-content ml-content"><b>npm install mongoose --save.</b></p>
+  <p class="text-content ml-content">
+    <b>Bodyparser</b> It will parse the data that is coming from the HTML body. We will install body-parser using the
+    command
+  </p>
+  <p class="text-content ml-content"><b>npm install body-parser --save.</b></p>
+  <p class="text-content ml-content">We will follow the file structure to create files and folders as shown below:</p>
+  <p class="text-content ml-content">mongodb-nodejs/</p>
+  <p class="text-content ml-content">├─ public/</p>
+  <p class="text-content ml-content">│&nbsp;&nbsp;├─ index.html</p>
+  <p class="text-content ml-content">├─ index.js</p>
+  <p class="text-content ml-content">├─ package.json</p>
+  <p class="text-content ml-content">└─ server.js</p>
+  <br />
+  <p class="text-content ml-content">&nbsp;&nbsp; In package.json, We will add the start property to scripts.</p>
+  <p class="text-content ml-content">"scripts": {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"start": "nodemon index.js",</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;}</p>
+  <br />
+  <p class="text-content ml-content">We will require all modules to index.js file as shown below:</p>
+  <p class="text-content ml-content">const express = require('express')</p>
+  <p class="text-content ml-content">const mongoose = require('mongoose')</p>
+  <p class="text-content ml-content">const bodyParser = require('body-parser')</p>
+  <p class="text-content ml-content">
+    We will listen to the express app at local port 4000 and add the following code to the index.js file
+  </p>
+  <p class="text-content ml-content">const app = express()</p>
+  <p class="text-content ml-content">app.listen(4000, (res) => {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log('Listening on port 4000')</p>
+  <p class="text-content ml-content">})</p>
+  <br />
+  <p class="text-content ml-content">
+    We will add the following code to index.html. It is a simple student form that will get the data from the web and
+    store the data in the local MongoDB database.
+  </p>
+  <p class="text-content ml-content">&lt;!DOCTYPE html&gt;</p>
+  <p class="text-content ml-content">&lt;html lang="en"&gt;</p>
+  <p class="text-content ml-content">&lt;head&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+  </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name="viewport" content=</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"width=device-width, initial-scale=1.0"&gt;
+  </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Student Form&lt;/title&gt;</p>
+  <p class="text-content ml-content">&lt;/head&gt;</p>
+  <p class="text-content ml-content">&lt;body&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;form action="/student" method="post"&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" placeholder="Enter Your Name" name="name"&gt;
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" placeholder="Enter Your Email"
+    name="email"&gt;
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="submit"&gt;Submit&lt;/button&gt;
+  </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;</p>
+  <p class="text-content ml-content">&lt;/body&gt;</p>
+  <p class="text-content ml-content">&lt;/html&gt;<br /></p>
+  <p class="text-content ml-content">
+    In the above code block, We are using the action and method attribute in the form tag. action attribute sends the
+    data to the server and the method attribute tells whether it is a POST request or GET request.
+  </p>
+  <p class="text-content ml-content">
+    We will tell express to serve the index.html on local port 4000 and use the body-parser to get the data from the
+    HTTP request in a proper format.
+  </p>
+  <p class="text-content ml-content">app.use(express.static(`${__dirname}/public`))</p>
+  <p class="text-content ml-content">app.use(bodyParser.json())</p>
+  <p class="text-content ml-content">app.use(bodyParser.urlencoded({</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;extended: true</p>
+  <p class="text-content ml-content">}))</p>
+  <br />
+  <p class="text-content ml-content">
+    &nbsp;&nbsp; In the above code block, We are enabling middlewares with the help of the use() method of the express
+    app. We are using the static() method to add a path for static files.
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp; We need a database to store the data. Hence, We will connect the local MongoDB database using the
+    connect() method of mongoose.
+  </p>
+  <p class="text-content ml-content">mongoose.connect('mongodb://localhost:27017/students')</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp; In the above code block, We pass the database URL that creates the collection name students if it
+    doesn't exist.
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp; We will create and validate the schema using the Schema() method of mongoose. We will also create a
+    model using the model() method of mongoose.
+  </p>
+  <p class="text-content ml-content">const studentSchema = new mongoose.Schema({</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;name: String,</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;email: String</p>
+  <p class="text-content ml-content">})</p>
+  <br />
+  <p class="text-content ml-content">const Student = mongoose.model('Student', studentSchema)</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp; We will use the post() method of the express app to serve the HTTP request POST to the /student route.
+  </p>
+  <p class="text-content ml-content">app.post('/student', (req, res) => {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;let student = new Student(req.body);</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;student.save()</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.then(doc => {</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.send(doc)
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(doc)
+  </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;.catch(err => console.log(err))</p>
+  <p class="text-content ml-content">})</p>
+  <br />
+  <p class="text-content ml-content">
+    Now, We will go to the URL http://localhost:4000/ and fill out the student form.
+  </p>
+  <br />
+  <img src="/Assets/database-2.jpg" height="400" width="400" /><br />
+  <p class="text-content ml-content">
+    When we hit submit button, It will store the student data in the local MongoDB database and navigate to the
+    http://localhost:4000/student URL and display the output as shown below:
+  </p>
+  <p class="text-content ml-content">{</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;"name": "abc",</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;"email": "abc@example.com",</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;"_id": "635a46cf9e89ce7cd5e1473f",</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;"__v": 0</p>
+  <p class="text-content ml-content">}</p>
+  <br />
+  <p class="text-content ml-content">
+    We will use the get() method to fetch all the students from the local MongoDB database.
+  </p>
+  <p class="text-content ml-content">// Get all students</p>
+  <p class="text-content ml-content">app.get('/students', (req, res) => {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;Student.find({})</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.then(docs => {</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(docs)
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.json(docs)
+  </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.catch(err => console.log(err))</p>
+  <p class="text-content ml-content">})</p>
+  <br />
+  <p class="text-content ml-content">
+    In the above code block, We are using the find() method to retrieve students' data. When we hit the URL
+    http://localhost:4000/students, It will display the output as shown below:
+  </p>
+  <br />
+  <p class="text-content ml-content">[</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;{</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"_id": "635a4a55b9e33f7ab6e09ed4",</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"name": "abc",</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"email": "abc@example.com",</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"__v": 0</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;},</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;{</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"_id": "635a4a8dc7824ed2d957b882",</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"name": "xyz",</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"email": "xyz@example.com",</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"__v": 0</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;},</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;{</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"_id": "635a4b2e0c67336d6d866ca1",</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"name": "hi",</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"email": "hi@example.com",</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;"__v": 0</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;}</p>
+  <p class="text-content ml-content">]</p>
+</div>

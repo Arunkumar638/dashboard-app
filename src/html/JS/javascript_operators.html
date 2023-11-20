@@ -1,143 +1,166 @@
- <div>
-    <h2 class="text-subhead font-head"><b>Operators</b></h2>
-    <p class="text-content ml-content">JavaScript operators are symbols or keywords that allow you to perform operations on operands. Operands can be variables, values, or expressions. 
-        There are several types of operators in JavaScript:</p><br/>
-    <h3><b>Arithmetic Operators:</b></h3>
-    <p class="text-content ml-content">These operators perform mathematical operations.</p><br/>
-    <b>Examples:</b>
-    <p class="text-content ml-content">// Addition Operator </p>
-    <p class="text-content ml-content">let a = 1 + 2 </p>
-    <p class="text-content ml-content">console.log(a); </p>
-    <p class="text-content ml-content">// Subtraction Operator</p> 
-    <p class="text-content ml-content">let b = 10 - 7 </p>
-    <p class="text-content ml-content">console.log(b); </p>
-    <p class="text-content ml-content">// Multiplication Operator </p>
-    <p class="text-content ml-content">let c = 3 * 3 </p>
-    <p class="text-content ml-content">console.log(c); </p>
-    <p class="text-content ml-content">// Division Operator </p>
-    <p class="text-content ml-content">let d = 1.0 / 2.0 </p>
-    <p class="text-content ml-content">console.log(d); </p>
-    <p class="text-content ml-content">// Modulas Operator </p>
-    <p class="text-content ml-content">let e = 9 % 5 </p>
-    <p class="text-content ml-content">console.log(e) </p>
-    <p class="text-content ml-content">// Exponentian Operator </p>
-    <p class="text-content ml-content">let f = 2 ** 5</p> 
-    <p class="text-content ml-content">console.log(f) </p>
-    <p class="text-content ml-content">// Increment Operator </p>
-    <p class="text-content ml-content">let g = 2; </p>
-    <p class="text-content ml-content">g1 = g++; </p>
-    <p class="text-content ml-content">console.log(g) </p>
-    <p class="text-content ml-content">// Decrement Operator </p>
-    <p class="text-content ml-content">let h = 2; </p>
-    <p class="text-content ml-content">h1 = h--; </p>
-    <p class="text-content ml-content">console.log(h) </p>
-    <p class="text-content ml-content">// Unary plus Operator </p>
-    <p class="text-content ml-content">let i = 3; </p>
-    <p class="text-content ml-content">i1 = +i;</p> 
-    <p class="text-content ml-content">console.log(i1) </p>
-    <p class="text-content ml-content">// Negation Operator </p>
-    <p class="text-content ml-content">let j = 3; </p>
-    <p class="text-content ml-content">j1 = -j; </p>
-    <p class="text-content ml-content">console.log(j1)</p><br/>
-    <h3><b>Assignment Operators:</b></h3>
-    <p class="text-content ml-content">These operators are used to assign values to variables.</p>
-    <b>Examples:</b>
-    <p class="text-content ml-content">let a = 10;</p>
-    <p class="text-content ml-content">let b = 5;</p>
-    <p class="text-content ml-content">// Simple assignment</p>
-    <p class="text-content ml-content">let c = a; // c = 10</p>
-    <p class="text-content ml-content">// Addition assignment</p>
-    <p class="text-content ml-content">a += b; // equivalent to a = a + b; a = 15</p>
-    <p class="text-content ml-content">// Subtraction assignment</p>
-    <p class="text-content ml-content">a -= b; // equivalent to a = a - b; a = 10</p>
-    <p class="text-content ml-content">// Multiplication assignment</p>
-    <p class="text-content ml-content">a *= b; // equivalent to a = a * b; a = 50</p>
-    <p class="text-content ml-content">// Division assignment</p>
-    <p class="text-content ml-content">a /= b; // equivalent to a = a / b; a = 10</p>
-    <p class="text-content ml-content">// Modulus assignment</p>
-    <p class="text-content ml-content">a %= b; // equivalent to a = a % b; a = 0</p><br/>
-    <h3><b>Comparison Operators:</b></h3>
-    <p class="text-content ml-content">These operators compare two values and return a boolean result.</p>
-    <b>Examples:</b>
-    <p class="text-content ml-content">let x = 10;</p>
-    <p class="text-content ml-content">let y = 5;</p>
-    <p class="text-content ml-content">// Equal to</p>
-    <p class="text-content ml-content">let isEqual = x == y; // isEqual = false</p>
-    <p class="text-content ml-content">// Not equal to</p>
-    <p class="text-content ml-content">let isNotEqual = x != y; // isNotEqual = true</p>
-    <p class="text-content ml-content">// Greater than</p>
-    <p class="text-content ml-content">let isGreater = x > y; // isGreater = true</p>
-    <p class="text-content ml-content">// Less than</p>
-    <p class="text-content ml-content">{"let isLess = x &lt; y; // isLess = false"}</p>
-    <p class="text-content ml-content">// Greater than or equal to</p>
-    <p class="text-content ml-content">let isGreaterOrEqual = x >= y; // isGreaterOrEqual = true</p>
-    <p class="text-content ml-content">// Less than or equal to</p>
-    {"let isLessOrEqual = x &lt;= y; // isLessOrEqual = false"}</p><br/>
-    <h3><b>Logical Operators:</b></h3>
-    <p class="text-content ml-content">These operators are used to perform logical operations on boolean values.</p>
-    <b>Examples:</b>
-    <p class="text-content ml-content">let a = true;</p>
-    <p class="text-content ml-content">let b = false;</p>
-    <p class="text-content ml-content">// AND</p>
-    <p class="text-content ml-content">let andResult = a && b; // andResult = false</p>
-    <p class="text-content ml-content">// OR</p>
-    <p class="text-content ml-content">let orResult = a || b; // orResult = true</p>
-    <p class="text-content ml-content">// NOT</p>
-    <p class="text-content ml-content">let notResult = !a; // notResult = false</p>
-    <h3><b>Unary Operators:</b></h3>
-    <p class="text-content ml-content">These operators operate on a single operand.</p>
-    <b>Examples:</b></p>
-    <p class="text-content ml-content">let x = 10;</p>
-    <p class="text-content ml-content">// Unary plus (+)</p>
-    <p class="text-content ml-content">let positive = +x; // positive = 10</p>
-    <p class="text-content ml-content">// Unary minus (-)</p>
-    <p class="text-content ml-content">let negative = -x; // negative = -10</p>
-    <p class="text-content ml-content">// Increment (++)</p>
-    <p class="text-content ml-content">x++; // x = 11</p>
-    <p class="text-content ml-content">// Decrement (--)</p>
-    <p class="text-content ml-content">x--; // x = 10</p><br/>
-    <h3><b>String Operators:</b></h3>
-    <p class="text-content ml-content">The + operator is used to concatenate strings.</p>
-    <b>Example:</b>
-    <p class="text-content ml-content">let firstName = "John";</p>
-    <p class="text-content ml-content">let lastName = "Doe";</p>
-    <p class="text-content ml-content">let fullName = firstName + " " + lastName; // fullName = "John Doe"</p><br/>
-    <h3><b>Conditional (Ternary) Operator:</b></h3>
-    This operator evaluates a condition and returns one of two values depending on whether the condition is true or false.</p>
-    <b>Example:</b>
-    <p class="text-content ml-content">let age = 20;</p>
-    <p class="text-content ml-content">{"let canVote = (age >= 18) ? "Yes" : "No"; // canVote = "Yes""}</p>
-    <h3><b>Type Operators:</b></h3>
-    <b>typeof:</b> Returns the type of a variable or expression.</p>
-    <b>instanceof:</b> Returns true if an object is an instance of a specific object type.</p>
-    <b>Examples:</b>
-    <p class="text-content ml-content">&nbsp;&nbsp; let a = 17; </p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;let b = "Gyroneb"; </p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;let c = "";</p> 
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;let d = null; </p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log("Type of a = " + (typeof a)); </p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log("Type of b = " + (typeof b)); </p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log("Type of c = " + (typeof c)); </p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log("Type of d = " + (typeof d)); </p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log("Type of e = " + (typeof e)); </p><br/>
-    <h3><b>Bitwise Operators:</b></h3>
-    <p class="text-content ml-content">These operators perform bit-level operations.</p>
-    <b>Example:</b>
-    <p class="text-content ml-content">let x = 6;&nbsp;&nbsp;// Binary representation: 0101</p>
-    <p class="text-content ml-content">let y = 1;&nbsp;&nbsp;// Binary representation: 0011</p>
-    <p class="text-content ml-content">let result = x & y;&nbsp;&nbsp;// Bitwise AND</p>
-    <p class="text-content ml-content">console.log(result);</p>
-    <p class="text-content ml-content">let result1 = x | y;&nbsp;&nbsp;// Bitwise OR</p>
-    <p class="text-content ml-content">console.log(result1);</p>
-    <p class="text-content ml-content">let result2 = x ^ y;&nbsp;&nbsp;// Bitwise XOR</p>
-    <p class="text-content ml-content">console.log(result2);</p>
-    <p class="text-content ml-content">let result3 =&nbsp;&nbsp;~ x;&nbsp;&nbsp;// Bitwise NOT</p>
-    <p class="text-content ml-content">console.log(result3);</p>
-    <p class="text-content ml-content">let result4 =&nbsp;&nbsp;x >> y;&nbsp;&nbsp;// Bitwise Right Shift</p>
-    <p class="text-content ml-content">console.log(result4);</p>
-    <p class="text-content ml-content">{"let result5 =&nbsp;&nbsp;x &lt;&lt; y;&nbsp;&nbsp;// Bitwise&nbsp;&nbsp;Left Shift"}</p>
-    <p class="text-content ml-content">console.log(result5);</p>
-    <p class="text-content ml-content">{"let result6 =&nbsp;&nbsp;x >>> y;&nbsp;&nbsp;// Bitwise Zero Fill Right Shift"}</p>
-    <p class="text-content ml-content">console.log(result6);</p><br/>
-    <p class="text-content ml-content">These are the main types of operators in JavaScript, each serving a specific purpose. Keep in mind that understanding how operators work is fundamental to writing efficient and effective JavaScript code.</p>
- </div>
+<div>
+  <h2 class="text-subhead font-head">Operators</h2>
+  <p class="text-content ml-content">
+    JavaScript operators are symbols or keywords that allow you to perform operations on operands. Operands can be
+    variables, values, or expressions. There are several types of operators in JavaScript:
+  </p>
+  <br />
+  <h3 class="font-head">Arithmetic Operators:</h3>
+  <p class="text-content ml-content">These operators perform mathematical operations.</p>
+  <br />
+  <b>Examples:</b>
+  <p class="text-content ml-content">// Addition Operator</p>
+  <p class="text-content ml-content">let a = 1 + 2</p>
+  <p class="text-content ml-content">console.log(a);</p>
+  <p class="text-content ml-content">// Subtraction Operator</p>
+  <p class="text-content ml-content">let b = 10 - 7</p>
+  <p class="text-content ml-content">console.log(b);</p>
+  <p class="text-content ml-content">// Multiplication Operator</p>
+  <p class="text-content ml-content">let c = 3 * 3</p>
+  <p class="text-content ml-content">console.log(c);</p>
+  <p class="text-content ml-content">// Division Operator</p>
+  <p class="text-content ml-content">let d = 1.0 / 2.0</p>
+  <p class="text-content ml-content">console.log(d);</p>
+  <p class="text-content ml-content">// Modulas Operator</p>
+  <p class="text-content ml-content">let e = 9 % 5</p>
+  <p class="text-content ml-content">console.log(e)</p>
+  <p class="text-content ml-content">// Exponentian Operator</p>
+  <p class="text-content ml-content">let f = 2 ** 5</p>
+  <p class="text-content ml-content">console.log(f)</p>
+  <p class="text-content ml-content">// Increment Operator</p>
+  <p class="text-content ml-content">let g = 2;</p>
+  <p class="text-content ml-content">g1 = g++;</p>
+  <p class="text-content ml-content">console.log(g)</p>
+  <p class="text-content ml-content">// Decrement Operator</p>
+  <p class="text-content ml-content">let h = 2;</p>
+  <p class="text-content ml-content">h1 = h--;</p>
+  <p class="text-content ml-content">console.log(h)</p>
+  <p class="text-content ml-content">// Unary plus Operator</p>
+  <p class="text-content ml-content">let i = 3;</p>
+  <p class="text-content ml-content">i1 = +i;</p>
+  <p class="text-content ml-content">console.log(i1)</p>
+  <p class="text-content ml-content">// Negation Operator</p>
+  <p class="text-content ml-content">let j = 3;</p>
+  <p class="text-content ml-content">j1 = -j;</p>
+  <p class="text-content ml-content">console.log(j1)</p>
+  <br />
+  <h3 class="font-head">Assignment Operators:</h3>
+  <p class="text-content ml-content">These operators are used to assign values to variables.</p>
+  <b>Examples:</b>
+  <p class="text-content ml-content">let a = 10;</p>
+  <p class="text-content ml-content">let b = 5;</p>
+  <p class="text-content ml-content">// Simple assignment</p>
+  <p class="text-content ml-content">let c = a; // c = 10</p>
+  <p class="text-content ml-content">// Addition assignment</p>
+  <p class="text-content ml-content">a += b; // equivalent to a = a + b; a = 15</p>
+  <p class="text-content ml-content">// Subtraction assignment</p>
+  <p class="text-content ml-content">a -= b; // equivalent to a = a - b; a = 10</p>
+  <p class="text-content ml-content">// Multiplication assignment</p>
+  <p class="text-content ml-content">a *= b; // equivalent to a = a * b; a = 50</p>
+  <p class="text-content ml-content">// Division assignment</p>
+  <p class="text-content ml-content">a /= b; // equivalent to a = a / b; a = 10</p>
+  <p class="text-content ml-content">// Modulus assignment</p>
+  <p class="text-content ml-content">a %= b; // equivalent to a = a % b; a = 0</p>
+  <br />
+  <h3 class="font-head">Comparison Operators:</h3>
+  <p class="text-content ml-content">These operators compare two values and return a boolean result.</p>
+  <b>Examples:</b>
+  <p class="text-content ml-content">let x = 10;</p>
+  <p class="text-content ml-content">let y = 5;</p>
+  <p class="text-content ml-content">// Equal to</p>
+  <p class="text-content ml-content">let isEqual = x == y; // isEqual = false</p>
+  <p class="text-content ml-content">// Not equal to</p>
+  <p class="text-content ml-content">let isNotEqual = x != y; // isNotEqual = true</p>
+  <p class="text-content ml-content">// Greater than</p>
+  <p class="text-content ml-content">let isGreater = x > y; // isGreater = true</p>
+  <p class="text-content ml-content">// Less than</p>
+  <p class="text-content ml-content">{"let isLess = x &lt; y; // isLess = false"}</p>
+  <p class="text-content ml-content">// Greater than or equal to</p>
+  <p class="text-content ml-content">let isGreaterOrEqual = x >= y; // isGreaterOrEqual = true</p>
+  <p class="text-content ml-content">
+    // Less than or equal to<br />
+    {"let isLessOrEqual = x &lt;= y; // isLessOrEqual = false"}
+  </p>
+  <br />
+  <h3 class="font-head">Logical Operators:</h3>
+  <p class="text-content ml-content">These operators are used to perform logical operations on boolean values.</p>
+  <b>Examples:</b>
+  <p class="text-content ml-content">let a = true;</p>
+  <p class="text-content ml-content">let b = false;</p>
+  <p class="text-content ml-content">// AND</p>
+  <p class="text-content ml-content">let andResult = a && b; // andResult = false</p>
+  <p class="text-content ml-content">// OR</p>
+  <p class="text-content ml-content">let orResult = a || b; // orResult = true</p>
+  <p class="text-content ml-content">// NOT</p>
+  <p class="text-content ml-content">let notResult = !a; // notResult = false</p>
+  <h3 class="font-head">Unary Operators:</h3>
+  <p class="text-content ml-content">These operators operate on a single operand.</p>
+  <b>Examples:</b>
+  <p class="text-content ml-content">let x = 10;</p>
+  <p class="text-content ml-content">// Unary plus (+)</p>
+  <p class="text-content ml-content">let positive = +x; // positive = 10</p>
+  <p class="text-content ml-content">// Unary minus (-)</p>
+  <p class="text-content ml-content">let negative = -x; // negative = -10</p>
+  <p class="text-content ml-content">// Increment (++)</p>
+  <p class="text-content ml-content">x++; // x = 11</p>
+  <p class="text-content ml-content">// Decrement (--)</p>
+  <p class="text-content ml-content">x--; // x = 10</p>
+  <br />
+  <h3 class="font-head">String Operators:</h3>
+  <p class="text-content ml-content">The + operator is used to concatenate strings.</p>
+  <b>Example:</b>
+  <p class="text-content ml-content">let firstName = "John";</p>
+  <p class="text-content ml-content">let lastName = "Doe";</p>
+  <p class="text-content ml-content">let fullName = firstName + " " + lastName; // fullName = "John Doe"</p>
+  <br />
+  <h3 class="font-head">Conditional (Ternary) Operator:</h3>
+  <p>
+    This operator evaluates a condition and returns one of two values depending on whether the condition is true or
+    false.
+  </p>
+  <b>Example:</b>
+  <p class="text-content ml-content">let age = 20;</p>
+  <p class="text-content ml-content">{"let canVote = (age >= 18) ? "Yes" : "No"; // canVote = "Yes""}</p>
+  <h3 class="font-head">Type Operators:</h3>
+  <p><b>typeof:</b> Returns the type of a variable or expression.</p>
+  <p><b>instanceof:</b> Returns true if an object is an instance of a specific object type.</p>
+  <b>Examples:</b>
+  <p class="text-content ml-content">&nbsp;&nbsp; let a = 17;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;let b = "Gyroneb";</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;let c = "";</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;let d = null;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log("Type of a = " + (typeof a));</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log("Type of b = " + (typeof b));</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log("Type of c = " + (typeof c));</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log("Type of d = " + (typeof d));</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log("Type of e = " + (typeof e));</p>
+  <br />
+  <h3 class="font-head">Bitwise Operators:</h3>
+  <p class="text-content ml-content">These operators perform bit-level operations.</p>
+  <b>Example:</b>
+  <p class="text-content ml-content">let x = 6;&nbsp;&nbsp;// Binary representation: 0101</p>
+  <p class="text-content ml-content">let y = 1;&nbsp;&nbsp;// Binary representation: 0011</p>
+  <p class="text-content ml-content">let result = x & y;&nbsp;&nbsp;// Bitwise AND</p>
+  <p class="text-content ml-content">console.log(result);</p>
+  <p class="text-content ml-content">let result1 = x | y;&nbsp;&nbsp;// Bitwise OR</p>
+  <p class="text-content ml-content">console.log(result1);</p>
+  <p class="text-content ml-content">let result2 = x ^ y;&nbsp;&nbsp;// Bitwise XOR</p>
+  <p class="text-content ml-content">console.log(result2);</p>
+  <p class="text-content ml-content">let result3 =&nbsp;&nbsp;~ x;&nbsp;&nbsp;// Bitwise NOT</p>
+  <p class="text-content ml-content">console.log(result3);</p>
+  <p class="text-content ml-content">let result4 =&nbsp;&nbsp;x >> y;&nbsp;&nbsp;// Bitwise Right Shift</p>
+  <p class="text-content ml-content">console.log(result4);</p>
+  <p class="text-content ml-content">
+    {"let result5 =&nbsp;&nbsp;x &lt;&lt; y;&nbsp;&nbsp;// Bitwise&nbsp;&nbsp;Left Shift"}
+  </p>
+  <p class="text-content ml-content">console.log(result5);</p>
+  <p class="text-content ml-content">
+    {"let result6 =&nbsp;&nbsp;x >>> y;&nbsp;&nbsp;// Bitwise Zero Fill Right Shift"}
+  </p>
+  <p class="text-content ml-content">console.log(result6);</p>
+  <br />
+  <p class="text-content ml-content">
+    These are the main types of operators in JavaScript, each serving a specific purpose. Keep in mind that
+    understanding how operators work is fundamental to writing efficient and effective JavaScript code.
+  </p>
+</div>

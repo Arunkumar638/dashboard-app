@@ -1,98 +1,147 @@
 <div>
-    <h3 class="text-subhead font-head">Basic routing</h3>
-    <p class="text-content ml-content">Routing refers to determining how an application responds to a client request to a particular endpoint, which is a URI (or path) and a specific HTTP request method (GET, POST, and so on).</p>
-    <p class="text-content ml-content">Each route can have one or more handler functions, which are executed when the route is matched.</p>
-    <p class="text-content ml-content">Route definition takes the following structure:</p>
-    <p class="text-content ml-content"><b>app.METHOD(PATH, HANDLER)</b></p><br/>
-    <p class="text-content ml-content">Where:</p>
-    <ol class="list-disc">
+  <h3 class="text-subhead font-head">Basic routing</h3>
+  <p class="text-content ml-content">
+    Routing refers to determining how an application responds to a client request to a particular endpoint, which is a
+    URI (or path) and a specific HTTP request method (GET, POST, and so on).
+  </p>
+  <p class="text-content ml-content">
+    Each route can have one or more handler functions, which are executed when the route is matched.
+  </p>
+  <p class="text-content ml-content">Route definition takes the following structure:</p>
+  <p class="text-content ml-content"><b>app.METHOD(PATH, HANDLER)</b><br /></p>
+  <p class="text-content ml-content">Where:</p>
+  <ol class="list-disc">
     <li class="ml-points">app is an instance of express.</li>
     <li class="ml-points">METHOD is an HTTP request method, in lowercase.</li>
     <li class="ml-points">PATH is a path on the server.</li>
     <li class="ml-points">HANDLER is the function executed when the route is matched.</li>
-    </ol><br/>
-    <p class="text-content ml-content">The following examples illustrate defining simple routes.</p>
-    <p class="text-content ml-content"><b>Respond with Hello World! on the homepage:</b></p>
-    <p class="text-content ml-content">app.get('/', (req, res) => {</p>
-    <p class="text-content ml-content">res.send('Hello World!')</p>
-    <p class="text-content ml-content">})</p>
-    <p class="text-content ml-content"><b>Respond to POST request on the root route (/), the application’s home page:</b></p>
-    <p class="text-content ml-content">app.post('/', (req, res) => {</p>
-    <p class="text-content ml-content">res.send('Got a POST request')</p>
-    <p class="text-content ml-content">})</p>
-    <p class="text-content ml-content"><b>Respond to a PUT request to the /user route:</b></p>
-    <p class="text-content ml-content">app.put('/user', (req, res) => {</p>
-    <p class="text-content ml-content">res.send('Got a PUT request at /user')</p>
-    <p class="text-content ml-content">})</p>
-    <p class="text-content ml-content"><b>Respond to a DELETE request to the /user route:</b></p>
-    <p class="text-content ml-content">app.delete('/user', (req, res) => {</p>
-    <p class="text-content ml-content">res.send('Got a DELETE request at /user')</p>
-    <p class="text-content ml-content">})</p><br/>
-    <h3 class="text-subhead font-head">Express.js Web Application</h3>
-    <p class="text-content ml-content">In this section, you will learn how to create a web application using Express.js.</p>
-    <p class="text-content ml-content">Express.js provides an easy way to create web server and render HTML pages for different HTTP requests by configuring 
-        routes for your application.</p><br/>
-    <h3 class="text-subhead font-head">Web Server</h3>
-    <p class="text-content ml-content">First of all, import the Express.js module and create the web server as shown below.</p>
-    <b>app.js: Express.js Web Server</b>
-    <p class="text-content ml-content">const express = require('express');</p>
-    <p class="text-content ml-content">const app = express();</p>
-    <p class="text-content ml-content">// define routes here..</p>
-    <p class="text-content ml-content">const server = app.listen(5000, function () {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log('Node server is running..');</p>
-    <p class="text-content ml-content">});</p>
-    <p class="text-content ml-content">In the above example, we imported Express.js module using require() function. The express module returns a function. 
-        This function returns an object which can be used to configure Express application (app in the above example).</p><br/>
-    <p class="text-content ml-content">The app object includes methods for routing HTTP requests, configuring middleware, rendering HTML views and registering a 
-        template engine.</p><br/>
-    <p class="text-content ml-content">The app.listen() function creates the Node.js web server at the specified host and port. It is identical to Node's http.Server.listen() method.</p>
-    <p class="text-content ml-content">Run the above example using node app.js command and point your browser to http://localhost:5000. 
-        It will display Cannot GET / because we have not configured any routes yet.</p><br/>
-    <h3 class="text-subhead font-head">Configure Routes</h3>
-    <p class="text-content ml-content">Use app object to define different routes of your application. The app object includes get(), post(), put() and delete() 
-        methods to define routes for HTTP GET, POST, PUT and DELETE requests respectively.</p><br/>
-    <p class="text-content ml-content">The following example demonstrates configuring routes for HTTP requests.</p>
-    <b>Example: Configure Routes in Express.js</b>
-    <p class="text-content ml-content">const express = require('express');</p>
-    <p class="text-content ml-content">const app = express();</p>
-    <p class="text-content ml-content">app.get('/', function (req, res) {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;res.send('&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello World&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;');</p>
-    <p class="text-content ml-content">});</p>
-    <p class="text-content ml-content">app.post('/submit-data', function (req, res) {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;res.send('POST Request');</p>
-    <p class="text-content ml-content">});</p>
-    <p class="text-content ml-content">app.put('/update-data', function (req, res) {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;res.send('PUT Request');</p>
-    <p class="text-content ml-content">});</p>
-    <p class="text-content ml-content">app.delete('/delete-data', function (req, res) {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;res.send('DELETE Request');</p>
-    <p class="text-content ml-content">});</p>
-    <p class="text-content ml-content">var server = app.listen(5000, function () {</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log('Node server is running..');</p>
-    <p class="text-content ml-content">});</p><br/>
-    <p class="text-content ml-content">In the above example, app.get(), app.post(), app.put() and app.delete() methods define routes for HTTP GET, POST, PUT, DELETE 
-        respectively. The first parameter is a path of a route which will start after base URL. The callback function includes request and response object 
-        which will be executed on each request.</p><br/>
-    <p class="text-content ml-content">Run the above example using node server.js command, and point your browser to http://localhost:5000 and you will see the following result.</p>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Hello World</b></p><br/>
-    <h3 class="text-subhead font-head">Handle POST Request</h3>
-    <p class="text-content ml-content">Here, you will learn how to handle HTTP POST request and get data from the submitted form.</p>
-    <p class="text-content ml-content">First, create Index.html file in the root folder of your application and write the following HTML code in it.</p>
-    <b>Example: Configure Routes in Express.js</b>
-    <p class="text-content ml-content">&lt;!DOCTYPE html&gt;</p>
-    <p class="text-content ml-content">&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;</p>
-    <p class="text-content ml-content">&lt;head&gt;</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp; &lt;meta charset="utf-8" /&gt;</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp; &lt;title&gt;&lt;/title&gt;</p>
-    <p class="text-content ml-content">&lt;/head&gt;</p>
-    <p class="text-content ml-content">&lt;body&gt;</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp; &lt;form action="/submit-student-data" method="post"&gt;</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First Name: &lt;input name="firstName" type="text" /&gt; &lt;br/&gt;</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Last Name: &lt;input name="lastName" type="text" /&gt; &lt;br/&gt;</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="submit" /gt;</p>
-    <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp; &lt;/form&gt;</p>
-    <p class="text-content ml-content">&lt;/body&gt;</p>
-    <p class="text-content ml-content">&lt;/html&gt;</p>
-    </div>
-    
-    
+  </ol>
+  <br />
+  <p class="text-content ml-content">The following examples illustrate defining simple routes.</p>
+  <p class="text-content ml-content"><b>Respond with Hello World! on the homepage:</b></p>
+  <p class="text-content ml-content">app.get('/', (req, res) => {</p>
+  <p class="text-content ml-content">res.send('Hello World!')</p>
+  <p class="text-content ml-content">})</p>
+  <p class="text-content ml-content">
+    <b>Respond to POST request on the root route (/), the application’s home page:</b>
+  </p>
+  <p class="text-content ml-content">app.post('/', (req, res) => {</p>
+  <p class="text-content ml-content">res.send('Got a POST request')</p>
+  <p class="text-content ml-content">})</p>
+  <p class="text-content ml-content"><b>Respond to a PUT request to the /user route:</b></p>
+  <p class="text-content ml-content">app.put('/user', (req, res) => {</p>
+  <p class="text-content ml-content">res.send('Got a PUT request at /user')</p>
+  <p class="text-content ml-content">})</p>
+  <p class="text-content ml-content"><b>Respond to a DELETE request to the /user route:</b></p>
+  <p class="text-content ml-content">app.delete('/user', (req, res) => {</p>
+  <p class="text-content ml-content">res.send('Got a DELETE request at /user')</p>
+  <p class="text-content ml-content">})</p>
+  <br />
+  <h3 class="text-subhead font-head">Express.js Web Application</h3>
+  <p class="text-content ml-content">
+    In this section, you will learn how to create a web application using Express.js.
+  </p>
+  <p class="text-content ml-content">
+    Express.js provides an easy way to create web server and render HTML pages for different HTTP requests by
+    configuring routes for your application.
+  </p>
+  <br />
+  <h3 class="text-subhead font-head">Web Server</h3>
+  <p class="text-content ml-content">
+    First of all, import the Express.js module and create the web server as shown below.
+  </p>
+  <b>app.js: Express.js Web Server</b>
+  <p class="text-content ml-content">const express = require('express');</p>
+  <p class="text-content ml-content">const app = express();</p>
+  <p class="text-content ml-content">// define routes here..</p>
+  <p class="text-content ml-content">const server = app.listen(5000, function () {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log('Node server is running..');</p>
+  <p class="text-content ml-content">});</p>
+  <p class="text-content ml-content">
+    In the above example, we imported Express.js module using require() function. The express module returns a function.
+    This function returns an object which can be used to configure Express application (app in the above example).
+  </p>
+  <br />
+  <p class="text-content ml-content">
+    The app object includes methods for routing HTTP requests, configuring middleware, rendering HTML views and
+    registering a template engine.
+  </p>
+  <br />
+  <p class="text-content ml-content">
+    The app.listen() function creates the Node.js web server at the specified host and port. It is identical to Node's
+    http.Server.listen() method.
+  </p>
+  <p class="text-content ml-content">
+    Run the above example using node app.js command and point your browser to http://localhost:5000. It will display
+    Cannot GET / because we have not configured any routes yet.
+  </p>
+  <br />
+  <h3 class="text-subhead font-head">Configure Routes</h3>
+  <p class="text-content ml-content">
+    Use app object to define different routes of your application. The app object includes get(), post(), put() and
+    delete() methods to define routes for HTTP GET, POST, PUT and DELETE requests respectively.
+  </p>
+  <br />
+  <p class="text-content ml-content">The following example demonstrates configuring routes for HTTP requests.</p>
+  <b>Example: Configure Routes in Express.js</b>
+  <p class="text-content ml-content">const express = require('express');</p>
+  <p class="text-content ml-content">const app = express();</p>
+  <p class="text-content ml-content">app.get('/', function (req, res) {</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;res.send('&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello
+    World&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;');
+  </p>
+  <p class="text-content ml-content">});</p>
+  <p class="text-content ml-content">app.post('/submit-data', function (req, res) {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;res.send('POST Request');</p>
+  <p class="text-content ml-content">});</p>
+  <p class="text-content ml-content">app.put('/update-data', function (req, res) {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;res.send('PUT Request');</p>
+  <p class="text-content ml-content">});</p>
+  <p class="text-content ml-content">app.delete('/delete-data', function (req, res) {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;res.send('DELETE Request');</p>
+  <p class="text-content ml-content">});</p>
+  <p class="text-content ml-content">var server = app.listen(5000, function () {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log('Node server is running..');</p>
+  <p class="text-content ml-content">});</p>
+  <br />
+  <p class="text-content ml-content">
+    In the above example, app.get(), app.post(), app.put() and app.delete() methods define routes for HTTP GET, POST,
+    PUT, DELETE respectively. The first parameter is a path of a route which will start after base URL. The callback
+    function includes request and response object which will be executed on each request.
+  </p>
+  <br />
+  <p class="text-content ml-content">
+    Run the above example using node server.js command, and point your browser to http://localhost:5000 and you will see
+    the following result.
+  </p>
+  <b>Hello World</b><br />
+  <h3 class="text-subhead font-head">Handle POST Request</h3>
+  <p class="text-content ml-content">
+    Here, you will learn how to handle HTTP POST request and get data from the submitted form.
+  </p>
+  <p class="text-content ml-content">
+    First, create Index.html file in the root folder of your application and write the following HTML code in it.
+  </p>
+  <b>Example: Configure Routes in Express.js</b>
+  <p class="text-content ml-content">&lt;!DOCTYPE html&gt;</p>
+  <p class="text-content ml-content">&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;</p>
+  <p class="text-content ml-content">&lt;head&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp; &lt;meta charset="utf-8" /&gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp; &lt;title&gt;&lt;/title&gt;</p>
+  <p class="text-content ml-content">&lt;/head&gt;</p>
+  <p class="text-content ml-content">&lt;body&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp; &lt;form action="/submit-student-data" method="post"&gt;
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First Name: &lt;input name="firstName" type="text" /&gt; &lt;br/&gt;
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Last Name: &lt;input name="lastName" type="text" /&gt; &lt;br/&gt;
+  </p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="submit" /gt;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp; &lt;/form&gt;</p>
+  <p class="text-content ml-content">&lt;/body&gt;</p>
+  <p class="text-content ml-content">&lt;/html&gt;</p>
+</div>

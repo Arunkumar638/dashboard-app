@@ -1,7 +1,14 @@
 <div>
   <h3 class="text-subhead font-head">Include / Import Custom Module</h3>
-  <p class="text-content ml-content">In node.js, we can include or import our custom module same like built-in or external modules by using require directive with module name like as shown below.</p><br/>
-  <p class="text-content ml-content">Now, create a file called mathoperations.js and write the code like as shown following to include our custom module (custommodule) in node.js application.</p>
+  <p class="text-content ml-content">
+    In node.js, we can include or import our custom module same like built-in or external modules by using require
+    directive with module name like as shown below.
+  </p>
+  <br />
+  <p class="text-content ml-content">
+    Now, create a file called mathoperations.js and write the code like as shown following to include our custom module
+    (custommodule) in node.js application.
+  </p>
   <b>mathoperations.js</b>
   <p class="text-content ml-content">// Import bulit-in and custom modules</p>
   <p class="text-content ml-content">var http = require('http');</p>
@@ -9,165 +16,254 @@
   <p class="text-content ml-content">//Create server</p>
   <p class="text-content ml-content">http.createServer(function (req, res) {</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;res.writeHead(200, {'Content-Type': 'text/html'});</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;res.write('Addition: ' + cm.Addition(25,50) + '<br/>');</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;res.write('Subtraction: ' + cm.Subtract(25,50) + '<br/>');</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;res.write('Multiplication: ' + cm.Multiplication(25,50) + '<br/>');</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;res.write('Addition: ' + cm.Addition(25,50) + '<br />');
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;res.write('Subtraction: ' + cm.Subtract(25,50) + '<br />');
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;res.write('Multiplication: ' + cm.Multiplication(25,50) + '<br />');
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;res.write('Division: ' + cm.Division(25,50));</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;res.end();</p>
-  <p class="text-content ml-content">}).listen(4200, console.log('Server running on port 4200'));</p><br/>
-  <p class="text-content ml-content">If you observe above example, we used a ./ to locate our custom module (custommodule) in require function, that means the custom module (custommodule.js) exists in the same folder where mathoperations.js file exists.</p>
-  <p class="text-content ml-content">Now open node.js command prompt, navigate to the folder where the files exist and enter a command like <b>node mathoperations.js</b> and click enter like as shown below.</p>
-  <p class="text-content ml-content"> &nbsp; &nbsp; &nbsp;&nbsp;<b>Server running on port 4200</b></p>
-  <p class="text-content ml-content">Now our computer will work as a server, so if anyone tries to access our computer with http://localhost:4200 URL, then in return they will get a result like as shown below.</p>
+  <p class="text-content ml-content">}).listen(4200, console.log('Server running on port 4200'));</p>
+  <br />
+  <p class="text-content ml-content">
+    If you observe above example, we used a ./ to locate our custom module (custommodule) in require function, that
+    means the custom module (custommodule.js) exists in the same folder where mathoperations.js file exists.
+  </p>
+  <p class="text-content ml-content">
+    Now open node.js command prompt, navigate to the folder where the files exist and enter a command like
+    <b>node mathoperations.js</b> and click enter like as shown below.
+  </p>
+  <p class="text-content ml-content">&nbsp; &nbsp; &nbsp;&nbsp;<b>Server running on port 4200</b></p>
+  <p class="text-content ml-content">
+    Now our computer will work as a server, so if anyone tries to access our computer with http://localhost:4200 URL,
+    then in return they will get a result like as shown below.
+  </p>
   <p class="text-content ml-content">&nbsp; &nbsp; &nbsp;&nbsp;<b>Addition:75</b></p>
   <p class="text-content ml-content">&nbsp; &nbsp; &nbsp;&nbsp;<b>Subtraction:-25</b></p>
   <p class="text-content ml-content">&nbsp; &nbsp; &nbsp;&nbsp;<b>Multiplication:1250</b></p>
-  <p class="text-content ml-content">&nbsp; &nbsp; &nbsp;&nbsp;<b>Division: 0.5</b></p><br/>
-  <p class="text-content ml-content"> This is how we can create and import custom modules in our node.js applications based on requirements.</p><br/>
+  <p class="text-content ml-content">&nbsp; &nbsp; &nbsp;&nbsp;<b>Division: 0.5</b></p>
+  <br />
+  <p class="text-content ml-content">
+    This is how we can create and import custom modules in our node.js applications based on requirements.
+  </p>
+  <br />
   <h3 class="text-subhead font-head">Import and Export in Node.js</h3>
-  <p class="text-content ml-content">Importing and exporting files are important parts of any programming language. Importing functions or modules enhances the reusability of code. </p>
-  <p class="text-content ml-content">When the application grows in size, maintaining a single file with all the functions and logic becomes difficult. It also hinders the process of debugging. Therefore, it is good practice to create separate files for specific functions and later import them as per requirement.</p>
-  <p class="text-content ml-content">Node.js also allows importing and exporting functions and modules. Functions in one module can be imported and called in other modules saving the effort to copy function definitions into the other files. The module can be edited or debugged separately making it easier to add or remove features.</p><br/>
+  <p class="text-content ml-content">
+    Importing and exporting files are important parts of any programming language. Importing functions or modules
+    enhances the reusability of code.
+  </p>
+  <p class="text-content ml-content">
+    When the application grows in size, maintaining a single file with all the functions and logic becomes difficult. It
+    also hinders the process of debugging. Therefore, it is good practice to create separate files for specific
+    functions and later import them as per requirement.
+  </p>
+  <p class="text-content ml-content">
+    Node.js also allows importing and exporting functions and modules. Functions in one module can be imported and
+    called in other modules saving the effort to copy function definitions into the other files. The module can be
+    edited or debugged separately making it easier to add or remove features.
+  </p>
+  <br />
   <h4 class="text-subhead font-head"><b>Steps to include functions from other files:</b></h4>
-  <h5 class="text-subhead font-head"><b>Creating a Module:</b></h5> 
-  <p>Modules are created in Node.js are JavaScript files. Every time a new file with .js extension is created, it becomes a module.</p>
+  <h5 class="text-subhead font-head">Creating a Module:</h5>
+  <p>
+    Modules are created in Node.js are JavaScript files. Every time a new file with .js extension is created, it becomes
+    a module.
+  </p>
   <b>Exporting a Module: Filename: func.js</b>
-  <p class="text-content ml-content">function add(x, y) { </p>
-  <p class="text-content ml-content">&nbsp;&nbsp; return x + y; </p>
-  <p class="text-content ml-content">} </p>
-  <p class="text-content ml-content">function subtract(x, y) { </p>
-  <p class="text-content ml-content">&nbsp;&nbsp; return x - y; </p>
-  <p class="text-content ml-content">} </p>
-  <p class="text-content ml-content">// Adding the code below to allow importing </p>
-  <p class="text-content ml-content">// the functions in other files </p>
-  <p class="text-content ml-content">module.exports = { add } </p><br/>
-  <h5 class="text-subhead font-head">Importing a Module:</h5> We need to import the module to use the functions defined in the imported module in another file. The result returned by require() is stored in a variable which is used to invoke the functions using the dot notation.</p>
-  <b>Filename: main.js</b></p>
-  <p class="text-content ml-content">// Importing the func.js module </p>
-  <p class="text-content ml-content">// The ./ says that the func module </p>
-  <p class="text-content ml-content">// is in the same directory as </p> 
-  <p class="text-content ml-content">// the main.js file </p>
-  <p class="text-content ml-content">const f = require('./func'); </p>
-  <p class="text-content ml-content"> // Require returns an object with add() </p>
-  <p class="text-content ml-content">// and stores it in the f variable</p>&nbsp;&nbsp;
-  <p class="text-content ml-content">// which is used to invoke the required&nbsp;&nbsp;</p>
-  <p class="text-content ml-content">const result = f.add(10, 5); </p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('The result is:', result); </p><br/>
-  <b>Output:</b></p>
-  <p class="text-content ml-content">The result is: 15</p><br/>
-  <h5 class="text-subhead font-head"><b>Importing multiple functions from local file: Filename: func.js</b></h5>
-  <p class="text-content ml-content">function add(x, y) { </p>
-  <p class="text-content ml-content">&nbsp;&nbsp;return x + y; </p>
-  <p class="text-content ml-content">} </p>
-  <p class="text-content ml-content">function subtract(x, y) { </p>
-  <p class="text-content ml-content">&nbsp;&nbsp;return x - y; </p>
-  <p class="text-content ml-content">} </p>
-  <p class="text-content ml-content">module.exports = { add, subtract}; </p><br/>
+  <p class="text-content ml-content">function add(x, y) {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp; return x + y;</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">function subtract(x, y) {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp; return x - y;</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">// Adding the code below to allow importing</p>
+  <p class="text-content ml-content">// the functions in other files</p>
+  <p class="text-content ml-content">module.exports = { add }</p>
+  <br />
+  <h5 class="text-subhead font-head">Importing a Module:</h5>
+  <p>
+    We need to import the module to use the functions defined in the imported module in another file. The result
+    returned by require() is stored in a variable which is used to invoke the functions using the dot notation.
+  </p>
+  <br />
   <b>Filename: main.js</b>
-  <p class="text-content ml-content">const f = require('./func'); </p>
-  <p class="text-content ml-content">console.log(f.add(4, 4)); </p>
-  <p class="text-content ml-content">console.log(f.subtract(8, 4)); </p>
-  <p class="text-content ml-content">We can also use the destructuring syntax to unpack the properties of the object returned by require() function and store them in respective variables.</p>
-  <p class="text-content ml-content">const { add, subtract} = require('./func'); </p>
+  <p class="text-content ml-content">// Importing the func.js module</p>
+  <p class="text-content ml-content">// The ./ says that the func module</p>
+  <p class="text-content ml-content">// is in the same directory as</p>
+  <p class="text-content ml-content">// the main.js file</p>
+  <p class="text-content ml-content">const f = require('./func');</p>
+  <p class="text-content ml-content">// Require returns an object with add()</p>
+  <p class="text-content ml-content">// and stores it in the f variable</p>
+  &nbsp;&nbsp;
+  <p class="text-content ml-content">// which is used to invoke the required&nbsp;&nbsp;</p>
+  <p class="text-content ml-content">const result = f.add(10, 5);</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('The result is:', result);
+  </p>
+  <br />
+  <b>Output:</b>
+  <p class="text-content ml-content">The result is: 15</p>
+  <br />
+  <h5 class="text-subhead font-head">Importing multiple functions from local file: Filename: func.js</h5>
+  <p class="text-content ml-content">function add(x, y) {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;return x + y;</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">function subtract(x, y) {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;return x - y;</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">module.exports = { add, subtract};</p>
+  <br />
+  <b>Filename: main.js</b>
+  <p class="text-content ml-content">const f = require('./func');</p>
+  <p class="text-content ml-content">console.log(f.add(4, 4));</p>
+  <p class="text-content ml-content">console.log(f.subtract(8, 4));</p>
+  <p class="text-content ml-content">
+    We can also use the destructuring syntax to unpack the properties of the object returned by require() function and
+    store them in respective variables.
+  </p>
+  <p class="text-content ml-content">const { add, subtract} = require('./func');</p>
   <p class="text-content ml-content">console.log(add(4, 4));&nbsp;&nbsp;</p>
   <p class="text-content ml-content">console.log(subtract(8, 4));&nbsp;&nbsp;</p>
-  <b>Output:</b></p>
+  <b>Output:</b>
   <p class="text-content ml-content">8</p>
-  <p class="text-content ml-content">4</p><br/>
-  <h5 class="text-subhead font-head"><b>Other ways to export a module</b></h5>
+  <p class="text-content ml-content">4</p>
+  <br />
+  <h5 class="text-subhead font-head">Other ways to export a module</h5>
   <p class="text-content ml-content">Defining the functions inside module.exports object.</p>
-  <p class="text-content ml-content">module.exports = { </p>
-  <p class="text-content ml-content">&nbsp;&nbsp;add: function (x, y) { </p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;return x + y;</p> 
-  <p class="text-content ml-content">&nbsp;&nbsp;}, </p>
-  <p class="text-content ml-content">&nbsp;&nbsp;
-  <p class="text-content ml-content">&nbsp;&nbsp;subtract: function (x, y) { </p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;return x - y;</p> 
+  <p class="text-content ml-content">module.exports = {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;add: function (x, y) {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;return x + y;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;},</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;subtract: function (x, y) {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;return x - y;</p>
   <p class="text-content ml-content">},</p>
-  <p class="text-content ml-content">}; </p><br/>
+  <p class="text-content ml-content">};</p>
+  <br />
   <p class="text-content ml-content">Defining each function independently as a method of module.exports</p>
-  <p class="text-content ml-content">module.exports.add = function (x, y) { </p>
-  <p class="text-content ml-content">&nbsp;&nbsp; return x + y; </p>
-  <p class="text-content ml-content">}; </p>
-  <p class="text-content ml-content">module.exports.subtract = function (x, y) { </p>
-  <p class="text-content ml-content">&nbsp;&nbsp; return x - y; </p>
-  <p class="text-content ml-content">}; </p><br/>
+  <p class="text-content ml-content">module.exports.add = function (x, y) {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp; return x + y;</p>
+  <p class="text-content ml-content">};</p>
+  <p class="text-content ml-content">module.exports.subtract = function (x, y) {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp; return x - y;</p>
+  <p class="text-content ml-content">};</p>
+  <br />
   <h5 class="text-subhead font-head">Importing a module from a directory:</h5>
-  <p class="text-content ml-content"> Importing lib.js file inside the directory, by prefixing lib.js with the directory name.</p>
-  <p class="text-content ml-content">const lib = require('./mod/lib'); </p>
-  <p class="text-content ml-content">console.log(lib.add(6, 4)); </p>
-  <p class="text-content ml-content">console.log(lib.subtract(12, 4)); </p><br/>
-  <h5 class="font-head"><b>There are three types of modules in Node.js</b></h5>
-  <ol><li><b> Importing from local module:</b> These modules are created by the user and can be imported as:</p>
+  <p class="text-content ml-content">
+    Importing lib.js file inside the directory, by prefixing lib.js with the directory name.
+  </p>
+  <p class="text-content ml-content">const lib = require('./mod/lib');</p>
+  <p class="text-content ml-content">console.log(lib.add(6, 4));</p>
+  <p class="text-content ml-content">console.log(lib.subtract(12, 4));</p>
+  <br />
+  <h5 class="font-head">There are three types of modules in Node.js</h5>
+  <p><b> Importing from local module:</b> These modules are created by the user and can be imported as:</p>
   <p class="text-content ml-content">const var = require('./filename.js'); // OR</p>
   <p class="text-content ml-content">const var = require('./path/filename.js');</p>
-  <li><b> Importing from core modules:</b> These modules are inbuilt in Node.js and can be imported as:</p>
+  <p><b> Importing from core modules:</b> These modules are inbuilt in Node.js and can be imported as:</p>
   <p class="text-content ml-content">const var = require('fs');</p>
-  <li><b> Importing from third party modules:</b> These modules are installed using a package manager such as npm. Examples of third party modules are express, mongoose, nodemon, etc. These are imported as:</p>
+  <p>
+    <b> Importing from third party modules:</b> These modules are installed using a package manager such as npm.
+    Examples of third party modules are express, mongoose, nodemon, etc. These are imported as:
+  </p>
   <p class="text-content ml-content">const express = require('express');</p>
-  <p class="text-content ml-content">Thus above are few examples to import and export functions from different files in Node.js .</p></ol><br/>
+  <p class="text-content ml-content">
+    Thus above are few examples to import and export functions from different files in Node.js .
+  </p>
+  <br />
   <h3 class="text-subhead font-head">Module Exports</h3>
-  <p class="text-content ml-content">The module.exports in Node.js is used to export any literal, function or object as a module. It is used to include JavaScript file into node.js applications. The module is similar to variable that is used to represent the current module and exports is an object that is exposed as a module.</p><br/>
+  <p class="text-content ml-content">
+    The module.exports in Node.js is used to export any literal, function or object as a module. It is used to include
+    JavaScript file into node.js applications. The module is similar to variable that is used to represent the current
+    module and exports is an object that is exposed as a module.
+  </p>
+  <br />
   <h4 class="font-head">Syntax:</h4>
   <p class="text-content ml-content">module.exports = literal | function | object</p>
-  <b>Explanation:</b> 
-  <p class="text-content ml-content">Here the assigned value (literal | function | object) is directly
-  exposed as a module and can be used directly.</p>
+  <b>Explanation:</b>
+  <p class="text-content ml-content">
+    Here the assigned value (literal | function | object) is directly exposed as a module and can be used directly.
+  </p>
   <h4 class="font-head">Syntax:</h4>
   <p class="text-content ml-content">module.exports.variable = literal | function | object</p>
-  <b>Explanation:</b> 
-  <p class="text-content ml-content">Here the assigned value (literal | function | object) is
-  Indirectly exposed as a module and can be consumed using the variable.</p>
+  <b>Explanation:</b>
+  <p class="text-content ml-content">
+    Here the assigned value (literal | function | object) is Indirectly exposed as a module and can be consumed using
+    the variable.
+  </p>
   <h4 class="font-head">Example 1: Exporting Literals</h4>
   <p class="text-content ml-content">Create a file named as app.js and export the literal using module.exports.</p>
-  <p class="text-content ml-content">module.exports = " Gyroneb"; </p>
-  <p class="text-content ml-content">Create a file named as index.js and import the file app.js to print the exported literal to the console.</p>
-  <p class="text-content ml-content">const company = require("./app"); </p>
-  <p class="text-content ml-content">console.log(company); </p>
-  <h5 class="font-head">Output:</h5>
-  <p class="text-content ml-content">Gyroneb</p><br/>
-  <h4 class="font-head">Example 2: Exporting Object</h4>
-  <p class="text-content ml-content">Create a file named as app.js and export the object using module.exports.</p>
-  <p class="text-content ml-content">module.exports = { </p>
-  <p class="text-content ml-content">&nbsp;&nbsp;name: 'Gyroneb', </p>
-  <p class="text-content ml-content">&nbsp;&nbsp;website: ‘https://www.gyroneb.com’</p>
-  <p class="text-content ml-content">} </p>
-  <p class="text-content ml-content font-semibold">Create a file named as index.js and import the file app.js to print the exported object data to the console.</p>
-  <p class="text-content ml-content">const company = require('./app'); </p>
-  <p class="text-content ml-content">console.log(company.name); </p>
-  <p class="text-content ml-content">console.log(company.website);</p> 
+  <p class="text-content ml-content">module.exports = " Gyroneb";</p>
+  <p class="text-content ml-content">
+    Create a file named as index.js and import the file app.js to print the exported literal to the console.
+  </p>
+  <p class="text-content ml-content">const company = require("./app");</p>
+  <p class="text-content ml-content">console.log(company);</p>
   <h5 class="font-head">Output:</h5>
   <p class="text-content ml-content">Gyroneb</p>
-  <p class="text-content ml-content">https://www.gyroneb.com</p><br/>
+  <br />
+  <h4 class="font-head">Example 2: Exporting Object</h4>
+  <p class="text-content ml-content">Create a file named as app.js and export the object using module.exports.</p>
+  <p class="text-content ml-content">module.exports = {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;name: 'Gyroneb',</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;website: ‘https://www.gyroneb.com’</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content font-semibold">
+    Create a file named as index.js and import the file app.js to print the exported object data to the console.
+  </p>
+  <p class="text-content ml-content">const company = require('./app');</p>
+  <p class="text-content ml-content">console.log(company.name);</p>
+  <p class="text-content ml-content">console.log(company.website);</p>
+  <h5 class="font-head">Output:</h5>
+  <p class="text-content ml-content">Gyroneb</p>
+  <p class="text-content ml-content">https://www.gyroneb.com</p>
+  <br />
   <h4 class="font-head">Example 3: Exporting Function</h4>
   <p class="text-content ml-content">Create a file named as app.js and export the function using module.exports.</p>
-  <p class="text-content ml-content">module.exports = function (a, b) { </p>
-  <p class="text-content ml-content">&nbsp;&nbsp;console.log(a + b); </p>
-  <p class="text-content ml-content">} </p>
-  <p class="text-content ml-content">Create a file named as index.js and import the file app.js to use the exported function.
-  <p class="text-content ml-content">const sum = require('./app'); </p>
-  <p class="text-content ml-content">sum(2, 5); </p>
+  <p class="text-content ml-content">module.exports = function (a, b) {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;console.log(a + b);</p>
+  <p class="text-content ml-content">}</p>
+  <p class="text-content ml-content">
+    Create a file named as index.js and import the file app.js to use the exported function.
+  </p>
+  <p class="text-content ml-content">const sum = require('./app');</p>
+  <p class="text-content ml-content">sum(2, 5);</p>
   <h5 class="font-head">Output:</h5>
-  <p class="text-content ml-content">7</p><br/>
+  <p class="text-content ml-content">7</p>
+  <br />
   <h4 class="font-head">Example 4: Exporting function as a class</h4>
-  <p class="text-content ml-content">Create a file named as app.js. Define a function using this keyword and export the function using module.exports.</p>
-  <p class="text-content ml-content">module.exports = function () { </p>
-  <p class="text-content ml-content">&nbsp;&nbsp;this.name = ' Gyroneb'; </p>
-  <p class="text-content ml-content">&nbsp;&nbsp;this.website = ' https://www.gyroneb.com'; </p>
-  <p class="text-content ml-content">&nbsp;&nbsp;this.info = () => { </p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log(`Company name - ${this.name}`); </p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log(`Website - ${this.website}`); </p>
-  <p class="text-content ml-content">&nbsp;&nbsp;} </p>
-  <p class="text-content ml-content">} </p><br/>
-  <p class="text-content ml-content font-semibold">Create a file named index.js and import the file app.js to use the exported function as a class.</p>
-  <p class="text-content ml-content">const Company = require('./app'); </p>
-  <p class="text-content ml-content">const firstCompany = new Company(); </p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;firstCompany.info(); </p>
+  <p class="text-content ml-content">
+    Create a file named as app.js. Define a function using this keyword and export the function using module.exports.
+  </p>
+  <p class="text-content ml-content">module.exports = function () {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;this.name = ' Gyroneb';</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;this.website = ' https://www.gyroneb.com';</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;this.info = () => {</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log(`Company name - ${this.name}`);</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;console.log(`Website - ${this.website}`);</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;}</p>
+  <p class="text-content ml-content">}</p>
+  <br />
+  <p class="text-content ml-content font-semibold">
+    Create a file named index.js and import the file app.js to use the exported function as a class.
+  </p>
+  <p class="text-content ml-content">const Company = require('./app');</p>
+  <p class="text-content ml-content">const firstCompany = new Company();</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;firstCompany.info();</p>
   <h5 class="font-head">Output:</h5>
   <p class="text-content ml-content">Company name - Gyroneb</p>
-  <p class="text-content ml-content">Website - https://www.gyroneb.com</p><br/>
+  <p class="text-content ml-content">Website - https://www.gyroneb.com</p>
+  <br />
   <h4 class="font-head">Example 5: Load Module from Separate Folders</h4>
-  <p class="text-content ml-content">const index = require('./models/lang/index.js'); </p><br/>
-  <h5 class="font-head">Explanation:</h5> 
-  <p class="text-content ml-content">In the above example, the index.js file is under lang folder that is inside models folder. We can use the ./ to go to the root folder then we move relative to it.</p>
-  </div>
+  <p class="text-content ml-content">const index = require('./models/lang/index.js');</p>
+  <br />
+  <h5 class="font-head">Explanation:</h5>
+  <p class="text-content ml-content">
+    In the above example, the index.js file is under lang folder that is inside models folder. We can use the ./ to go
+    to the root folder then we move relative to it.
+  </p>
+</div>

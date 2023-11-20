@@ -1,10 +1,15 @@
 <div>
   <h3 class="text-subhead font-head">Working with nested routes in react</h3>
-  <p class="text-content ml-content">Working with nested routes in React Router allows you to create a hierarchical structure of components and routes within your application. 
-    This is useful for building complex user interfaces with multiple levels of navigation.</p><br/>
+  <p class="text-content ml-content">
+    Working with nested routes in React Router allows you to create a hierarchical structure of components and routes
+    within your application. This is useful for building complex user interfaces with multiple levels of navigation.
+  </p>
+  <br />
   <p class="text-content ml-content">Here's how you can work with nested routes in React:</p>
   <b>Step 1:</b> <span>Set Up Parent Component</span>
-  <p class="text-content ml-content">First, you'll need to set up a parent component that will serve as the container for the nested routes.</p>
+  <p class="text-content ml-content">
+    First, you'll need to set up a parent component that will serve as the container for the nested routes.
+  </p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">import { Route, Link } from 'react-router-dom';</p>
   <p class="text-content ml-content">import ChildComponent from './ChildComponent';</p>
@@ -12,24 +17,36 @@
   <p class="text-content ml-content">&nbsp;&nbsp;return (</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Parent Component&lt;/h2&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Link to="/parent/child"&gt;Go to Child&lt;/Link&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Link to="/parent/child"&gt;Go to Child&lt;/Link&gt;
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{/* Define a nested route */}</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route path="/parent/child" component={ChildComponent} /&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route path="/parent/child" component={ChildComponent} /&gt;
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
   <p class="text-content ml-content">export default ParentComponent;</p>
-  <p class="text-content ml-content">In this example, ParentComponent contains a link to navigate to the child route (/parent/child) and a Route component that renders 
-    ChildComponent when the path matches.</p><br/>
+  <p class="text-content ml-content">
+    In this example, ParentComponent contains a link to navigate to the child route (/parent/child) and a Route
+    component that renders ChildComponent when the path matches.
+  </p>
+  <br />
   <b>Step 2:</b> <span>Define Child Component</span>
-  <p class="text-content ml-content">Create the child component that will be rendered when the nested route is activated.</p>
+  <p class="text-content ml-content">
+    Create the child component that will be rendered when the nested route is activated.
+  </p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">const ChildComponent = () => {</p>
   <p class="text-content ml-content">&nbsp;&nbsp;return &lt;div&gt;Child Component&lt;/div&gt;;</p>
   <p class="text-content ml-content">};</p>
-  <p class="text-content ml-content">export default ChildComponent;</p><br/>
+  <p class="text-content ml-content">export default ChildComponent;</p>
+  <br />
   <b>Step 3:</b> <span>Set Up Routes in App.js</span>
-  <p class="text-content ml-content">In your main application file (usually App.js), configure the routes for the parent and child components.</p>
+  <p class="text-content ml-content">
+    In your main application file (usually App.js), configure the routes for the parent and child components.
+  </p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';</p>
   <p class="text-content ml-content">import ParentComponent from './ParentComponent';</p>
@@ -37,38 +54,69 @@
   <p class="text-content ml-content">&nbsp;&nbsp;return (</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;Router&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Switch&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route path="/parent" component={ParentComponent} /&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Route path="/parent" component={ParentComponent} /&gt;
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Switch&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Router&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
-  <p class="text-content ml-content">export default App;</p><br/>
+  <p class="text-content ml-content">export default App;</p>
+  <br />
   <b>Step 4:</b> <span>Add Navigation Links</span>
-  <p class="text-content ml-content">You can include navigation links within your components to navigate between the parent and child routes.</p>
+  <p class="text-content ml-content">
+    You can include navigation links within your components to navigate between the parent and child routes.
+  </p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">import { Link } from 'react-router-dom';</p>
   <p class="text-content ml-content">const Navigation = () => {</p>
   <p class="text-content ml-content">&nbsp;&nbsp;return (</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;nav&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Link to="/parent"&gt;Go to Parent&lt;/Link&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Link to="/parent"&gt;Go to Parent&lt;/Link&gt;
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/nav&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
-  <p class="text-content ml-content">export default Navigation;</p><br/>
+  <p class="text-content ml-content">export default Navigation;</p>
+  <br />
   <b>Important Points:</b>
-  <b>Nested Routes:</b><p>In the example above, the child route (/parent/child) is nested within the parent route (/parent). 
-  This allows for a hierarchical structure of components.</p><br/>
-  <b>Linking to Nested Routes:</b><p>Use the Link component to navigate to nested routes. In the example, the link takes the user to the parent route (/parent), 
-  which contains the nested route.</p><br/>
-  <b>Route Matching:</b><p>React Router will match the first route that matches the current location. In nested routes, ensure that the parent route 
-  is matched before the child route.</p><br/>
-  <b>Route Component Rendering:</b><p>Each Route component will render the specified component when the path matches. This allows for dynamic rendering of 
-  components based on the URL.</p><br/>
+  <b>Nested Routes:</b>
+  <p>
+    In the example above, the child route (/parent/child) is nested within the parent route (/parent). This allows for a
+    hierarchical structure of components.
+  </p>
+  <br />
+  <b>Linking to Nested Routes:</b>
+  <p>
+    Use the Link component to navigate to nested routes. In the example, the link takes the user to the parent route
+    (/parent), which contains the nested route.
+  </p>
+  <br />
+  <b>Route Matching:</b>
+  <p>
+    React Router will match the first route that matches the current location. In nested routes, ensure that the parent
+    route is matched before the child route.
+  </p>
+  <br />
+  <b>Route Component Rendering:</b>
+  <p>
+    Each Route component will render the specified component when the path matches. This allows for dynamic rendering of
+    components based on the URL.
+  </p>
+  <br />
   <b>Switch Component:</b>
-  <p class="text-content ml-content">In a more complex application with multiple routes, consider using the Switch component to ensure that only the first matching route is rendered.</p><br/>
+  <p class="text-content ml-content">
+    In a more complex application with multiple routes, consider using the Switch component to ensure that only the
+    first matching route is rendered.
+  </p>
+  <br />
   <h3 class="text-subhead font-head">Navigating to pages using Link and Nav Link component in react</h3>
-  <p class="text-content ml-content">In React Router, you can navigate between pages using the Link and NavLink components. Both components allow you to create clickable links that 
-    change the URL and render the corresponding component.</p><br/>
+  <p class="text-content ml-content">
+    In React Router, you can navigate between pages using the Link and NavLink components. Both components allow you to
+    create clickable links that change the URL and render the corresponding component.
+  </p>
+  <br />
   <h4 class="font-head">Using the Link Component:</h4>
   <p class="text-content ml-content">The Link component is used to create a hyperlink to a specific route.</p>
   <p class="text-content ml-content">import React from 'react';</p>
@@ -78,29 +126,43 @@
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;nav&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Link to="/"&gt;Home&lt;/Link&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Link to="/about"&gt;About&lt;/Link&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Link to="/contact"&gt;Contact&lt;/Link&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Link to="/contact"&gt;Contact&lt;/Link&gt;
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/nav&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
-  <p class="text-content ml-content">export default Navigation;</p><br/>
+  <p class="text-content ml-content">export default Navigation;</p>
+  <br />
   <p class="text-content ml-content">In this example, clicking on the links will navigate to the respective routes.</p>
-  <h4 class="font-head"><b>Using the NavLink Component:</b></h4>
-  <p class="text-content ml-content">The NavLink component is similar to Link, but it allows for additional styling options for the active link.</p>
+  <h4 class="font-head">Using the NavLink Component:</h4>
+  <p class="text-content ml-content">
+    The NavLink component is similar to Link, but it allows for additional styling options for the active link.
+  </p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">import { NavLink } from 'react-router-dom';</p>
   <p class="text-content ml-content">const Navigation = () => {</p>
   <p class="text-content ml-content">&nbsp;&nbsp;return (</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;nav&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;NavLink exact to="/"&gt;Home&lt;/NavLink&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;NavLink to="/about"&gt;About&lt;/NavLink&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;NavLink to="/contact"&gt;Contact&lt;/NavLink&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;NavLink exact to="/"&gt;Home&lt;/NavLink&gt;
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;NavLink to="/about"&gt;About&lt;/NavLink&gt;
+  </p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;NavLink to="/contact"&gt;Contact&lt;/NavLink&gt;
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/nav&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
   <p class="text-content ml-content">export default Navigation;</p>
-  <p class="text-content ml-content">In this example, the exact prop ensures that the active style is applied only when the path matches exactly. 
-    The NavLink component also allows you to add a class or style when the link is active.</p><br/>
-  <h4 class="font-head"><b>Using Link with Dynamic Routes:</b></h4>
+  <p class="text-content ml-content">
+    In this example, the exact prop ensures that the active style is applied only when the path matches exactly. The
+    NavLink component also allows you to add a class or style when the link is active.
+  </p>
+  <br />
+  <h4 class="font-head">Using Link with Dynamic Routes:</h4>
   <p class="text-content ml-content">You can use the Link component with dynamic routes (routes with parameters).</p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">import { Link } from 'react-router-dom';</p>
@@ -108,14 +170,21 @@
   <p class="text-content ml-content">&nbsp;&nbsp;return (</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;{username}'s Profile&lt;/h2&gt;</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Link to={`/user/${username}/posts`}&gt;View Posts&lt;/Link&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Link to={`/user/${username}/posts`}&gt;View Posts&lt;/Link&gt;
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
   <p class="text-content ml-content">export default UserProfile;</p>
-  <p class="text-content ml-content">In this example, clicking on the "View Posts" link will navigate to a dynamic route based on the username prop.</p><br/>
-  <h4 class="font-head"><b>Using onClick with Link:</b></h4>
-  <p class="text-content ml-content">You can also use the onClick event handler with Link to perform additional actions before navigating.</p>
+  <p class="text-content ml-content">
+    In this example, clicking on the "View Posts" link will navigate to a dynamic route based on the username prop.
+  </p>
+  <br />
+  <h4 class="font-head">Using onClick with Link:</h4>
+  <p class="text-content ml-content">
+    You can also use the onClick event handler with Link to perform additional actions before navigating.
+  </p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">import { Link } from 'react-router-dom';</p>
   <p class="text-content ml-content">const CustomLink = ({ to, onClick, children }) => {</p>
@@ -125,13 +194,21 @@
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;}</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;// Perform additional actions</p>
   <p class="text-content ml-content">&nbsp;&nbsp;};</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;return &lt;Link to={to} onClick={handleClick}&gt;{children}&lt;/Link&gt;;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;return &lt;Link to={to} onClick={handleClick}&gt;{children}&lt;/Link&gt;;
+  </p>
   <p class="text-content ml-content">};</p>
   <p class="text-content ml-content">export default CustomLink;</p>
-  <p class="text-content ml-content">In this example, the CustomLink component allows you to specify an onClick function that will be called before navigating.</p><br/>
-  <h4 class="font-head"><b>Using Links in Class Components:</b></h4>
-  <p class="text-content ml-content">If you are working with class components, you can use the withRouter HOC to access the router props (e.g., history, match, location) 
-    and use this.props.history.push() to navigate.</p>
+  <p class="text-content ml-content">
+    In this example, the CustomLink component allows you to specify an onClick function that will be called before
+    navigating.
+  </p>
+  <br />
+  <h4 class="font-head">Using Links in Class Components:</h4>
+  <p class="text-content ml-content">
+    If you are working with class components, you can use the withRouter HOC to access the router props (e.g., history,
+    match, location) and use this.props.history.push() to navigate.
+  </p>
   <p class="text-content ml-content">import React, { Component } from 'react';</p>
   <p class="text-content ml-content">import { withRouter } from 'react-router-dom';</p>
   <p class="text-content ml-content">class ExampleComponent extends Component {</p>
@@ -140,18 +217,26 @@
   <p class="text-content ml-content">&nbsp;&nbsp;};</p>
   <p class="text-content ml-content">&nbsp;&nbsp;render() {</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;return (</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button onClick={this.handleClick}&gt;Go to New Route&lt;/button&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button onClick={this.handleClick}&gt;Go to New Route&lt;/button&gt;
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">&nbsp;&nbsp;}</p>
   <p class="text-content ml-content">}</p>
   <p class="text-content ml-content">export default withRouter(ExampleComponent);</p>
-  <p class="text-content ml-content">By using the Link and NavLink components, you can create a seamless navigation experience in your React applications. 
-    These components make it easy to set up clickable links that change the URL and render the corresponding components.</p><br/>
-  <h3 class="text-subhead font-head"><b>Redirect routes using Redirect Component in react</b></h3>
-  <p class="text-content ml-content">In React Router, you can programmatically redirect users to another route using the Redirect component. 
-    This can be useful for scenarios like authentication, form submissions, or conditional navigation.</p>
+  <p class="text-content ml-content">
+    By using the Link and NavLink components, you can create a seamless navigation experience in your React
+    applications. These components make it easy to set up clickable links that change the URL and render the
+    corresponding components.
+  </p>
+  <br />
+  <h3 class="text-subhead font-head">Redirect routes using Redirect Component in react</h3>
+  <p class="text-content ml-content">
+    In React Router, you can programmatically redirect users to another route using the Redirect component. This can be
+    useful for scenarios like authentication, form submissions, or conditional navigation.
+  </p>
   <p class="text-content ml-content">Here's how you can use the Redirect component in React:</p>
-  <b>Method 1:</b> Using Conditional Rendering</p>
+  <b>Method 1:</b> <span>Conditional Rendering</span>
   <p class="text-content ml-content">import React, { useState } from 'react';</p>
   <p class="text-content ml-content">import { Redirect } from 'react-router-dom';</p>
   <p class="text-content ml-content">const LoginForm = () => {</p>
@@ -168,14 +253,19 @@
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Login Form&lt;/h2&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;form onSubmit={handleSubmit}&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{/* Form fields */}</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="submit"&gt;Login&lt;/button&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="submit"&gt;Login&lt;/button&gt;
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
   <p class="text-content ml-content">export default LoginForm;</p>
-  <p class="text-content ml-content">In this example, when the form is submitted, it checks if the user is logged in (loggedIn state). 
-    If they are, it redirects them to the /dashboard route.</p><br/>
+  <p class="text-content ml-content">
+    In this example, when the form is submitted, it checks if the user is logged in (loggedIn state). If they are, it
+    redirects them to the /dashboard route.
+  </p>
+  <br />
   <p class="text-content ml-content"><b>Method 2:</b> Using a Condition in Route</p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">import { Route, Redirect } from 'react-router-dom';</p>
@@ -185,26 +275,37 @@
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{...rest}</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;render={props =></p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isAuthenticated ? (</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Component {...props} /&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Component {...props} /&gt;
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;) : (</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Redirect to="/login" /&gt;</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Redirect to="/login" /&gt;
+  </p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;/&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;);</p>
   <p class="text-content ml-content">};</p>
   <p class="text-content ml-content">export default PrivateRoute;</p>
-  <p class="text-content ml-content">In this example, PrivateRoute is a custom component that takes a component prop and a condition (isAuthenticated). 
-    It renders either the specified component or redirects to the login page based on the condition.</p><br/>
-  <h4 class="font-head"><b>Usage of PrivateRoute:</b></h4>
+  <p class="text-content ml-content">
+    In this example, PrivateRoute is a custom component that takes a component prop and a condition (isAuthenticated).
+    It renders either the specified component or redirects to the login page based on the condition.
+  </p>
+  <br />
+  <h4 class="font-head">Usage of PrivateRoute:</h4>
   <p class="text-content ml-content">&lt;PrivateRoute</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;path="/dashboard"</p></p></p>
-  <p class="text-content ml-content">&nbsp;&nbsp;component={Dashboard}</p></p>
+  <p class="text-content ml-content">&nbsp;&nbsp;path="/dashboard"</p>
+  <p class="text-content ml-content">&nbsp;&nbsp;component={Dashboard}</p>
   <p class="text-content ml-content">&nbsp;&nbsp;isAuthenticated={isLoggedIn}</p>
   <p class="text-content ml-content">/&gt;</p>
   <b>Notes:</b>
-  <p class="text-content ml-content">When using the Redirect component, make sure it is rendered within the context of a BrowserRouter.</p>
-  <p class="text-content ml-content">You can also use the history object to programmatically navigate by pushing a new location onto the history stack.</p>
+  <p class="text-content ml-content">
+    When using the Redirect component, make sure it is rendered within the context of a BrowserRouter.
+  </p>
+  <p class="text-content ml-content">
+    You can also use the history object to programmatically navigate by pushing a new location onto the history stack.
+  </p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">import { withRouter } from 'react-router-dom';</p>
   <p class="text-content ml-content">const ExampleComponent = ({ history }) => {</p>
@@ -212,13 +313,20 @@
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;history.push('/new-route');</p>
   <p class="text-content ml-content">&nbsp;&nbsp;};</p>
   <p class="text-content ml-content">&nbsp;&nbsp;return (</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;button onClick={handleClick}&gt;Go to New Route&lt;/button&gt;</p>
-  <p class="text-content ml-content"> );</p>
+  <p class="text-content ml-content">
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;button onClick={handleClick}&gt;Go to New Route&lt;/button&gt;
+  </p>
+  <p class="text-content ml-content">);</p>
   <p class="text-content ml-content">};</p>
-  <p class="text-content ml-content">export default withRouter(ExampleComponent);</p><br/>
+  <p class="text-content ml-content">export default withRouter(ExampleComponent);</p>
+  <br />
   <p class="text-content font-semibold">Description</p>
-  <p class="text-content ml-content">The Redirect component is typically used for conditional redirects. For static redirects (redirecting from one route to another), 
-    you can use the to prop directly in the Route component.</p>
-  <p class="text-content ml-content">Using the Redirect component in React Router allows you to dynamically redirect users based on certain conditions or events, 
-    providing a more controlled navigation experience.</p>
-  </div>
+  <p class="text-content ml-content">
+    The Redirect component is typically used for conditional redirects. For static redirects (redirecting from one route
+    to another), you can use the to prop directly in the Route component.
+  </p>
+  <p class="text-content ml-content">
+    Using the Redirect component in React Router allows you to dynamically redirect users based on certain conditions or
+    events, providing a more controlled navigation experience.
+  </p>
+</div>

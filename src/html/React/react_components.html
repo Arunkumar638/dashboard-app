@@ -1,83 +1,178 @@
 <div>
-   <h3 class="text-head font-head">Components</h3>
-   <p class="text-content ml-content">React is a JavaScript library used for building user interfaces, particularly for single-page applications where you need dynamic and interactive UIs. React applications are built using components.</p><br/>
-   <p class="text-content ml-content">Components are the building blocks of a React application. 
-      They are reusable, independent, and can be nested within each other to create complex UIs.</p><br/>
-   <h4 class="text-subhead font-head"><b>Significance of component architecture</b></h4>
-   <b>Reusability:</b><p class="text-content ml-content">Once you've created a component, you can use it in different parts of 
-      your application or even in entirely different projects. This reduces redundant code and makes development more efficient.</p><br/>
-   <b>Modularity:</b><p class="text-content ml-content">Components are self-contained units that represent specific pieces of UI or functionality. They can be combined to form larger, more complex applications. This modularity makes it easier to manage and reason about your codebase.</p><br/>
-   <b>Abstraction and Encapsulation:</b>
-      <p class="text-content ml-content">Components allow you to abstract away complex logic and encapsulate it within a single unit. This means that the internal workings of a component are hidden from other components, promoting cleaner and more maintainable code.</p><br/>
-   <b>Separation of Concerns:</b><p class="text-content ml-content">React promotes a clear separation of concerns by encouraging you to break your UI into smaller, manageable components. Each component is responsible for a specific piece of functionality or UI element, making it easier to understand and maintain the codebase.</p><br/>
-   <b>Component Hierarchy:</b><p class="text-content ml-content">React components can be nested within each other, forming a hierarchy. This allows for the creation of complex UIs from simple, reusable building blocks. The parent-child relationship between components facilitates the passing of data (props) down the component tree.</p><br/>
-   <b>State Management:</b><p class="text-content ml-content">Class components in React have the ability to manage local component state. This is particularly useful for handling user interactions and dynamic data within a component.</p><br/>
-   <b>Virtual DOM and Efficient Rendering:</b><p class="text-content ml-content">React uses a virtual DOM to efficiently update the actual DOM. When a component's state or props change, React first updates the virtual DOM and then intelligently figures out the most efficient way to update the actual DOM, minimizing unnecessary re-rendering.</p><br/>
-   <h4 class="text-subhead font-head"><b>Lifecycle Methods (for Class Components):</b></h4>
-   <p class="text-content ml-content">Class components have a set of lifecycle methods that allow you to perform actions at specific points in the component's life, such as when it's created, updated, or removed from the DOM. This provides fine-grained control over the component's behavior.</p><br/>
-   <h4 class="text-subhead font-head"><b>Component Libraries and Ecosystem:</b></h2>
-   <p class="text-content ml-content">The React ecosystem is rich with pre-built, open-source component libraries (such as Material-UI, Ant Design, etc.) that provide ready-made, customizable UI components. This accelerates development and maintains design consistency.</p><br/>
-   <h4 class="text-subhead font-head"><b>Easy Testing:</b></h2>
-   <p class="text-content ml-content">Components, especially functional components, are easy to test in isolation. This enables thorough testing of individual components, ensuring that they behave as expected.</p><br/>
-   <p class="text-content ml-content">Overall, React's component architecture promotes code reusability, maintainability, and scalability, making it a powerful tool for building interactive and dynamic user interfaces.</p><br/>
-   <h4 class="text-subhead font-head"><b>Types of components</b></h2>
-   <p class="text-content ml-content">Different types of react components<br/>
-   <ol class="list-disc">
-      <li class="ml-points">Functional Components</li>
-      <li class="ml-points">Class Components</li>
-      <li class="ml-points">Pure Components</li>
-   </ol><br/>
-   <h4 class="text-subhead font-head"><b>Functional Components:</b></h2>
-   <p class="text-content ml-content">Functional components are functions that takes in props and return JSX. They do not natively have state or lifecycle methods, but this functionality can be added by implementing React Hooks. Functional components are usually used to display information. They are easy to read, debug, and test.</p><br/>
-   // Functional Component Example<br/>
-   import React from 'react';<br/>
-   const HelloWorld = () => {<br/>
-   return (<br/>
-      &lt;div&gt;<br/>
-         &lt;p&gt;Hello World!&lt;/p&gt;<br/>
-      &lt;/div&gt;<br/>
-   )<br/>
-   }<br/>
-   export default HelloWorld;<br/><br/>
-   <p class="text-content ml-content">In the code above, it is a very simple component that consists of a constant variable HelloWorld that is assigned to an arrow function which returns JSX. Functional components do not need to be arrow functions. They can be declared with regular JavaScript functions. You can also pass in props to the function and use them to render data in the JSX code.</p><br/>
-   <h4 class="text-subhead font-head"><b>Class Components</b></h2>
-   <p class="text-content ml-content">Class components have previously been the most commonly used among the four component types. 
-      This is because class components are able to do everything a functional component do but more. 
-      It can utilize the main functions of React, state, props, and lifecycle methods. Unlike functional components, 
-      class components are consist of … well, a class.</p><br/>
-   // Class Component Example
-   import React from 'react';<br/>
-   class HelloWorld extends React.Component {<br/>
-   render() {<br/>
-      return (<br/>
-         &lt;div&gt;<br/>
-            &lt;p&gt;Hello World!&lt;/p&gt;<br/>
-         &lt;/div&gt;<br/>
-      )<br/>
-   }<br/>
-   }<br/>
-   export default HelloWorld;<br/>
-   <p class="text-content ml-content">Class component syntax differs from functional component syntax. 
-      Class components use extends React.Component after declaring the class HelloWorld and requires a render() 
-      method to return JSX code. In this class component, you can declare a state, set it to a JavaScript object,
-       and use props to be the initial state or change the state in lifecycle methods. Some lifecycle methods are componentDidMount(),
-        componentDidUpdate(), and componentWillUnmount(). These are actions that a functional component cannot perform unless they use React Hooks.</p><br/>
-   <h4 class="text-subhead font-head"><b>Pure Components:</b></h2>
-   <p class="text-content ml-content">A pure component is a class component that automatically implements the shouldComponentUpdate lifecycle method. It performs a shallow comparison of the current props and state with the next props and state, and only re-renders if there are differences.</p><br/>
-   <p class="text-content ml-content">This can provide performance optimizations in situations where a component's render output is dependent only on its props and state.</p><br/>
-   <h5 class="font-bold">Example:</h5>
-   import React from ‘react’;<br/>
-   export default class Test extends React.PureComponent{<br/>
-   render(){<br/>
-      return &lt;h1&gt;Welcome to Gyroneb&lt;/h1&gt;;<br/>
-   }<br/>
-   }<br/>
-   <p class="text-content ml-content">But, one major difference between a regular React.Component and a React.PureComponent is that pure components perform shallow comparisons on state change. Pure components take care of shouldComponentUpdate() by itself. If the previous state and/or props are the same as the next, the component is not re-rendered.React Components are usually re-rendered when:</p><br/>
-   <li class="ml-points">setState() is called</li><br/>
-   <li class="ml-points">props values are updated</li><br/>
-   <li class="ml-points">forceUpdate() is called</li><br/>
-   <p class="text-content ml-content">But in pure components, the React components do not re-render blindly without considering the updated state and props. Thus, if state and props are the same as the previous state and props , then the component does not re-render. This is very useful when you do not want to re-render a certain component while the props and state remain the same.</p>
+  <h3 class="text-head font-head">Components</h3>
+  <p class="text-content ml-content">
+    React is a JavaScript library used for building user interfaces, particularly for single-page applications where you
+    need dynamic and interactive UIs. React applications are built using components.
+  </p>
+  <br />
+  <p class="text-content ml-content">
+    Components are the building blocks of a React application. They are reusable, independent, and can be nested within
+    each other to create complex UIs.
+  </p>
+  <br />
+  <h4 class="text-subhead font-head">Significance of component architecture</h4>
+  <b>Reusability:</b>
+  <p class="text-content ml-content">
+    Once you've created a component, you can use it in different parts of your application or even in entirely different
+    projects. This reduces redundant code and makes development more efficient.
+  </p>
+  <br />
+  <b>Modularity:</b>
+  <p class="text-content ml-content">
+    Components are self-contained units that represent specific pieces of UI or functionality. They can be combined to
+    form larger, more complex applications. This modularity makes it easier to manage and reason about your codebase.
+  </p>
+  <br />
+  <b>Abstraction and Encapsulation:</b>
+  <p class="text-content ml-content">
+    Components allow you to abstract away complex logic and encapsulate it within a single unit. This means that the
+    internal workings of a component are hidden from other components, promoting cleaner and more maintainable code.
+  </p>
+  <b>Separation of Concerns:</b>
+  <p class="text-content ml-content">
+    React promotes a clear separation of concerns by encouraging you to break your UI into smaller, manageable
+    components. Each component is responsible for a specific piece of functionality or UI element, making it easier to
+    understand and maintain the codebase.
+  </p>
+  <b>Component Hierarchy:</b>
+  <p class="text-content ml-content">
+    React components can be nested within each other, forming a hierarchy. This allows for the creation of complex UIs
+    from simple, reusable building blocks. The parent-child relationship between components facilitates the passing of
+    data (props) down the component tree.
+  </p>
+  <b>State Management:</b>
+  <p class="text-content ml-content">
+    Class components in React have the ability to manage local component state. This is particularly useful for handling
+    user interactions and dynamic data within a component.
+  </p>
+  <br />
+  <b>Virtual DOM and Efficient Rendering:</b>
+  <p class="text-content ml-content">
+    React uses a virtual DOM to efficiently update the actual DOM. When a component's state or props change, React first
+    updates the virtual DOM and then intelligently figures out the most efficient way to update the actual DOM,
+    minimizing unnecessary re-rendering.
+  </p>
+  <h4 class="text-subhead font-head">Lifecycle Methods (for Class Components):</h4>
+  <p class="text-content ml-content">
+    Class components have a set of lifecycle methods that allow you to perform actions at specific points in the
+    component's life, such as when it's created, updated, or removed from the DOM. This provides fine-grained control
+    over the component's behavior.
+  </p>
+  <br />
+  <h4 class="text-subhead font-head">Component Libraries and Ecosystem:</h4>
+  <p class="text-content ml-content">
+    The React ecosystem is rich with pre-built, open-source component libraries (such as Material-UI, Ant Design, etc.)
+    that provide ready-made, customizable UI components. This accelerates development and maintains design consistency.
+  </p>
+  <br />
+  <h4 class="text-subhead font-head">Easy Testing:</h4>
+  <p class="text-content ml-content">
+    Components, especially functional components, are easy to test in isolation. This enables thorough testing of
+    individual components, ensuring that they behave as expected.
+  </p>
+  <br />
+  <p class="text-content ml-content">
+    Overall, React's component architecture promotes code reusability, maintainability, and scalability, making it a
+    powerful tool for building interactive and dynamic user interfaces.
+  </p>
+  <br />
+  <h4 class="text-subhead font-head">Types of components</h4>
+  <p class="text-content ml-content">Different types of react components</p>
+  <ol class="list-disc">
+    <li class="ml-points">Functional Components</li>
+    <li class="ml-points">Class Components</li>
+    <li class="ml-points">Pure Components</li>
+  </ol>
+  <br />
+  <h4 class="text-subhead font-head">Functional Components:</h4>
+  <p class="text-content ml-content">
+    Functional components are functions that takes in props and return JSX. They do not natively have state or lifecycle
+    methods, but this functionality can be added by implementing React Hooks. Functional components are usually used to
+    display information. They are easy to read, debug, and test.<br />
+    // Functional Component Example<br />
+    import React from 'react';<br />
+    const HelloWorld = () => {<br />
+    return (<br />
+    &lt;div&gt;<br />
+    &lt;p&gt;Hello World!&lt;/p&gt;<br />
+    &lt;/div&gt;<br />
+    )<br />
+    }<br />
+    export default HelloWorld;
+  </p>
+  <br />
+  <p class="text-content ml-content">
+    In the code above, it is a very simple component that consists of a constant variable HelloWorld that is assigned to
+    an arrow function which returns JSX. Functional components do not need to be arrow functions. They can be declared
+    with regular JavaScript functions. You can also pass in props to the function and use them to render data in the JSX
+    code.
+  </p>
+  <br />
+  <h4 class="text-subhead font-head">Class Components</h4>
+  <p class="text-content ml-content">
+    Class components have previously been the most commonly used among the four component types. This is because class
+    components are able to do everything a functional component do but more. It can utilize the main functions of React,
+    state, props, and lifecycle methods. Unlike functional components, class components are consist of … well, a class.
+  </p>
+  <br />
+  <p class="text-content ml-content">
+    // Class Component Example import React from 'react';<br />
+    class HelloWorld extends React.Component {<br />
+    render() {<br />
+    return (<br />
+    &lt;div&gt;<br />
+    &lt;p&gt;Hello World!&lt;/p&gt;<br />
+    &lt;/div&gt;<br />
+    )<br />
+    }<br />
+    }<br />
+    export default HelloWorld;
+  </p>
+  <br />
+  <p class="text-content ml-content">
+    Class component syntax differs from functional component syntax. Class components use extends React.Component after
+    declaring the class HelloWorld and requires a render() method to return JSX code. In this class component, you can
+    declare a state, set it to a JavaScript object, and use props to be the initial state or change the state in
+    lifecycle methods. Some lifecycle methods are componentDidMount(), componentDidUpdate(), and componentWillUnmount().
+    These are actions that a functional component cannot perform unless they use React Hooks.
+  </p>
+  <br />
+  <h4 class="text-subhead font-head">Pure Components:</h4>
+  <p class="text-content ml-content">
+    A pure component is a class component that automatically implements the shouldComponentUpdate lifecycle method. It
+    performs a shallow comparison of the current props and state with the next props and state, and only re-renders if
+    there are differences.
+  </p>
+  <br />
+  <p class="text-content ml-content">
+    This can provide performance optimizations in situations where a component's render output is dependent only on its
+    props and state.
+  </p>
+  <br />
+  <h5 class="font-bold">Example:</h5>
+  import React from ‘react’;<br />
+  export default class Test extends React.PureComponent{<br />
+  render(){<br />
+  return &lt;h1&gt;Welcome to Gyroneb&lt;/h1&gt;;<br />
+  }<br />
+  }<br />
+  <p class="text-content ml-content">
+    But, one major difference between a regular React.Component and a React.PureComponent is that pure components
+    perform shallow comparisons on state change. Pure components take care of shouldComponentUpdate() by itself. If the
+    previous state and/or props are the same as the next, the component is not re-rendered.React Components are usually
+    re-rendered when:
+  </p>
+  <br />
+  <li class="ml-points">setState() is called</li>
+  <br />
+  <li class="ml-points">props values are updated</li>
+  <br />
+  <li class="ml-points">forceUpdate() is called</li>
+  <br />
+  <p class="text-content ml-content">
+    But in pure components, the React components do not re-render blindly without considering the updated state and
+    props. Thus, if state and props are the same as the previous state and props , then the component does not
+    re-render. This is very useful when you do not want to re-render a certain component while the props and state
+    remain the same.
+  </p>
 </div>
-
-
-

@@ -1,47 +1,79 @@
 <div>
-  <h2 class="text-head font-head">Introduction</h2><br/>
+  <h2 class="text-head font-head">Introduction</h2>
+  <br />
   <h3 class="text-subhead font-head">What is Node.js?</h3>
-  <li class="ml-points">Node.js is an open-source and cross-platform JavaScript runtime environment.</li> 
+  <li class="ml-points">Node.js is an open-source and cross-platform JavaScript runtime environment.</li>
   <li class="ml-points">Node.js app runs in a single process, without creating a new thread for every request.</li>
   <li class="ml-points">Node.js runs on various platforms (Windows, Linux, Unix, Mac OS X, etc.)</li>
-  <li class="ml-points">Node.js uses JavaScript on the server</li><br/>
+  <li class="ml-points">Node.js uses JavaScript on the server</li>
+  <br />
   <h3 class="text-subhead font-head">Why Node.js?</h3>
   <p class="text-content ml-content">Node.js uses asynchronous programming!</p>
-  <p class="text-content ml-content">A common task for a web server can be to open a file on the server and return the content to the client.</p><br/>
+  <p class="text-content ml-content">
+    A common task for a web server can be to open a file on the server and return the content to the client.
+  </p>
+  <br />
   <b>Here is how PHP or ASP handles a file request:</b>
   <li class="ml-points">Sends the task to the computer's file system.</li>
   <li class="ml-points">Waits while the file system opens and reads the file.</li>
   <li class="ml-points">Returns the content to the client.</li>
-  <li class="ml-points">Ready to handle the next request.</li><br/>
+  <li class="ml-points">Ready to handle the next request.</li>
+  <br />
   <b>Here is how Node.js handles a file request:</b>
   <li class="ml-points">Sends the task to the computer's file system.</li>
   <li class="ml-points">Ready to handle the next request.</li>
-  <li class="ml-points">&nbsp;&nbsp;When the file system has opened and read the file, the server returns the content to the client.</li>
+  <li class="ml-points">
+    &nbsp;&nbsp;When the file system has opened and read the file, the server returns the content to the client.
+  </li>
   <p class="text-content ml-content">Node.js eliminates the waiting, and simply continues with the next request.</p>
-  <p class="text-content ml-content">Node.js runs single-threaded, non-blocking, asynchronous programming, which is very memory efficient.</p><br/>
+  <p class="text-content ml-content">
+    Node.js runs single-threaded, non-blocking, asynchronous programming, which is very memory efficient.
+  </p>
+  <br />
   <h3 class="text-subhead font-head">Where to Use Node.js?</h3>
   <li class="ml-points">I/O bound Applications</li>
   <li class="ml-points">Data Streaming Applications</li>
   <li class="ml-points">Data Intensive Real-time Applications (DIRT)</li>
   <li class="ml-points">JSON APIs based Applications</li>
-  <li class="ml-points">Single Page Applications</li><br/>
+  <li class="ml-points">Single Page Applications</li>
+  <br />
   <h3 class="text-subhead font-head"><b>Where Not to Use Node.js?</b></h3>
-  <li class="ml-points">It is not advisable to use Node.js for CPU intensive applications.</li><br/>
+  <li class="ml-points">It is not advisable to use Node.js for CPU intensive applications.</li>
+  <br />
   <h3 class="text-subhead font-head">What Can Node.js Do?</h3>
   <li class="ml-points">It can generate dynamic page content.</li>
   <li class="ml-points">It can create, open, read, write, delete, and close files on the server.</li>
   <li class="ml-points">It can collect form data.</li>
-  <li class="ml-points">It can add, delete, modify data in your database.</li><br/>
+  <li class="ml-points">It can add, delete, modify data in your database.</li>
+  <br />
   <h4><b>Node.js Hello World Example</b></h4>
-  <p class="text-content ml-content">In node.js, we can create either console or web applications based on our requirements. Here, we will learn both ways to create node.js simple hello world application with examples.</p><br/>
+  <p class="text-content ml-content">
+    In node.js, we can create either console or web applications based on our requirements. Here, we will learn both
+    ways to create node.js simple hello world application with examples.
+  </p>
+  <br />
   <h4><b>Node.js Hello World Console Application</b></h4>
-  <p class="text-content ml-content">By using node.js command-line interface, we can create console applications. After opening online compiler, type console.log(“Hello World”) command in the console and click on the enter button that will show the output like as shown below.</p>
-   <p>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;<b>Hello World</b></p><br/>
+  <p class="text-content ml-content">
+    By using node.js command-line interface, we can create console applications. After opening online compiler, type
+    console.log(“Hello World”) command in the console and click on the enter button that will show the output like as
+    shown below.
+  </p>
+  <b>Hello World</b><br />
   <h3><b>Node.js Hello World Web Application</b></h3>
-  <p class="text-content ml-content">The following are the three main components required in node.js to create a web application.</p>
-  <li class="ml-points"><b> Import Modules</b>-By using require directive we can import required modules in the application.</li>
-  <li class="ml-points"><b> Create Server</b>-We need to create a server to listen a client request similar to Apache or IIS server.</li>
-  <li class="ml-points"><b> Request & Response</b>-By using these we can read the client requests and we can return our application response.</li><br/>
+  <p class="text-content ml-content">
+    The following are the three main components required in node.js to create a web application.
+  </p>
+  <li class="ml-points">
+    <b> Import Modules</b>-By using require directive we can import required modules in the application.
+  </li>
+  <li class="ml-points">
+    <b> Create Server</b>-We need to create a server to listen a client request similar to Apache or IIS server.
+  </li>
+  <li class="ml-points">
+    <b> Request & Response</b>-By using these we can read the client requests and we can return our application
+    response.
+  </li>
+  <br />
   <h4><b>Sample Hello world code:</b></h4>
   <p class="text-content ml-content">const http = require('http');</p>
   <p class="text-content ml-content">const hostname = '127.0.0.1';</p>
@@ -49,48 +81,81 @@
   <p class="text-content ml-content">const server = http.createServer((req, res) => {</p>
   <p class="text-content ml-content">&nbsp;&nbsp;res.statusCode = 200;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;res.setHeader('Content-Type', 'text/plain');</p>
-  <p class="text-content ml-content">&nbsp;&nbsp;res.end('Hello World\n');</p><p class="text-content ml-content">
+  <p class="text-content ml-content">&nbsp;&nbsp;res.end('Hello World\n');</p>
+  <p class="text-content ml-content"></p>
   <p class="text-content ml-content">});</p>
   <p class="text-content ml-content">server.listen(port, hostname, () => {</p>
   <p class="text-content ml-content">&nbsp;&nbsp;console.log(`Server running at http://${hostname}:${port}/`);</p>
-  <p class="text-content ml-content">});</p><br/>
-  <li class="ml-points font-semibold">This code first includes the Node.js http module.Node.js has a fantastic standard library, including first-class support for networking.</li>
+  <p class="text-content ml-content">});</p>
+  <br />
+  <li class="ml-points font-semibold">
+    This code first includes the Node.js http module.Node.js has a fantastic standard library, including first-class
+    support for networking.
+  </li>
   <li class="ml-points font-semibold">The createServer() method of http creates a new HTTP server and returns it.</li>
-  <li class="ml-points font-semibold">The server is set to listen on the specified port and host name. When the server is ready, the callback function is called, in this case informing us that the server is running.</li><br/>
-  <li class="ml-points font-semibold">Whenever a new request is received, the request event is called, providing two objects: a request (an http.IncomingMessage object) and a response (an http.ServerResponse object).</li>
+  <li class="ml-points font-semibold">
+    The server is set to listen on the specified port and host name. When the server is ready, the callback function is
+    called, in this case informing us that the server is running.
+  </li>
+  <br />
+  <li class="ml-points font-semibold">
+    Whenever a new request is received, the request event is called, providing two objects: a request (an
+    http.IncomingMessage object) and a response (an http.ServerResponse object).
+  </li>
   <li class="ml-points font-semibold">Those 2 objects are essential to handle the HTTP call.</li>
-  <p class="text-content ml-points font-semibold">The first provides the request details. In this simple example, this is not used, but you could access the request headers and request data.</p>
-  <p class="text-content ml-points font-semibold">The second is used to return data to the caller.</p><br/>
-  <b>In this case with:</b></p>
+  <p class="text-content ml-points font-semibold">
+    The first provides the request details. In this simple example, this is not used, but you could access the request
+    headers and request data.
+  </p>
+  <p class="text-content ml-points font-semibold">The second is used to return data to the caller.</p>
+  <br />
+  <b>In this case with:</b>
   <p class="text-content ml-content">&nbsp; &nbsp; &nbsp;&nbsp;res.statusCode = 200;</p>
   <p class="text-content ml-content">we set the statusCode property to 200, to indicate a successful response.</p>
   <p class="text-content ml-content">We set the Content-Type header:</p>
   <p class="text-content ml-content">&nbsp; &nbsp; &nbsp;&nbsp;res.setHeader('Content-Type', 'text/plain');</p>
   <p class="text-content ml-content">and we close the response, adding the content as an argument to end():</p>
-  <p class="text-content ml-content">&nbsp; &nbsp; &nbsp;&nbsp;res.end('Hello World\n');</p><br/>
+  <p class="text-content ml-content">&nbsp; &nbsp; &nbsp;&nbsp;res.end('Hello World\n');</p>
+  <br />
   <h3><b>Console:</b></h3>
-  <p class="text-content ml-content">Node.js console module provides a simple debugging console similar to JavaScript console mechanism provided by web browsers.</p>
+  <p class="text-content ml-content">
+    Node.js console module provides a simple debugging console similar to JavaScript console mechanism provided by web
+    browsers.
+  </p>
   <p class="text-content ml-content">There are three console methods that are used to write any node.js stream:</p>
-  <ol><li class="ml-points">console.log()- used to display simple message on console.</li>
-  <li class="ml-points">console.error() - used to render error message on console.</li>
-  <li class="ml-points">console.warn() - used to display warning message on console.</li></ol><br/>
+  <ol>
+    <li class="ml-points">console.log()- used to display simple message on console.</li>
+    <li class="ml-points">console.error() - used to render error message on console.</li>
+    <li class="ml-points">console.warn() - used to display warning message on console.</li>
+  </ol>
+  <br />
   <h4><b>Example:</b></h4>
   <p class="text-content ml-content">// It prints welcome to Gyrolearn</p>
-  &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;<b>console.log('Welcome to Gyrolearn');</b></p>
+  <b>console.log('Welcome to Gyrolearn');</b>
   <p class="text-content ml-content">// It prints hello world, here we used format specifier(%s)</p>
-  &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;<b>console.log('hello %s', 'world');</b></p>
+  <b>console.log('hello %s', 'world');</b>
   <p class="text-content ml-content">// It prints Error: Oops... something went wrong</p>
-  &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;<b>console.error(new Error('Hell! This is a wrong method.'));</b>&nbsp;&nbsp;</p>
+  <b>console.error(new Error('Hell! This is a wrong method.'));</b>
   <p class="text-content ml-content">// It prints Warning Gyroneb!</p>
-  &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;<b>const name = 'sachin';</b></p>
-  &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;<b>console.warn(`Don't mess with me ${name}! Don't mess with me!`);</b></p><br/>
-  <p class="text-content ml-content">Apart from the above three methods, few other following methods also available with 
-    node.js console object to write or print messages in node.js stream.</p><br/>
-  <b>console.count()</b>-<p class="text-content ml-content">It is useful to count the number of times the specific label has been called.</p>
-  <b>console.clear()</b>-<p class="text-content ml-content">It is useful to clear the console history.</p>
-  <b>console.info()</b>-<p class="text-content ml-content">It is useful to write messages to console and it's an alias of console.log() method.</p>
-  <b>console.time()</b>-<p class="text-content ml-content">It is used to get the starting time of an action.</p>
-  <b>console.timeEnd()</b>-<p class="text-content ml-content">It is used to get the end time of specific action.</p>
-  <b>console.dir()</b>-<p class="text-content ml-content">It uses util.inspect() on obj and prints the resulting string to stdout.</p>
-  </div>
-  
+  <b>const name = 'sachin';</b>
+  <b>console.warn(`Don't mess with me ${name}! Don't mess with me!`);</b><br />
+  <p class="text-content ml-content">
+    Apart from the above three methods, few other following methods also available with node.js console object to write
+    or print messages in node.js stream.
+  </p>
+  <br />
+  <b>console.count()</b>-
+  <p class="text-content ml-content">It is useful to count the number of times the specific label has been called.</p>
+  <b>console.clear()</b>-
+  <p class="text-content ml-content">It is useful to clear the console history.</p>
+  <b>console.info()</b>-
+  <p class="text-content ml-content">
+    It is useful to write messages to console and it's an alias of console.log() method.
+  </p>
+  <b>console.time()</b>-
+  <p class="text-content ml-content">It is used to get the starting time of an action.</p>
+  <b>console.timeEnd()</b>-
+  <p class="text-content ml-content">It is used to get the end time of specific action.</p>
+  <b>console.dir()</b>-
+  <p class="text-content ml-content">It uses util.inspect() on obj and prints the resulting string to stdout.</p>
+</div>

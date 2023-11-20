@@ -1,13 +1,16 @@
 <div>
   <h2 class="text-subhead font-bold"><b>Using logical operators</b></h2>
-  <p class="text-content ml-content">Using logical operators in JSX allows you to conditionally render elements based on certain conditions. 
-    This can be very useful for creating dynamic user interfaces. <br/>Here's an example of how you can use logical operators in JSX:</p>
+  <p class="text-content ml-content">
+    Using logical operators in JSX allows you to conditionally render elements based on certain conditions. This can be
+    very useful for creating dynamic user interfaces. <br />Here's an example of how you can use logical operators in
+    JSX:
+  </p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">const MyComponent = () => {</p>
   <p class="text-content ml-content">const isLoggedIn = true;</p>
   <p class="text-content ml-content">const isAdmin = false;</p>
   <p class="text-content ml-content">return (</p>
-  <p class="text-content ml-content">&lt;div&gt;
+  <p class="text-content ml-content">&lt;div&gt;</p>
   <p class="text-content ml-content">{isLoggedIn && &lt;p&gt;Welcome, User!&lt;/p&gt;}</p>
   <p class="text-content ml-content">{isAdmin && &lt;p&gt;Admin privileges granted.&lt;/p&gt;}</p>
   <p class="text-content ml-content">{!isLoggedIn && &lt;p&gt;Please log in&lt;/p&gt;}</p>
@@ -18,26 +21,47 @@
   <p>In this example:</p>
   <p class="text-content ml-content">1. We define a functional component MyComponent.</p>
   <p class="text-content ml-content">2. We have two variables, isLoggedIn and isAdmin.</p>
-  <p class="text-content ml-content">3. We use the && (logical AND) operator to conditionally render elements. The element on the right will only be rendered if the condition on the left is true.</p>
-  <p class="text-content ml-content">4. {isLoggedIn && &lt;p&gt;Welcome, User!&lt;/p&gt;} will render the &lt;p&gt; element if isLoggedIn is true.</p>
-  <p class="text-content ml-content">5. {isAdmin && &lt;p&gt;Admin privileges granted.&lt;/p&gt;} will render the &lt;p&gt; element if isAdmin is true.</p>
-  <p class="text-content ml-content">6. {!isLoggedIn && &lt;p&gt;Please log in&lt;/p&gt;} will render the &lt;p&gt; element if isLoggedIn is false.</p><br/>
-  <p class="text-content ml-content">You can also use the || (logical OR) operator for conditional rendering. In this case, the element on the right will be rendered if the condition on the left is false.</p>
-  <p class="text-content ml-content">import React from 'react';
-  <p class="text-content ml-content">const MyComponent = () => {
-  <p class="text-content ml-content">const isPremiumUser = false;
+  <p class="text-content ml-content">
+    3. We use the && (logical AND) operator to conditionally render elements. The element on the right will only be
+    rendered if the condition on the left is true.
+  </p>
+  <p class="text-content ml-content">
+    4. {isLoggedIn && &lt;p&gt;Welcome, User!&lt;/p&gt;} will render the &lt;p&gt; element if isLoggedIn is true.
+  </p>
+  <p class="text-content ml-content">
+    5. {isAdmin && &lt;p&gt;Admin privileges granted.&lt;/p&gt;} will render the &lt;p&gt; element if isAdmin is true.
+  </p>
+  <p class="text-content ml-content">
+    6. {!isLoggedIn && &lt;p&gt;Please log in&lt;/p&gt;} will render the &lt;p&gt; element if isLoggedIn is false.
+  </p>
+  <br />
+  <p class="text-content ml-content">
+    You can also use the || (logical OR) operator for conditional rendering. In this case, the element on the right will
+    be rendered if the condition on the left is false.
+  </p>
+  <p class="text-content ml-content">import React from 'react';</p>
+  <p class="text-content ml-content">const MyComponent = () => {</p>
+  <p class="text-content ml-content">const isPremiumUser = false;</p>
   <p class="text-content ml-content">return (</p>
   <p class="text-content ml-content">&lt;div&gt;</p>
-  <p class="text-content ml-content">{isPremiumUser || &lt;p&gt;Upgrade to premium for addition<p class="text-content ml-content">al features!&lt;/p&gt;}
+  <p class="text-content ml-content">{isPremiumUser || &lt;p&gt;Upgrade to premium for addition</p>
+  <p class="text-content ml-content">al features!&lt;/p&gt;}</p>
   <p class="text-content ml-content">&lt;/div&gt;</p>
   <p class="text-content ml-content">);</p>
   <p class="text-content ml-content">};</p>
-  <p>export default MyComponent;</p><br/>
-  <p class="text-content ml-content font-head">In this example, the &lt;p&gt; 
-    element will be rendered if isPremiumUser is false.Remember that you can use any valid JavaScript expression within these conditions. 
-    This allows for complex logic and dynamic rendering in your components.</p><br/>
+  <p>export default MyComponent;</p>
+  <br />
+  <p class="text-content ml-content font-head">
+    In this example, the &lt;p&gt; element will be rendered if isPremiumUser is false.Remember that you can use any
+    valid JavaScript expression within these conditions. This allows for complex logic and dynamic rendering in your
+    components.
+  </p>
+  <br />
   <h2 class="text-subhead font-bold"><b>Specifying attributes</b></h2>
-  <p class="text-content ml-content font-head">In JSX, you can specify attributes for HTML elements similar to how you would in regular HTML. However, in JSX, you use curly braces {} to embed JavaScript expressions within the attributes. Here's an example:</p>
+  <p class="text-content ml-content font-head">
+    In JSX, you can specify attributes for HTML elements similar to how you would in regular HTML. However, in JSX, you
+    use curly braces {} to embed JavaScript expressions within the attributes. Here's an example:
+  </p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">const MyComponent = () => {</p>
   <p class="text-content ml-content">const imageUrl = 'https://example.com/image.jpg';</p>
@@ -48,16 +72,30 @@
   <p class="text-content ml-content">&lt;/div&gt;</p>
   <p class="text-content ml-content">);</p>
   <p class="text-content ml-content">};</p>
-  export default MyComponent;</p><br/>
-  <p class="text-content ml-content font-head">In this example, we're using JSX to create a div element containing an img element. 
-    We're specifying two attributes for the img element:</p><br/>
-  <p class="text-content ml-content">1.src: We're using curly braces {} to embed the JavaScript expression imageUrl, which contains the URL of the image.</p><p class="text-content ml-content">
-  <p class="text-content ml-content">2.alt: Similarly, we're using curly braces to embed the JavaScript expression altText, which contains the alt text for the image.</p>
-  <p class="text-content ml-content">When the component is rendered, it will create the following HTML:
-  &lt;div&gt;
-  &lt;img src="https://example.com/image.jpg" alt="A sample image" /&gt;
-  &lt;/div&gt;
-  <p class="text-content ml-content">You can use this same approach to specify any attribute for an HTML element in JSX. For example, you can set className for styling, onClick for event handling, and so on.</p>
+  <p>export default MyComponent;</p>
+  <br />
+  <p class="text-content ml-content font-head">
+    In this example, we're using JSX to create a div element containing an img element. We're specifying two attributes
+    for the img element:
+  </p>
+  <br />
+  <p class="text-content ml-content">
+    1.src: We're using curly braces {} to embed the JavaScript expression imageUrl, which contains the URL of the image.
+  </p>
+  <p class="text-content ml-content"></p>
+  <p class="text-content ml-content">
+    2.alt: Similarly, we're using curly braces to embed the JavaScript expression altText, which contains the alt text
+    for the image.
+  </p>
+  <p class="text-content ml-content">
+    When the component is rendered, it will create the following HTML: &lt;div&gt; &lt;img
+    src="https://example.com/image.jpg" alt="A sample image" /&gt; &lt;/div&gt;
+  </p>
+
+  <p class="text-content ml-content">
+    You can use this same approach to specify any attribute for an HTML element in JSX. For example, you can set
+    className for styling, onClick for event handling, and so on.
+  </p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">const MyComponent = () => {</p>
   <p class="text-content ml-content">const buttonStyle = {</p>
@@ -72,18 +110,25 @@
   <p class="text-content ml-content">&lt;button</p>
   <p class="text-content ml-content">className="my-button"</p>
   <p class="text-content ml-content">style={buttonStyle}</p>
-  <p class="text-content ml-content">onClick={handleClick}&gt; </p>
+  <p class="text-content ml-content">onClick={handleClick}&gt;</p>
   <p class="text-content ml-content">Click Me</p>
   <p class="text-content ml-content">&lt;/button&gt;</p>
   <p class="text-content ml-content">&lt;/div&gt;</p>
   <p class="text-content ml-content">);</p>
   <p class="text-content ml-content">};</p>
-  export default MyComponent;</p><br/>
-  <p class="text-content ml-content font-head">In this example, we're setting the className, 
-    style, and onClick attributes for the button element using JSX.
-     The style attribute takes an object with CSS properties, and the onClick attribute takes a function that will be called when the button is clicked.</p><br/>
+  <p>export default MyComponent;</p>
+  <br />
+  <p class="text-content ml-content font-head">
+    In this example, we're setting the className, style, and onClick attributes for the button element using JSX. The
+    style attribute takes an object with CSS properties, and the onClick attribute takes a function that will be called
+    when the button is clicked.
+  </p>
+  <br />
   <h2 class="text-subhead font-bold"><b>Specifying children</b></h2>
-  <p>In JSX, you can specify child elements by placing them within the opening and closing tags of a JSX element. Here's an example:</p>
+  <p>
+    In JSX, you can specify child elements by placing them within the opening and closing tags of a JSX element. Here's
+    an example:
+  </p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">const MyComponent = () => {</p>
   <p class="text-content ml-content">return (</p>
@@ -93,8 +138,12 @@
   <p class="text-content ml-content">&lt;/div&gt;</p>
   <p class="text-content ml-content">);</p>
   <p class="text-content ml-content">};</p>
-  export default MyComponent;</p><br/>
-  <p class="text-content ml-content font-head">In this example, the div element contains two child elements: an h1 element with the text "Hello, World!" and a p element with the text "This is a paragraph." When this component is rendered, it will generate the following HTML:</p>
+  <p>export default MyComponent;</p>
+  <br />
+  <p class="text-content ml-content font-head">
+    In this example, the div element contains two child elements: an h1 element with the text "Hello, World!" and a p
+    element with the text "This is a paragraph." When this component is rendered, it will generate the following HTML:
+  </p>
   <p class="text-content ml-content">&lt;div&gt;</p>
   <p class="text-content ml-content">&lt;h1&gt;Hello, World!&lt;/h1&gt;</p>
   <p class="text-content ml-content">&lt;p&gt;This is a paragraph.&lt;/p&gt;</p>
@@ -110,8 +159,11 @@
   <p class="text-content ml-content">&lt;/div&gt;</p>
   <p class="text-content ml-content">);</p>
   <p class="text-content ml-content">};</p>
-  export default MyComponent;</p><br/>
-  <p class="text-content ml-content font-head">In this example, the value of the name variable is dynamically inserted within the h1 element using curly braces {}.</p>
+  <p>export default MyComponent;</p>
+  <br />
+  <p class="text-content ml-content font-head">
+    In this example, the value of the name variable is dynamically inserted within the h1 element using curly braces {}.
+  </p>
   <p class="text-content ml-content">You can have multiple child elements within a parent element:</p>
   <p class="text-content ml-content">import React from 'react';</p>
   <p class="text-content ml-content">const MyComponent = () => {</p>
@@ -126,7 +178,11 @@
   <p class="text-content ml-content">&lt;/div&gt;</p>
   <p class="text-content ml-content">);</p>
   <p class="text-content ml-content">};</p>
-  <p class="text-content ml-content">export default MyComponent;</p><br/>
-  <p class="text-content ml-content font-head">In this example, the ul element contains two li elements as its children.
-  Remember that JSX expressions should evaluate to valid React elements, which means they should return a single element or null/undefined. If you need to return multiple elements, you can wrap them in a &lt;div&gt; or use a React fragment (&lt;&gt;>...&lt;/&gt;).</p>
+  <p class="text-content ml-content">export default MyComponent;</p>
+  <br />
+  <p class="text-content ml-content font-head">
+    In this example, the ul element contains two li elements as its children. Remember that JSX expressions should
+    evaluate to valid React elements, which means they should return a single element or null/undefined. If you need to
+    return multiple elements, you can wrap them in a &lt;div&gt; or use a React fragment (&lt;&gt;>...&lt;/&gt;).
+  </p>
 </div>

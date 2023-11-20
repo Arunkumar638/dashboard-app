@@ -1,78 +1,150 @@
 <div>
   <h3 class="text-subhead font-head">Code Splitting</h3>
   <h4 class="font-head">a.What is code splitting</h4>
-  <p class="text-content ml-content">Code splitting is a technique used in web development to improve the performance and loading time of a web application. 
-  It involves breaking down a large JavaScript file (bundle) into smaller, more manageable chunks that can be loaded on demand.</p><br/>
-  <p class="text-content ml-content">In a typical web application, all the JavaScript code required for the entire application is bundled together into a single file. 
-  This means that when a user visits a page, they have to download and parse this entire bundle, 
-  even if they only interact with a small part of the application.</p><br/>
-  <p class="text-content ml-content">Code splitting aims to optimize this process by splitting the code into smaller chunks, 
-  and then loading only the necessary parts when they are actually needed. 
-  This can lead to faster initial load times and a more responsive user experience.</p><br/>
+  <p class="text-content ml-content">
+    Code splitting is a technique used in web development to improve the performance and loading time of a web
+    application. It involves breaking down a large JavaScript file (bundle) into smaller, more manageable chunks that
+    can be loaded on demand.
+  </p>
+  <br />
+  <p class="text-content ml-content">
+    In a typical web application, all the JavaScript code required for the entire application is bundled together into a
+    single file. This means that when a user visits a page, they have to download and parse this entire bundle, even if
+    they only interact with a small part of the application.
+  </p>
+  <br />
+  <p class="text-content ml-content">
+    Code splitting aims to optimize this process by splitting the code into smaller chunks, and then loading only the
+    necessary parts when they are actually needed. This can lead to faster initial load times and a more responsive user
+    experience.
+  </p>
+  <br />
   <h3 class="text-subhead font-head">Advantages of Code Splitting:</h3>
-  <p class="text-content ml-content"><span class="font-head">Faster Initial Load Times:</span> By only loading the code needed for the current view or functionality, the initial load time of the application can be significantly reduced.</p>
-  <p class="text-content ml-content"><span class="font-head">Reduced Bandwidth Usage:</span> Smaller chunks of code mean less data needs to be transferred over the network, which is particularly important for users on slower connections or mobile devices.</p>
-  <p class="text-content ml-content"><span class="font-head">Improved User Experience:</span> Users can start interacting with the application more quickly, leading to a smoother and more responsive experience.</p>
-  <p class="text-content ml-content"><span class="font-head">Better Caching:</span> Smaller code chunks are more likely to be cached by the browser, which can further improve subsequent page loads.</p><br/>
+  <p class="text-content ml-content">
+    <span class="font-head">Faster Initial Load Times:</span> By only loading the code needed for the current view or
+    functionality, the initial load time of the application can be significantly reduced.
+  </p>
+  <p class="text-content ml-content">
+    <span class="font-head">Reduced Bandwidth Usage:</span> Smaller chunks of code mean less data needs to be
+    transferred over the network, which is particularly important for users on slower connections or mobile devices.
+  </p>
+  <p class="text-content ml-content">
+    <span class="font-head">Improved User Experience:</span> Users can start interacting with the application more
+    quickly, leading to a smoother and more responsive experience.
+  </p>
+  <p class="text-content ml-content">
+    <span class="font-head">Better Caching:</span> Smaller code chunks are more likely to be cached by the browser,
+    which can further improve subsequent page loads.
+  </p>
+  <br />
   <h4 class="font-head">b.Techniques for Code Splitting:</h4>
-  <h3 class="text-subhead font-head">Dynamic Import (import() syntax):</h3> 
-  <p class="text-content ml-content">This is a feature of JavaScript that allows you to import modules dynamically at runtime. It returns a promise that resolves to the module.</p>
+  <h3 class="text-subhead font-head">Dynamic Import (import() syntax):</h3>
+  <p class="text-content ml-content">
+    This is a feature of JavaScript that allows you to import modules dynamically at runtime. It returns a promise that
+    resolves to the module.
+  </p>
   <h5 class="font-head">Example:</h5>
   <p class="text-content ml-content">import("./module")</p>
-  <p class="text-content ml-content"> .then(module => {</p>
+  <p class="text-content ml-content">.then(module => {</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Use the module</p>
   <p class="text-content ml-content">})</p>
-  <p class="text-content ml-content"> .catch(error => {</p>
+  <p class="text-content ml-content">.catch(error => {</p>
   <p class="text-content ml-content">&nbsp;&nbsp; // Handle error</p>
-  <p class="text-content ml-content"> });<br/>
+  <p class="text-content ml-content">});</p>
+  <br />
   <h3 class="text-subhead font-head">Webpack SplitChunksPlugin:</h3>
-  <p class="text-content ml-content">Webpack, a popular JavaScript bundler, has a SplitChunksPlugin that automatically splits code into 
-    separate files based on shared dependencies.</p><br/>
+  <p class="text-content ml-content">
+    Webpack, a popular JavaScript bundler, has a SplitChunksPlugin that automatically splits code into separate files
+    based on shared dependencies.
+  </p>
+  <br />
   <h3 class="text-subhead font-head">React.lazy() and Suspense:</h3>
-  <p class="text-content ml-content">In React, you can use React.lazy() to dynamically import components. 
-    Combined with Suspense, you can easily implement code splitting for components.</p>
+  <p class="text-content ml-content">
+    In React, you can use React.lazy() to dynamically import components. Combined with Suspense, you can easily
+    implement code splitting for components.
+  </p>
   <p class="text-content ml-content">const MyComponent = React.lazy(() => import('./MyComponent'));</p>
-  <p class="text-content ml-content">&lt;React.Suspense fallback={<div>Loading... &lt;/div&gt;}&gt;</p>
+  <p class="text-content ml-content">&lt;React.Suspense fallback={ Loading... &lt;/div&gt;}&gt;</p>
   <p class="text-content ml-content">&nbsp;&nbsp;&lt;MyComponent /&gt;</p>
-  <p class="text-content ml-content">&lt;/React.Suspense&gt;</p><br/>
+  <p class="text-content ml-content">&lt;/React.Suspense&gt;</p>
+  <br />
   <h3 class="text-subhead font-head">Route-based Code Splitting:</h3>
-  <p class="text-content ml-content">In web applications with routing, you can implement code splitting by loading different chunks for different routes.</p>
-  <p class="text-content ml-content">Code splitting is an important optimization technique, especially for large and complex web applications. 
-    It allows you to serve the minimum amount of code necessary for a user's current interaction, 
-    leading to a faster and more efficient user experience.</p><br/>
-  <h4 class="font-head">c.Why do you need code splitting?</h2>
-  <h3 class="text-subhead font-head">Code splitting is important for several reasons:</h3><br/>
-  <h4>Faster Initial Page Load:</h4> 
-  <p class="text-content ml-content">Smaller initial JavaScript bundles mean quicker load times for users. 
-    They can start interacting with the page sooner, leading to a better user experience.</p><br/>
-  <h4>Reduced Bandwidth Usage:</h4>
-  <p class="text-content ml-content">With code splitting, users only download the code they need for the current view or interaction. 
-    This reduces the amount of data transferred over the network, which is crucial for users on slower connections or mobile devices.</p><br/>
-  <h4>Improved Performance on Low-End Devices:</h4>
-  <p class="text-content ml-content">Code splitting can significantly benefit users with low-end or budget devices that have limited processing power and memory. 
-    It allows the application to run more smoothly on these devices.</p><br/>
-  <h4>Optimized Caching:</h4>
-  <p class="text-content ml-content">Smaller code chunks are more likely to be cached by the browser. 
-    This means that subsequent visits to the same website can be much faster, as the browser can reuse previously loaded code.</p><br/>
-  <h4>Efficient Resource Utilization:</h4>
-  <p class="text-content ml-content">Not all parts of a web application are used at once. 
-    Code splitting allows you to load only the necessary code for the current view, reducing unnecessary resource consumption.</p><br/>
-  <h4>Simplified Maintenance:</h4>
-  <p class="text-content ml-content">Smaller code chunks are easier to manage and debug. It's also easier to reason about smaller pieces of code, 
-    making it simpler to maintain and update the application.</p><br/>
-  <h4>Facilitates Parallel Loading:</h4>
-  <p class="text-content ml-content">Code splitting enables browsers to load multiple smaller files in parallel, rather than one large file sequentially. 
-    This can lead to faster loading times, especially on devices with multiple CPU cores.</p><br/>
-  <h4>Facilitates Progressive Web Apps (PWAs):</h4>
-  <p class="text-content ml-content">Code splitting can be crucial for Progressive Web Apps, which aim to provide a fast and reliable user experience. 
-    By only loading necessary code, PWAs can achieve faster load times, even in offline or low-connectivity scenarios.</p><br/>
-  <h4>Enables On-Demand Loading:</h4>
-  <p class="text-content ml-content">Code splitting allows for on-demand loading of components or features. 
-    This is particularly useful for applications with complex UIs, where not all components are needed immediately.</p><br/>
-  <h4>Enhanced Developer Experience:</h4>
-  <p class="text-content ml-content">For developers, code splitting encourages modular, reusable code. 
-    It allows teams to work on smaller, more focused pieces of the application, making it easier to develop and maintain.</p><br/>
-  <p class="text-content ml-content">Overall, code splitting is a powerful technique that helps optimize web applications for better performance, 
-    especially in scenarios where users may have varying levels of connectivity and device capabilities. 
-    It's an essential tool for building fast, responsive, and efficient web experiences.</p><br/>
+  <p class="text-content ml-content">
+    In web applications with routing, you can implement code splitting by loading different chunks for different routes.
+  </p>
+  <p class="text-content ml-content">
+    Code splitting is an important optimization technique, especially for large and complex web applications. It allows
+    you to serve the minimum amount of code necessary for a user's current interaction, leading to a faster and more
+    efficient user experience.
+  </p>
+  <br />
+  <h4 class="font-head">c.Why do you need code splitting?</h4>
+  <h3 class="text-subhead font-head">Code splitting is important for several reasons:</h3>
+  <br />
+  <h4 class="font-head">Faster Initial Page Load:</h4>
+  <p class="text-content ml-content">
+    Smaller initial JavaScript bundles mean quicker load times for users. They can start interacting with the page
+    sooner, leading to a better user experience.
+  </p>
+  <br />
+  <h4 class="font-head">Reduced Bandwidth Usage:</h4>
+  <p class="text-content ml-content">
+    With code splitting, users only download the code they need for the current view or interaction. This reduces the
+    amount of data transferred over the network, which is crucial for users on slower connections or mobile devices.
+  </p>
+  <br />
+  <h4 class="font-head">Improved Performance on Low-End Devices:</h4>
+  <p class="text-content ml-content">
+    Code splitting can significantly benefit users with low-end or budget devices that have limited processing power and
+    memory. It allows the application to run more smoothly on these devices.
+  </p>
+  <br />
+  <h4 class="font-head">Optimized Caching:</h4>
+  <p class="text-content ml-content">
+    Smaller code chunks are more likely to be cached by the browser. This means that subsequent visits to the same
+    website can be much faster, as the browser can reuse previously loaded code.
+  </p>
+  <br />
+  <h4 class="font-head">Efficient Resource Utilization:</h4>
+  <p class="text-content ml-content">
+    Not all parts of a web application are used at once. Code splitting allows you to load only the necessary code for
+    the current view, reducing unnecessary resource consumption.
+  </p>
+  <br />
+  <h4 class="font-head">Simplified Maintenance:</h4>
+  <p class="text-content ml-content">
+    Smaller code chunks are easier to manage and debug. It's also easier to reason about smaller pieces of code, making
+    it simpler to maintain and update the application.
+  </p>
+  <br />
+  <h4 class="font-head">Facilitates Parallel Loading:</h4>
+  <p class="text-content ml-content">
+    Code splitting enables browsers to load multiple smaller files in parallel, rather than one large file sequentially.
+    This can lead to faster loading times, especially on devices with multiple CPU cores.
+  </p>
+  <br />
+  <h4 class="font-head">Facilitates Progressive Web Apps (PWAs):</h4>
+  <p class="text-content ml-content">
+    Code splitting can be crucial for Progressive Web Apps, which aim to provide a fast and reliable user experience. By
+    only loading necessary code, PWAs can achieve faster load times, even in offline or low-connectivity scenarios.
+  </p>
+  <br />
+  <h4 class="font-head">Enables On-Demand Loading:</h4>
+  <p class="text-content ml-content">
+    Code splitting allows for on-demand loading of components or features. This is particularly useful for applications
+    with complex UIs, where not all components are needed immediately.
+  </p>
+  <br />
+  <h4 class="font-head">Enhanced Developer Experience:</h4>
+  <p class="text-content ml-content">
+    For developers, code splitting encourages modular, reusable code. It allows teams to work on smaller, more focused
+    pieces of the application, making it easier to develop and maintain.
+  </p>
+  <br />
+  <p class="text-content ml-content">
+    Overall, code splitting is a powerful technique that helps optimize web applications for better performance,
+    especially in scenarios where users may have varying levels of connectivity and device capabilities. It's an
+    essential tool for building fast, responsive, and efficient web experiences.
+  </p>
+  <br />
 </div>
