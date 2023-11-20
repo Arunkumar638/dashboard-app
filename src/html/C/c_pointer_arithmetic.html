@@ -1,51 +1,58 @@
 <div>
-  <h2><b>Pointer arithmetic</b></h2>
-  Pointer arithmetic is a feature in C that allows you to perform arithmetic operations on pointers. This is possible
+  <h2>Pointer arithmetic</h2>
+  <div class="text-content ml-content">Pointer arithmetic is a feature in C that allows you to perform arithmetic operations on pointers. This is possible
   because pointers are just memory addresses, and their values are typically integers representing locations in
   memory.<br />
 
-  Here are some important things to know about pointer arithmetic:<br />
+  Here are some important things to know about pointer arithmetic:
+</div><br />
 
-  <b>Increment and Decrement:</b><br />
+  <b class="text-base">Increment and Decrement:</b><br />
 
-  You can increment and decrement a pointer by an integer value. The size of the increment or decrement is based on the
+  <div class="text-content ml-content">You can increment and decrement a pointer by an integer value. The size of the increment or decrement is based on the
   data type the pointer is pointing to.<br />
   int arr[5] = {1, 2, 3, 4, 5};<br />
   int *ptr = arr; // ptr points to the first element of arr<br />
 
-  ptr++; // Moves ptr to the next integer location in memory<br />
-  <b>Addition and Subtraction:</b><br />
+  ptr++; // Moves ptr to the next integer location in memory
+</div><br />
+  <b class="text-base">Addition and Subtraction:</b><br />
 
-  You can add or subtract an integer from a pointer. Again, the size of the increment or decrement is based on the data
+  <div class="text-content ml-content">You can add or subtract an integer from a pointer. Again, the size of the increment or decrement is based on the data
   type.<br />
   int arr[5] = {1, 2, 3, 4, 5};<br />
   int *ptr = arr; // ptr points to the first element of arr<br />
 
-  ptr = ptr + 2; // Moves ptr two elements ahead (8 bytes for integers)<br />
-  <b>Array Indexing:</b><br />
+  ptr = ptr + 2; // Moves ptr two elements ahead (8 bytes for integers)
+</div><br />
+  <b class="text-base">Array Indexing:</b><br />
 
-  Array indexing can be viewed as a form of pointer arithmetic. The expression arr[i] is equivalent to *(arr + i), where
+  <div class="text-content ml-content">Array indexing can be viewed as a form of pointer arithmetic. The expression arr[i] is equivalent to *(arr + i), where
   arr is a pointer to the first element of the array.<br />
   int arr[5] = {1, 2, 3, 4, 5};<br />
   int *ptr = arr; // ptr points to the first element of arr<br />
 
-  printf("%d\n", *(ptr + 2)); // This will print the value 3<br />
-  P<b>ointer Differences:</b><br />
+  printf("%d\n", *(ptr + 2)); // This will print the value 3
+</div><br />
+  <b class="text-base">Pointer Differences:</b><br />
 
-  You can subtract one pointer from another, as long as they are both pointers to the same data type. The result will be
+  <div class="text-content ml-content">You can subtract one pointer from another, as long as they are both pointers to the same data type. The result will be
   the number of elements between them.<br />
 
   int arr[5] = {1, 2, 3, 4, 5};<br />
   int *ptr1 = arr; // ptr1 points to the first element of arr<br />
   int *ptr2 = arr + 3; // ptr2 points to the fourth element of arr<br />
 
-  int diff = ptr2 - ptr1; // diff will be 3, because there are 3 elements between ptr1 and ptr2<br />
-  <b>Void Pointers and Pointer Arithmetic:</b><br />
+  int diff = ptr2 - ptr1; // diff will be 3, because there are 3 elements between ptr1 and ptr2
+</div><br />
+  <b class="text-base">Void Pointers and Pointer Arithmetic:</b><br />
 
-  Void pointers (void*) cannot be directly dereferenced, but they can be typecasted to other pointer types to perform
+  <div class="text-content ml-content">Void pointers (void*) cannot be directly dereferenced, but they can be typecasted to other pointer types to perform
   pointer arithmetic. Be cautious, as typecasting a void pointer incorrectly can lead to undefined behavior.<br />
   Pointer arithmetic is a powerful feature, but it also requires caution. You must ensure that you are performing
   operations on valid memory locations to avoid undefined behavior or memory access violations. Additionally, it's
   important to be aware of the size of the data type being pointed to, as this affects the behavior of pointer
-  arithmetic.<br />
+  arithmetic.
+</div><br />
 </div>
+

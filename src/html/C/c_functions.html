@@ -1,49 +1,10 @@
 <div>
-  <h2 class="text-head font-head">Function basics</h2>
-  <p class="text-content ml-content">
-    In C, a function is a self-contained block of code that performs a specific task. Functions provide modularity and
-    allow you to organize your code into smaller, manageable pieces. Here are the basics of defining and using functions
-    in C:
-  </p>
-  <br />
-  <h3 class="text-subhead font-head">Function Declaration and Definition:</h3>
-  <p class="font-head">Function Declaration:</p>
-  <p class="text-content ml-content">
-    A function declaration tells the compiler about the existence of a function. It specifies the function's name,
-    return type, and parameters (if any).<br />
-    It's also known as the function prototype.<br />
-    return_type function_name(parameter1_type parameter1_name, parameter2_type parameter2_name, ...);
-  </p>
-  <br />
-  <p class="font-head">Example:</p>
-  <p class="text-content ml-content">int add(int a, int b); // Function declaration for an addition function</p>
-  <br />
-  <p class="font-head">Function Definition:</p>
-  <p class="text-content ml-content">
-    A function definition provides the actual implementation of the function. It contains the code that is executed when
-    the function is called.<br />
-    The function definition includes the function's body.<br />
-    &nbsp;&nbsp;return_type function_name(parameter1_type parameter1_name, parameter2_type parameter2_name, ...) {<br />
-    &nbsp;&nbsp;&nbsp;&nbsp;// Function body<br />
-    &nbsp;&nbsp;&nbsp;&nbsp;// ...<br />
-    &nbsp;&nbsp;&nbsp;&nbsp;return return_value; // Return statement (if the function has a return type)<br />
-    &nbsp;&nbsp;}
-  </p>
-  <br />
-  <p class="font-head">Example:</p>
-  <p class="text-content ml-content">
-    int add(int a, int b) {<br />
-    &nbsp;&nbsp;&nbsp;&nbsp;int sum = a + b;<br />
-    &nbsp;&nbsp;&nbsp;&nbsp;return sum;<br />
-    &nbsp;&nbsp;}
-  </p>
-  <br />
   <h2 class="text-head font-head">Function Basics</h2>
   <p class="text-content ml-content">
     In C, a function is a self-contained block of code that performs a specific task. Functions provide modularity and
     allow you to organize your code into smaller, manageable pieces. Here are the basics of defining and using functions
     in C:
-  </p>
+  </p><br />
   <h3 class="text-subhead font-head">Function Declaration and Definition:</h3>
   <p class="font-head">Function Declaration:</p>
   <p class="text-content ml-content">
@@ -53,7 +14,7 @@
   <p class="font-head">Example:</p>
   <p class="text-content ml-content">
     &nbsp;&nbsp;int add(int a, int b); // Function declaration for an addition function
-  </p>
+  </p><br/>
   <p class="font-head">Function Definition:</p>
   <p class="text-content ml-content">
     A function definition provides the actual implementation of the function. It contains the code that is executed when
@@ -65,13 +26,13 @@
     &nbsp;&nbsp;&nbsp;&nbsp;int sum = a + b;<br />
     &nbsp;&nbsp;&nbsp;&nbsp;return sum;<br />
     &nbsp;&nbsp;}
-  </p>
-  <p class="font-head">
-    Calling a Function:<br />
+  </p><br />
+  <p class="font-head">Calling a Function:</p>
+  <p class="text-content ml-content">
     To use a function, you need to call it from your program. You do this by using the function name followed by
     parentheses. If the function has parameters, you pass the actual values (arguments) inside the parentheses.
   </p>
-  <br /><br />
+  <br />
   <p class="font-head">Example:</p>
   <p class="text-content ml-content">
     int result = add(3, 4); // Calling the add function and storing the result in the variable 'result'
@@ -82,7 +43,7 @@
     The return type of a function specifies the type of value that the function will return. If a function doesn't
     return anything, its return type is void.
   </p>
-  <br /><br />
+  <br />
   <p class="font-head">Example:</p>
   <p class="text-content ml-content">
     int add(int a, int b) {<br />
@@ -94,12 +55,12 @@
     &nbsp;&nbsp;// This function doesn't return anything (return type is 'void')<br />
     }
   </p>
-  <br /><br />
+  <br />
   <p class="font-head">Function Parameters:</p>
   <p class="text-content ml-content">
     Parameters are the values that a function receives when it's called. They allow you to pass data into a function.
   </p>
-  <br /><br />
+  <br />
   <p class="font-head">Example:</p>
   <p class="text-content ml-content">
     int add(int a, int b) {<br />
@@ -112,20 +73,20 @@
     &nbsp;&nbsp;return 0;<br />
     }
   </p>
-  <br /><br />
+  <br />
   <p class="font-head">Function Call Stack:</p>
   <p class="text-content ml-content">
     When a function is called, the program execution jumps to the function's code. The variables and parameters of the
     function are stored in a memory area called the "stack frame". When the function finishes executing, it returns
     control to the calling function.
   </p>
-  <br /><br />
+  <br />
   <p class="font-head">Recursive Functions:</p>
   <p class="text-content ml-content">
     A recursive function is a function that calls itself. This technique is useful for solving problems that can be
     broken down into smaller, similar sub-problems.
   </p>
-  <br /><br />
+  <br />
   <p class="font-head">Example:</p>
   <p class="text-content ml-content">
     int factorial(int n) {<br />
@@ -138,7 +99,7 @@
     These are the basic concepts of functions in C. They are a fundamental part of programming, enabling you to organize
     code, reuse logic, and build complex applications.
   </p>
-  <br /><br />
+  <br />
   <h2 class="text-head font-head">Function with input parameter example</h2>
   <p class="text-content ml-content">
     Certainly! Here's an example of a C function that takes two integers as input parameters and returns their sum:
@@ -159,10 +120,10 @@
     &nbsp;&nbsp;return result;<br />
     }
   </p>
-  <br /><br />
+  <br />
   <p class="font-head">Output:</p>
   <p class="text-content ml-content">The sum of 5 and 7 is 12</p>
-  <br /><br />
+  <br />
   <p class="font-head">Explanation:</p>
   <li class="ml-points">
     We have a function named add that takes two integer parameters (a and b) and returns an integer.
@@ -174,12 +135,12 @@
     We then call the add function, passing num1 and num2 as arguments. The result is stored in the variable sum.
   </li>
   <li class="ml-points">Finally, we print out the result using printf.</li>
-  <br /><br />
+  <br />
   <p class="text-content ml-content">
     In this example, the add function takes two integers (a and b) as input parameters, adds them together, and returns
     the result. The main function calls this add function with num1 and num2 as arguments and prints out the result.
   </p>
-  <br /><br />
+  <br />
   <h2 class="text-head font-head">Function Call by value example</h2>
   <p class="text-content ml-content">
     In C, when you pass parameters to a function, they are passed by value by default. This means that the function
@@ -198,14 +159,14 @@
     &nbsp;&nbsp;return 0;<br />
     }
   </p>
-  <br /><br />
+  <br />
   <p class="font-head">Output:</p>
   <p class="text-content ml-content">
     Before function call: 5<br />
     Inside function: 25<br />
     After function call: 5
   </p>
-  <br /><br />
+  <br />
   <p class="font-head">Explanation:</p>
   <li class="ml-points">
     We have a function named square that takes an integer num as a parameter. Inside the function, it calculates the
@@ -237,7 +198,7 @@
   <p class="text-content ml-content">
     In C, you can pass parameters to a function by reference, which allows the function to directly access and modify
     the original variables. This is achieved by passing pointers to the variables. Here's an example to illustrate call
-    by reference:<br /><br />
+    by reference:<br />
     #include &lt;stdio.h&gt;<br />
     void square(int *num) {<br />
     &nbsp;&nbsp;*num = (*num) * (*num);<br />
@@ -251,14 +212,14 @@
     &nbsp;&nbsp;return 0;<br />
     }
   </p>
-  <br /><br />
-  <p class="font-head">
-    Output:<br />
+  <br />
+  <p class="font-head">Output:</p><br />
+  <p class="text-content ml-content">  
     Before function call: 5<br />
     Inside function: 25<br />
     After function call: 25
   </p>
-  <br /><br />
+  <br />
   <p class="font-head">Explanation:</p>
   <li class="ml-points">
     We have a function named square that takes a pointer to an integer num as a parameter. Inside the function, it
@@ -307,19 +268,19 @@
     &nbsp;&nbsp;return 0;<br />
     }
   </p>
-  <br /><br />
+  <br />
   <p class="font-head">Output:</p>
   <p class="text-content ml-content">
     Factorial of 5 is 120<br />
     In this example, the factorial function calls itself with a smaller value (n - 1) until it reaches the base case (n
     == 0). The base case is important to prevent infinite recursion.
   </p>
-  <br /><br />
+  <br />
   <p class="font-head">Inline Functions:</p>
   <p class="text-content ml-content">
     In C, the inline keyword suggests to the compiler that it should attempt to generate code for a function inline,
     rather than making a function call. This can lead to faster execution because there's no overhead of a function
-    call.<br /><br />
+    call.<br />
     Here's an example of an inline function:<br />
     #include &lt;stdio.h&gt;<br />
     inline int add(int a, int b) {<br />
@@ -331,15 +292,15 @@
     &nbsp;&nbsp;return 0;<br />
     }
   </p>
-  <br /><br />
+  <br />
   <p class="font-head">Output:</p>
   <p class="text-content ml-content">
-    Result: 7<br /><br />
+    Result: 7<br />
     The inline keyword is used before the function definition. It's a suggestion to the compiler, and the compiler may
-    choose to ignore it.<br /><br />
+    choose to ignore it.<br />
     Note that the effectiveness of inlining depends on various factors, including the size of the function and the
     optimization settings of the compiler. The compiler will decide whether it's appropriate to actually inline the
-    function.<br /><br />
+    function.<br />
     Inlining is generally used for small, frequently called functions where the overhead of a function call might be
     significant.
   </p>

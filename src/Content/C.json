@@ -28,18 +28,14 @@
         "key": "c_constants"
       },
       {
-        "label": "Printing and Dynamic Inputs",
+        "label": "Printing and Dynammic Inputs",
         "key": "c_printing_and_dynamic_inputs"
       }
     ]
   },
   {
-    "label": "Comments",
-    "key": "c_comments"
-  },
-  {
-    "label": "Operators",
-    "key": "c_operators"
+    "label": "Comments and Operators",
+    "key": "c_comments_and_operators"
   },
   {
     "label": "Control Statements",
@@ -65,29 +61,7 @@
   },
   {
     "label": "Functions",
-    "key": "c_functions",
-    "children": [
-      {
-        "label": "Functions",
-        "key": "c_functions_introduction"
-      },
-      {
-        "label": "Function with parameter",
-        "key": "c_Function_with_input_parameter"
-      },
-      {
-        "label": "Call by value",
-        "key": "c_Function_call_by_value"
-      },
-      {
-        "label": "Call by reference ",
-        "key": "c_Function_call_by_reference"
-      },
-      {
-        "label": "Recursion and inline function",
-        "key": "c_Recursion_and_inline_function"
-      }
-    ]
+    "key": "c_functions"
   },
   {
     "label": "Arrays",
@@ -99,78 +73,48 @@
     "children": [
       {
         "label": "Pointer and types of Pointers",
-        "key": "c_Pointer and types of Pointers"
+        "key": "c_pointer_and_types_of_pointers"
       },
       {
         "label": "Pointer to pointer",
-        "key": "c_Pointer to pointer"
+        "key": "c_pointer_to_pointer"
       },
       {
         "label": "Pointer arithmetic",
-        "key": "c_Pointer arithmetic"
+        "key": "c_pointer_arithmetic"
       },
       {
         "label": "Direct and Indirect Access Pointers",
-        "key": "c_Direct and Indirect Access Pointers"
+        "key": "c_direct_and_indirect_access_pointers"
       },
       {
         "label": "Dynamic memory allocation malloc",
-        "key": "c_Dynamic memory allocation malloc"
+        "key": "c_dynamic_memory_allocation_malloc"
       },
       {
         "label": "C Pointers & Arrays with Examples",
-        "key": "c_C Pointers & Arrays with Examples"
+        "key": "c_pointers_&_arrays_with_examples"
       },
       {
         "label": "C Pointers and Strings with Examples",
-        "key": "c_C Pointers and Strings with Examples"
+        "key": "c_pointers_and_strings_with_examples"
       }
     ]
   },
   {
     "label": "Functions Pointers",
-    "key": "c_Functions Pointers",
-    "children": [
-      {
-        "label": "Functions Pointers Example",
-        "key": "c_Functions Pointers Example"
-      },
-      {
-        "label": "Functions with Array Parameters",
-        "key": "c_Functions with Array Parameters"
-      },
-      {
-        "label": "Functions that Return an Array",
-        "key": "c_Functions that Return an Array"
-      },
-      {
-        "label": "Function Pointers",
-        "key": "c_Function Pointers"
-      },
-      {
-        "label": "Array of Function Pointers",
-        "key": "c_Array of Function Pointers"
-      },
-      {
-        "label": "Functions Using void Pointers",
-        "key": "c_Functions Using void Pointers"
-      },
-      {
-        "label": "Function Pointers as Arguments",
-        "key": "c_Function Pointers as Arguments"
-      }
-    ]
+    "key": "c_functions_pointers"
   },
   {
     "label": "String and Method",
-    "key": "c_String and Method"
+    "key": "c_string_and_method"
   },
   {
     "label": "Structures and Unions",
-    "key": "c_Structures and Unions"
+    "key": "c_structures_and_unions"
   },
   {
     "label": "File Handling",
-    "key": "c_File Handling"
+    "key": "c_file_handling"
   }
 ]

@@ -1,5 +1,5 @@
 <div>
-  <h2 class="text-head font-head"><b>Array</b></h2>
+  <h2 class="text-head font-head">Array</h2>
   <p class="text-content ml-content">
     An array is simply a collection of variables of the same type that share a common reference. Or you can think of an
     array as a group of variables with the same type that share a name. In order to get to a certain item in an array,
@@ -8,7 +8,7 @@
     <b>Note:</b> In an array, the index starts at 0 always.
   </p>
   <br />
-  <h3 class="text-subhead font-head"><b>Declare an array in C</b></h3>
+  <h4 class="font-head">Declare an array in C</h4>
   <p class="text-content ml-content">
     Here is the general form to declare an array in C:<br />
     type arr_name[size];<br />
@@ -16,14 +16,14 @@
     other words, size specifies the number of elements that an array can hold.
   </p>
   <br />
-  <h4><b>Initialize an array in C</b></h4>
+  <h4 class="font-head">Initialize an array in C</h4>
   <p class="text-content ml-content">
     Here's an example of how to initialize an array in C. Here, we create a five-element array: int arr[5] = {1, 2, 3,
     4, 5};<br />
     Here, arr is the name of the array of type int containing five elements, i.e., 1, 2, 3, 4, and 5.
   </p>
   <br />
-  <h4><b>What if you omit the array size?</b></h4>
+  <h4 class="font-head">What if you omit the array size?</h4>
   <p class="text-content ml-content">
     If the array size is omitted, the array becomes large enough to hold the initialization. Let's look at the following
     code fragment:<br />
@@ -35,7 +35,7 @@
     int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
   </p>
   <br />
-  <h4><b>Access Array Elements in C</b></h4>
+  <h4 class="font-head">Access Array Elements in C</h4>
   <p class="text-content ml-content">
     An array element is accessed by indexing the array name. This can be done by placing the index number of that
     element within the square bracket after the name of the array. Let's look at this code fragment. Here we are going
@@ -51,10 +51,10 @@
     <li class="ml-points">Multi-dimensional Array</li>
   </p>
   <br />
-  <h4><b>One-dimensional Arrays in C</b></h4>
+  <h4 class="font-head text-subhead">One-dimensional Arrays in C</h4>
   <p class="text-content ml-content">
     As previously discussed, you can declare a one-dimensional array, initialize a one-dimensional array, and access
-    one-dimensional array elements in the same way. Let's look at an example.<br />
+    one-dimensional array elements in the same way. Let's look at an example.<br /><br />
     #include &lt;stdio.h&gt;<br />
     int main()<br />
     {<br />
@@ -65,19 +65,19 @@
     tot = sizeof(arr)/sizeof(arr[0]);<br />
     printf("\nThe last element = %d", arr[tot-1]);<br />
     return 0;<br />
-    }<br />
+    }<br /><br />
     The output of the above program is<br />
     The first element = 12<br />
     The second element = 43<br />
-    The last element = 430<br />
+    The last element = 430<br /><br />
     In the above program, the code "sizeof(arr)" returns the size of "arr" in bytes, and the code "sizeof(arr[0])"
     returns the size of the first element (which is 12; an integer-type value) of the array "arr." Therefore, the
-    following statement<br />
+    following statement<br /><br />
     tot = sizeof(arr)/sizeof(arr[0]);<br />
     initialize the number of elements available in the array named "arr." The above statement can also be written as:<br />
     tot = sizeof(arr)/sizeof(int);<br />
     Because the array's first element is "12," which is an integer value. As a result, we will eventually get the size
-    of "int" in our platform.<br />
+    of "int" in our platform.<br /><br />
     Let me create another example of an array in C.<br />
     #include &lt;stdio.h&gt;<br />
     int main()<br />
@@ -91,7 +91,7 @@
     for (i = 0; i &lt; 10; i++)<br />
     printf("arr[%d] = %d\n", i, arr[i]);<br />
     return 0;<br />
-    }<br />
+    }<br /><br />
     The following snapshot shows the initial output produced by the above program:<br />
     <b>c arrays example</b>
     Now type the first element, say 23, and hit the ENTER key, then type the second number, say 43, and hit the ENTER
@@ -100,7 +100,7 @@
     c array program
   </p>
   <br />
-  <h4><b>Multi-dimensional Arrays in C</b></h4>
+  <h4 class="font-head text-subhead">Multi-dimensional Arrays in C</h4>
   <p class="text-content ml-content">
     Multidimensional arrays are also supported by the C programming language. A two-dimensional array is the most basic
     type of multi-dimensional array. In C, the following is the general syntax for declaring a two-dimensional array:<br />
@@ -108,7 +108,7 @@
     A two-dimensional array is equivalent to an array of one-dimensional arrays. As a result of the preceding
     declaration, int arr[10][5] can be considered a ten one-dimensional array where each array is of size 5 or contains
     5 elements. The first index can be thought of as a row, and the second index as a column. As a result, the above
-    array has ten rows and five columns. Let's look at an example.<br />
+    array has ten rows and five columns. Let's look at an example.<br /><br />
     #include &lt;stdio.h&gt;<br />
     int main()<br />
     {<br />
@@ -132,9 +132,9 @@
     printf("\n");<br />
     }<br />
     return 0;<br />
-    }<br />
+    }<br /><br />
     The output with user inputs 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, and 15 as fifteen elements for the 5x3
-    matrix should be:<br />
+    matrix should be:<br /><br />
 
     Enter 15 elements for a 5x3 matrix:1<br />
     2<br />
@@ -150,21 +150,21 @@
     12<br />
     13<br />
     14<br />
-    15<br />
+    15<br /><br />
     The Matrix is:<br />
     1 &nbsp; 2 &nbsp; 3<br />
     4 &nbsp; 5 &nbsp; 6<br />
     7 &nbsp; 8 &nbsp; 9<br />
     10 11 12<br />
-    13 14 15<br />
+    13 14 15<br /><br />
     The C programming language supports arrays with more than two dimensions. A multi-dimensional array declaration
     takes the following general form:<br />
     type array_name[size1][size2][size3]...[sizeN];<br />
-    Consider the following example illustrating the multi-dimensional array in C:<br />
-    #include &lt;stdio.h&gt;<br /><br />
+    Consider the following example illustrating the multi-dimensional array in C:<br /><br />
+    #include &lt;stdio.h&gt;<br />
     int main()<br />
     {<br />
-    int my_array[1][2][3][4], i, j, k, l, val = 1;<br />
+    int my_array[1][2][3][4], i, j, k, l, val = 1;<br /><br />
 
     // initializing array<br />
     for (i = 0; i &lt; 1; i++)<br />
@@ -180,7 +180,7 @@
     }<br />
     }<br />
     }<br />
-    }<br />
+    }<br /><br />
 
     // displaying array<br />
     for (i = 0; i &lt; 1; i++)<br />
@@ -198,7 +198,7 @@
     }<br />
 
     return 0;<br />
-    }<br />
+    }<br /><br />
     The output should be:<br />
     my_array[0][0][0][0] = 1<br />
     my_array[0][0][0][1] = 2<br />
@@ -226,13 +226,13 @@
     my_array[0][1][2][3] = 24<br />
   </p>
   <br />
-  <h4><b>Pass arrays to a function in C</b></h4>
+  <h4 class="font-head">Pass arrays to a function in C</h4>
   <p class="text-content ml-content">
     In C programming, you can pass an entire array to functions. Before we learn that, let's see how you can pass
     individual elements of an array to functions.
   </p>
   <br />
-  <h4><b>Pass Individual Array Elements</b></h4>
+  <h4 class="font-head">Pass Individual Array Elements</h4>
   <p class="text-content ml-content">
     Passing array elements to a function is similar to passing variables to a function.<br />
     <b>Example 1: Pass Individual Array Elements</b><br />
@@ -286,7 +286,7 @@
     This informs the compiler that you are passing a one-dimensional array to the function.
   </p>
   <br />
-  <h4><b>Pass Multidimensional Arrays to a Function</b></h4>
+  <h4 class="font-head">Pass Multidimensional Arrays to a Function</h4>
   <p class="text-content ml-content">
     To pass multidimensional arrays to a function, only the name of the array is passed to the function (similar to
     one-dimensional arrays).<br />
@@ -323,14 +323,14 @@
     2<br />
     3<br />
     4<br />
-    5<br />
+    5<br /><br />
     Notice the parameter int num[2][2] in the function prototype and function definition:<br />
     // function prototype<br />
-    void displayNumbers(int num[2][2]);<br />
+    void displayNumbers(int num[2][2]);<br /><br />
     This signifies that the function takes a two-dimensional array as an argument. We can also pass arrays with more
     than 2 dimensions as a function argument.<br />
     When passing two-dimensional arrays, it is not mandatory to specify the number of rows in the array. However, the
-    number of columns should always be specified.<br />
+    number of columns should always be specified.<br /><br />
     For example,<br />
     void displayNumbers(int num[][2]) {<br />
     // code<br />

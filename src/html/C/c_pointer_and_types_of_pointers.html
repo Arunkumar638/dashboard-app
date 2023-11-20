@@ -1,47 +1,60 @@
-<div><h2><b>Pointer and types of Pointers in c</b></h2>
-In C programming, a pointer is a variable that holds the memory address of another variable. It allows you to indirectly access a variable by its address rather than its value. This can be useful for tasks like dynamic memory allocation, working with arrays, and passing parameters to functions by reference.<br/>
-
-Here are some important points about pointers in C:<br/>
-
-<b>Declaring Pointers:</b><br/>
-
-To declare a pointer, you use the * (asterisk) symbol followed by the data type. For example:<br/>
-int *ptr;  // Declares a pointer to an integer<br/>
-float *ptr2;  // Declares a pointer to a float<br/>
-<b>Initializing Pointers:</b><br/>
-
-Pointers should be initialized before they are used. They can be assigned the address of an existing variable using the & (address of) operator. For example:<br/>
-int num = 10;<br/>
-int *ptr = &num;  // ptr now points to the memory location of 'num'<br/>
-Accessing Value through Pointers:<br/>
-
-You can access the value pointed to by a pointer using the * (dereference) operator. For example:<br/>
-int num = 10;<br/>
-int *ptr = &num;<br/>
-printf("%d", *ptr);  // This will print the value of 'num', which is 10<br/>
-<b>NULL Pointers:</b><br/>
-
-A pointer that is not initialized is called a null pointer. It doesn't point to any valid memory location. It's a good practice to initialize pointers to NULL if you don't have a valid address to assign initially.<br/>
-<b>Pointer Arithmetic:</b><br/>
-
-Pointers in C can be manipulated using arithmetic operations. For example, if ptr points to an integer, then ptr + 1 will point to the next integer location in memory.<br/>
-<b>Types of Pointers:</b><br/>
-
-<b>Integer Pointers (int*):</b> These pointers are used to store the address of an integer variable.<br/>
-<b>Float Pointers (float*):</b> These pointers are used to store the address of a float variable.<br/>
-<b>Character Pointers (char*):</b> These pointers are used to store the address of a character variable.<br/>
-<b>Void Pointers (void*):</b> These are generic pointers that can point to any type. They are often used with dynamic memory allocation functions like malloc.<br/>
-<b>Pointer to Pointer:</b><br/>
-
-You can have pointers that point to other pointers. These are known as double pointers or pointers to pointers. They are declared using multiple * symbols. For example:<br/>
-int num = 10;<br/>
-int *ptr = &num;<br/>
-int **ptr_to_ptr = &ptr;  // ptr_to_ptr is a pointer to a pointer to an integer<br/>
-<b>Arrays and Pointers:</b><br/>
-
-Arrays can be accessed using pointers. In fact, the name of an array is essentially a pointer to the first element of the array.<br/>
-<b>Function Pointers:</b><br/>
-
-Pointers can also point to functions. This allows you to call different functions at runtime, depending on which function the pointer is pointing to.<br/>
-Understanding pointers is crucial for advanced C programming, especially for tasks like dynamic memory allocation and working with complex data structures. However, improper use of pointers can lead to bugs like segmentation faults, so it's important to handle them carefully.<br/>
-</div>
+<div>
+  <h2 class="text-head font-head">Pointer and types of Pointers in c</h2>
+  <div class="text-content ml-content">In C programming, a pointer is a variable that holds the memory address of another variable. It allows you to indirectly access a variable by its address rather than its value. This can be useful for tasks like dynamic memory allocation, working with arrays, and passing parameters to functions by reference.<br/>
+  
+  Here are some important points about pointers in C:
+  </div><br/>
+  
+  <div class="text-subhead font-head">Declaring Pointers:</div>
+  
+  <div class="text-content ml-content">To declare a pointer, you use the * (asterisk) symbol followed by the data type. For example:<br/>
+  int *ptr;  // Declares a pointer to an integer<br/>
+  float *ptr2;  // Declares a pointer to a float
+  </div><br/>
+  <div class="text-subhead font-head">Initializing Pointers:</div>
+  
+  <div class="text-content ml-content">Pointers should be initialized before they are used. They can be assigned the address of an existing variable using the & (address of) operator. For example:<br/>
+  int num = 10;<br/>
+  int *ptr = &num;  // ptr now points to the memory location of 'num'</div><br/>
+  <div class="text-subhead font-head">Accessing Value through Pointers:</div>
+  
+  <div class="text-content ml-content">You can access the value pointed to by a pointer using the * (dereference) operator. For example:<br/>
+  int num = 10;<br/>
+  int *ptr = &num;<br/>
+  printf("%d", *ptr);  // This will print the value of 'num', which is 10
+  </div><br/>
+  <div class="text-subhead font-head">NULL Pointers:</div>
+  
+  <div class="text-content ml-content">A pointer that is not initialized is called a null pointer. It doesn't point to any valid memory location. 
+    It's a good practice to initialize pointers to NULL if you don't have a valid address to assign initially.
+  </div><br/>
+  <div class="text-subhead font-head">Pointer Arithmetic:</div>
+  
+  <div class="text-content ml-content">Pointers in C can be manipulated using arithmetic operations. For example, if ptr points to an integer, then ptr + 1 
+    will point to the next integer location in memory.
+  </div><br/>
+  <div class="text-subhead font-head">Types of Pointers:</div>
+  <div class="text-content ml-content"> 
+  <b>Integer Pointers (int*):</b> These pointers are used to store the address of an integer variable.<br/><br/>
+  <b>Float Pointers (float*):</b> These pointers are used to store the address of a float variable.<br/><br/>
+  <b>Character Pointers (char*):</b> These pointers are used to store the address of a character variable.<br/><br/>
+  <b>Void Pointers (void*):</b> These are generic pointers that can point to any type. They are often used with dynamic memory allocation functions like malloc.<br/><br/>
+  <b>Pointer to Pointer:</b><br/>
+  
+  You can have pointers that point to other pointers. These are known as double pointers or pointers to pointers. They are declared using multiple * symbols.<br/><br/> 
+  <b>For example:</b><br/>
+  int num = 10;<br/>
+  int *ptr = &num;<br/>
+  int **ptr_to_ptr = &amp;ptr;  // ptr_to_ptr is a pointer to a pointer to an integer
+</div><br/>
+  <div class="text-subhead font-head">Arrays and Pointers:</div>
+  
+  <div class="text-content ml-content">Arrays can be accessed using pointers. In fact, the name of an array is essentially a pointer to the first element of the array.</div><br/>
+  <div class="text-subhead font-head">Function Pointers:</div>
+  
+  <div class="text-content ml-content">
+  <li>Pointers can also point to functions. This allows you to call different functions at runtime, depending on which function the pointer is pointing to.</li><br/>
+  <li>Understanding pointers is crucial for advanced C programming, especially for tasks like dynamic memory allocation and working with complex data structures.</li><br/>
+  <li>However, improper use of pointers can lead to bugs like segmentation faults, so it's important to handle them carefully.</li>
+</div><br/>
+  </div>
